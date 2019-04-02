@@ -6,6 +6,7 @@
 package acoes;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,8 +24,8 @@ public class Envio implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codEnvio;
     private String codApadrinamiento;
-    private String fechaEnvio;
-    private String fechaLlegada;
+    private Date fechaEnvio;
+    private Date fechaLlegada;
     private String observaciones;
             
             

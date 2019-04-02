@@ -6,6 +6,7 @@
 package acoes;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +25,7 @@ public class Apadrinamiento implements Serializable {
     private Long codApadrinamiento;
     private Ninos codNino;
  //   private Socios numSocio;
-    private String fechaApadrinamiento;
+    private Date fechaApadrinamiento;
     private String observaciones;
 
     public Long getCodApadrinamiento() {

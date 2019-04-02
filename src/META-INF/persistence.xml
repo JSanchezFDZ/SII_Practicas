@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>acoes.Socios</class>
     <class>acoes.Apadrinamiento</class>
+    <class>acoes.Envio</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/samplez"/>
       <property name="javax.persistence.jdbc.user" value="app"/>

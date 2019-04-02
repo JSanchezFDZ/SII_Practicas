@@ -6,6 +6,7 @@
 package acoes;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,7 +33,9 @@ public class Socios implements Serializable {
     private String telefono;
     private String correo;
     private String sector;
-    
+    private Date FechaAlta;
+    private Date FechaBaja;
+    private String observaciones;
     
 
     public Long getId() {
@@ -42,6 +45,112 @@ public class Socios implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getPoblacion() {
+        return poblacion;
+    }
+
+    public void setPoblacion(String poblacion) {
+        this.poblacion = poblacion;
+    }
+
+    public int getCodPostal() {
+        return codPostal;
+    }
+
+    public void setCodPostal(int codPostal) {
+        this.codPostal = codPostal;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getSector() {
+        return sector;
+    }
+
+    public void setSector(String sector) {
+        this.sector = sector;
+    }
+
+    public Date getFechaAlta() {
+        return FechaAlta;
+    }
+
+    public void setFechaAlta(Date FechaAlta) {
+        this.FechaAlta = FechaAlta;
+    }
+
+    public Date getFechaBaja() {
+        return FechaBaja;
+    }
+
+    public void setFechaBaja(Date FechaBaja) {
+        this.FechaBaja = FechaBaja;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+    
+    
 
     @Override
     public int hashCode() {

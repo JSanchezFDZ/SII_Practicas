@@ -24,7 +24,7 @@ public class Apadrinamiento implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codApadrinamiento;
     private Ninos codNino;
- //   private Socios numSocio;
+     private Socios numSocio;
     private Date fechaApadrinamiento;
     private String observaciones;
 

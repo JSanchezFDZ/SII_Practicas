@@ -21,24 +21,48 @@ public class Apadrinamiento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long codigoApadrinamiento;
-    private Ninos codigoNino;
+    private Long codApadrinamiento;
+    private Ninos codNino;
  //   private Socios numSocio;
     private String fechaApadrinamiento;
     private String observaciones;
 
-    public Long getId() {
-        return codigoApadrinamiento;
+    public Long getCodApadrinamiento() {
+        return codApadrinamiento;
     }
 
-    public void setId(Long id) {
-        this.codigoApadrinamiento = id;
+    public void setCodApadrinamiento(Long id) {
+        this.codApadrinamiento = id;
+    }
+
+    public Ninos getCodNino() {
+        return codNino;
+    }
+
+    public void setCodNino(Ninos codNino) {
+        this.codNino = codNino;
+    }
+
+    public String getFechaApadrinamiento() {
+        return fechaApadrinamiento;
+    }
+
+    public void setFechaApadrinamiento(String fechaApadrinamiento) {
+        this.fechaApadrinamiento = fechaApadrinamiento;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (codigoApadrinamiento != null ? codigoApadrinamiento.hashCode() : 0);
+        hash += (codApadrinamiento != null ? codApadrinamiento.hashCode() : 0);
         return hash;
     }
 
@@ -49,7 +73,7 @@ public class Apadrinamiento implements Serializable {
             return false;
         }
         Apadrinamiento other = (Apadrinamiento) object;
-        if ((this.codigoApadrinamiento == null && other.codigoApadrinamiento != null) || (this.codigoApadrinamiento != null && !this.codigoApadrinamiento.equals(other.codigoApadrinamiento))) {
+        if ((this.codApadrinamiento == null && other.codApadrinamiento != null) || (this.codApadrinamiento != null && !this.codApadrinamiento.equals(other.codApadrinamiento))) {
             return false;
         }
         return true;
@@ -57,7 +81,7 @@ public class Apadrinamiento implements Serializable {
 
     @Override
     public String toString() {
-        return "acoes.Apadrinamiento[ id=" + codigoApadrinamiento + " ]";
+        return "acoes.Apadrinamiento[ id=" + codApadrinamiento + " ]";
     }
     
 }

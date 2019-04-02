@@ -1,7 +1,7 @@
 # SII_Practicas
 ## Grupo compuesto por:
 - Integrante 1
-- Integrante 2
+- Salvador Madrid Sánchez
 - Integrante 3
 - Integrante 4
 - Integrante 5

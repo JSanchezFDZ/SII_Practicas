@@ -44,11 +44,11 @@ public class Apadrinamiento implements Serializable {
         this.codNino = codNino;
     }
 
-    public String getFechaApadrinamiento() {
+    public Date getFechaApadrinamiento() {
         return fechaApadrinamiento;
     }
 
-    public void setFechaApadrinamiento(String fechaApadrinamiento) {
+    public void setFechaApadrinamiento(Date fechaApadrinamiento) {
         this.fechaApadrinamiento = fechaApadrinamiento;
     }
 

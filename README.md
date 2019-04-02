@@ -5,3 +5,4 @@
 - Integrante 3
 - Integrante 4
 - Integrante 5
+- Integrante 6

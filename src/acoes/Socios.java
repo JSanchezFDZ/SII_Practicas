@@ -7,6 +7,7 @@ package acoes;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,6 +37,7 @@ public class Socios implements Serializable {
     private Date FechaAlta;
     private Date FechaBaja;
     private String observaciones;
+    private List<Apadrinamiento> apadrinamiento; //relacion 1 a muchos con apadrinamiento
     
 
     public Long getId() {

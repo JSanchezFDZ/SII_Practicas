@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -34,7 +36,9 @@ public class Socios implements Serializable {
     private String telefono;
     private String correo;
     private String sector;
+    @Temporal(TemporalType.DATE)
     private Date FechaAlta;
+    @Temporal(TemporalType.DATE)
     private Date FechaBaja;
     private String observaciones;
     private List<Apadrinamiento> apadrinamiento; //relacion 1 a muchos con apadrinamiento
@@ -150,6 +154,14 @@ public class Socios implements Serializable {
 
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
+    }
+
+    public List<Apadrinamiento> getApadrinamiento() {
+        return apadrinamiento;
+    }
+
+    public void setApadrinamiento(List<Apadrinamiento> apadrinamiento) {
+        this.apadrinamiento = apadrinamiento;
     }
     
     

@@ -1,8 +1,9 @@
 # SII_Practicas
+
 ## Grupo compuesto por:
-- Integrante 1
+- Jesús Sánchez Fernández
 - Salvador Madrid Sánchez
-- Integrante 3
-- Integrante 4
-- Integrante 5
-- Integrante 6
+- Jesús Correa Conejero
+- Sergio Cañete Linares
+- Eduardo Ruiz Morales
+- Jaime Moreno Sánchez

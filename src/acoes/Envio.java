@@ -21,20 +21,57 @@ public class Envio implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    public Long getId() {
-        return id;
+    private Long codEnvio;
+    private String codApadrinamiento;
+    private String fechaEnvio;
+    private String fechaLlegada;
+    private String observaciones;
+            
+            
+    public Long getCodEnvio() {
+        return codEnvio;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCodEnvio(Long id) {
+        this.codEnvio = id;
+    }
+    
+    public String getCodApadrinamiento() {
+        return codApadrinamiento;
+    }
+
+    public void setCodApadrinamiento(String codApadrinamiento) {
+        this.codApadrinamiento = codApadrinamiento;
+    }
+
+    public String getFechaEnvio() {
+        return fechaEnvio;
+    }
+
+    public void setFechaEnvio(String fechaEnvio) {
+        this.fechaEnvio = fechaEnvio;
+    }
+
+    public String getFechaLlegada() {
+        return fechaLlegada;
+    }
+
+    public void setFechaLlegada(String fechaLlegada) {
+        this.fechaLlegada = fechaLlegada;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (codEnvio != null ? codEnvio.hashCode() : 0);
         return hash;
     }
 
@@ -45,7 +82,7 @@ public class Envio implements Serializable {
             return false;
         }
         Envio other = (Envio) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.codEnvio == null && other.codEnvio != null) || (this.codEnvio != null && !this.codEnvio.equals(other.codEnvio))) {
             return false;
         }
         return true;
@@ -53,7 +90,7 @@ public class Envio implements Serializable {
 
     @Override
     public String toString() {
-        return "acoes.Envio[ id=" + id + " ]";
+        return "acoes.Envio[ id=" + codEnvio + " ]";
     }
     
 }

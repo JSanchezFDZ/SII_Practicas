@@ -1,21 +1,40 @@
 # Practica SII - Grupo G
+## :mortar_board: Instrucciones
+1.- ANTES DE TRABAJAR CON EL REPOSITORIO
+ - Crear cuenta en Github
+ - Configurar Git en NetBeans
+  - Utilizar la URL del repositorio
 
-## Instrucciones para trabajar
-1.- Antes de empezar a trabajar: CLONAR EL REPOSITORIO (Solo una vez)
+2.- CLONANDO EL REPOSITORIO (Solo una vez)
+ - En la barra superior de NetBeans "Team" -> "Git" -> "Clone"
 
-2.- Cada vez que vayas a trabajar con el repositorio:
-  *PRIMERO HACER FETCH/PULL PARA ACTUALIZAR LOS ARCHIVOS* 
+3.- PULL REPOSITORIO (ACTUALIZAR/BAJAR)
+ - PRIMERO HACER PULL PARA ACTUALIZAR LOS ARCHIVOS
+ 
+4.- COMMIT AND PUSH (MODIFICAR/SUBIR)
+ - Primero hacer COMMIT
+ - Posteriormente hacer PUSH
 
-3.- Cuando termines de trabajar con el repositorio:
-  *PRIMERO HACER FETCH/PULL PARA ACTUALIZAR LOS ARCHIVOS*
-  
-  Al terminar de trabajar, hacer *PUSH* para que todos podamos ver los archivos.
+
+## :bomb: Problemas encontrados
 
 
-## Grupo "G" compuesto por:
+
+## :rocket: Funcionalidades
+
+
+
+## :hammer: Diagrama Entidad/Relación
+
+
+## :grimacing: Integrantes del equipo
 - Jesús Sánchez Fernández
 - Salvador Madrid Sánchez
 - Jesús Correa Conejero
 - Sergio Cañete Linares
 - Eduardo Ruiz Morales
 - Jaime Moreno Sánchez
+
+## :pencil: Licencia y derechos
+
+[Universidad de Málaga](https://www.uma.es)

@@ -21,20 +21,24 @@ public class Apadrinamiento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long codigoApadrinamiento;
+    private Ninos codigoNino;
+    private Socios numSocio;
+    private String fechaApadrinamiento;
+    private String observaciones;
 
     public Long getId() {
-        return id;
+        return codigoApadrinamiento;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.codigoApadrinamiento = id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (codigoApadrinamiento != null ? codigoApadrinamiento.hashCode() : 0);
         return hash;
     }
 
@@ -45,7 +49,7 @@ public class Apadrinamiento implements Serializable {
             return false;
         }
         Apadrinamiento other = (Apadrinamiento) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.codigoApadrinamiento == null && other.codigoApadrinamiento != null) || (this.codigoApadrinamiento != null && !this.codigoApadrinamiento.equals(other.codigoApadrinamiento))) {
             return false;
         }
         return true;
@@ -53,7 +57,7 @@ public class Apadrinamiento implements Serializable {
 
     @Override
     public String toString() {
-        return "acoes.Apadrinamiento[ id=" + id + " ]";
+        return "acoes.Apadrinamiento[ id=" + codigoApadrinamiento + " ]";
     }
     
 }

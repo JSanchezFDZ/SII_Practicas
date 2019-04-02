@@ -23,7 +23,7 @@ public class Envio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codEnvio;
-    private String codApadrinamiento;
+    private Apadrinamiento codApadrinamiento;
     private Date fechaEnvio;
     private Date fechaLlegada;
     private String observaciones;
@@ -37,11 +37,11 @@ public class Envio implements Serializable {
         this.codEnvio = id;
     }
     
-    public String getCodApadrinamiento() {
+    public Apadrinamiento getCodApadrinamiento() {
         return codApadrinamiento;
     }
 
-    public void setCodApadrinamiento(String codApadrinamiento) {
+    public void setCodApadrinamiento(Apadrinamiento codApadrinamiento) {
         this.codApadrinamiento = codApadrinamiento;
     }
 

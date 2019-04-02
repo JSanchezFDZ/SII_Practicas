@@ -24,7 +24,8 @@ public class Apadrinamiento implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codApadrinamiento;
     private Ninos codNino;
-     private Socios numSocio;
+    private Socios numSocio;
+    private Envio codEnvio;
     private Date fechaApadrinamiento;
     private String observaciones;
 
@@ -58,6 +59,22 @@ public class Apadrinamiento implements Serializable {
 
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
+    }
+
+    public Socios getNumSocio() {
+        return numSocio;
+    }
+
+    public void setNumSocio(Socios numSocio) {
+        this.numSocio = numSocio;
+    }
+
+    public Envio getCodEnvio() {
+        return codEnvio;
+    }
+
+    public void setCodEnvio(Envio codEnvio) {
+        this.codEnvio = codEnvio;
     }
 
     @Override

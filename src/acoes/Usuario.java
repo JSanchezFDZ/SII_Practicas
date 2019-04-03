@@ -20,7 +20,7 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String UserID;
+    private Long UserID;
     private String pass;
     private String nombre;
     private String apellidos;
@@ -31,7 +31,7 @@ public class Usuario implements Serializable {
         return serialVersionUID;
     }
 
-    public String getUserID() {
+    public Long getUserID() {
         return UserID;
     }
 
@@ -55,7 +55,7 @@ public class Usuario implements Serializable {
         return tipo;
     }
 
-    public void setUserID(String UserID) {
+    public void setUserID(Long UserID) {
         this.UserID = UserID;
     }
 

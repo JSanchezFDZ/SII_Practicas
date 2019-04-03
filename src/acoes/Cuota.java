@@ -20,12 +20,12 @@ public class Cuota implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String codigoCuota;
+    private Long codigoCuota;
     private String nombreCuota;
     private String tipo;    //puntual, mensual, anual...
     private float cantidad;
 
-    public String getCodigoCuota() {
+    public Long getCodigoCuota() {
         return codigoCuota;
     }
 
@@ -41,7 +41,7 @@ public class Cuota implements Serializable {
         return cantidad;
     }
 
-    public void setCodigoCuota(String codigoCuota) {
+    public void setCodigoCuota(Long codigoCuota) {
         this.codigoCuota = codigoCuota;
     }
 

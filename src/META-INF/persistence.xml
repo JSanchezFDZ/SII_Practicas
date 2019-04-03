@@ -5,6 +5,9 @@
     <class>acoes.Socios</class>
     <class>acoes.Apadrinamiento</class>
     <class>acoes.Envio</class>
+    <class>acoes.Ninos</class>
+    <class>acoes.Usuario</class>
+    <class>acoes.Cuota</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/samplez"/>
       <property name="javax.persistence.jdbc.user" value="app"/>

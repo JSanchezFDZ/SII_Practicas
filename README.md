@@ -1,4 +1,5 @@
 # Practica SII - Grupo G
+
 ## :mortar_board: Instrucciones
 **1. ANTES DE TRABAJAR CON EL REPOSITORIO**
  - Crear cuenta en Github
@@ -8,14 +9,15 @@
 **2. CLONANDO EL REPOSITORIO (Solo una vez)**
  - En la barra superior de NetBeans "Team" -> "Git" -> "Clone"
 
-:warning: **SIEMPRE QUE VAYAS A TRABAJAR CON EL REPOSITORIO DEBERÁS HACER `PULL` PARA PODER TRABAJAR CON EL REPOSITORIO ACTUALIZADO** :warning:
-
 **3. `PULL` REPOSITORIO (ACTUALIZAR/BAJAR)**
  - PRIMERO HACER PULL PARA ACTUALIZAR LOS ARCHIVOS
  
 **4. `COMMIT AND PUSH` (MODIFICAR/SUBIR)**
  - Primero hacer COMMIT
  - Posteriormente hacer PUSH
+
+# :warning: ¡ATENCIÓN!
+**SIEMPRE QUE VAYAS A TRABAJAR CON EL REPOSITORIO DEBERÁS HACER `PULL` PARA PODER TRABAJAR CON EL REPOSITORIO ACTUALIZADO**
 
 ## :bomb: Problemas encontrados
 

@@ -36,6 +36,7 @@ public class Socios implements Serializable {
     private String telefono;
     private String correo;
     private String sector;
+    private String certificado;
     @Temporal(TemporalType.DATE)
     private Date FechaAlta;
     @Temporal(TemporalType.DATE)
@@ -180,6 +181,14 @@ public class Socios implements Serializable {
 
     public void setCuota(Cuota cuota) {
         this.cuota = cuota;
+    }
+
+    public String getCertificado() {
+        return certificado;
+    }
+
+    public void setCertificado(String certificado) {
+        this.certificado = certificado;
     }
     
     

@@ -6,6 +6,7 @@
 package acoes;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,12 @@ public class Cuota implements Serializable {
     private Long codigoCuota;
     private String nombreCuota;
     private String tipo;    //puntual, mensual, anual...
-    private float cantidad;
+    private float aportación;
+    private List<Socios> codigoSocios;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Long getCodigoCuota() {
         return codigoCuota;
@@ -37,8 +43,12 @@ public class Cuota implements Serializable {
         return tipo;
     }
 
-    public float getCantidad() {
-        return cantidad;
+    public float getAportación() {
+        return aportación;
+    }
+
+    public List<Socios> getCodigoSocios() {
+        return codigoSocios;
     }
 
     public void setCodigoCuota(Long codigoCuota) {
@@ -53,17 +63,22 @@ public class Cuota implements Serializable {
         this.tipo = tipo;
     }
 
-    public void setCantidad(float cantidad) {
-        this.cantidad = cantidad;
+    public void setAportación(float aportación) {
+        this.aportación = aportación;
+    }
+
+    public void setCodigoSocios(List<Socios> codigoSocios) {
+        this.codigoSocios = codigoSocios;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.codigoCuota);
-        hash = 67 * hash + Objects.hashCode(this.nombreCuota);
-        hash = 67 * hash + Objects.hashCode(this.tipo);
-        hash = 67 * hash + Float.floatToIntBits(this.cantidad);
+        int hash = 5;
+        hash = 79 * hash + Objects.hashCode(this.codigoCuota);
+        hash = 79 * hash + Objects.hashCode(this.nombreCuota);
+        hash = 79 * hash + Objects.hashCode(this.tipo);
+        hash = 79 * hash + Float.floatToIntBits(this.aportación);
+        hash = 79 * hash + Objects.hashCode(this.codigoSocios);
         return hash;
     }
 
@@ -85,7 +100,10 @@ public class Cuota implements Serializable {
         if (!Objects.equals(this.tipo, other.tipo)) {
             return false;
         }
-        if (Float.floatToIntBits(this.cantidad) != Float.floatToIntBits(other.cantidad)) {
+        if (Float.floatToIntBits(this.aportación) != Float.floatToIntBits(other.aportación)) {
+            return false;
+        }
+        if (!Objects.equals(this.codigoSocios, other.codigoSocios)) {
             return false;
         }
         return true;
@@ -93,9 +111,10 @@ public class Cuota implements Serializable {
 
     @Override
     public String toString() {
-        return "Cuota{" + "codigoCuota=" + codigoCuota + ", nombreCuota=" + nombreCuota + ", tipo=" + tipo + ", cantidad=" + cantidad + '}';
+        return "Cuota{" + "codigoCuota=" + codigoCuota + ", nombreCuota=" + nombreCuota + ", tipo=" + tipo + ", aportaci\u00f3n=" + aportación + ", codigoSocios=" + codigoSocios + '}';
     }
-    
+
+  
     
     
 }

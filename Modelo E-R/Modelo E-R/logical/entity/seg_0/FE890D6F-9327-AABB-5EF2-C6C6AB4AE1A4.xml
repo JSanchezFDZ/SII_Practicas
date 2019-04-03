@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FE890D6F-9327-AABB-5EF2-C6C6AB4AE1A4" name="APADRINAMIENTO">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:27:16 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codApadrinamiento" id="0F68EE42-A019-19C7-0F75-043F49A7BD95">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:27:39 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaApadrinamiento" id="2D5039AE-5B8F-82B0-5586-F621D4EE09EF">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:27:53 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="observaciones" id="A697E5AF-A9DF-4FA7-C2FD-8B8660C281FC">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:28:14 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codNino" id="D8AC6960-48C7-8C5B-FCCB-58DA7BA58861">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 17:17:35 UTC</createdTime>
+<generatorID>8B4F196F-D719-0190-B7DB-2C03929BE658</generatorID>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<referedAttribute>DFB2387B-0D14-CD71-699F-4F3BB5E07936</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codSocio" id="E77216AE-7118-622A-5DC0-45E4711E79AD">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 17:19:36 UTC</createdTime>
+<generatorID>27A62E51-A847-140E-6CCD-249C68A10318</generatorID>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<referedAttribute>F5C20220-C025-139A-583B-908800721D2B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FE5F524A-ADD6-D41A-FC2C-41832A06E1A1" name="APADRINAMIENTO PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:27:56 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0F68EE42-A019-19C7-0F75-043F49A7BD95</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

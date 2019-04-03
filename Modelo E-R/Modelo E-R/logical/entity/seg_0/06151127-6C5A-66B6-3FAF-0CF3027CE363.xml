@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="06151127-6C5A-66B6-3FAF-0CF3027CE363" name="ENVIO">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:30:03 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codEnvio" id="CD059D6F-9B5C-C5DB-077D-768BF89A7F49">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:30:08 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaEnvio" id="AC1DCAC4-40B3-9554-58F6-CA46E776203A">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:35:08 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaLlegada" id="EFDC7322-0A5A-E9DC-9743-88228906DCEB">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:35:28 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="observaciones" id="6652B561-F76B-D193-3EF7-54AE5B8830A2">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:35:35 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codApadrinamiento" id="DC0F4E82-B074-B162-C75B-79699615F1E5">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 17:18:24 UTC</createdTime>
+<generatorID>2358A54F-55D6-E797-C01E-815BB50E73F5</generatorID>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<referedAttribute>0F68EE42-A019-19C7-0F75-043F49A7BD95</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="33BE6E08-7742-64FB-2B82-E5D20884646F" name="ENVIO PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:35:06 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CD059D6F-9B5C-C5DB-077D-768BF89A7F49</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

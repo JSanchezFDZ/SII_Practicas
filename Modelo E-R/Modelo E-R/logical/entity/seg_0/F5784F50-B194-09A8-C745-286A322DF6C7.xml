@@ -1,0 +1,221 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F5784F50-B194-09A8-C745-286A322DF6C7" name="NINO">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:14:58 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codNino" id="DFB2387B-0D14-CD71-699F-4F3BB5E07936">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:16:25 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="448B76CD-7F37-3DD6-B60A-A56EFE57E614">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:18:09 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellidos" id="7B0B408D-2743-D914-57C9-ADD60158440A">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:18:21 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado" id="4BE5D502-18DB-EEAA-5A93-004E82190ED5">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:18:29 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="beca" id="916C09D1-03C8-4F71-3ADC-5366A5D6BB3B">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:18:48 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="agente" id="4BB4F1BB-78FF-CE6A-5900-BA7936F6CC92">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:18:53 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sexo" id="E110CA84-9393-B361-D937-976DB98969AE">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:19:10 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="foto" id="08F1648A-B09C-8C0F-4009-22D54AD8C7AC">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:19:19 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaNacimiento" id="263A6478-3BCA-53E7-7941-13740127A781">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:19:32 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaAlta" id="E46C54C6-A86B-C6CF-4D3B-C9EA85EAA225">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:19:52 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaBaja" id="036F364F-EE1A-BD39-80F0-F722660CAA09">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:19:59 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="proyecto" id="EA7CF7FD-230B-CEC6-970E-0253EFECB36C">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:20:15 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="gradoCurso" id="1AF85C66-EE44-D699-9FB5-6EE3DEE21B25">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:20:23 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comunidadProcedencia" id="935A1C68-1177-897D-8B80-BCD04F636F49">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:20:30 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="coloniaActual" id="A4ECF185-5949-4B6F-B0AB-6132A911610E">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:20:40 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8D4CD047-EF34-3CF1-7B99-CE01FF2D8A7F" name="NINO PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2019-04-03 16:21:11 UTC</createdTime>
+<ownerDesignName>Modelo E-R</ownerDesignName>
+<engineerTo>
+<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DFB2387B-0D14-CD71-699F-4F3BB5E07936</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

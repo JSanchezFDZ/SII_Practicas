@@ -38,8 +38,7 @@
 
 ## :hammer: Diagrama Entidad/Relación
 
-![Diagrama E/R](https://github.com/JSanchezFDZ/SII_Practicas/blob/master/Entity%20Relationship/EntityRelationship.PNG?raw=true)
-
+![Diagrama E/R](https://github.com/JSanchezFDZ/SII_Practicas/blob/master/Modelo%20E-R/Modelo%20E-R.png?raw=true)
 
 ## :grimacing: Integrantes del equipo
 - Jesús Sánchez Fernández

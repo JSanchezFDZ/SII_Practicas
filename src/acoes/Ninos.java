@@ -44,7 +44,7 @@ public class Ninos implements Serializable {
     private String comunidadProcedencia;
     private String coloniaActual;
     private String observaciones;
-    //private Apadrinamiento codApadrinamiento;
+    private Apadrinamiento codApadrinamiento;
 
     public Long getId() {
         return id;
@@ -178,13 +178,13 @@ public class Ninos implements Serializable {
         this.observaciones = observaciones;
     }
 
-    /*public Apadrinamiento getCodApadrinamiento() {
+    public Apadrinamiento getCodApadrinamiento() {
         return codApadrinamiento;
     }
 
     public void setCodApadrinamiento(Apadrinamiento codApadrinamiento) {
         this.codApadrinamiento = codApadrinamiento;
-    }*/
+    }
     
     
     

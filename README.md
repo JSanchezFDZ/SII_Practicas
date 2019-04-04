@@ -24,9 +24,11 @@
 ## :bomb: Problemas encontrados
 
 [] Solo funciona en "sample" de JavaDB
+
 [] Plurales y singular en requisitos, diagrama E/R y código.
 
 > [] Problema
+> 
 > [X] Problema solucionado
 
 ## :rocket: Funcionalidades

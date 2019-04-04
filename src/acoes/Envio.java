@@ -26,10 +26,7 @@ public class Envio implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codEnvio;
     private Apadrinamiento codApadrinamiento;
-<<<<<<< HEAD
-=======
     @Temporal(TemporalType.TIMESTAMP)
->>>>>>> master
     private Date fechaEnvio;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaLlegada;

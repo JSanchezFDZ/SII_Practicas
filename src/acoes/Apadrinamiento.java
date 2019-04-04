@@ -28,10 +28,8 @@ public class Apadrinamiento implements Serializable {
     private Ninos codNino;
     private Socios numSocio;
     private Envio codEnvio;
-<<<<<<< HEAD
-=======
+
     @Temporal(TemporalType.TIMESTAMP)
->>>>>>> master
     private Date fechaApadrinamiento;
     private String observaciones;
 

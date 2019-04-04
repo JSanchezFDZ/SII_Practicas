@@ -9,6 +9,12 @@
     <class>acoes.Usuario</class>
     <class>acoes.Cuota</class>
     <properties>
+      <!--
+        EN LA VERSIÓN FINAL CAMBIAR:
+        - Nombre BBDD
+        - Usuario BBDD
+        - Contraseña BBDD
+      -->
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.user" value="app"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>

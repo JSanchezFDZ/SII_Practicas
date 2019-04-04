@@ -5,6 +5,8 @@
  - Crear cuenta en Github
  - Configurar Git en NetBeans
   - Utilizar la URL del repositorio
+ - Iniciar el servicio "Java DB" de NetBeans
+ - Crear la tabla de ejemplo "sample" si no está creada.
 
 **2. CLONANDO EL REPOSITORIO (Solo una vez)**
  - En la barra superior de NetBeans "Team" -> "Git" -> "Clone"
@@ -21,13 +23,15 @@
 
 ## :bomb: Problemas encontrados
 
-[X] Problema 1
+[] Solo funciona en "sample" de JavaDB
+[] Plurales y singular en requisitos, diagrama E/R y código.
 
-[] Problema 2
-
-> X = Solucionado
+> [] Problema
+> [X] Problema solucionado
 
 ## :rocket: Funcionalidades
+
+- Funciona con JavaDB, base de datos por defecto: sample
 
 - Los socios podrán acceder a la aplicación
   - Podrán consultar los niños que tienen apadrinados

@@ -43,7 +43,7 @@ public class Socios implements Serializable {
     private Date FechaBaja;
     private String observaciones;
     private List<Apadrinamiento> apadrinamiento; //relacion 1 a muchos con apadrinamiento
-    private Usuario user;
+    private Usuario usuario;
     private Cuota cuota;
     
 
@@ -168,11 +168,11 @@ public class Socios implements Serializable {
     }
 
     public Usuario getUser() {
-        return user;
+        return usuario;
     }
 
     public void setUser(Usuario user) {
-        this.user = user;
+        this.usuario = usuario;
     }
 
     public Cuota getCuota() {

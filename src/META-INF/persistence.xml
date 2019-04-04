@@ -20,10 +20,10 @@
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.password" value="app"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
-      <!-- EXPORTAR EL CÓDIGO PARA LA CREACIÓN DE LA BBDD 
+      <!-- EXPORTAR EL CÓDIGO PARA LA CREACIÓN DE LA BBDD -->
       <property name="javax.persistence.schema-generation.scripts.action" value="create"/>
-      <property name="javax.persistence.schema-generation.scripts.create-target" value="C:\Users\usuario\BBDDAcoes.sql"/>
-      -->
+      <property name="javax.persistence.schema-generation.scripts.create-target" value="BBDDAcoes.ddl"/>
+      <!-- -->
     </properties>
   </persistence-unit>
 </persistence>

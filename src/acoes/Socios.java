@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Sistemas de Información para Intenet
+ * Grupo G
+ * Universidad de Málaga
  */
 package acoes;
 
@@ -36,12 +36,15 @@ public class Socios implements Serializable {
     private String telefono;
     private String correo;
     private String sector;
+    private String certificado;
     @Temporal(TemporalType.DATE)
     private Date FechaAlta;
     @Temporal(TemporalType.DATE)
     private Date FechaBaja;
     private String observaciones;
     private List<Apadrinamiento> apadrinamiento; //relacion 1 a muchos con apadrinamiento
+    private Usuario usuario;
+    private Cuota cuota;
     
 
     public Long getId() {
@@ -162,6 +165,30 @@ public class Socios implements Serializable {
 
     public void setApadrinamiento(List<Apadrinamiento> apadrinamiento) {
         this.apadrinamiento = apadrinamiento;
+    }
+
+    public Usuario getUser() {
+        return usuario;
+    }
+
+    public void setUser(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Cuota getCuota() {
+        return cuota;
+    }
+
+    public void setCuota(Cuota cuota) {
+        this.cuota = cuota;
+    }
+
+    public String getCertificado() {
+        return certificado;
+    }
+
+    public void setCertificado(String certificado) {
+        this.certificado = certificado;
     }
     
     

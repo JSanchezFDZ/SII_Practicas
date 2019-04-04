@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Sistemas de Información para Intenet
+ * Grupo G
+ * Universidad de Málaga
  */
 package acoes;
 
@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -31,14 +33,18 @@ public class Ninos implements Serializable {
     private String sexo;
     private String agente;
     private String foto;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaNac;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAlta;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
     private String proyecto;
     private String gradoCurso;
     private String comunidadProcedencia;
     private String coloniaActual;
     private String observaciones;
+    //private Apadrinamiento codApadrinamiento;
 
     public Long getId() {
         return id;
@@ -171,6 +177,16 @@ public class Ninos implements Serializable {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
+
+    /*public Apadrinamiento getCodApadrinamiento() {
+        return codApadrinamiento;
+    }
+
+    public void setCodApadrinamiento(Apadrinamiento codApadrinamiento) {
+        this.codApadrinamiento = codApadrinamiento;
+    }*/
+    
+    
     
     @Override
     public int hashCode() {

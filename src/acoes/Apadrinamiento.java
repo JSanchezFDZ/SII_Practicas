@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Sistemas de Información para Intenet
+ * Grupo G
+ * Universidad de Málaga
  */
 package acoes;
 
@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -26,6 +28,10 @@ public class Apadrinamiento implements Serializable {
     private Ninos codNino;
     private Socios numSocio;
     private Envio codEnvio;
+<<<<<<< HEAD
+=======
+    @Temporal(TemporalType.TIMESTAMP)
+>>>>>>> master
     private Date fechaApadrinamiento;
     private String observaciones;
 

@@ -11,10 +11,6 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
 
-/**
- *
- * @author francis
- */
 @Named(value = "controlAutorizacion")
 @SessionScoped
 public class ControlAutorizacion implements Serializable {

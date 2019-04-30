@@ -5,6 +5,7 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:define name="title">Autenticando</ui:define>
     <ui:define name="content">
+        <h1>ACCESO ACOES.</h1>
         <c:choose>
             <c:when test="#{empty controlAutorizacion.usuario}">
                 <h:form id="login">
@@ -32,4 +33,3 @@
         <h:messages/>
     </ui:define>
 </ui:composition>
-

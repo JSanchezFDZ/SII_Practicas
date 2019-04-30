@@ -12,6 +12,11 @@
                 <h1>LISTA NIÑOS</h1>
 
             </c:when>
+            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
+                <h1>Niños apadrinados:</h1>
+                <h2>LISTA NIÑOS</h2>
+
+            </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
             </c:otherwise>

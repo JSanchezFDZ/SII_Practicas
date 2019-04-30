@@ -20,6 +20,10 @@ public class ControlAutorizacion implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+    
+    public Long getID(){
+        return usuario.getUserID();
+    }
 
     public Usuario getUsuario() {
         return usuario;

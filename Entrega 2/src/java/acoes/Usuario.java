@@ -46,15 +46,20 @@ public class Usuario implements Serializable {
         
     }
     
-    public Usuario (String usuario, String contrasenia, Rol tipo)
+    public Usuario (String usuario,String id,  String contrasenia, Rol tipo)
     {
         setUser(usuario);
+        setID(Long.parseLong(id));
         setPass(contrasenia);
         setRol(tipo);
     }
 
     public String getPass() {
         return pass;
+    }
+    
+    public void setID(Long n){
+        UserID = n;
     }
 
     public String getUser() {

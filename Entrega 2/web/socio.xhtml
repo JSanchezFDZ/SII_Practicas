@@ -9,6 +9,26 @@
             <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
                 <h1>Usuario socio</h1>
                 <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario}"/>!!</p>
+                <p>¡¡ID de usuario: <h:outputText value="#{controlAutorizacion.usuario}"/>!!</p>
+                
+                 <!--___________________________________Datos inventados____________________________________________________-->
+                 <p>Apellido: Rodriguez</p>  
+                 <p>Estado: Casado</p>
+                 <p>Dirección: Calle Roja</p> 
+                 <p>Población: Mijas</p>
+                 <p>Código postal: 29745</p>
+                 <p>Provincia: Málaga</p>
+                 <p>Teléfono: 952475692</p>
+                 <p>Correo: pe.rro@gmail.com</p>
+                 <p>Sector: Agrario</p>
+                 <p>Certificado: ??</p>
+                 <p>Fecha de alta: 13/08/1996</p>
+                 <p>Fecha de baja 01/012/2010</p>
+                 <p>Observaciones: Impago de cuotas!</p>
+                 
+                  <!--_______________________________________________________________________________________________________-->
+                <h:button outcome="cuota.xhtml" value="Mi Cuota"/>
+                 <h:button outcome="apadrinar.xhtml" value="Apadrinar"/>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
@@ -16,5 +36,3 @@
         </c:choose>
     </ui:define>
 </ui:composition>
-
-

@@ -7,6 +7,8 @@
   - Utilizar la URL del repositorio
  - Iniciar el servicio "Java DB" de NetBeans
  - Crear la tabla de ejemplo "sample" si no está creada.
+ 
+ **RECOMIENDO UTILIZAR GITKRAKEN EN VEZ DE LA UTILIDAD DE NETBEANS (GIT)**
 
 **2. CLONANDO EL REPOSITORIO (Solo una vez)**
  - En la barra superior de NetBeans "Team" -> "Git" -> "Clone"
@@ -44,7 +46,7 @@
 
 ## :hammer: Diagrama Entidad/Relación
 
-![Diagrama E/R](https://github.com/JSanchezFDZ/SII_Practicas/blob/master/Modelo%20E-R/Modelo%20E-R.png?raw=true)
+![Diagrama E/R](https://github.com/JSanchezFDZ/SII_Practicas/blob/master/Entrega%201/Modelo%20E-R/Modelo%20E-R.png?raw=true)
 
 ## :grimacing: Integrantes del equipo
 - Jesús Sánchez Fernández

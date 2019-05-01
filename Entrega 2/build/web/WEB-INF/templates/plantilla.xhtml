@@ -22,17 +22,17 @@
                     
                     <!-- OPCIONES PARA SOCIO-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
-                        <li><h:commandLink action="#{controlAutorizacion.MisDatos()}" value="Mis datos"/></li>
-                        <li><h:commandLink action="#{controlAutorizacion.NinosApadrinados()}" value="Niños apadrinados"/></li>
-                        <li><h:commandLink action="#{controlAutorizacion.ListarEnvios()}" value="Listar envíos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Mis datos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Niños apadrinados"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Listar envíos"/></li>
                     </c:if>
                     
                     <!-- OPCIONES PARA ADMINISTRADOR-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                        <li><h:commandLink action="#{controlAutorizacion.ListaSocios()}" value="Lista socios"/></li>
-                        <li><h:commandLink action="#{controlAutorizacion.ListaNinos()}" value="Lista niños"/></li>
-                        <li><h:commandLink action="#{controlAutorizacion.NinosApadrinados()}" value="Apadrinamientos"/></li>
-                        <li><h:commandLink action="#{controlAutorizacion.Cuotas()}" value="Cuotas"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Lista socios"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Lista niños"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Apadrinamientos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Cuotas"/></li>
                     </c:if>
                     
                     <!-- ULTIMA OPCIÓN PARA SALIR -->

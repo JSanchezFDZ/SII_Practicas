@@ -4,7 +4,6 @@
  */
 package jsf;
 
-import acoes.Socios;
 import acoes.Usuario;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -16,7 +15,6 @@ import javax.faces.context.FacesContext;
 public class ControlAutorizacion implements Serializable {
 
     private Usuario usuario;
-    private Socios[] socios;
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -28,38 +26,6 @@ public class ControlAutorizacion implements Serializable {
 
     public Usuario getUsuario() {
         return usuario;
-    }
-    
-    public Socios[] getSocios() {
-        return socios;
-    }
-    
-    public String ListaSocios(){
-        return "listasocios.xhtml";
-    }
-    
-    public String ListaNinos(){
-        return "listasocios.xhtml";
-    }
-    
-    public String NinosApadrinados(){
-        return "listaninosapadrinados.xhtml";
-    }
-    
-    public String Cuotas(){
-        return "listacuotas.xhtml";
-    }
-    
-    public String MisDatos(){
-        return "socio.xhtml";
-    }
-    
-    public String NinosApadrinados(){
-        return "listaninos.xhtml";
-    }
-    
-    public String ListaEnvios(){
-        return "envio.xhtml";
     }
 
     public String home() {

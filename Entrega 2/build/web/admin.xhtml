@@ -10,9 +10,9 @@
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>Usuario administrador</h1>
                 <h2>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario}"/>!!</h2>
-                 <p>ID de usuario: <h:outputText value="#{controlAutorizacion.ID}"/></p>
+                <p>ID de usuario: <h:outputText value="#{controlAutorizacion.ID}"/></p>
                 <h:button outcome="cuota.xhtml" value="Gestionar Cuotas"/>
-                 <h:button outcome="apadrinar.xhtml" value="Gestionar Apadrinamientos"/>
+                <h:button outcome="apadrinar.xhtml" value="Gestionar Apadrinamientos"/>
 
             </c:when>
             <c:otherwise>

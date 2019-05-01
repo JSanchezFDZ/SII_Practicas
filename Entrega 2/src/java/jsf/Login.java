@@ -36,8 +36,8 @@ public class Login {
      */
     public Login() {
         usuarios = new ArrayList<Usuario>();
-        usuarios.add(new Usuario("pepe","70001", "asdf", Rol.SOCIO));
-        usuarios.add(new Usuario("manolo","10001", "qwer", Rol.ADMINISTRADOR));
+        //usuarios.add(new Usuario("pepe","70001", "asdf", Rol.SOCIO));
+        //usuarios.add(new Usuario("manolo","10001", "qwer", Rol.ADMINISTRADOR));
     }
 
     public String getUsuario() {

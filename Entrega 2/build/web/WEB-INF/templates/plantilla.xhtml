@@ -15,9 +15,10 @@
 
     <h:body>
         <div id="top" class="top">
+            <div id="logo" class="logo"><img alt="Logo de ACOES" align="center" src="./resources/img/logo.png"/></div>
             <h:form id="menu">
                 <ul class="menulist">
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Home"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inicio"/></li>
                     <c:if test="#{!empty controlAutorizacion.usuario}">
                         <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Salir"/></li>
                     </c:if>
@@ -27,6 +28,10 @@
 
         <div id="content" class="center_content">
             <ui:insert name="content">Content</ui:insert>
+        </div>
+        
+        <div id="footer" class="footer">
+            <p>Desing by Thinks 2.0 | Todos los derechos reservados.<br/> <b>Universidad de Málaga.</b></p>
         </div>
     </h:body>
 

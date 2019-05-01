@@ -1,11 +1,28 @@
-
 #top {
     position: relative;
-    background-color: #036fab;
+    background-color: #0099e0;
     color: white;
     padding: 5px;
-    height: 3em;
+    height: 6em;
     margin: 0px 0px 10px 0px;
+}
+
+#logo {
+    margin: 5px 0px 5px 0px;
+    text-align: center;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    background-color: #0099e0;
+    color: white;
+    padding: 5px;
+    height: 4em;
+    margin: 10px 0px 5px 0px;
+    text-align: center;
+    display: block;
 }
 
 #bottom {
@@ -31,7 +48,7 @@
 
 .center_content {
     position: relative;
-    background-color: #dddddd;
+    background-color: #ffffff;
     padding: 5px;
 }
 

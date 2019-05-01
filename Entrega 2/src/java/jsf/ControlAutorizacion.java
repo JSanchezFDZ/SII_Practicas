@@ -39,7 +39,7 @@ public class ControlAutorizacion implements Serializable {
     }
     
     public String ListaNinos(){
-        return "listasocios.xhtml";
+        return "listaninos.xhtml";
     }
     
     public String NinosApadrinados(){
@@ -52,10 +52,6 @@ public class ControlAutorizacion implements Serializable {
     
     public String MisDatos(){
         return "socio.xhtml";
-    }
-    
-    public String NinosApadrinados(){
-        return "listaninos.xhtml";
     }
     
     public String ListaEnvios(){

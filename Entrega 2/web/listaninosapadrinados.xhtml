@@ -13,7 +13,19 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>LISTA SOCIOS</h1>
+                <h1>LISTA NIÑOS APADRINADOS</h1>
+                <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
+                <table>
+                    <ui:param name="max" value="5"/>
+                    <ui:repeat var="i" value="#{controlAutorizacion.getSocios()}" size="#{max}">
+                        <tr>
+                            <td>#{controlAutorizacion.listaSocios[i].toString()}</td>
+                        </tr>
+                    </ui:repeat>
+                </table>
+            </c:when>
+            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
+                <h1>LISTA NIÑOS APADRINADOS</h1>
                 <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
                 <table>
                     <ui:param name="max" value="5"/>

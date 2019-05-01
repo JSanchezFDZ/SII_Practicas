@@ -7,7 +7,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
-                <h1>Estos son sus envíos:</h1>
+                <h1>LISTA DE ENVÍOS</h1>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

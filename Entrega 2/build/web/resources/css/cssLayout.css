@@ -7,6 +7,15 @@
     width: 100%;
 }
 
+#menu {
+    text-align: center;
+}
+
+#login {
+    text-align: center;
+    margin: 0 auto;
+}
+
 #logo {
     padding: 10px 0px 5px 0px;
     text-align: center;

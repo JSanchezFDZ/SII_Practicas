@@ -18,13 +18,14 @@
             <div id="logo" class="logo"><img alt="Logo de ACOES" align="center" src="./resources/img/logo.png"/></div>
             <h:form id="menu">
                 <ul class="menulist">
+                    <c:if test="#{controlAutorizacion.usuario.rol != null}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inicio"/></li>
-                    
+                    </c:if>
                     <!-- OPCIONES PARA SOCIO-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
                         <li><h:commandLink action="#{controlAutorizacion.MisDatos()}" value="Mis datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.NinosApadrinados()}" value="Niños apadrinados"/></li>
-                        <li><h:commandLink action="#{controlAutorizacion.ListarEnvios()}" value="Listar envíos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.ListaEnvios()}" value="Listar envíos"/></li>
                     </c:if>
                     
                     <!-- OPCIONES PARA ADMINISTRADOR-->

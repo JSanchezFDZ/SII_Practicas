@@ -5,11 +5,11 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
     
-    <ui:define name="title">Lista de niños</ui:define>
+    <ui:define name="title">Lista de cuotas</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>LISTA SOCIOS</h1>
+                <h1>LISTA CUOTAS</h1>
                 <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
                 <table>
                     <ui:param name="max" value="5"/>

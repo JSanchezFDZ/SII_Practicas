@@ -2,25 +2,23 @@
     position: relative;
     background-color: #0099e0;
     color: white;
-    padding: 5px;
-    height: 6em;
+    height: 7em;
     margin: 0px 0px 10px 0px;
+    width: 100%;
 }
 
 #logo {
-    margin: 5px 0px 5px 0px;
+    padding: 10px 0px 5px 0px;
     text-align: center;
 }
 
 #footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    width: 98%;
+    width: 100%;
     background-color: #0099e0;
     color: white;
-    padding: 5px;
     height: 4em;
-    margin: 10px 0px 5px 0px;
     text-align: center;
     display: block;
 }
@@ -49,9 +47,16 @@
 .center_content {
     position: relative;
     background-color: #ffffff;
-    padding: 5px;
+    height: 460px;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    width: 100%;
 }
-
+@media screen and (min-height: 470px){
+    .center_content {
+        height: 100%;
+    }
+}
 .left_content {
     background-color: #dddddd;
     padding: 5px;

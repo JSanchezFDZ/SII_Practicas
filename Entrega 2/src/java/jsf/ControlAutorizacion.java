@@ -4,7 +4,6 @@
  */
 package jsf;
 
-import acoes.Socios;
 import acoes.Usuario;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -16,7 +15,6 @@ import javax.faces.context.FacesContext;
 public class ControlAutorizacion implements Serializable {
 
     private Usuario usuario;
-    private Socios[] socios;
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -29,6 +27,7 @@ public class ControlAutorizacion implements Serializable {
     public Usuario getUsuario() {
         return usuario;
     }
+<<<<<<< HEAD
     
     public Socios[] getSocios() {
         return socios;
@@ -57,6 +56,8 @@ public class ControlAutorizacion implements Serializable {
     public String ListaEnvios(){
         return "envio.xhtml";
     }
+=======
+>>>>>>> master
 
     public String home() {
         // Devuelve la página Home dependiendo del rol del usuario

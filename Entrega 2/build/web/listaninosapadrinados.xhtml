@@ -5,7 +5,11 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
     
-    <ui:define name="title">Lista de niños</ui:define>
+    <ui:define name="title">Lista de niños apadrinados</ui:define>
+    <!-- OJO HAY QUE TENER EN CUENTA
+        - SI ES ADMINISTRADOR: VE TODOS LOS NIÑOS APADRINADOS POR CADA SOCIO
+        - SI ES SOCIO: SOLO VE SUS NIÑOS APADRINADOS
+    -->
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">

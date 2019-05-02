@@ -7,13 +7,13 @@
     <ui:define name="content">
         <c:choose>
             <!--Como socio: Ver los envíos a sus apadrinados.-->
-            <c:when test="#{controlAutorizacion.getUsuario.getRol == 'SOCIO'}">
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                 <h1>LISTA DE ENVÍOS</h1>
                 <table>
-                    <ui:param name ="tam" value="0-100"/>
-                    <ui:repeat var = "i" value="#{ListaEnvios.getEnvios()}" size = "#{tam}">
+                   
+                    <ui:repeat var = "i" value="#{ListaEnvios.getEnviosPadrino()}">
                         <tr>
-                            <td>#{controlAutorizacion.listaEnvios[i].toString()}</td>
+                            <td>#{i}</td>
                         </tr>   
                     </ui:repeat>
                                
@@ -26,10 +26,10 @@
              <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA DE ENVÍOS</h1>
                 <table>
-                    <ui:param name ="tam" value="0-100"/>
-                    <ui:repeat var = "i" value="#{listaEnvios.getEnvios()}" size = "#{tam}">
+                    
+                    <ui:repeat var = "i" value="#{listaEnvios.getEnvios()}">
                         <tr>
-                            <td>#{controlAutorizacion.ListaEnvios[i].toString()}</td>
+                            <td>#{i}</td>
                         </tr>   
                     </ui:repeat>
                                 

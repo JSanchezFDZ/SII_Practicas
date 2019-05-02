@@ -5,8 +5,10 @@
 package jsf;
 
 
+import acoes.Envio;
 import acoes.Usuario;
 import acoes.Usuario.Rol;
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -38,6 +40,9 @@ public class Login {
         usuarios = new ArrayList<Usuario>();
         usuarios.add(new Usuario("pepe","70001", "asdf", Rol.SOCIO));
         usuarios.add(new Usuario("manolo","10001", "qwer", Rol.ADMINISTRADOR));
+       
+       
+        
     }
     
     public List<Usuario> getUsuarios(){

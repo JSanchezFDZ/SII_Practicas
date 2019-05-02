@@ -32,7 +32,8 @@ public class Envio implements Serializable {
     private Date fechaLlegada;
     private String observaciones;
             
-            
+ 
+    
     public Long getCodEnvio() {
         return codEnvio;
     }

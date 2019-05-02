@@ -23,6 +23,7 @@ import javax.faces.context.FacesContext;
 public class ListaSocios implements Serializable {
     private Socios[] socios;
     private Usuario usuario;
+    private Login user;
     
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -35,8 +36,9 @@ public class ListaSocios implements Serializable {
     public Socios[] getSocios(){
         return socios;
     }
+    
     /*
-    public Socios[](List<Usuario> user.getUsuarios()){
+    public Socios[](user.getUsuarios()){
         
         return socios;
     }

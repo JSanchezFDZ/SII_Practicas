@@ -24,10 +24,10 @@ import javax.faces.context.FacesContext;
 @Named(value = "ListaSocios")
 @SessionScoped
 public class ListaSocios implements Serializable {
-    private List<Socios> socios;
+    private final List<Socios> socios;
     private Usuario usuario;
     private Login user;
-    private List<Usuario> usuarios = user.getUsuarios();
+    private final List<Usuario> usuarios = user.getUsuarios();
     
     public ListaSocios(){
         socios = new ArrayList<>();

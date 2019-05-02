@@ -65,11 +65,11 @@ public class ControlAutorizacion implements Serializable {
         }
         
         if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
-            return "admin.xhtml";
+            return "inicio.xhtml";
         }
         
         if(getUsuario().getRol().equals(getUsuario().getRol().SOCIO)){
-            return "socio.xhtml";
+            return "inicio.xhtml";
         }
         return null;
     }

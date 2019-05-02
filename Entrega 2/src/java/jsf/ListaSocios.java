@@ -43,11 +43,14 @@ public class ListaSocios implements Serializable {
         return socios;
     }
     
-    
-    public List<Socios> añadirSocio(Usuario usuario){
-        if(usuario.getRol() == SOCIO){
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Socios> añadirSocio(){
+        if(this.usuario.getRol() == SOCIO){
             
-            socios.add(new Socios(usuario.getUser(), usuario.getUserID(), usuario.getRol()));
+            socios.add(new Socios(this.usuario.getUser(), this.usuario.getUserID(), this.usuario.getRol()));
         }
         return socios;
     }

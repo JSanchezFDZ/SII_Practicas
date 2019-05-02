@@ -12,11 +12,11 @@
                 <h1>LISTA SOCIOS</h1>
                 <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
                 <table>
-                    <ui:repeat value="#{ListaSocios.getSocios()}" var = "soc">
+                    <ui:repeat value="#{controlAutorizacion.getSocios()}" var = "soc">
                         <tr>
-                            <td>#{soc.nombre}</td>
-                            <td>#{soc.id}</td>
-                            <td>#{soc.estado}</td>
+                            <td>#{nombre}</td>
+                            <td>#{id}</td>
+                            <td>#{estado}</td>
                         </tr>
                     </ui:repeat>
                 </table>

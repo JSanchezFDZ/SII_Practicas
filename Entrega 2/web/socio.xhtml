@@ -8,25 +8,53 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
                 <h1>Usuario socio</h1>
-                <h2>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario}"/>!!</h2>
+                
+                
+                
+                <h3>Bienvenido <h:outputText value="#{controlAutorizacion.usuario}"/></h3>
                 <p>ID de usuario: <h:outputText value="#{controlAutorizacion.ID}"/></p>
                 
-                 
-                 <p>Apellido: Rodriguez</p>  
-                 <p>Estado: Casado</p>
-                 <p>Dirección: Calle Roja</p> 
-                 <p>Población: Mijas</p>
-                 <p>Código postal: 29745</p>
-                 <p>Provincia: Málaga</p>
-                 <p>Teléfono: 952475692</p>
-                 <p>Correo: pe.rro@gmail.com</p>
-                 <p>Sector: Agrario</p>
-                 <p>Certificado: ??</p>
-                 <p>Fecha de alta: 13/08/1996</p>
-                 <p>Fecha de baja 01/012/2010</p>
-                 <p>Observaciones: Impago de cuotas!</p>
+                
+                 <p>Apellido: </p>
+                     <form>
+                     <p>Estado:<input type="text" name="estado" value=""/></p>
+                     <p>Dirección:<input type="text" name="direccion" value=""/></p>
+                     
+                     
+                     <p>Código postal: <input type="text" name="cd" value=""/></p>
+                     <p>Provincia: <input type="text" name="provincia" value=""/></p>
+                     <p>Población: <input type="text" name="poblacion" value=""/></p>
+                     
+                     <p>Teléfono: <input type="text" name="telf" value=""/></p>
+                     <p>Correo: <input type="text" name="correo" value=""/></p>
+                     <p>Sector: <input type="text" name="sector" value=""/></p>
+                 </form>
                  
                 
+                 <p>Teléfono: </p>
+                 <p>Correo: </p>
+                 <p>Sector: </p>
+                 <p>Certificado: </p>
+                 <p>Fecha de alta: </p>
+                 <p>Fecha de baja: </p>
+                 <p>Observaciones: </p>
+                 
+                <button onclick="actualizarInfo()">Guardar cambios!</button>
+                
+                <script>
+                function actualizarInfo() {
+                estado = document.getElementById("estado").value;
+                direccion = document.getElementById("direccion").value;
+                
+                cd = document.getElementById("cd").value;
+                provincia = document.getElementById("provincia").value;
+                poblacion = document.getElementById("poblacion").value;
+                telf = document.getElementById("telf").value;
+                correo = document.getElementById("correo").value;
+                sector = document.getElementById("sector").value;
+                
+                }
+                </script>
                
             </c:when>
             <c:otherwise>

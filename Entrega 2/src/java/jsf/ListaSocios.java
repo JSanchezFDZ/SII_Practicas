@@ -35,12 +35,12 @@ public class ListaSocios implements Serializable {
     public Socios[] getSocios(){
         return socios;
     }
-    
+    /*
     public Socios[](List<Usuario> user.getUsuarios()){
         
         return socios;
     }
-    
+    */
     public String home() {
         
         // Si no ha iniciado sesion, le lleva al login

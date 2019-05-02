@@ -9,7 +9,7 @@
             <!--Como socio: Ver los envíos a sus apadrinados.-->
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                 <h1>LISTA DE ENVÍOS</h1>
-                <c:when test="#{ListaEnvios.envios=nulll}">
+                <c:when test="#{ListaEnvios.envios=null}">
                             <p>Hay 0 elementos en la lista</p>
                 </c:when>
                 
@@ -29,7 +29,7 @@
             <!-- Como administrador: Ver todos los envíos.-->
              <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA DE ENVÍOS</h1>
-                 <c:when test="#{ListaEnvios.envios=nulll}">
+                 <c:when test="#{ListaEnvios.envios=null}">
                             <p>Hay 0 elementos en la lista</p>
                 </c:when>
                 <table>

@@ -6,14 +6,41 @@
     <ui:define name="title">Envio</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
+            <!--Como socio: Ver los envíos a sus apadrinados.-->
+            <c:when test="#{controlAutorizacion.getUsuario.getRol == 'SOCIO'}">
                 <h1>LISTA DE ENVÍOS</h1>
+                <table>
+                    <ui:param name ="tam" value="0-100"/>
+                    <ui:repeat var = "i" value="#{ListaEnvios.getEnvios()}" size = "#{tam}">
+                        <tr>
+                            <td>#{controlAutorizacion.listaEnvios[i].toString()}</td>
+                        </tr>   
+                    </ui:repeat>
+                               
+                </table>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
             </c:otherwise>
+            <!-- Como administrador: Ver todos los envíos.-->
+             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                <h1>LISTA DE ENVÍOS</h1>
+                <table>
+                    <ui:param name ="tam" value="0-100"/>
+                    <ui:repeat var = "i" value="#{listaEnvios.getEnvios()}" size = "#{tam}">
+                        <tr>
+                            <td>#{controlAutorizacion.ListaEnvios[i].toString()}</td>
+                        </tr>   
+                    </ui:repeat>
+                                
+                </table>
+            </c:when> 
         </c:choose>
     </ui:define>
 </ui:composition>
+
+<!-- Como administrador: Ver todos los envíos.
+
+Como socio: Ver los envíos a sus apadrinados.-->
 
 

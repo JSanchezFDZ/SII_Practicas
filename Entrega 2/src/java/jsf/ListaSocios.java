@@ -66,3 +66,4 @@ public class ListaSocios implements Serializable {
     }
     
 }
+//Mostrar todos los socios. Solo para administrador.

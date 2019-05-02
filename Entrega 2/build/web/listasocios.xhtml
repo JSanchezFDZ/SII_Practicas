@@ -8,7 +8,7 @@
     <ui:define name="title">Lista de niños</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA SOCIOS</h1>
                 <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
                 <table>

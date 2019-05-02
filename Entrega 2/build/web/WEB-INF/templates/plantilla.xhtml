@@ -31,7 +31,6 @@
                     
                     <!-- OPCIONES PARA ADMINISTRADOR-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                        <li><h:commandLink action="#{controlAutorizacion.Administrador()}" value="Administrador"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.ListaSocios()}" value="Lista socios"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.ListaNinos()}" value="Lista niños"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.NinosApadrinados()}" value="Apadrinamientos"/></li>

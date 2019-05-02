@@ -27,7 +27,6 @@ public class ListaSocios implements Serializable {
     private final List<Socios> socios;
     private Usuario usuario;
     private Login user;
-    private final List<Usuario> usuarios =  user.getUsuarios();
     
     public ListaSocios(){
         socios = new ArrayList<>();
@@ -46,16 +45,9 @@ public class ListaSocios implements Serializable {
     }
     
     
-    public List<Socios> añadirSocio(List<Usuario> usuarios){
+    public List<Socios> añadirSocio(Usuario usuario){
+            socios.add(new Socios(usuario.getUser(), usuario.getUserID(), usuario.getRol()));
         
-        Iterator<Usuario> it = usuarios.iterator();
-        
-        while(it.hasNext()){
-        
-            if (it.next().getRol() == SOCIO) {
-                socios.add(new Socios(it.next().getUser(), it.next().getUserID(), it.next().getRol()));
-            }
-        }
         return socios;
     }
     

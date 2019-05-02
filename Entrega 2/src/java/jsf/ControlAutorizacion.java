@@ -54,10 +54,6 @@ public class ControlAutorizacion implements Serializable {
         return "socio.xhtml";
     }
     
-    public String Administrador(){
-        return "admin.xhtml";
-    }
-    
     public String ListaEnvios(){
         return "envio.xhtml";
     }

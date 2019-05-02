@@ -11,13 +11,27 @@
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA CUOTAS</h1>
                 <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
-                <table>
-                    <ui:param name="max" value="5"/>
-                    <ui:repeat var="i" value="#{controlAutorizacion.getSocios()}" size="#{max}">
-                        <tr>
-                            <td>#{controlAutorizacion.listaSocios[i].toString()}</td>
-                        </tr>
-                    </ui:repeat>
+                 <table>
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Nombre</th>
+					<th>Tipo</th>
+					<th>Aportación</th>
+					<th>Socio</th>
+				</tr>
+			</thead>
+                        <tbody>
+                            <ui:repeat var="i" value="#{ListaCuotas.cuotas}">
+                                <tr>
+                                    <td>#{i.codigoCuota}</td>
+                                    <td>#{i.nombreCuota}</td>
+                                    <td>#{i.tipo}</td>
+                                    <td>#{i.aportación}</td>
+                                    <td>#{i.codigoSocios}</td>
+                                </tr>
+                            </ui:repeat>
+                        </tbody>
                 </table>
             </c:when>
             <c:otherwise>

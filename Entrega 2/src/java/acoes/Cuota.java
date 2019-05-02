@@ -27,6 +27,14 @@ public class Cuota implements Serializable {
     private float aportación;
     private List<Socios> codigoSocios;
 
+    public Cuota(Long codigoCuota, String nombreCuota, String tipo, float aportación, List<Socios> codigoSocios) {
+        this.codigoCuota = codigoCuota;
+        this.nombreCuota = nombreCuota;
+        this.tipo = tipo;
+        this.aportación = aportación;
+        this.codigoSocios = codigoSocios;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -70,6 +78,8 @@ public class Cuota implements Serializable {
     public void setCodigoSocios(List<Socios> codigoSocios) {
         this.codigoSocios = codigoSocios;
     }
+    
+    
 
     @Override
     public int hashCode() {

@@ -8,22 +8,29 @@ package jsf;
 import acoes.Ninos;
 import acoes.Socios;
 import acoes.Usuario;
+import static acoes.Usuario.Rol.SOCIO;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Jesús Sánchez Fernández
+ * @author Jaime Moreno Sánchez
  */
 @Named(value = "ListaSocios")
 @SessionScoped
 public class ListaSocios implements Serializable {
-    private Socios[] socios;
+    private List<Socios> socios;
     private Usuario usuario;
     private Login user;
+    private List<Usuario> usuarios = user.getUsuarios();
+    
+    public ListaSocios(){
+        socios = new ArrayList<>();
+    }
     
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -33,16 +40,28 @@ public class ListaSocios implements Serializable {
         return usuario;
     }  
     
-    public Socios[] getSocios(){
+    public List<Socios> getSocios(){
         return socios;
     }
     
-    /*
-    public Socios[](user.getUsuarios()){
+    
+    public List<Socios> añadirSocio (List<Usuario> usuarios){
+        
+        for(int i = 0; i < usuarios.size(); i++){
+            Socios aux = null;
+           if(usuarios.get(i).getRol() == SOCIO){
+                 aux.setNombre(usuarios.get(i).getUser());
+                 aux.setApellido(usuarios.get(i).getApellidos());
+                 aux.setId(usuarios.get(i).getUserID());
+           }
+            if(aux != null){
+                socios.add(aux);
+            }
+        }
         
         return socios;
     }
-    */
+    
     public String home() {
         
         // Si no ha iniciado sesion, le lleva al login

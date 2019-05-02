@@ -15,11 +15,8 @@
                     <ui:repeat value="#{ListaSocios.getSocios()}" var = "soc">
                         <tr>
                             <td>#{soc.nombre}</td>
-                            <td>#{soc.apellido}</td>
-                            <td>me cago en la puta</td>
-                            <td>#{soc.certificado}</td>
-                            <td>#{soc.correo}</td>
-                            <td>#{soc.cuota}</td>
+                            <td>#{soc.id}</td>
+                            <td>#{soc.estado}</td>
                         </tr>
                     </ui:repeat>
                 </table>

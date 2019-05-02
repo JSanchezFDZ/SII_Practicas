@@ -13,6 +13,7 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.faces.context.FacesContext;
 
@@ -47,18 +48,14 @@ public class ListaSocios implements Serializable {
     
     public List<Socios> añadirSocio (List<Usuario> usuarios){
         
-        for(int i = 0; i < usuarios.size(); i++){
-            Socios aux = null;
-           if(usuarios.get(i).getRol() == SOCIO){
-                 aux.setNombre(usuarios.get(i).getUser());
-                 aux.setApellido(usuarios.get(i).getApellidos());
-                 aux.setId(usuarios.get(i).getUserID());
-           }
-            if(aux != null){
-                socios.add(aux);
+        Iterator<Usuario> it = usuarios.iterator();
+        
+        while(it.hasNext()){
+        
+            if (it.next().getRol() == SOCIO) {
+                socios.add(new Socios(it.next().getUser(), it.next().getUserID(), it.next().getRol()));
             }
         }
-        
         return socios;
     }
     

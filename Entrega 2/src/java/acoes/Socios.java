@@ -5,6 +5,7 @@
  */
 package acoes;
 
+import static acoes.Usuario.Rol.SOCIO;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -46,6 +47,13 @@ public class Socios implements Serializable {
     private Usuario usuario;
     private List<Cuota> cuota;
     
+    public Socios (String usuario,Long id, Usuario.Rol tipo){
+        while(tipo == SOCIO){
+            setNombre(usuario);
+            setEstado("SOCIO");
+            setId(id);
+        }
+    }
 
     public Long getId() {
         return id;

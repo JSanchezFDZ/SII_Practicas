@@ -10,7 +10,7 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                 <h1>LISTA SOCIOS</h1>
-                <c:when test="#{ListaSocios.socios=null}">
+                <c:when test="#{ListaSocios.socios == null}">
                             <p>Hay 0 socios</p>
                 </c:when>
                

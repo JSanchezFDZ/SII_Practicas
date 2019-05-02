@@ -45,8 +45,10 @@ public class ListaSocios implements Serializable {
     
     
     public List<Socios> añadirSocio(Usuario usuario){
+        if(usuario.getRol() == SOCIO){
+            
             socios.add(new Socios(usuario.getUser(), usuario.getUserID(), usuario.getRol()));
-        
+        }
         return socios;
     }
     

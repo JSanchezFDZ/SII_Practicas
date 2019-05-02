@@ -11,6 +11,7 @@ import acoes.Usuario;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.List;
 import javax.faces.context.FacesContext;
 
 /**
@@ -32,6 +33,11 @@ public class ListaSocios implements Serializable {
     }  
     
     public Socios[] getSocios(){
+        return socios;
+    }
+    
+    public Socios[](List<Usuario> user.getUsuarios()){
+        
         return socios;
     }
     

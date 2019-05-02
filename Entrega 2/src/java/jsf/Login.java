@@ -39,6 +39,11 @@ public class Login {
         usuarios.add(new Usuario("pepe","70001", "asdf", Rol.SOCIO));
         usuarios.add(new Usuario("manolo","10001", "qwer", Rol.ADMINISTRADOR));
     }
+    
+    public List<Usuario> getUsuarios(){
+        
+        return this.usuarios;
+    }
 
     public String getUsuario() {
         return usuario;

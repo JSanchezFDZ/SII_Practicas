@@ -94,3 +94,10 @@ ul.menulist li {
     display:inline;
     margin: 1em;
 }
+
+#scl{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

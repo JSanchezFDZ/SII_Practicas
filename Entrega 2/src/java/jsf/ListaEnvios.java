@@ -26,7 +26,9 @@ public class ListaEnvios implements Serializable{
 
   
     
-    
+    public int tamano(){
+        return envios.size();
+    }
 
     public ArrayList<Envio> getEnvios() {
         return envios;

@@ -9,6 +9,10 @@
             <!--Como socio: Ver los envíos a sus apadrinados.-->
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                 <h1>LISTA DE ENVÍOS</h1>
+                <c:when test="#{ListaEnvios.envios=nulll}">
+                            <p>Hay 0 elementos en la lista</p>
+                </c:when>
+                
                 <table>
                    
                     <ui:repeat var = "i" value="#{ListaEnvios.getEnviosPadrino()}">
@@ -25,6 +29,9 @@
             <!-- Como administrador: Ver todos los envíos.-->
              <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA DE ENVÍOS</h1>
+                 <c:when test="#{ListaEnvios.envios=nulll}">
+                            <p>Hay 0 elementos en la lista</p>
+                </c:when>
                 <table>
                     
                     <ui:repeat var = "i" value="#{listaEnvios.getEnvios()}">

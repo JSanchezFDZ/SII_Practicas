@@ -24,9 +24,8 @@ import javax.faces.context.FacesContext;
 @Named(value = "ListaSocios")
 @SessionScoped
 public class ListaSocios implements Serializable {
-    private final List<Socios> socios;
+    private ArrayList<Socios> socios;
     private Usuario usuario;
-    private Login user;
     
     public ListaSocios(){
         socios = new ArrayList<>();
@@ -40,7 +39,7 @@ public class ListaSocios implements Serializable {
         return usuario;
     }  
     
-    public List<Socios> getSocios(){
+    public ArrayList<Socios> getSocios(){
         return socios;
     }
     

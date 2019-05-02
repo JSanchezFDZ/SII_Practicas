@@ -46,7 +46,7 @@ public class ListaSocios implements Serializable {
     }
     
     
-    public List<Socios> añadirSocio (List<Usuario> usuarios){
+    public List<Socios> añadirSocio(List<Usuario> usuarios){
         
         Iterator<Usuario> it = usuarios.iterator();
         

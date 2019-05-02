@@ -7,7 +7,7 @@
     <ui:define name="title">Página para el usuario administrador</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                 <h1>Usuario administrador</h1>
                 <h2>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario}"/>!!</h2>
                 <p>ID de usuario: <h:outputText value="#{controlAutorizacion.ID}"/></p>

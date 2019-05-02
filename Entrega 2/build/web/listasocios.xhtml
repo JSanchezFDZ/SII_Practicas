@@ -12,13 +12,16 @@
                 <h1>LISTA SOCIOS</h1>
                 <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
                 <table>
-                    <ui:param name ="tam" value="10"/>
-                    <ui:repeat var = "i" value="#{controlAutorizacion.getSocios()}" size = "#{tam}">
+                    <ui:repeat value="#{ListaSocios.getSocios()}" var = "soc">
                         <tr>
-                            <td>#{controlAutorizacion.listaSocios[i].toString()}</td>
-                        </tr>   
+                            <td>#{soc.nombre}</td>
+                            <td>#{soc.apellido}</td>
+                            <td><a href="me cago en la puta"></a></td>
+                            <td>#{soc.certificado}</td>
+                            <td>#{soc.correo}</td>
+                            <td>#{soc.cuota}</td>
+                        </tr>
                     </ui:repeat>
-                                
                 </table>
             </c:when>
             <c:otherwise>

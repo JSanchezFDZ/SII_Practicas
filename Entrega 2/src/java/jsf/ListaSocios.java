@@ -35,27 +35,23 @@ public class ListaSocios implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }  
     
-    public ArrayList<Socios> getSocios(){
-        return socios;
-    }
-    
-    /**
-     *
-     * @return
-     */
     public ArrayList<Socios> añadirSocio(){
        
         if(this.usuario.getRol() == SOCIO){
             
-            socios.add(new Socios(this.usuario.getUser(), this.usuario.getUserID()));
+            socios.add(new Socios("pepe", new Long (70001)));
         }
         return socios;
     }
+    
+    public Usuario getUsuario() {
+        return usuario;
+    }  
+    /**
+     *
+     * @return
+     */
     
     public String home() {
         

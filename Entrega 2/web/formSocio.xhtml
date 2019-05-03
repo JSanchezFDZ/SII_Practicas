@@ -6,10 +6,9 @@
                 >
     <ui:define name="title">Formulario nuevo socio</ui:define>
     <ui:define name="content">
-        <c:choose>
-            <c:when test="#{empty ControladorFormSocio.socio}">
-                <h:form id="listasocios">
-                    <table id="listasocios">
+                <h1>FORMULARIO</h1>
+                <h:form id="ListaSocios">
+                    <table id="ListaSocios">
                         
                         <tr>
                             <td>Nombre: </td>
@@ -18,12 +17,12 @@
                         
                         <tr>
                             <td>Apellido: </td>
-                            <td><h:inputSecret value="#{listasocios.apellido}"/></td>
+                            <td><h:inputSecret value="#{listaSocios.apellido}"/></td>
                         </tr>
                         
                         <tr>
                             <td>ID: </td>
-                            <td><h:inputSecret value="#{listasocios.id}"/></td>
+                            <td><h:inputSecret value="#{ListaSocios.usuario}"/></td>
                         </tr>
                         
                         <tr>
@@ -89,20 +88,18 @@
                         <tr>
                             <td>Usuario: </td>
                             <td><h:inputSecret value="#{listasocios.user}"/></td>
-                        </tr>
-                    <h:form id="socio">
-                    <h:column>
-                        <h:commandButton value="Insertar Socio" action ="#{controladorFormSocio.crearSocio()}"
-                        </h:column>
-                    </h:form>    
-                        
+                        </tr>         
                     </table>
+                    <h:form id="socio">
+                        <h:column>
+                            <h:commandButton value="Crear" action ="#{controladorFormSocio.crear()}"/>
+                        </h:column>
+                    </h:form> 
+                        
+                    
                 </h:form>
-            </c:when>
-            <c:otherwise>
-                <p>Debe salir de la aplicación si quiere entrar como otro usuario</p>
-            </c:otherwise>
-        </c:choose>
+                
+      
         <h:messages/>
     </ui:define>
 </ui:composition>

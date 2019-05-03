@@ -28,7 +28,9 @@ public class ListaCuotas implements Serializable {
         
         public ListaCuotas(){
             cuotas = new ArrayList<Cuota>();
-            //socios.add(new Socios("pepe", (long) 70001, Usuario.Rol.SOCIO));
+            socios = new ArrayList<Socios>();
+            socios.add(new Socios("pepe", (long) 70001));
+            //socios.add(new Socios("Manuel", (long) 70002));
             cuotas.add(new Cuota((long) 1, "Estándar", "Mensual", 20, socios));
             cuotas.add(new Cuota((long) 2, "Básica", "Semanal", 5, socios));
         }

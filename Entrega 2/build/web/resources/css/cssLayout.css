@@ -101,3 +101,22 @@ ul.menulist li {
   margin-right: auto;
   width: 50%;
 }
+
+#tablaListaCuotas{
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bordeTablaCuotas table{
+    border: 1px solid black;
+}
+
+.bordeTablaCuotas th{
+    border: 1px solid black;
+}
+
+.bordeTablaCuotas td{
+    border: 1px solid black;
+}

@@ -11,14 +11,15 @@
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA CUOTAS</h1>
                 <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
-                 <table>
+                 <div class="bordeTablaCuotas">
+                 <table id="tablaListaCuotas">
 			<thead>
 				<tr>
 					<th>Código</th>
 					<th>Nombre</th>
 					<th>Tipo</th>
 					<th>Aportación</th>
-					<th>Socio</th>
+					<th>Socio(s)</th>
 				</tr>
 			</thead>
                         <tbody>
@@ -33,6 +34,7 @@
                             </ui:repeat>
                         </tbody>
                 </table>
+                </div> 
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

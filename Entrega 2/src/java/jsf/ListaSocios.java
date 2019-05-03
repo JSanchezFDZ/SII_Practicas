@@ -29,6 +29,7 @@ public class ListaSocios implements Serializable {
     
     public ListaSocios(){
         socios = new ArrayList<>();
+        usuario = new Usuario("pepe","70001", "asdf", Usuario.Rol.SOCIO);
     }
     
     public void setUsuario(Usuario usuario) {

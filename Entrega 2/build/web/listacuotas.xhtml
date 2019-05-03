@@ -19,6 +19,7 @@
 					<th>Tipo</th>
 					<th>Aportación</th>
 					<th>Socio(s)</th>
+                                        <th>Accion</th>
 				</tr>
 			</thead>
                         <tbody>
@@ -29,6 +30,12 @@
                                     <td>#{i.tipo}</td>
                                     <td>#{i.aportación}</td>
                                     <td>#{i.codigoSocios}</td>
+                                    
+                                    <td> 
+                                        <h:form id = "cuotaaccion"> <h:column> <h:commandButton value="Ver" action="listacuotas.xhtml"/> </h:column> </h:form>
+                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listacuotas.xhtml"/> </h:column> </h:form>
+                                    </td>
+                                    
                                 </tr>
                             </ui:repeat>
                         </tbody>
@@ -37,9 +44,6 @@
                 <h:form id="cuota">
                     <h:column>
                             <h:commandButton value="Insertar cuota" action="#{ListaCuotas.insertarCuota()}"/>
-                    </h:column>
-                    <h:column>
-                        <h:commandButton value="Eliminar cuota" action="#{ListaCuotas.eliminarCuota()}"/>
                     </h:column>
                 </h:form>
             </c:when>

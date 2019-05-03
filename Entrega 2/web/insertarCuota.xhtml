@@ -12,11 +12,11 @@
                 <h:form id="cuo" >
                     <h:panelGrid columns="3">
                         <h:outputText value="Nombre"/>
-                        <h:inputText id ="nombre" value=""/>
+                        <h:inputText id ="nombre" value="#{ListaCuotas.cuota.nombreCuota}"/>
                         <h:message for="nombre"/>
                         
                         <h:outputText value="Tipo"/>
-                        <h:inputText id ="tipo" value=""/>
+                        <h:inputText id ="tipo" value="#{ListaCuotas.cuota.tipo}"/>
                         <h:message for="tipo"/>
                         
                         <h:commandButton value="Insertar" action="listacuotas.xhtml"/>

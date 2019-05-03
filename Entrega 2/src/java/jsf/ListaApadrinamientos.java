@@ -9,7 +9,9 @@ import acoes.Apadrinamiento;
 import acoes.Envio;
 import acoes.Ninos;
 import acoes.Socios;
+import acoes.Usuario;
 import java.util.ArrayList;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -20,6 +22,12 @@ public class ListaApadrinamientos {
     private Ninos ninio;
     private Socios socio;
     private Envio envio;
+    
+    private Usuario usuario;
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
     
      public void ListaApadrinamiento(){
         lApadrinamiento = new ArrayList<>();
@@ -32,5 +40,33 @@ public class ListaApadrinamientos {
 
     public void setlApadrinamiento(ArrayList<Apadrinamiento> lApadrinamiento) {
         this.lApadrinamiento = lApadrinamiento;
+    }
+    
+     public String home() {
+        
+        // Si no ha iniciado sesion, le lleva al login
+        if(getUsuario()==null){
+            return "login.xhtml";
+        }
+        
+        // Si el usuario es un administrador, le lleva a la pagina de niños solicitada
+        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+            return "listaninosapadrinados.xhtml";
+        }
+        
+        // Si el usuario es socio, le lleva a la pagina de socios
+        if(getUsuario().getRol().equals(getUsuario().getRol().SOCIO)){
+            return "apadrinar.xhtml";
+        }
+        return null;
+    }
+     
+     public String logout()
+    {
+        // Destruye la sesión (y con ello, el ámbito de este bean)
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        ctx.getExternalContext().invalidateSession();
+        usuario = null;
+        return "login.xhtml";
     }
 }

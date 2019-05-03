@@ -10,6 +10,7 @@ import acoes.Envio;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Objects;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -24,11 +25,15 @@ public class ListaEnvios implements Serializable{
     private ArrayList<Envio> envios;
     private Apadrinamiento padrino;
 
-  
-    
-    public int tamano(){
-        return envios.size();
+    public ListaEnvios() {
+        envios = new ArrayList<>();
+        DatosPrueba test = new DatosPrueba();   //CLASE QUE CONTIENE EJEMPLOS DE CADA ENTIDAD!
+        padrino = test.getPadrino();
+        envios.add(new Envio(Long.parseLong("1"), test.getPadrino(), new Date(000, 0, 0), new Date(004, 0, 0), "N/A"));
+         envios.add(new Envio(Long.parseLong("2"), test.getPadrino(), new Date(000, 3, 0), new Date(003, 0, 0), "N/A"));
+         envios.add(new Envio(Long.parseLong("3"), test.getPadrino(), new Date(000, 4, 1), new Date(001, 0, 0), "N/A"));
     }
+
 
     public ArrayList<Envio> getEnvios() {
         return envios;
@@ -81,15 +86,16 @@ public class ListaEnvios implements Serializable{
     }
 
         public ArrayList<Envio> getEnviosPadrino(){
-        ArrayList<Envio> aux = new ArrayList<>();
-        if(envios==null) return null;
-        for (Envio envio : envios) {
-            if (envio.getCodApadrinamiento().equals(getPadrino().getCodApadrinamiento())) {
-                aux.add(envio);
+        if(padrino.getCodApadrinamiento()==null) return null;
+        Long codigoPadrino = padrino.getCodApadrinamiento();
+        ArrayList<Envio> aux = new ArrayList<>(envios.size());
+        
+        for(int i=0; i<envios.size();i++){
+            if(codigoPadrino.equals(envios.get(i).getCodApadrinamiento().getCodApadrinamiento())){
+                aux.add(envios.get(i));
             }
         }
-       
-        return  aux;
+        return aux;
     }
     
     

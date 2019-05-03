@@ -31,6 +31,16 @@ public class Envio implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaLlegada;
     private String observaciones;
+
+    public Envio(Long codEnvio, Apadrinamiento codApadrinamiento, Date fechaEnvio, Date fechaLlegada, String observaciones) {
+        this.codEnvio = codEnvio;
+        this.codApadrinamiento = codApadrinamiento;
+        this.fechaEnvio = fechaEnvio;
+        this.fechaLlegada = fechaLlegada;
+        this.observaciones = observaciones;
+    }
+
+
             
  
     
@@ -94,9 +104,12 @@ public class Envio implements Serializable {
         return true;
     }
 
+
+
     @Override
     public String toString() {
-        return "acoes.Envio[ id=" + codEnvio + " ]";
+        return "Envio{" + "codEnvio=" + codEnvio + ", codApadrinamiento=" + codApadrinamiento + ", fechaEnvio=" + fechaEnvio + ", fechaLlegada=" + fechaLlegada + ", observaciones=" + observaciones + '}';
     }
+  
     
 }

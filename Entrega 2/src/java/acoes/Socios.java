@@ -45,6 +45,7 @@ public class Socios implements Serializable {
     private Date FechaBaja;
     private String observaciones;
     private Usuario usuario;
+    private List<Cuota> cuota;
     
     
     public Socios (String nombre,String apellido,Long id,String estado,String direccion,String poblacion,int codPostal,
@@ -76,6 +77,14 @@ public class Socios implements Serializable {
     public Socios(String nombre, long id){
         this.nombre=nombre;
         this.id=id;
+    }
+
+    public List<Cuota> getCuota() {
+        return cuota;
+    }
+
+    public void setCuota(List<Cuota> cuota) {
+        this.cuota = cuota;
     }
 
     public Long getId() {

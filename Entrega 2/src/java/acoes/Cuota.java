@@ -14,7 +14,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author Sergio
+ * @author Jesús Correa Conejero
  */
 public class Cuota implements Serializable {
     
@@ -33,6 +33,13 @@ public class Cuota implements Serializable {
         this.tipo = tipo;
         this.aportación = aportación;
         this.codigoSocios = codigoSocios;
+    }
+    
+    public Cuota(Long codigoCuota, String nombreCuota, String tipo, float aportación) {
+        this.codigoCuota = codigoCuota;
+        this.nombreCuota = nombreCuota;
+        this.tipo = tipo;
+        this.aportación = aportación;
     }
 
     public static long getSerialVersionUID() {

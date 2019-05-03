@@ -8,40 +8,29 @@
     <ui:define name="title">Lista de cuotas</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
                 <h1>MIS CUOTAS</h1>
+                <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
                  <div class="bordeTablaCuotas">
                  <table id="tablaListaCuotas">
 			<thead>
 				<tr>
-					<th>Código</th>
 					<th>Nombre</th>
 					<th>Tipo</th>
 					<th>Aportación</th>
-					<th>Socio(s)</th>
 				</tr>
 			</thead>
                         <tbody>
-                            <ui:repeat var="i" value="#{ListaCuotas.cuotas}">
+                            <ui:repeat var="i" value="#{ListaSocios.cuotas}">
                                 <tr>
-                                    <td>#{i.codigoCuota}</td>
                                     <td>#{i.nombreCuota}</td>
                                     <td>#{i.tipo}</td>
                                     <td>#{i.aportación}</td>
-                                    <td>#{i.codigoSocios}</td>
                                 </tr>
                             </ui:repeat>
                         </tbody>
                 </table>
                 </div> 
-                <h:form id="cuota">
-                    <h:column>
-                            <h:commandButton value="Insertar cuota" action="#{ListaCuotas.insertarCuota()}"/>
-                    </h:column>
-                    <h:column>
-                        <h:commandButton value="Eliminar cuota" action="#{ListaCuotas.eliminarCuota()}"/>
-                    </h:column>
-                </h:form>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

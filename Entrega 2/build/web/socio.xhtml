@@ -39,6 +39,12 @@
                  
                 <button onclick="actualizarInfo()">Guardar cambios!</button>
                 
+                 <h:form id="cuota">
+                    <h:column>
+                            <h:commandButton value="Ver mis cuotas" action="verCuotas.xhtml"/>
+                    </h:column>
+                </h:form>
+                
                 <script>
                 function actualizarInfo() {
                 estado = document.getElementById("estado").value;

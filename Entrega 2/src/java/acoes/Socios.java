@@ -47,12 +47,9 @@ public class Socios implements Serializable {
     private Usuario usuario;
     private List<Cuota> cuota;
     
-    public Socios (String usuario,Long id, Usuario.Rol tipo){
-        if(tipo == SOCIO){
-            setNombre(usuario);
-            setId(id);
-            setEstado("SOCIO");
-        }
+    public Socios (String usuario,Long id){
+            this.nombre = usuario;
+            this.id = id;
     }
 
     public Long getId() {

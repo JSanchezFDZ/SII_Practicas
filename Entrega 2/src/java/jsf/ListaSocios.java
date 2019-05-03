@@ -52,7 +52,7 @@ public class ListaSocios implements Serializable {
        
         if(this.usuario.getRol() == SOCIO){
             
-            socios.add(new Socios(this.usuario.getUser(), this.usuario.getUserID(), this.usuario.getRol()));
+            socios.add(new Socios(this.usuario.getUser(), this.usuario.getUserID()));
         }
         return socios;
     }

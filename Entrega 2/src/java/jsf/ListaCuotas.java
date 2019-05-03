@@ -42,6 +42,11 @@ public class ListaCuotas implements Serializable {
     public void setCuotas(List<Cuota> cuotas) {
         this.cuotas = cuotas;
     }
+    
+        public String insertarCuota() {
+        //setModo(Modo.INSERTAR);
+        return "insertarCuota.xhtml";
+    }
 
     public List<Socios> getSocios() {
         return socios;

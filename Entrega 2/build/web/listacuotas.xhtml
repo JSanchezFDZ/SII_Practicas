@@ -35,6 +35,11 @@
                         </tbody>
                 </table>
                 </div> 
+                <h:form id="cuotas">
+                    <h:column>
+                            <h:commandButton value="Insertar cuota" action="#{cuotas.insertarCuota()}"/>
+                        </h:column>
+                </h:form>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

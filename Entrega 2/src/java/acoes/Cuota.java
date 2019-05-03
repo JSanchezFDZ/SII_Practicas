@@ -54,6 +54,11 @@ public class Cuota implements Serializable {
     public float getAportación() {
         return aportación;
     }
+    
+    public String insertarCuota() {
+        //setModo(Modo.INSERTAR);
+        return "insertarCuota.xhtml";
+    }
 
     public List<Socios> getCodigoSocios() {
         return codigoSocios;

@@ -120,7 +120,7 @@ public class ControladorFormSocio implements Serializable {
         return "envio.xhtml";
     }
     
-    public String CrearSocio(){
+    public String crearSocio(){
         return "listasocios.xhtml";
     }
     

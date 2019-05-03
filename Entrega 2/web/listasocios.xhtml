@@ -10,7 +10,8 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                 <h1>LISTA SOCIOS</h1>
-                <table>
+                <div class="bordeTablaSocios">
+                    <table id="tablaListaSocios">
                     <thead>
 				<tr>
 					<th>Nombre</th>
@@ -55,10 +56,10 @@
                     </body>
                     
                 </table>
-                
-                <h:form id = "ListaSocios">
+                </div>
+                <h:form id = "socio">
                     <h:column>
-                        <h:commandButton value="Inserta nuevo socio"/>
+                        <h:commandButton value="Inserta nuevo socio" action="#{ListaSocios.crearSocio()}"/>
                     </h:column>               
                 </h:form>
                 

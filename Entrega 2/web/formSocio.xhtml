@@ -1,0 +1,108 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                >
+    <ui:define name="title">Formulario nuevo socio</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{empty ControladorFormSocio.socio}">
+                <h:form id="listasocios">
+                    <table id="listasocios">
+                        
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText value="#{listasocios.nombre}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Apellido: </td>
+                            <td><h:inputSecret value="#{listasocios.apellido}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>ID: </td>
+                            <td><h:inputSecret value="#{listasocios.id}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Estado: </td>
+                            <td><h:inputSecret value="#{listasocios.estado}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Direccion: </td>
+                            <td><h:inputSecret value="#{listasocios.direccion}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Poblacion: </td>
+                            <td><h:inputSecret value="#{listasocios.poblacion}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Codigo Postal: </td>
+                            <td><h:inputSecret value="#{listasocios.cosPostal}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Provincia: </td>
+                            <td><h:inputSecret value="#{listasocios.provincia}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Telefono: </td>
+                            <td><h:inputSecret value="#{listasocios.telefono}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Correo: </td>
+                            <td><h:inputSecret value="#{listasocios.correo}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Sector: </td>
+                            <td><h:inputSecret value="#{listasocios.sector}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Certificado: </td>
+                            <td><h:inputSecret value="#{listasocios.certificado}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Fecha de Alta: </td>
+                            <td><h:inputSecret value="#{listasocios.fechaAlta}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Fecha de Baja: </td>
+                            <td><h:inputSecret value="#{listasocios.fechaBaja}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Observaciones: </td>
+                            <td><h:inputSecret value="#{listasocios.observaciones}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Usuario: </td>
+                            <td><h:inputSecret value="#{listasocios.user}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">
+                                <h:commandButton value="Crear Socio" action="#{ControladorFormSocio.CrearSocio()}"/>
+                            </td>
+                        </tr>
+                    </table>
+                </h:form>
+            </c:when>
+            <c:otherwise>
+                <p>Debe salir de la aplicación si quiere entrar como otro usuario</p>
+            </c:otherwise>
+        </c:choose>
+        <h:messages/>
+    </ui:define>
+</ui:composition>

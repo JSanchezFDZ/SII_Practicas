@@ -9,19 +9,29 @@
             <!--Como socio: Ver los envíos a sus apadrinados.-->
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                 <h1>LISTA DE ENVÍOS</h1>
-                <c:when test="#{ListaEnvios.envios=null}">
-                            <p>Hay 0 elementos en la lista</p>
-                </c:when>
-                
                 <table>
-                   
-                    <ui:repeat var = "i" value="#{ListaEnvios.getEnviosPadrino()}">
-                        <tr>
-                            <td>#{i}</td>
-                        </tr>   
-                    </ui:repeat>
-                               
+                    <thead>
+				<tr>
+					<th> Código</th>
+                                        <th> ID Padrino  </th>
+					<th> Fecha envío  </th>
+                                        <th> Fecha llegada  </th>
+                                        <th> Observaciones  </th>
+                                </tr>
+			</thead>
+                    
+                    <ui:repeat var = "i" value="#{ListaEnvios.enviosPadrino}">
+                     <tr>
+                         <td>#{i.codEnvio}</td>
+                         <td>#{i.codApadrinamiento.codApadrinamiento}</td>
+                         <td>#{i.fechaEnvio}</td>
+                         <td>#{i.fechaLlegada}</td>
+                         <td>#{i.observaciones}</td>
+                     </tr>
+                     </ui:repeat>
                 </table>
+                    
+                 
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
@@ -29,17 +39,12 @@
             <!-- Como administrador: Ver todos los envíos.-->
              <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA DE ENVÍOS</h1>
-                 <c:when test="#{ListaEnvios.envios=null}">
-                            <p>Hay 0 elementos en la lista</p>
-                </c:when>
-                <table>
-                    
+                <table>  
                     <ui:repeat var = "i" value="#{listaEnvios.getEnvios()}">
                         <tr>
                             <td>#{i}</td>
                         </tr>   
-                    </ui:repeat>
-                                
+                    </ui:repeat>           
                 </table>
             </c:when> 
         </c:choose>

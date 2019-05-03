@@ -6,7 +6,9 @@
 package jsf;
 
 import acoes.Apadrinamiento;
+import acoes.Envio;
 import acoes.Ninos;
+import acoes.Socios;
 import java.util.ArrayList;
 
 /**
@@ -15,10 +17,13 @@ import java.util.ArrayList;
  */
 public class ListaApadrinamientos {
     private ArrayList<Apadrinamiento> lApadrinamiento;
+    private Ninos ninio;
+    private Socios socio;
+    private Envio envio;
     
      public void ListaApadrinamiento(){
         lApadrinamiento = new ArrayList<>();
-        lApadrinamiento.add(new Apadrinamiento());
+        lApadrinamiento.add(new Apadrinamiento((long) 0001, ninio, socio, envio));
     }
 
     public ArrayList<Apadrinamiento> getlApadrinamiento() {

@@ -35,7 +35,7 @@ public class ListaSocios implements Serializable {
     public ListaSocios(){
         socios = new ArrayList<>();
         socios.add(new Socios("Pepe","Gutierrez", new Long(70001),"Soltero","C/Sin nombre nº -5","Narnia",00000,"El baticano",
-        "111 222 333", "pepeG@gmail.com", "    ", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "  ", new Usuario ("Pepito","70001","asdf",SOCIO), apadrinamientos, cuotas));
+        "111 222 333", "pepeG@gmail.com", "    ", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "  ", usuario, apadrinamientos, cuotas));
     }
     
     public ArrayList<Socios> getSocios(){

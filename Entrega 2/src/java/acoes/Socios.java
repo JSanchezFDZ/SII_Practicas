@@ -44,13 +44,12 @@ public class Socios implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date FechaBaja;
     private String observaciones;
-    private List<Apadrinamiento> apadrinamiento; //relacion 1 a muchos con apadrinamiento
     private Usuario usuario;
-    private List<Cuota> cuota;
+    
     
     public Socios (String nombre,String apellido,Long id,String estado,String direccion,String poblacion,int codPostal,
              String provincia, String telefono,String correo,String sector,String certificado, Date FechaAlta, Date FechaBaja,
-            String observaciones,Usuario usuario,List<Apadrinamiento> apadrinamiento,List<Cuota> cuota){
+            String observaciones,Usuario usuario){
             
             this.nombre = nombre;
             this.apellido = apellido;
@@ -68,8 +67,6 @@ public class Socios implements Serializable {
             this.FechaBaja = FechaBaja;
             this.observaciones = observaciones;
             this.usuario = usuario;
-            this.apadrinamiento = apadrinamiento;
-            this.cuota = cuota;
     }
 
     public Socios(String pepe, String gutierrez, Long aLong, String soltero, String cSin_nombre_nº_5, String narnia, int i, String el_baticano, String _222_333, String pepeGgmailcom, String ____, String activo, String __, Usuario usuario, ArrayList<Apadrinamiento> apadrinamientos, List<Cuota> cuotas) {
@@ -193,14 +190,6 @@ public class Socios implements Serializable {
         this.observaciones = observaciones;
     }
 
-    public List<Apadrinamiento> getApadrinamiento() {
-        return apadrinamiento;
-    }
-
-    public void setApadrinamiento(List<Apadrinamiento> apadrinamiento) {
-        this.apadrinamiento = apadrinamiento;
-    }
-
     public Usuario getUser() {
         return usuario;
     }
@@ -208,17 +197,6 @@ public class Socios implements Serializable {
     public void setUser(Usuario usuario) {
         this.usuario = usuario;
     }
-
-    public List<Cuota> getCuota() {
-        return cuota;
-    }
-
-    public void setCuota(List<Cuota> cuota) {
-        this.cuota = cuota;
-    }
-
-
-
     public String getCertificado() {
         return certificado;
     }

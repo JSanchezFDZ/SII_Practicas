@@ -29,9 +29,7 @@
                                         <th>Fecha de Baja</th>
                                         <th>Observaciones</th>
                                         <th>Usuario</th>
-                                        <th>Apadrinamientos</th>
-                                        <th>Cuota</th>
-				</tr>
+                                </tr>
 			</thead>
                     <body>
                         <ui:repeat var = "i" value="#{ListaSocios.socios}">
@@ -52,13 +50,18 @@
                                 <td>#{i.fechaBaja}</td>
                                 <td>#{i.observaciones}</td>
                                 <td>#{i.user}</td>
-                                <td>#{i.apadrinamiento}</td>
-                                <td>#{i.cuota}</td>
                             </tr>
                         </ui:repeat>
                     </body>
                     
                 </table>
+                
+                <h:form id = "ListaSocios">
+                    <h:column>
+                        <h:commandButton value="Inserta nuevo Socio"/>
+                    </h:column>               
+                </h:form>
+                
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

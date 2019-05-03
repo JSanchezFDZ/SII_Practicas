@@ -29,13 +29,11 @@ import javax.faces.context.FacesContext;
 public class ListaSocios implements Serializable {
     private final ArrayList<Socios> socios;
     private Usuario usuario;
-    private ArrayList<Apadrinamiento>apadrinamientos;
-    private List<Cuota> cuotas;
     
     public ListaSocios(){
         socios = new ArrayList<>();
         socios.add(new Socios(" Pepe "," Gutierrez ", new Long(70001)," Soltero ", " C/SinNombre nº 5","Narnia ",00000,"El baticano",
-        "111 222 333", "pepeG@gmail.com", "", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "", usuario, apadrinamientos, cuotas));
+        "111 222 333", "pepeG@gmail.com", "", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "", usuario));
     }
     
     public ArrayList<Socios> getSocios(){

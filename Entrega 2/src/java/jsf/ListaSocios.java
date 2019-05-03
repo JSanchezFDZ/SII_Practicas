@@ -48,8 +48,8 @@ public class ListaSocios implements Serializable {
      * @return
      */
     public ArrayList<Socios> añadirSocio(){
-        
-        if(usuario.getRol() == SOCIO){
+       
+        if(this.usuario.getRol() == SOCIO){
             
             socios.add(new Socios(this.usuario.getUser(), this.usuario.getUserID(), this.usuario.getRol()));
         }

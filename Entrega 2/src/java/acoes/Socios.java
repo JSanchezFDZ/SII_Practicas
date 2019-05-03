@@ -50,8 +50,8 @@ public class Socios implements Serializable {
     public Socios (String usuario,Long id, Usuario.Rol tipo){
         while(tipo == SOCIO){
             setNombre(usuario);
-            setEstado("SOCIO");
             setId(id);
+            setEstado("SOCIO");
         }
     }
 

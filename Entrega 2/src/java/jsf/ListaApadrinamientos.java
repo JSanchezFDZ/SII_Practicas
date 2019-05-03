@@ -5,10 +5,27 @@
  */
 package jsf;
 
+import acoes.Apadrinamiento;
+import acoes.Ninos;
+import java.util.ArrayList;
+
 /**
  *
- * @author Sergio
+ * @author Salva
  */
 public class ListaApadrinamientos {
+    private ArrayList<Apadrinamiento> lApadrinamiento;
     
+     public void ListaApadrinamiento(){
+        lApadrinamiento = new ArrayList<>();
+        lApadrinamiento.add(new Apadrinamiento());
+    }
+
+    public ArrayList<Apadrinamiento> getlApadrinamiento() {
+        return lApadrinamiento;
+    }
+
+    public void setlApadrinamiento(ArrayList<Apadrinamiento> lApadrinamiento) {
+        this.lApadrinamiento = lApadrinamiento;
+    }
 }

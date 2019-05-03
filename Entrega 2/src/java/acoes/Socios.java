@@ -48,7 +48,7 @@ public class Socios implements Serializable {
     private List<Cuota> cuota;
     
     public Socios (String usuario,Long id, Usuario.Rol tipo){
-        while(tipo == SOCIO){
+        if(tipo == SOCIO){
             setNombre(usuario);
             setId(id);
             setEstado("SOCIO");

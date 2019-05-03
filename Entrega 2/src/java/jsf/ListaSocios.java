@@ -47,7 +47,11 @@ public class ListaSocios implements Serializable {
     
     public Usuario getUsuario() {
         return usuario;
-    }  
+    } 
+    
+    public String crearSocio(){
+        return "formSocio.xhtml";
+    }
     /**
      *
      * @return

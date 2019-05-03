@@ -90,12 +90,12 @@
                             <td>Usuario: </td>
                             <td><h:inputSecret value="#{listasocios.user}"/></td>
                         </tr>
+                    <h:form id="socio">
+                    <h:column>
+                            <h:commandButton value="Insertar Socio" action="#{ListaSocio.crearSocio()}"/>
+                        </h:column>
+                    </h:form>    
                         
-                        <tr>
-                            <td colspan="2">
-                                <h:commandButton value="Crear Socio" action="#{ControladorFormSocio.CrearSocio()}"/>
-                            </td>
-                        </tr>
                     </table>
                 </h:form>
             </c:when>

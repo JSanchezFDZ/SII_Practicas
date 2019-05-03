@@ -28,7 +28,14 @@ public class Apadrinamiento implements Serializable {
     private Ninos codNino;
     private Socios numSocio;
     private Envio codEnvio;
-
+    
+    public Apadrinamiento(Long codA, Ninos codNin, Socios numSoc, Envio codEnv){
+        codApadrinamiento = codA;
+        codNino = codNin;
+        numSocio = numSoc;
+        codEnvio = codEnv;
+    }
+    
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaApadrinamiento;
     private String observaciones;

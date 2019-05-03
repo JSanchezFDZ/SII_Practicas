@@ -38,9 +38,9 @@ public class ListaSocios implements Serializable {
     
     public ArrayList<Socios> añadirSocio(){
        
-        if(this.usuario.getRol() == SOCIO){
+        if(usuario.getRol() == SOCIO){
             
-            socios.add(new Socios("pepe", new Long (70001)));
+            socios.add(new Socios(usuario.getUser(), usuario.getUserID()));
         }
         return socios;
     }

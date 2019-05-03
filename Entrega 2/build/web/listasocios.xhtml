@@ -15,9 +15,11 @@
                 </c:when>
                
                 <table>
-                    <ui:repeat var = "i" value="#{ListaSocios.getSocios()}">
+                    <ui:repeat var = "i" value="#{ListaSocios.socios}">
                         <tr>
-                            <td>#{i}</td>
+                            <td>#{i.nombre}</td>
+                            <td>#{i.id}</td>
+                            <td>#{i.estado}</td>
                         </tr>
                     </ui:repeat>
                 </table>

@@ -109,6 +109,14 @@ ul.menulist li {
     margin: 10px;
 }
 
+/* CUOTAS */
+#tablaListaCuotas{
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
 .bordeTablaCuotas table{
     border: 1px solid black;
 }
@@ -118,5 +126,45 @@ ul.menulist li {
 }
 
 .bordeTablaCuotas td{
+    border: 1px solid black;
+}
+
+/* NIÑOS */
+#tablaListaNinos{
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bordeTablaNinos table{
+    border: 1px solid black;
+}
+
+.bordeTablaNinos th{
+    border: 1px solid black;
+}
+
+.bordeTablaNinos td{
+    border: 1px solid black;
+}
+
+/* SOCIOS */
+#tablaListaSocios{
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bordeTablaSocios table{
+    border: 1px solid black;
+}
+
+.bordeTablaSocios th{
+    border: 1px solid black;
+}
+
+.bordeTablaSocios td{
     border: 1px solid black;
 }

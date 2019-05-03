@@ -46,6 +46,51 @@ public class Ninos implements Serializable {
     private String observaciones;
     private Apadrinamiento codApadrinamiento;
 
+    public Ninos(Long id, String nombre, String apellidos, String estado, String beca, String sexo, String agente, String foto, Date fechaNac, Date fechaAlta, Date fechaBaja, String proyecto, String gradoCurso, String comunidadProcedencia, String coloniaActual, String observaciones, Apadrinamiento codApadrinamiento) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.estado = estado;
+        this.beca = beca;
+        this.sexo = sexo;
+        this.agente = agente;
+        this.foto = foto;
+        this.fechaNac = fechaNac;
+        this.fechaAlta = fechaAlta;
+        this.fechaBaja = fechaBaja;
+        this.proyecto = proyecto;
+        this.gradoCurso = gradoCurso;
+        this.comunidadProcedencia = comunidadProcedencia;
+        this.coloniaActual = coloniaActual;
+        this.observaciones = observaciones;
+        this.codApadrinamiento = codApadrinamiento;
+    }
+
+    public Ninos(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }   
+    
+    public Ninos(Long id, String nombre, String apellidos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+    }
+
+    public Ninos(Long id, String nombre, String apellidos, Date fechaNac) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.fechaNac = fechaNac;
+    }
+
+    public Ninos(Long id, String nombre, String apellidos, String observaciones) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.observaciones = observaciones;
+    }
+    
     public Long getId() {
         return id;
     }

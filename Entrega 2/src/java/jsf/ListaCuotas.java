@@ -17,7 +17,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Sergio
+ * @author Jesús Correa Conejero
  */
 
     @Named(value = "ListaCuotas")
@@ -34,6 +34,7 @@ public class ListaCuotas implements Serializable {
             //socios.add(new Socios("Manuel", (long) 70002));
             cuotas.add(new Cuota((long) 1, "Estándar", "Mensual", 20, socios));
             cuotas.add(new Cuota((long) 2, "Básica", "Semanal", 5, socios));
+            cuota = new Cuota(Long.MIN_VALUE, null, null, 0, null);
         }
 
     public Cuota getCuota() {
@@ -42,6 +43,19 @@ public class ListaCuotas implements Serializable {
 
     public void setCuota(Cuota cuota) {
         this.cuota = cuota;
+    }
+    
+    public String añadirCuotaALista(String nombre, String tipo, long apor){
+        cuotas.add(new Cuota((long) 3, nombre, tipo, apor, null));
+        return "listacuotas.xhtml";
+    }
+    
+        public int getNumeroCuotas(){
+        int i;
+        for (i=0;i<cuotas.size();i++){
+            i++;
+        }
+        return i;
     }
 
     public List<Cuota> getCuotas() {
@@ -52,9 +66,13 @@ public class ListaCuotas implements Serializable {
         this.cuotas = cuotas;
     }
     
-        public String insertarCuota() {
+    public String insertarCuota() {
         //setModo(Modo.INSERTAR);
         return "insertarCuota.xhtml";
+    }
+    
+    public String eliminarCuota() {
+        return "listacuotas.xhtml";
     }
 
     public List<Socios> getSocios() {

@@ -24,7 +24,7 @@ import javax.faces.context.FacesContext;
 @Named(value = "ListaSocios")
 @SessionScoped
 public class ListaSocios implements Serializable {
-    private ArrayList<Socios> socios;
+    private final ArrayList<Socios> socios;
     private Usuario usuario;
     
     public ListaSocios(){
@@ -32,18 +32,14 @@ public class ListaSocios implements Serializable {
         usuario = new Usuario("pepe","70001", "asdf", Usuario.Rol.SOCIO);
     }
     
+    public ArrayList<Socios> getSocios(){
+        return socios;
+    }
+    
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
     
-    public ArrayList<Socios> añadirSocio(){
-       
-        if(usuario.getRol() == SOCIO){
-            
-            socios.add(new Socios(usuario.getUser(), usuario.getUserID()));
-        }
-        return socios;
-    }
     
     public Usuario getUsuario() {
         return usuario;
@@ -52,6 +48,14 @@ public class ListaSocios implements Serializable {
      *
      * @return
      */
+      public ArrayList<Socios> añadirSocio(){
+       
+        if(usuario.getRol() == SOCIO){
+            
+            socios.add(new Socios(usuario.getUser(), usuario.getUserID()));
+        }
+        return socios;
+    }
     
     public String home() {
         

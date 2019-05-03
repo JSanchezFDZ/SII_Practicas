@@ -25,6 +25,10 @@ public class ListaApadrinamientos {
     
     private Usuario usuario;
 
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
     public Usuario getUsuario() {
         return usuario;
     }
@@ -49,12 +53,12 @@ public class ListaApadrinamientos {
             return "login.xhtml";
         }
         
-        // Si el usuario es un administrador, le lleva a la pagina de niños solicitada
+        // Si el usuario es un administrador, le lleva a la pagina del listado de apadrinados
         if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
             return "listaninosapadrinados.xhtml";
         }
         
-        // Si el usuario es socio, le lleva a la pagina de socios
+        // Si el usuario es socio, le lleva a la pagina de apadrinar
         if(getUsuario().getRol().equals(getUsuario().getRol().SOCIO)){
             return "apadrinar.xhtml";
         }

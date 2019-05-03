@@ -25,6 +25,7 @@ import javax.faces.context.FacesContext;
 public class ListaCuotas implements Serializable {
         private List<Cuota> cuotas;
         private List<Socios> socios;
+        private Cuota cuota;
         
         public ListaCuotas(){
             cuotas = new ArrayList<Cuota>();
@@ -34,6 +35,14 @@ public class ListaCuotas implements Serializable {
             cuotas.add(new Cuota((long) 1, "Estándar", "Mensual", 20, socios));
             cuotas.add(new Cuota((long) 2, "Básica", "Semanal", 5, socios));
         }
+
+    public Cuota getCuota() {
+        return cuota;
+    }
+
+    public void setCuota(Cuota cuota) {
+        this.cuota = cuota;
+    }
 
     public List<Cuota> getCuotas() {
         return cuotas;

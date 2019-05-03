@@ -10,17 +10,29 @@
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>Insertar cuota</h1>
                 <h:form id="cuo" >
-                    <h:panelGrid columns="3">
+                    <h:panelGrid columns="3" >
                         <h:outputText value="Nombre"/>
-                        <h:inputText id ="nombre" value="#{ListaCuotas.cuota.nombreCuota}"/>
+                        <h:inputText id ="nom" value="#{ListaCuotas.cuota.nombreCuota}" />
                         <h:message for="nombre"/>
                         
                         <h:outputText value="Tipo"/>
-                        <h:inputText id ="tipo" value="#{ListaCuotas.cuota.tipo}"/>
+                        <h:inputText id ="tp" value="#{ListaCuotas.cuota.tipo}"/>
                         <h:message for="tipo"/>
+                        
+                        <h:outputText value="Aportación"/>
+                        <h:inputText id ="ap" value="#{ListaCuotas.cuota.aportación}"/>
+                        <h:message for="aportacion"/>
+                        
+                        <h:outputText value="Socios"/>
+                        <ui:repeat value="#{ListaCuotas.socios}" var="socio">
+                            <h:inputText id="socios" value="#{socio.id}" /><br/>
+                        </ui:repeat>
+                        <h:message for="socio"/>
+                        
                         
                         <h:commandButton value="Insertar" action="listacuotas.xhtml"/>
                         <h:commandButton value="Cancelar" action="listacuotas.xhtml"/>
+                        <h:commandButton value="Limpiar" type="reset" />
 
                     </h:panelGrid>
                 </h:form>

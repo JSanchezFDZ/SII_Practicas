@@ -38,7 +38,10 @@
                 <h:form id="cuota">
                     <h:column>
                             <h:commandButton value="Insertar cuota" action="#{ListaCuotas.insertarCuota()}"/>
-                        </h:column>
+                    </h:column>
+                    <h:column>
+                        <h:commandButton value="Eliminar cuota" action="#{ListaCuotas.eliminarCuota()}"/>
+                    </h:column>
                 </h:form>
             </c:when>
             <c:otherwise>

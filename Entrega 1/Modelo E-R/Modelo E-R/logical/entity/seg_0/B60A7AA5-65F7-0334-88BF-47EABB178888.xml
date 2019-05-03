@@ -228,20 +228,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="codCuota" id="EBC91C90-9AE1-1090-202C-70C3E1B31427">
-<createdBy>Usuario</createdBy>
-<createdTime>2019-04-03 17:21:06 UTC</createdTime>
-<generatorID>4A57D333-D843-1313-6340-A4382A40219F</generatorID>
-<ownerDesignName>Modelo E-R</ownerDesignName>
-<engineerTo>
-<item key="D6E0ADF8-0151-65DA-4CED-0084150CA936" value="true"/>
-</engineerTo>
-<referedAttribute>5A313DF2-E562-01EE-4D05-2F26127DFBB1</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="4382802D-40F9-05DC-06D7-429FB178A113" name="SOCIO PK">

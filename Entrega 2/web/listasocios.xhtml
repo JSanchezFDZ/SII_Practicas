@@ -10,17 +10,25 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                 <h1>LISTA SOCIOS</h1>
-                <c:when test="#{ListaSocios.socios == null}">
-                            <p>Hay 0 socios</p>
-                </c:when>
-               
                 <table>
-                    <ui:repeat var = "i" value="#{ListaSocios.socios}">
-                        <tr>
-                            <td>#{i.nombre}</td>
-                            <td>#{i.id}</td>
-                        </tr>
-                    </ui:repeat>
+                    <thead>
+				<tr>
+					<th>Código</th>
+					<th>Nombre</th>
+					<th>Tipo</th>
+					<th>Aportación</th>
+					<th>Socio</th>
+				</tr>
+			</thead>
+                    <body>
+                        <ui:repeat var = "i" value="#{ListaSocios.socios}">
+                            <tr>
+                                <td>#{i.nombre}</td>
+                                <td>#{i.id}</td>
+                            </tr>
+                        </ui:repeat>
+                    </body>
+                    
                 </table>
             </c:when>
             <c:otherwise>

@@ -29,7 +29,7 @@ public class ListaSocios implements Serializable {
     
     public ListaSocios(){
         socios = new ArrayList<>();
-        usuario = new Usuario("pepe","70001", "asdf", Usuario.Rol.SOCIO);
+        socios.add(new Socios("pepe", new Long(70001)));
     }
     
     public ArrayList<Socios> getSocios(){
@@ -48,15 +48,16 @@ public class ListaSocios implements Serializable {
      *
      * @return
      */
+    /*
       public ArrayList<Socios> añadirSocio(){
        
         if(usuario.getRol() == SOCIO){
             
-            socios.add(new Socios(usuario.getUser(), usuario.getUserID()));
+            socios.add(new Socios("pepe", new Long(7001)));
         }
         return socios;
     }
-    
+    */
     public String home() {
         
         // Si no ha iniciado sesion, le lleva al login

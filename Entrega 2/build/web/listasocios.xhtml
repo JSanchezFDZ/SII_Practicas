@@ -14,14 +14,46 @@
                     <thead>
 				<tr>
 					<th>Nombre</th>
+                                        <th>Apellido</th>
 					<th>ID</th>
+                                        <th>Estado</th>
+                                        <th>Direccion</th>
+                                        <th>Poblacion</th>
+                                        <th>Codigo Postal</th>
+                                        <th>Provincia</th>
+                                        <th>Telefono</th>
+                                        <th>Correo</th>
+                                        <th>Sector</th>
+                                        <th>Certificado</th>
+                                        <th>Fecha de Alta</th>
+                                        <th>Fecha de Baja</th>
+                                        <th>Observaciones</th>
+                                        <th>Usuario</th>
+                                        <th>Apadrinamientos</th>
+                                        <th>Cuota</th>
 				</tr>
 			</thead>
                     <body>
                         <ui:repeat var = "i" value="#{ListaSocios.socios}">
                             <tr>
                                 <td>#{i.nombre}</td>
+                                <td>#{i.apellido}</td>
                                 <td>#{i.id}</td>
+                                <td>#{i.estado}</td>
+                                <td>#{i.direccion}</td>
+                                <td>#{i.poblacion}</td>
+                                <td>#{i.codPostal}</td>
+                                <td>#{i.provincia}</td>
+                                <td>#{i.telefono}</td>
+                                <td>#{i.correo}</td>
+                                <td>#{i.sector}</td>
+                                <td>#{i.certificado}</td>
+                                <td>#{i.fechaAlta}</td>
+                                <td>#{i.fechaBaja}</td>
+                                <td>#{i.observaciones}</td>
+                                <td>#{i.usuario}</td>
+                                <td>#{i.apadrinamiento}</td>
+                                <td>#{i.cuota}</td>
                             </tr>
                         </ui:repeat>
                     </body>

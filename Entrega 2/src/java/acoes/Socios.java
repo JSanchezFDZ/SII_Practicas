@@ -7,6 +7,7 @@ package acoes;
 
 import static acoes.Usuario.Rol.SOCIO;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -47,9 +48,32 @@ public class Socios implements Serializable {
     private Usuario usuario;
     private List<Cuota> cuota;
     
-    public Socios (String usuario,Long id){
-            this.nombre = usuario;
+    public Socios (String nombre,String apellido,Long id,String estado,String direccion,String poblacion,int codPostal,
+             String provincia, String telefono,String correo,String sector,String certificado, Date FechaAlta, Date FechaBaja,
+            String observaciones,Usuario usuario,List<Apadrinamiento> apadrinamiento,List<Cuota> cuota){
+            
+            this.nombre = nombre;
+            this.apellido = apellido;
             this.id = id;
+            this.estado = estado;
+            this.direccion = direccion;
+            this.poblacion = poblacion;
+            this.codPostal = codPostal;
+            this.provincia = provincia;
+            this.telefono = telefono;
+            this.correo = correo;
+            this.sector = sector;
+            this.certificado = certificado;
+            this.FechaAlta = FechaAlta;
+            this.FechaBaja = FechaBaja;
+            this.observaciones = observaciones;
+            this.usuario = usuario;
+            this.apadrinamiento = apadrinamiento;
+            this.cuota = cuota;
+    }
+
+    public Socios(String pepe, String gutierrez, Long aLong, String soltero, String cSin_nombre_nº_5, String narnia, int i, String el_baticano, String _222_333, String pepeGgmailcom, String ____, String activo, String __, Usuario usuario, ArrayList<Apadrinamiento> apadrinamientos, List<Cuota> cuotas) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Long getId() {

@@ -5,6 +5,8 @@
  */
 package jsf;
 
+import acoes.Apadrinamiento;
+import acoes.Cuota;
 import acoes.Ninos;
 import acoes.Socios;
 import acoes.Usuario;
@@ -13,6 +15,7 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import javax.faces.context.FacesContext;
@@ -26,10 +29,13 @@ import javax.faces.context.FacesContext;
 public class ListaSocios implements Serializable {
     private final ArrayList<Socios> socios;
     private Usuario usuario;
+    private ArrayList<Apadrinamiento>apadrinamientos;
+    private List<Cuota> cuotas;
     
     public ListaSocios(){
         socios = new ArrayList<>();
-        socios.add(new Socios("pepe", new Long(70001)));
+        socios.add(new Socios("Pepe","Gutierrez", new Long(70001),"Soltero","C/Sin nombre nº -5","Narnia",00000,"El baticano",
+        "111 222 333", "pepeG@gmail.com", "    ", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "  ", new Usuario ("Pepito","70001","asdf",SOCIO), apadrinamientos, cuotas));
     }
     
     public ArrayList<Socios> getSocios(){

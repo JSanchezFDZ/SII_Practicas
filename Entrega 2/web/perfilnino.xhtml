@@ -73,14 +73,9 @@
                             <td><h:inputText  value="#{i.observaciones}"/></td>
                         </tr> 
                     </table>
-                    
-                <h:form id="nino">
-                    <h:column>
-                        <h:commandButton value="Actualizar" action ="#{ControladorActualizarNino.actualizar()}"/>
-                    </h:column>
-                </h:form> 
-        </h:form>
-                               
+                </h:form>
+                <h:form> <h:column> <h:commandButton value="Actualizar niño"/> </h:column> </h:form>
+                   
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

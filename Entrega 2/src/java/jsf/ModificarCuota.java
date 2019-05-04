@@ -18,7 +18,7 @@ import javax.inject.Named;
 
 /**
  *
- * @author Edu Ruiz
+ * @author Jesús Correa Conejero
  */
 
 @Named(value = "ModificarCuota")

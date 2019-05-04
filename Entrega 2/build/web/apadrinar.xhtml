@@ -1,0 +1,27 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <ui:define name="title">Apadrinamiento</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
+                <c:when test="#{controlAutorizacion.usuario == 'SOCIO'}">
+                
+                
+                </c:when>
+                 <h:button outcome="envio.xhtml" value="Realizar un envío"/>
+                 <h:button outcome="ninos.xhtml" value="Realizar apadrinamiento"/>
+            </c:when>
+             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                 <h:button outcome="envio.xhtml" value="Gestionar envíos"/>
+                 <h:button outcome="ninos.xhtml" value="Gestionar niños apadrinados"/>
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>
+

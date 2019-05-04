@@ -1,0 +1,78 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                >
+    
+    <ui:define name="title">Lista de Socios</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
+                <h1>LISTA SOCIOS</h1>
+                <div class="bordeTablaSocios">
+                    <table id="tablaListaSocios">
+                    <thead>
+				<tr>
+					<th>Nombre</th>
+                                        <th>Apellido</th>
+					<th>ID</th>
+                                        <th>Estado</th>
+                                        <th>Direccion</th>
+                                        <th>Poblacion</th>
+                                        <th>Codigo Postal</th>
+                                        <th>Provincia</th>
+                                        <th>Telefono</th>
+                                        <th>Correo</th>
+                                        <th>Sector</th>
+                                        <th>Certificado</th>
+                                        <th>Fecha de Alta</th>
+                                        <th>Fecha de Baja</th>
+                                        <th>Observaciones</th>
+                                        <th>Usuario</th>
+                                        <th>Accion</th>
+                                </tr>
+			</thead>
+                    <body>
+                        <ui:repeat var = "i" value="#{ListaSocios.socios}">
+                            <tr>
+                                <td>#{i.nombre}</td>
+                                <td>#{i.apellido}</td>
+                                <td>#{i.id}</td>
+                                <td>#{i.estado}</td>
+                                <td>#{i.direccion}</td>
+                                <td>#{i.poblacion}</td>
+                                <td>#{i.codPostal}</td>
+                                <td>#{i.provincia}</td>
+                                <td>#{i.telefono}</td>
+                                <td>#{i.correo}</td>
+                                <td>#{i.sector}</td>
+                                <td>#{i.certificado}</td>
+                                <td>#{i.fechaAlta}</td>
+                                <td>#{i.fechaBaja}</td>
+                                <td>#{i.observaciones}</td>
+                                <td>#{i.user}</td>
+                                
+                                <td> 
+                                        <h:form id = "socioaccion"> <h:column> <h:commandButton value="Ver" action="listasocios.xhtml"/> </h:column> </h:form>
+                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listasocios.xhtml"/> </h:column> </h:form>
+                                </td>
+                            </tr>
+                        </ui:repeat>
+                    </body>
+                    
+                </table>
+                </div>
+                <h:form id = "socio">
+                    <h:column>
+                        <h:commandButton value="Inserta nuevo socio"/>
+                    </h:column>               
+                </h:form>
+                
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>

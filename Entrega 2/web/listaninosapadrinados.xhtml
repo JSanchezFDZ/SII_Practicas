@@ -28,11 +28,11 @@
                             </thead>
                         
                         <tbody>
-                            <ui:repeat var = "i" value="#{ListaApadrinamientos.lApadrinamiento}">
+                            <ui:repeat var = "i" value="#{ListaApadrinamientos.getlApadrinamiento()}">
                                 <tr>                                
                                     <td>#{i.codApadrinamiento}</td>
                                     <td>#{i.codNino}</td>
-                                    <td>#{i.NumSocio}</td>
+                                    <td>#{i.numSocio}</td>
                                     <td>#{i.codEnvio}</td>
                                     
                                 </tr>

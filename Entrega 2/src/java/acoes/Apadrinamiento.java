@@ -51,6 +51,8 @@ public class Apadrinamiento implements Serializable {
     public Ninos getCodNino() {
         return codNino;
     }
+    
+    
 
     public void setCodNino(Ninos codNino) {
         this.codNino = codNino;

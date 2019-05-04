@@ -70,12 +70,12 @@
                         
                         <tr>
                             <td>Fecha Alta: </td>
-                            <td><h:inputText  value="#{i.FechaAlta}"/></td>
+                            <td><h:inputText  value="#{i.fechaAlta}"/></td>
                         </tr>  
                         
                         <tr>
                             <td>Fecha Baja: </td>
-                            <td><h:inputText  value="#{i.FechaBaja}"/></td>
+                            <td><h:inputText  value="#{i.fechaBaja}"/></td>
                         </tr>  
                         
                         <tr>
@@ -85,13 +85,16 @@
                         
                         <tr>
                             <td>Usuario: </td>
-                            <td><h:inputText  value="#{i.usuario}"/></td>
+                            <td><h:inputText  value="#{i.user}"/></td>
                         </tr>  
                                             
                         
                     </table>
                 </h:form>
-                <h:form> <h:column> <h:commandButton value="Actualizar socio"/> </h:column> </h:form>
+                <h:form> 
+                    <h:column> <h:commandButton value="Actualizar socio"/> </h:column> 
+                    <h:column> <h:commandButton value="Cancelar" action="listasocios.xhtml" /> </h:column> 
+                </h:form>
                    
             </c:when>
             <c:otherwise>

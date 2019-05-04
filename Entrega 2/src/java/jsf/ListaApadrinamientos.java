@@ -12,12 +12,9 @@ import acoes.Socios;
 import acoes.Usuario;
 import java.io.Serializable;
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.util.Date;
-=======
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
->>>>>>> master
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 

@@ -10,15 +10,22 @@ import acoes.Envio;
 import acoes.Ninos;
 import acoes.Socios;
 import acoes.Usuario;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 /**
  *
  * @author Salva
  */
-public class ListaApadrinamientos {
-    private ArrayList<Apadrinamiento> lApadrinamiento;
+    @Named(value = "ListaApadrinamientos")
+    @SessionScoped
+    
+public class ListaApadrinamientos implements Serializable {
+    private List<Apadrinamiento> lApadrinamiento;
     private Ninos ninio;
     private Socios socio;
     private Envio envio;
@@ -33,19 +40,46 @@ public class ListaApadrinamientos {
         return usuario;
     }
     
-     public void ListaApadrinamiento(){
+     public ListaApadrinamientos(){
         lApadrinamiento = new ArrayList<>();
         lApadrinamiento.add(new Apadrinamiento((long) 0001, ninio, socio, envio));
         lApadrinamiento.add(new Apadrinamiento((long) 0002, ninio, socio, envio));
     }
 
-    public ArrayList<Apadrinamiento> getlApadrinamiento() {
+
+    public Ninos getNinio() {
+        return ninio;
+    }
+
+    public void setNinio(Ninos ninio) {
+        this.ninio = ninio;
+    }
+
+    public Socios getSocio() {
+        return socio;
+    }
+
+    public void setSocio(Socios socio) {
+        this.socio = socio;
+    }
+
+    public Envio getEnvio() {
+        return envio;
+    }
+
+    public void setEnvio(Envio envio) {
+        this.envio = envio;
+    }
+
+    public List<Apadrinamiento> getlApadrinamiento() {
         return lApadrinamiento;
     }
 
-    public void setlApadrinamiento(ArrayList<Apadrinamiento> lApadrinamiento) {
+    public void setlApadrinamiento(List<Apadrinamiento> lApadrinamiento) {
         this.lApadrinamiento = lApadrinamiento;
     }
+    
+
     
      public String home() {
         

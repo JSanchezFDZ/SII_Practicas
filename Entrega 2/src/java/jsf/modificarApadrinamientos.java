@@ -9,12 +9,17 @@ import acoes.Apadrinamiento;
 import acoes.Envio;
 import acoes.Ninos;
 import acoes.Socios;
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 /**
  *
  * @author Salva
  */
-public class modificarApadrinamientos {
+@Named(value = "ModificarApadrinamientos")
+@SessionScoped
+public class modificarApadrinamientos implements Serializable{
     private Ninos ninio;
     private Apadrinamiento apadrinamiento;
     private Socios socio;

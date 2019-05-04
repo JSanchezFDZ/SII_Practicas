@@ -9,31 +9,25 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{ModificarApadrinamiento.apadrinamiento}">Modificar Apadrinamiento</h1>
+                <h1 var = "i" value="#{ModificarApadrinamientos.apadrinamiento}">Modificar Apadrinamiento</h1>
                 
                 <h:form id="ListaApadrinamiento">
                     <table>
                         <tr>
-                            <td>Nombre: </td>
+                            <td>Niño: </td>
                             <td><h:inputText  value="#{i.nombre}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Apellidos: </td>
-                            <td><h:inputText  value="#{i.apellidos}"/></td>
+                            <td>Socio: </td>
+                            <td><h:inputText  value="#{i.socio}"/></td>
                         </tr>
                         
                         <tr>
-                            <td>Aportación </td>
-                            <td><h:inputText  value="#{i.aportación}"/></td>
+                            <td>Envio: </td>
+                            <td><h:inputText  value="#{i.envio}"/></td>
                         </tr>
-                        
-                        <tr>
-                            <td>Socios </td>
-                            <td><h:inputText  value="#{i.codigoSocios}"/></td>
-                        </tr>
-
-                        
+                                                                        
                     </table>
                 </h:form>
                 <h:form> <h:column> <h:commandButton value="Actualizar apadrinamiento"/> </h:column> </h:form>

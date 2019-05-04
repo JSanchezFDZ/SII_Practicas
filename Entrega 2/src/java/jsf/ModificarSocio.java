@@ -21,7 +21,7 @@ import javax.inject.Named;
  * @author Jesús Correa Conejero
  */
 
-@Named(value = "ModificarCuota")
+@Named(value = "ModificarSocio")
 @SessionScoped
 public class ModificarSocio implements Serializable {
     private Socios socio;
@@ -130,7 +130,6 @@ public class ModificarSocio implements Serializable {
     
  
     public String verSocio(Long cod){
-        
         return "modificarSocio.xhtml";
     }
 

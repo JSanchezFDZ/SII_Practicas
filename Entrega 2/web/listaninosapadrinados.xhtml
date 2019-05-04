@@ -24,6 +24,7 @@
                                         <th>Código niño</th>
                                         <th>Número de socio</th>
                                         <th>Código de envío</th>
+                                        <th>Configuración</th>
                                 </tr>
                             </thead>
                         
@@ -34,7 +35,7 @@
                                     <td>#{i.codNino}</td>
                                     <td>#{i.numSocio}</td>
                                     <td>#{i.codEnvio}</td>
-                                    <td> <h:form> <h:column> <h:commandButton value="Gestionar niños apadrinados" action="apadrinar.xhtml"/> </h:column> </h:form> </td>
+                                    <td> <h:form id = "socio"> <h:column> <h:commandButton value="Gestionar niños apadrinados" action="#{PerfilNino.verNino(i.id)}"/> </h:column> </h:form> </td>
                                 </tr>
                             </ui:repeat>
                         </tbody>

@@ -36,6 +36,7 @@ public class ListaApadrinamientos {
      public void ListaApadrinamiento(){
         lApadrinamiento = new ArrayList<>();
         lApadrinamiento.add(new Apadrinamiento((long) 0001, ninio, socio, envio));
+        lApadrinamiento.add(new Apadrinamiento((long) 0002, ninio, socio, envio));
     }
 
     public ArrayList<Apadrinamiento> getlApadrinamiento() {

@@ -6,7 +6,9 @@
 package jsf;
 
 import acoes.Apadrinamiento;
+import acoes.Envio;
 import acoes.Ninos;
+import acoes.Socios;
 
 /**
  *
@@ -15,6 +17,8 @@ import acoes.Ninos;
 public class modificarApadrinamientos {
     private Ninos ninio;
     private Apadrinamiento apadrinamiento;
+    private Socios socio;
+    private Envio envio;
 
     public Ninos getNinio() {
         return ninio;
@@ -32,5 +36,39 @@ public class modificarApadrinamientos {
         this.apadrinamiento = apadrinamiento;
     }
     
+    public String ListaSocios(){
+        return "listasocios.xhtml";
+    }
     
+    public String ListaNinos(){
+        return "listaninos.xhtml";
+    }
+    
+    public String NinosApadrinados(){
+        return "listaninosapadrinados.xhtml";
+    }
+    
+    public String Cuotas(){
+        return "listacuotas.xhtml";
+    }
+    
+    public String MisDatos(){
+        return "socio.xhtml";
+    }
+    
+    public String ListaEnvios(){
+        return "envio.xhtml";
+    }
+    
+    public String verCuota(Long cod){
+        this.apadrinamiento = new Apadrinamiento((long) 00000, ninio, socio, envio);
+        
+        return "modificarApadrinamientos.xhtml";
+    }
+
+    /**
+     * Creates a new instance of ControlAutorizacion
+     */
+    public modificarApadrinamientos() {
+    }
 }

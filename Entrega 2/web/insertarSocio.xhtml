@@ -1,0 +1,96 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                >
+    <ui:define name="title">Formulario nuevo socio</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                <h1>Insertar cuota</h1>
+                <h:form id="soc" >
+                    <h:panelGrid columns="3" >
+                        <h:outputText value="Nombre"/>
+                        <h:inputText id ="nom" value="#{ListaSocios.socio.nombre}" />
+                        <h:message for="nombre"/>
+                        
+                        <h:outputText value="Apellido"/>
+                        <h:inputText id ="apell" value="#{ListaSocios.socio.apellido}"/>
+                        <h:message for="apell"/>
+                        
+                        <h:outputText value="Identificador"/>
+                        <h:inputText id ="ident" value="#{ListaSocios.socio.id}"/>
+                        <h:message for="ident"/>
+                        
+                        <h:outputText value="Estado"/>
+                        <h:inputText id ="estado" value="#{ListaSocios.socio.estado}"/>
+                        <h:message for="estado"/>
+                        
+                        <h:outputText value="DirecciÃ³n"/>
+                        <h:inputText id ="direccion" value="#{ListaSocios.socio.direccion}"/>
+                        <h:message for="direccion"/>
+                        
+                        <h:outputText value="Poblacion"/>
+                        <h:inputText id ="pob" value="#{ListaSocios.socio.poblacion}"/>
+                        <h:message for="pob"/>
+                        
+                        <h:outputText value="Codigo Postal"/>
+                        <h:inputText id ="codPostal" value="#{ListaSocios.socio.codPostal}"/>
+                        <h:message for="codPostal"/>
+                        
+                        <h:outputText value="Provincia"/>
+                        <h:inputText id ="prov" value="#{ListaSocios.socio.provincia}"/>
+                        <h:message for="prov"/>
+                        
+                        <h:outputText value="Telefono"/>
+                        <h:inputText id ="tlf" value="#{ListaSocios.socio.telefono}"/>
+                        <h:message for="tlf"/>
+                        
+                        <h:outputText value="Correo"/>
+                        <h:inputText id ="correo" value="#{ListaSocios.socio.correo}"/>
+                        <h:message for="correo"/>
+                        
+                        <h:outputText value="Sector"/>
+                        <h:inputText id ="sec" value="#{ListaSocios.socio.sector}"/>
+                        <h:message for="sec"/>
+                        
+                        <h:outputText value="Certificado"/>
+                        <h:inputText id ="cert" value="#{ListaSocios.socio.certificado}"/>
+                        <h:message for="cert"/>
+                        
+                        <h:outputText value="Fecha Alta"/>
+                        <ui:repeat value="#{ListaSocios.socio}" var="socio">
+                            <h:inputText id="fechaalta" value="#{socio.fechaAlta}" /><br/>
+                        </ui:repeat>
+                        <h:message for="fechaalta"/>
+                        
+                        <h:outputText value="Fecha Baja"/>
+                        <ui:repeat value="#{ListaSocios.socio}" var="socio">
+                            <h:inputText id="fechabaja" value="#{socio.fechaBaja}" /><br/>
+                        </ui:repeat>
+                        <h:message for="fechabaja"/>
+                        
+                        <h:outputText value="Observaciones"/>
+                        <h:inputText id ="obs" value="#{ListaSocios.socio.observaciones}"/>
+                        <h:message for="obs"/>                       
+
+                        <h:outputText value="Usuario"/>
+                        <ui:repeat value="#{ListaSocios.socio}" var="socio">
+                            <h:inputText id="usuario" value="#{socio.user}" /><br/>
+                        </ui:repeat>
+                        <h:message for="us"/>                    
+                        
+                        <h:commandButton value="Insertar nuevo socio" action="listasocios.xhtml"/>
+                        <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
+                        <h:commandButton value="Limpiar" type="reset" />
+
+                    </h:panelGrid>
+                </h:form>
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose> 
+    </ui:define>
+</ui:composition>

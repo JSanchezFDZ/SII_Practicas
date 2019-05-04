@@ -29,6 +29,7 @@ import javax.faces.context.FacesContext;
 public class ListaSocios implements Serializable {
     private final ArrayList<Socios> socios;
     private Usuario usuario;
+    private Socios socio;
     private final ArrayList<Cuota> cuotas;
     
     public ListaSocios(){
@@ -37,6 +38,7 @@ public class ListaSocios implements Serializable {
         cuotas.add(new Cuota((long) 1, "Estándar", "Mensual", 20));
         socios.add(new Socios(" Pepe "," Gutierrez ", new Long(70001)," Soltero ", " C/SinNombre nº 5","Narnia ",00000,"El baticano",
         "111 222 333", "pepeG@gmail.com", "", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "", usuario));
+        socio = new Socios();
     }
     
     public ArrayList<Socios> getSocios(){
@@ -50,6 +52,14 @@ public class ListaSocios implements Serializable {
     public ArrayList<Cuota> getCuotas() {
         return cuotas;
     }
+
+    public Socios getSocio() {
+        return socio;
+    }
+
+    public void setSocio(Socios socio) {
+        this.socio = socio;
+    }
     
     
     public Usuario getUsuario() {
@@ -57,7 +67,7 @@ public class ListaSocios implements Serializable {
     } 
     
     public String crearSocio(){
-        return "formSocio.xhtml";
+        return "insertarSocio.xhtml";
     }
     /**
      *

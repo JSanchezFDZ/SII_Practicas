@@ -73,6 +73,9 @@ public class Socios implements Serializable {
     public Socios(String pepe, String gutierrez, Long aLong, String soltero, String cSin_nombre_nº_5, String narnia, int i, String el_baticano, String _222_333, String pepeGgmailcom, String ____, String activo, String __, Usuario usuario, ArrayList<Apadrinamiento> apadrinamientos, List<Cuota> cuotas) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public Socios() {
+    }
     
     public Socios(String nombre, long id){
         this.nombre=nombre;

@@ -11,6 +11,7 @@ import acoes.Ninos;
 import acoes.Socios;
 import acoes.Usuario;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.faces.context.FacesContext;
 
 /**
@@ -35,6 +36,12 @@ public class ListaApadrinamientos {
     
      public void ListaApadrinamiento(){
         lApadrinamiento = new ArrayList<>();
+        
+        ninio = (new Ninos(new Long(1), "Bruce", "Wayne", new Date(2000, 11, 21)));
+        socio = (new Socios(" Pepe "," Gutierrez ", new Long(70001)," Soltero ", " C/SinNombre nº 5","Narnia ",00000,"El baticano",
+        "111 222 333", "pepeG@gmail.com", "", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "", usuario));
+        envio = (new Envio(Long.parseLong("1"),(new Apadrinamiento((long) 0001, ninio, socio, envio)), new Date(000, 0, 0), new Date(004, 0, 0), "N/A"));
+                
         lApadrinamiento.add(new Apadrinamiento((long) 0001, ninio, socio, envio));
         lApadrinamiento.add(new Apadrinamiento((long) 0002, ninio, socio, envio));
     }

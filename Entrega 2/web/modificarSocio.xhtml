@@ -1,0 +1,102 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                >
+    
+    <ui:define name="title">Modificar Socio</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
+                <h1 var = "i" value="#{ModificarSocio.socio}">Modificar Socio</h1>
+                
+                <h:form id="ListaSocio">
+                    <table>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText  value="#{i.nombre}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Apellidos: </td>
+                            <td><h:inputText  value="#{i.apellido}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Estado: </td>
+                            <td><h:inputText  value="#{i.estado}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Dirección: </td>
+                            <td><h:inputText  value="#{i.direccion}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Poblacion: </td>
+                            <td><h:inputText  value="#{i.poblacion}"/></td>
+                        </tr>      
+                        
+                        <tr>
+                            <td>Código postal: </td>
+                            <td><h:inputText  value="#{i.codPostal}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Provincia: </td>
+                            <td><h:inputText  value="#{i.provincia}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Telefóno: </td>
+                            <td><h:inputText  value="#{i.telefono}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Correo: </td>
+                            <td><h:inputText  value="#{i.correo}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Sector: </td>
+                            <td><h:inputText  value="#{i.sector}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Certificado: </td>
+                            <td><h:inputText  value="#{i.certificado}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Fecha Alta: </td>
+                            <td><h:inputText  value="#{i.FechaAlta}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Fecha Baja: </td>
+                            <td><h:inputText  value="#{i.FechaBaja}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Observaciones: </td>
+                            <td><h:inputText  value="#{i.observaciones}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Usuario: </td>
+                            <td><h:inputText  value="#{i.usuario}"/></td>
+                        </tr>  
+                                            
+                        
+                    </table>
+                </h:form>
+                <h:form> <h:column> <h:commandButton value="Actualizar socio"/> </h:column> </h:form>
+                   
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>

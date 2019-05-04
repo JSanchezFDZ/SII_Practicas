@@ -54,7 +54,7 @@
                                 <td>#{i.user}</td>
                                 
                                 <td> 
-                                        <h:form id = "socioaccion"> <h:column> <h:commandButton value="Ver" action="listasocios.xhtml"/> </h:column> </h:form>
+                                        <h:form id = "socioaccion"> <h:column> <h:commandButton value="Ver" action=#{ModificarSocio.verSocio(i.id)}/> </h:column> </h:form>
                                         <h:form> <h:column> <h:commandButton value="Borrar" action="listasocios.xhtml"/> </h:column> </h:form>
                                 </td>
                             </tr>

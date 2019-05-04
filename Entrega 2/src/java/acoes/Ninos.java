@@ -255,7 +255,7 @@ public class Ninos implements Serializable {
 
     @Override
     public String toString() {
-        return "acoes.Ninos[ id=" + id + " ]";
+        return nombre + " -> " + id;
     }
     
 }

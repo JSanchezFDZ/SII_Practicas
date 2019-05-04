@@ -7,10 +7,6 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
-                <c:when test="#{controlAutorizacion.usuario == 'SOCIO'}">
-                
-                
-                </c:when>
                  <h:button outcome="envio.xhtml" value="Realizar un envío"/>
                  <h:button outcome="ninos.xhtml" value="Realizar apadrinamiento"/>
             </c:when>

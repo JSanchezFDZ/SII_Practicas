@@ -32,7 +32,7 @@
                                     <td>#{i.codigoSocios}</td>
                                     
                                     <td> 
-                                        <h:form id = "cuotaaccion"> <h:column> <h:commandButton value="Ver" action="listacuotas.xhtml"/> </h:column> </h:form>
+                                        <h:form id = "cuotaaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarCuota.verCuota(i.codigoCuota)}"/> </h:column> </h:form>
                                         <h:form> <h:column> <h:commandButton value="Borrar" action="listacuotas.xhtml"/> </h:column> </h:form>
                                     </td>
                                     

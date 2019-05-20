@@ -1,0 +1,88 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Insertar nuevo socio</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
+                <h1>Insertar socio</h1>
+               
+                <f:view>
+                    <h:form>
+                        <h:panelGrid columns="2">
+  
+                            <h:outputLabel value="Nombre:" for="nombre" />
+                            <h:inputText id="nombre" value="#{ListaSocios.s.nombre}" title="Nombre" />
+                            
+                            <h:outputLabel value="Apellido:" for="apellido" />
+                            <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" title="Apellido" />
+                            
+                            <h:outputLabel value="Estado:" for="estado" />
+                            <h:inputText id="estado" value="#{ListaSocios.s.estado}" title="Estado" />
+                            
+                            <h:outputLabel value="Direccion:" for="direccion" />
+                            <h:inputText id="direccion" value="#{ListaSocios.s.direccion}" title="Direccion" />
+                            
+                            <h:outputLabel value="Poblacion:" for="poblacion" />
+                            <h:inputText id="poblacion" value="#{ListaSocios.s.poblacion}" title="Poblacion" />
+                            
+                            <h:outputLabel value="CodPostal:" for="codPostal" />
+                            <h:inputText id="codPostal" value="#{ListaSocios.s.codPostal}" title="CodPostal" />
+                            
+                            <h:outputLabel value="Provincia:" for="provincia" />
+                            <h:inputText id="provincia" value="#{ListaSocios.s.provincia}" title="Provincia" />
+                            
+                            <h:outputLabel value="Telefono:" for="telefono" />
+                            <h:inputText id="telefono" value="#{ListaSocios.s.telefono}" title="Telefono" />
+                            
+                            <h:outputLabel value="Correo:" for="correo" />
+                            <h:inputText id="correo" value="#{ListaSocios.s.correo}" title="Correo" />
+                            
+                            <h:outputLabel value="Sector:" for="sector" />
+                            <h:inputText id="sector" value="#{ListaSocios.s.sector}" title="Sector" />
+                            
+                            <h:outputLabel value="FechaAlta:" for="fechaAlta" />
+                            <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" title="Fecha Alta" />
+                            
+                            <h:outputLabel value="FechaBaja:" for="fechaBaja" />
+                            <h:inputText id="fechaBaja" value="#{ListaSocios.s.fechaBaja}" title="Fecha Baja" />
+                            
+                            <h:outputLabel value="Observaciones:" for="observaciones" />
+                            <h:inputText id="observaciones" value="#{ListaSocios.s.observaciones}" title="Observaciones" />
+                                       
+                            <h:outputLabel value="Certificado:" for="certificado" />
+                            <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
+                            
+                             <h:outputLabel value="Usuario:" for="usuario" />
+                            <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                             
+                            <h:outputLabel value="Apadr:" for="apadr" />
+                            <h:selectOneMenu id="apadr" value="#{ListaSocios.s.apadr}" title="Apadrinamiento" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            
+                        </h:panelGrid>
+                        
+                    </h:form>
+                </f:view>
+                <h:form>
+                        <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add()}" />
+                        <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
+                        <h:commandButton value="Limpiar" type="reset" />
+                </h:form>
+
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose> 
+    </ui:define>
+</ui:composition>

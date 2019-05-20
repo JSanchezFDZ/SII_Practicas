@@ -1,0 +1,113 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <ui:define name="title">Lista de Socios</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
+
+                <h1>LISTA SOCIOS</h1>
+                <h:form>
+                    <h:dataTable var="s" value="#{ListaSocios.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                        <h:column>
+                            <f:facet name="header">Id</f:facet>
+                            <h:outputText value="#{s.id}"></h:outputText>
+                        </h:column> 
+                        <h:column>
+                            <f:facet name="header">Nombre</f:facet>
+                            <h:outputText value="#{s.nombre}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Apellido</f:facet>
+                            <h:outputText value="#{s.apellido}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Correo</f:facet>
+                            <h:outputText value="#{s.correo}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Dirección</f:facet>
+                            <h:outputText value="#{s.direccion}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Codigo Postal</f:facet>
+                            <h:outputText value="#{s.codPostal}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Certificado</f:facet>
+                            <h:outputText value="#{s.certificado}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Estado</f:facet>
+                            <h:outputText value="#{s.estado}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Población</f:facet>
+                            <h:outputText value="#{s.poblacion}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Provincia</f:facet>
+                            <h:outputText value="#{s.provincia}"></h:outputText>
+                        </h:column>       
+                        <h:column>
+                            <f:facet name="header">Sector</f:facet>
+                            <h:outputText value="#{s.sector}"></h:outputText>
+                        </h:column>   
+                        <h:column>
+                            <f:facet name="header">Telefóno</f:facet>
+                            <h:outputText value="#{s.telefono}"></h:outputText>
+                        </h:column>        
+                        <h:column>
+                            <f:facet name="header">Fecha Alta</f:facet>
+                            <h:outputText value="#{s.fechaAlta}"></h:outputText>
+                        </h:column>       
+                        <h:column>
+                            <f:facet name="header">Fecha Baja</f:facet>
+                            <h:outputText value="#{s.fechaBaja}"></h:outputText>
+                        </h:column>     
+                        <h:column>
+                            <f:facet name="header">Población</f:facet>
+                            <h:outputText value="#{s.poblacion}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Usuario</f:facet>
+                            <h:outputText value="#{s.usuario}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Apadrinamiento</f:facet>
+                            <h:outputText value="#{s.apadr}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Cuotas</f:facet>
+                            <h:outputText value="#{s.cuota}"></h:outputText>
+                        </h:column>  
+                        <h:column>
+                            <f:facet name="header">Observaciones</f:facet>
+                            <h:outputText value="#{s.observaciones}"></h:outputText>
+                        </h:column>                          
+                        <h:column>
+                            <f:facet name="header">Opción</f:facet>
+                            <h:commandLink value="Eliminar" action="#{ListaSocios.delete(s)}" 
+                                           onclick="return confirm('¿Estás seguro?')"></h:commandLink>
+                            <br></br>
+                            <h:commandLink value="Editar" action="#{ListaSocios.edit(s)}"></h:commandLink>                            
+                        </h:column> 
+                        
+                    </h:dataTable>
+
+                    <h:column>
+                        <h:commandButton value="Inserta nuevo socio" action="#{ListaSocios.crearSocio()}"/>
+                    </h:column>               
+                </h:form>
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>

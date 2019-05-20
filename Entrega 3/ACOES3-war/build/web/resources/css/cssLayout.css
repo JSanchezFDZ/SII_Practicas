@@ -1,0 +1,170 @@
+#top {
+    position: relative;
+    background-color: #0099e0;
+    color: white;
+    height: 7em;
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+}
+
+#menu {
+    text-align: center;
+}
+
+#login {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#logo {
+    padding: 10px 0px 5px 0px;
+    text-align: center;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #0099e0;
+    color: white;
+    height: 4em;
+    text-align: center;
+    display: block;
+}
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}
+
+#left {
+    float: left;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #ffffff;
+    height: 460px;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    width: 100%;
+    padding: 0px 0px 0px 10px;
+}
+@media screen and (min-height: 470px){
+    .center_content {
+        height: 100%;
+    }
+}
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin-left: 170px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:hover {
+    color: #c2dfef;
+}
+
+ul.menulist li {
+    list-style: none;
+    display:inline;
+    margin: 1em;
+}
+
+#scl{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#tablaListaCuotas{
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+/* CUOTAS */
+#tablaListaCuotas{
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bordeTablaCuotas table{
+    border: 1px solid black;
+}
+
+.bordeTablaCuotas th{
+    border: 1px solid black;
+}
+
+.bordeTablaCuotas td{
+    border: 1px solid black;
+}
+
+/* NIÑOS */
+#tablaListaNinos{
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bordeTablaNinos table{
+    border: 1px solid black;
+}
+
+.bordeTablaNinos th{
+    border: 1px solid black;
+}
+
+.bordeTablaNinos td{
+    border: 1px solid black;
+}
+
+/* SOCIOS */
+#tablaListaSocios{
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bordeTablaSocios table{
+    border: 1px solid black;
+}
+
+.bordeTablaSocios th{
+    border: 1px solid black;
+}
+
+.bordeTablaSocios td{
+    border: 1px solid black;
+}

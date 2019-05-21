@@ -42,7 +42,7 @@ public class ListaApadrinamientos implements Serializable {
         
         ninio = (new Ninos(new Long(1), "Bruce", "Wayne", new Date(2000, 11, 21)));
         socio = (new Socios(" Pepe "," Gutierrez ", new Long(70001)," Soltero ", " C/SinNombre nº 5","Narnia ",00000,"El baticano",
-        "111 222 333", "pepeG@gmail.com", "", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "", usuario));
+        "111 222 333", "pepeG@gmail.com", "", "Activo", null, null, "", usuario));
                 
         lApadrinamiento.add(new Apadrinamiento((long) 0001, ninio, socio, envio));
         lApadrinamiento.add(new Apadrinamiento((long) 0002, ninio, socio, envio));

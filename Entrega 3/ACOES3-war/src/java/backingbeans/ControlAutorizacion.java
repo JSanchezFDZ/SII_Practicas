@@ -30,6 +30,10 @@ public class ControlAutorizacion implements Serializable {
         return socios;
     }
     
+    public String ListaUsuarios(){
+        return "listausuarios.xhtml";
+    }
+    
     public String ListaSocios(){
         return "listasocios.xhtml";
     }

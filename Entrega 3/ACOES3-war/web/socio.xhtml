@@ -2,41 +2,67 @@
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:define name="title">Página para el socio</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
-                <h1>Usuario socio</h1>
-                
-                
-                
-                <h3>Bienvenido <h:outputText value="#{controlAutorizacion.usuario}"/></h3>
-                <p>Nombre de usuario: <h:outputText value="#{controlAutorizacion.usuario}"/></p>
-                
-                
-                 <p>Apellido: Alcalino</p>
-                     <form>
-                     <p>Estado:<input type="text" name="estado" value="Casado"/></p>
-                     <p>Dirección:<input type="text" name="direccion" value="c/Roja nº3"/></p>
+               
+                <f:view>
+                    
                      
-                     
-                     <p>Código postal: <input type="text" name="cd" value="29754"/></p>
-                     <p>Provincia: <input type="text" name="provincia" value="Malaguf"/></p>
-                     <p>Población: <input type="text" name="poblacion" value="Mijo"/></p>
-                     
-                     <p>Teléfono: <input type="text" name="telf" value="962320484"/></p>
-                     <p>Correo: <input type="text" name="correo" value="pe.rro@correo.net"/></p>
-                     <p>Sector: <input type="text" name="sector" value="Agrario"/></p>
-                 </form>
-                 
+
+
+                    <h:form>
+                        <h1><h:outputText value="Mis datos"/></h1>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Usuario:" for="usuario" />
+                           <!-- <h:selectOneMenu id="usuario" value="#{ListaApadrinamientos.socio.usuario}" title="Usuario" >
+                              
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="Apadr:" for="apadr" />
+                            <h:selectOneMenu id="apadr" value="#{ListaApadrinamientos.socio.apadr}" title="Apadr" >
+                              
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu> -->
+                            <h:outputLabel value="Id:" for="id" />
+                            <h:outputLabel id="id" value="#{ListaApadrinamientos.socio.id}" title="Id" />
+                            <h:outputLabel value="Nombre:" for="nombre" />
+                            <h:outputLabel id="nombre" value="#{ListaApadrinamientos.socio.nombre}" title="Nombre" />
+                            <h:outputLabel value="Apellido:" for="apellido" />
+                            <h:outputLabel id="apellido" value="#{ListaApadrinamientos.socio.apellido}" title="Apellido" />
+                            <h:outputLabel value="Estado:" for="estado" />
+                            <h:inputText id="estado" value="#{ListaApadrinamientos.socio.estado}" title="Estado" />
+                            <h:outputLabel value="Direccion:" for="direccion" />
+                            <h:inputText id="direccion" value="#{ListaApadrinamientos.socio.direccion}" title="Direccion" />
+                            <h:outputLabel value="Poblacion:" for="poblacion" />
+                            <h:inputText id="poblacion" value="#{ListaApadrinamientos.socio.poblacion}" title="Poblacion" />
+                            <h:outputLabel value="CodPostal:" for="codPostal" />
+                            <h:inputText id="codPostal" value="#{ListaApadrinamientos.socio.codPostal}" title="CodPostal" />
+                            <h:outputLabel value="Provincia:" for="provincia" />
+                            <h:inputText id="provincia" value="#{ListaApadrinamientos.socio.provincia}" title="Provincia" />
+                            <h:outputLabel value="Telefono:" for="telefono" />
+                            <h:inputText id="telefono" value="#{ListaApadrinamientos.socio.telefono}" title="Telefono" />
+                            <h:outputLabel value="Correo:" for="correo" />
+                            <h:inputText id="correo" value="#{ListaApadrinamientos.socio.correo}" title="Correo" />
+                            <h:outputLabel value="Sector:" for="sector" />
+                            <h:inputText id="sector" value="#{ListaApadrinamientos.socio.sector}" title="Sector" />
+                            <h:outputLabel value="FechaAlta:" for="fechaAlta" />
+                            <h:outputLabel id="fechaAlta" value="#{ListaApadrinamientos.socio.fechaAlta}" title="FechaAlta" />
+                            <h:outputLabel value="FechaBaja:" for="fechaBaja" />
+                            <h:outputLabel id="fechaBaja" value="#{ListaApadrinamientos.socio.fechaBaja}" title="FechaBaja" />
+                            <h:outputLabel value="Observaciones:" for="observaciones" />
+                            <h:outputLabel id="observaciones" value="#{ListaApadrinamientos.socio.observaciones}" title="Observaciones" />
+                            <h:outputLabel value="Certificado:" for="certificado" />
+                            <h:outputLabel id="certificado" value="#{ListaApadrinamientos.socio.certificado}" title="Certificado" />
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
+
                 
-                 
-                 <p>Certificado: N/A</p>
-                 <p>Fecha de alta: 25/12/2018</p>
-                 <p>Fecha de baja: --</p>
-                 <p>Observaciones: No</p>
-                 
+                
                 <button onclick="actualizarInfo()">Guardar cambios!</button>
                 
                  <h:form id="cuota">

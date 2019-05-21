@@ -40,10 +40,16 @@
              <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA DE ENVÍOS</h1>
                 <table>  
-                    <ui:repeat var = "i" value="#{listaEnvios.getEnvios()}">
-                        <tr>
-                            <td>#{i}</td>
-                        </tr>   
+                    <ui:repeat var = "i" value="#{ListaEnvios.envios}">
+                     
+                            <tr>
+                         <td>#{i.codEnvio}</td>
+                         <td>#{i.codApadrinamiento.codApadrinamiento}</td>
+                         <td>#{i.fechaEnvio}</td>
+                         <td>#{i.fechaLlegada}</td>
+                         <td>#{i.observaciones}</td>
+                     </tr>
+                         
                     </ui:repeat>           
                 </table>
             </c:when> 

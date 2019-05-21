@@ -25,7 +25,7 @@ public class DatosPrueba {
     public DatosPrueba() {
         usuario = new Usuario("pepe", "asdf", Usuario.Rol.SOCIO);
         socio = new Socios(" Pepe "," Gutierrez ", new Long(70001)," Soltero ", " C/SinNombre nº 5","Narnia ",00000,"El baticano",
-        "111 222 333", "pepeG@gmail.com", "", "Activo", new Date(118, 5, 3), new Date(000, 0, 0), "", usuario);
+        "111 222 333", "pepeG@gmail.com", "", "Activo", null, null, "", usuario);
         padrino = new Apadrinamiento(Long.parseLong("111"), null, socio, envio);
     }
     

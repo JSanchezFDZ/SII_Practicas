@@ -85,17 +85,14 @@
                         <h:column>
                             <f:facet name="header">Cuotas</f:facet>
                             <h:outputText value="#{s.cuota}"></h:outputText>
-                        </h:column>  
-                        <h:column>
-                            <f:facet name="header">Observaciones</f:facet>
-                            <h:outputText value="#{s.observaciones}"></h:outputText>
-                        </h:column>                          
+                        </h:column>                    
                         <h:column>
                             <f:facet name="header">Opción</f:facet>
+                            <h:commandLink value="Editar" action="#{ListaSocios.edit(s)}"></h:commandLink>
+                            <br></br>
                             <h:commandLink value="Eliminar" action="#{ListaSocios.delete(s)}" 
                                            onclick="return confirm('¿Estás seguro?')"></h:commandLink>
-                            <br></br>
-                            <h:commandLink value="Editar" action="#{ListaSocios.edit(s)}"></h:commandLink>                            
+                            <br></br>                           
                         </h:column> 
                         
                     </h:dataTable>

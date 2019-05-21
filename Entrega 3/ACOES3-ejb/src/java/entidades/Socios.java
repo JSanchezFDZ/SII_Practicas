@@ -38,10 +38,8 @@ public class Socios implements Serializable {
     private String correo;
     private String sector;
     private String certificado;
-    @Temporal(TemporalType.DATE)
-    private Date FechaAlta;
-    @Temporal(TemporalType.DATE)
-    private Date FechaBaja;
+    private String FechaAlta;
+    private String FechaBaja;
     private String observaciones;
     @OneToOne
     private Usuario usuario;
@@ -52,7 +50,7 @@ public class Socios implements Serializable {
     
     
     public Socios (String nombre,String apellido,Long id,String estado,String direccion,String poblacion,int codPostal,
-             String provincia, String telefono,String correo,String sector,String certificado, Date FechaAlta, Date FechaBaja,
+             String provincia, String telefono,String correo,String sector,String certificado, String FechaAlta, String FechaBaja,
             String observaciones,Usuario usuario){
             
             this.nombre = nombre;
@@ -194,19 +192,19 @@ public class Socios implements Serializable {
         this.sector = sector;
     }
 
-    public Date getFechaAlta() {
+    public String getFechaAlta() {
         return FechaAlta;
     }
 
-    public void setFechaAlta(Date FechaAlta) {
+    public void setFechaAlta(String FechaAlta) {
         this.FechaAlta = FechaAlta;
     }
 
-    public Date getFechaBaja() {
+    public String getFechaBaja() {
         return FechaBaja;
     }
 
-    public void setFechaBaja(Date FechaBaja) {
+    public void setFechaBaja(String FechaBaja) {
         this.FechaBaja = FechaBaja;
     }
 

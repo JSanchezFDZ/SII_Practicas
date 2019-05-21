@@ -3,16 +3,16 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <ui:define name="title">Página para el usuario normal</ui:define>
+    <ui:define name="title">Página para el socio</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                 <h1>Usuario socio</h1>
                 
                 
                 
                 <h3>Bienvenido <h:outputText value="#{controlAutorizacion.usuario}"/></h3>
-                <p>ID de usuario: <h:outputText value="#{controlAutorizacion.ID}"/></p>
+                <p>Nombre de usuario: <h:outputText value="#{controlAutorizacion.usuario}"/></p>
                 
                 
                  <p>Apellido: Alcalino</p>

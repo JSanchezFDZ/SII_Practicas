@@ -11,6 +11,7 @@
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                 <h1>Insertar socio</h1>
                
+                <h:body>
                 <f:view>
                     <h:form>
                         <h:panelGrid columns="2">
@@ -50,9 +51,6 @@
                             
                             <h:outputLabel value="FechaBaja:" for="fechaBaja" />
                             <h:inputText id="fechaBaja" value="#{ListaSocios.s.fechaBaja}" title="Fecha Baja" />
-                            
-                            <h:outputLabel value="Observaciones:" for="observaciones" />
-                            <h:inputText id="observaciones" value="#{ListaSocios.s.observaciones}" title="Observaciones" />
                                        
                             <h:outputLabel value="Certificado:" for="certificado" />
                             <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
@@ -69,16 +67,14 @@
                                 <f:selectItems value="#{fixme}"/>
                             </h:selectOneMenu>
                             
+                            <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add()}" />
+                            <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
+                            <h:commandButton value="Limpiar" type="reset" />                            
                         </h:panelGrid>
                         
                     </h:form>
                 </f:view>
-                <h:form>
-                        <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add()}" />
-                        <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
-                        <h:commandButton value="Limpiar" type="reset" />
-                </h:form>
-
+                </h:body>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

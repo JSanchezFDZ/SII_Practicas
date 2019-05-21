@@ -10,8 +10,9 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
+                
+                <h:body>
                 <f:view>
-
 
                     <h:form>
                         <h:panelGrid columns="2">
@@ -73,17 +74,13 @@
                                 <!-- TODO: update below reference to list of available items-->
                                 <f:selectItems value="#{fixme}"/>
                             </h:selectOneMenu>
-                            
+                            <h:commandButton value="Modificar socio" action="#{ListaSocios.edit()}" />
+                            <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
                         </h:panelGrid>
                     </h:form>
                 </f:view>
-                
-                <h:form>
-                    <h:commandButton value="Modificar socio" action="#{ListaSocios.edit()}" />
-                    <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
-                </h:form>
+                </h:body>
 
-                   
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

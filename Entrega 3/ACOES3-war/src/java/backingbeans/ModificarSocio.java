@@ -7,10 +7,7 @@ package backingbeans;
 
 import entidades.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
@@ -79,11 +76,11 @@ public class ModificarSocio implements Serializable {
     }
 
 
-    public Date getFechaAlta() {
+    public String getFechaAlta() {
         return this.socio.getFechaAlta();
     }
 
-    public Date getFechaBaja() {
+    public String getFechaBaja() {
         return this.socio.getFechaBaja();
     }
 

@@ -18,11 +18,11 @@
             <div id="logo" class="logo"><img alt="Logo de ACOES" align="center" src="./resources/img/logo.png"/></div>
             <h:form id="menu">
                 <ul class="menulist">
-                    <c:if test="#{controlAutorizacion.usuario.rol != null}">
+                    <c:if test="#{controlAutorizacion.getUsuario().getRol() != null}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inicio"/></li>
                     </c:if>
                     <!-- OPCIONES PARA SOCIO-->
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
+                    <c:if test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                         <li><h:commandLink action="#{controlAutorizacion.MisDatos()}" value="Mis datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.NinosApadrinados()}" value="Niños apadrinados"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.ListaEnvios()}" value="Listar envíos"/></li>
@@ -30,10 +30,11 @@
                     </c:if>
                     
                     <!-- OPCIONES PARA ADMINISTRADOR-->
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                    <c:if test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                         <li><h:commandLink action="#{controlAutorizacion.ListaSocios()}" value="Lista socios"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.ListaNinos()}" value="Lista niños"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.NinosApadrinados()}" value="Apadrinamientos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.ListaEnvios()}" value="Gestionar envíos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.Cuotas()}" value="Cuotas"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.ListaUsuarios()}" value="Usuarios"/></li>
                     </c:if>

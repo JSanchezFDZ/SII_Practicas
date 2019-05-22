@@ -23,7 +23,6 @@ public class ListaUsuarios implements Serializable {
     @EJB
     private UsuarioFacade usuarioFacade;
     private Usuario u = new Usuario();
-    private List<Usuario> usuarios;
 
     
     /*Constructor vacio*/
@@ -34,6 +33,7 @@ public class ListaUsuarios implements Serializable {
     public List<Usuario> findAll(){
         return this.usuarioFacade.findAll();
     }
+    
 
     public Usuario getU() {
         return u;

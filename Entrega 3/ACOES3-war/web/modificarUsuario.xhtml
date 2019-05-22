@@ -21,7 +21,7 @@
                                 <h:inputText readonly="true" id="usuario" value="#{ListaUsuarios.u.usuario}" title="Usuario" />                                
                                 
                                 <h:outputLabel value="Pass:" for="pass" />
-                                <h:inputSecret id="pass" value="#{ListaUsuarios.u.pass}" title="Pass" />
+                                <h:inputSecret id="pass" value="#{ListaUsuarios.u.pass}" title="Pass" required="true" requiredMessage="Establezca una contraseña" />
                                 
                                 <h:outputLabel value="Apellidos:" for="apellidos" />
                                 <h:inputText id="apellidos" value="#{ListaUsuarios.u.apellidos}" title="Apellidos" />
@@ -30,7 +30,9 @@
                                 <h:inputText id="email" value="#{ListaUsuarios.u.email}" title="Email" />
                                 
                                 <h:outputLabel value="Rol:" for="rol" />
-                                <h:inputText id="rol" value="#{ListaUsuarios.u.rol}" title="Rol" />
+                                <h:selectOneMenu id="rol" value="#{ListaUsuarios.u.rol}" >
+                                    <f:selectItems value="#{ListaUsuarios.roles}" />
+                                </h:selectOneMenu>
                                 
 
                             <h:commandButton value="Modificar Usuario" action="#{ListaUsuarios.edit()}" />

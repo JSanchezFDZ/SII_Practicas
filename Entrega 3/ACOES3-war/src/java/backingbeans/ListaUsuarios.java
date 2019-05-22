@@ -6,6 +6,7 @@
 package backingbeans;
 
 import entidades.*;
+import entidades.Usuario.Rol;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -27,13 +28,16 @@ public class ListaUsuarios implements Serializable {
     
     /*Constructor vacio*/
     public ListaUsuarios(){
-
+        
     }
     
     public List<Usuario> findAll(){
         return this.usuarioFacade.findAll();
     }
     
+    public Rol[] getRoles(){
+        return Rol.values();
+    }
 
     public Usuario getU() {
         return u;

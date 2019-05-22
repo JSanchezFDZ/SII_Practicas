@@ -56,9 +56,9 @@
                             <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
                             
                              <h:outputLabel value="Usuario:" for="usuario" />
-                            <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                             <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" converter="ConvertidorJSF" >
+                                <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
+                                <f:selectItems value="#{ListaUsuarios.findAll()}"/>
                             </h:selectOneMenu>
                              
                             <h:outputLabel value="Apadr:" for="apadr" />

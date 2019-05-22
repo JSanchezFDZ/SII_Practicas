@@ -9,11 +9,9 @@ import entidades.*;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
-import javax.faces.context.FacesContext;
+import javax.ejb.EJB;
+import modelos.NinosFacade;
 
 /**
  *
@@ -23,57 +21,48 @@ import javax.faces.context.FacesContext;
 @Named(value = "ListaNinos")
 @SessionScoped
 public class ListaNinos implements Serializable{
-    private ArrayList<Ninos> ninos;
-    private Usuario usuario;
+    @EJB
+    private NinosFacade ninosFacade;
+    private Ninos s = new Ninos();
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }  
     
+    /*Constructor vacio*/
     public ListaNinos(){
-        ninos = new ArrayList<>();
-        ninos.add(new Ninos(new Long(1), "Bruce", "Wayne", new Date(2000, 11, 21)));
-        ninos.add(new Ninos(new Long(2), "Tony", "Stark", new Date(1999, 11, 21)));
+
     }
     
-    public ArrayList<Ninos> getNinos(){
-        return ninos;
+    public List<Ninos> findAll(){
+        return this.ninosFacade.findAll();
+    }
+
+    public Ninos getS() {
+        return s;
+    }
+
+    public void setS(Ninos s) {
+        this.s = s;
     }
     
-    public String registrarNino(){
+    public String crearNino(){
         return "registrarnino.xhtml";
     }
     
-    public String home() {
-        // Si no ha iniciado sesion, le lleva al login
-        if(getUsuario()==null){
-            return "login.xhtml";
-        }
-        
-        // Si el usuario es un administrador, le lleva a la pagina de niños solicitada
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
-            return "ListaNinos.xhtml";
-        }
-        
-        // Si el usuario es socio, le lleva a la pagina de socios
-        if(getUsuario().getRol().equals(getUsuario().getRol().SOCIO)){
-            return "login.xhtml";
-        }
-        
-        return null;
+    public String add(){
+        this.ninosFacade.create(this.s);
+        return "listaninos.xhtml";
     }
     
-    public String logout()
-    {
-        // Destruye la sesión (y con ello, el ámbito de este bean)
-        FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.getExternalContext().invalidateSession();
-        usuario = null;
-        
-        return "login.xhtml";
+    public void delete(Ninos s){
+        this.ninosFacade.remove(s);
+    }
+    
+    public String edit(Ninos s){
+        this.s = s;
+        return "perfilnino.xhtml";
+    }
+    
+    public String edit(){
+        this.ninosFacade.edit(this.s);
+        return "listaninos.xhtml";
     }
 }

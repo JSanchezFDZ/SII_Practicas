@@ -34,12 +34,9 @@ public class Ninos implements Serializable {
     private String sexo;
     private String agente;
     private String foto;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaNac;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaAlta;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaBaja;
+    private String fechaNac;
+    private String fechaAlta;
+    private String fechaBaja;
     private String proyecto;
     private String gradoCurso;
     private String comunidadProcedencia;
@@ -51,7 +48,7 @@ public class Ninos implements Serializable {
     public Ninos() {
     }
 
-    public Ninos(Long id, String nombre, String apellidos, String estado, String beca, String sexo, String agente, String foto, Date fechaNac, Date fechaAlta, Date fechaBaja, String proyecto, String gradoCurso, String comunidadProcedencia, String coloniaActual, String observaciones, Apadrinamiento codApadrinamiento) {
+    public Ninos(Long id, String nombre, String apellidos, String estado, String beca, String sexo, String agente, String foto, String fechaNac, String fechaAlta, String fechaBaja, String proyecto, String gradoCurso, String comunidadProcedencia, String coloniaActual, String observaciones, Apadrinamiento codApadrinamiento) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -81,20 +78,13 @@ public class Ninos implements Serializable {
         this.nombre = nombre;
         this.apellidos = apellidos;
     }
-
-    public Ninos(Long id, String nombre, String apellidos, Date fechaNac) {
+/*
+    public Ninos(Long id, String nombre, String apellidos, String fechaNac) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.fechaNac = fechaNac;
-    }
-
-    public Ninos(Long id, String nombre, String apellidos, String observaciones) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.observaciones = observaciones;
-    }
+    }*/
     
     public Long getId() {
         return id;
@@ -104,9 +94,9 @@ public class Ninos implements Serializable {
         this.id = id;
     }
 
-    public static long getSerialVersionUID() {
+    /*public static long getSerialVersionUID() {
         return serialVersionUID;
-    }
+    }*/
 
     public String getNombre() {
         return nombre;
@@ -136,15 +126,15 @@ public class Ninos implements Serializable {
         return foto;
     }
 
-    public Date getFechaNac() {
+    public String getFechaNac() {
         return fechaNac;
     }
 
-    public Date getFechaAlta() {
+    public String getFechaAlta() {
         return fechaAlta;
     }
 
-    public Date getFechaBaja() {
+    public String getFechaBaja() {
         return fechaBaja;
     }
 
@@ -196,15 +186,15 @@ public class Ninos implements Serializable {
         this.foto = foto;
     }
 
-    public void setFechaNac(Date fechaNac) {
+    public void setFechaNac(String fechaNac) {
         this.fechaNac = fechaNac;
     }
 
-    public void setFechaAlta(Date fechaAlta) {
+    public void setFechaAlta(String fechaAlta) {
         this.fechaAlta = fechaAlta;
     }
 
-    public void setFechaBaja(Date fechaBaja) {
+    public void setFechaBaja(String fechaBaja) {
         this.fechaBaja = fechaBaja;
     }
 

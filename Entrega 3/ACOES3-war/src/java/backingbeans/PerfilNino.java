@@ -69,15 +69,15 @@ public class PerfilNino implements Serializable {
         return this.nino.getFoto();
     }
 
-    public Date getFechaNac() {
+    public String getFechaNac() {
         return this.nino.getFechaNac();
     }
 
-    public Date getFechaAlta() {
+    public String getFechaAlta() {
         return this.nino.getFechaAlta();
     }
 
-    public Date getFechaBaja() {
+    public String getFechaBaja() {
         return this.nino.getFechaBaja();
     }
 
@@ -125,41 +125,10 @@ public class PerfilNino implements Serializable {
         return "envio.xhtml";
     }
     
- 
-    public String verNino(Long id){
-        this.nino = new Ninos(new Long(1), "Bruce", "Wayne", "Es rico");
-        
+    public String verNino(Long id){        
         return "perfilnino.xhtml";
     }
-    
-    public String home() {
-        // Si no ha iniciado sesion, le lleva al login
-        if(getUsuario()==null){
-            return "login.xhtml";
-        }
-        
-        // Si el usuario es un administrador, le lleva a la pagina de niños solicitada
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
-            return "ListaNinos.xhtml";
-        }
-        
-        // Si el usuario es socio, le lleva a la pagina de socios
-        if(getUsuario().getRol().equals(getUsuario().getRol().SOCIO)){
-            return "login.xhtml";
-        }
-        
-        return null;
-    }
-    
-    public String logout()
-    {
-        // Destruye la sesión (y con ello, el ámbito de este bean)
-        FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.getExternalContext().invalidateSession();
-        usuario = null;
-        
-        return "login.xhtml";
-    }    
+  
     /**
      * Creates a new instance of ControlAutorizacion
      */

@@ -3,7 +3,8 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                >
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <ui:define name="title">Lista de niños apadrinados</ui:define>
     <!-- OJO HAY QUE TENER EN CUENTA
@@ -13,98 +14,61 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>LISTA NIÑOS APADRINADOS</h1>
-                <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
-                
-                <div class="bordeTablaApadrinados">
-                    <table id="tablaListaApadrinados">
-                        <thead>
-                                <tr>
-                                        <th>Código</th>
-                                        <th>Código niño</th>
-                                        <th>Número de socio</th>
-                                        <th>Datos envío</th>
-                                        <th>Configuración</th>
-                                </tr>
-                            </thead>
-                        
-                        <tbody>
-                            <ui:repeat var = "i" value="#{ListaApadrinamientos.getlApadrinamiento()}">
-                                <tr>                                
-                                    <td>#{i.codApadrinamiento}</td>
-                                    <td>#{i.codNino}</td>
-                                    <td>#{i.numSocio}</td>
-                                    <td>#{i.codEnvio}</td>
+                <h1>LISTA SOCIOS</h1>
 
-                                    <td> <h:form id = "socio"> <h:column> <h:commandButton value="Gestionar niños apadrinados" action="modificarApadrinamiento.xhtml"/> </h:column> </h:form> </td>
-                                </tr>
-                            </ui:repeat>
-                        </tbody>
-                    </table>
-                    
-                    <td> 
-                            <h:form id = "envio"> 
-                                   <h:column> <h:commandButton value="Gestionar envíos" action="envio.xhtml"/> </h:column>
-                            </h:form>
-                         
-                    </td>
-                </div>
-                
-                <table>
-                    <ui:param name="max" value="5"/>
-                    <ui:repeat var="i" value="#{controlAutorizacion.getSocios()}" size="#{max}">
-                        <tr>
-                            <td>#{controlAutorizacion.listaSocios[i].toString()}</td>
-                        </tr>
-                    </ui:repeat>
-                </table>
-                
-                
-            </c:when>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
-                <h1>LISTA NIÑOS APADRINADOS</h1>
-                <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
-                
-                <div class="bordeTablaApadrinados">
-                    <table id="tablaListaApadrinados">
-                        <thead>
-                                <tr>
-                                        <th>Nombre</th>
-                                        <th>Apellidos</th>
-                                        <th>Fecha Apadrinamiento</th>
-                                        <th>Código de envío</th>
-                                </tr>
-                            </thead>
+                <f:view>
+
+                    <h:form>
+                        <h:dataTable value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="CodApadrinamiento"/>
+                                </f:facet>
+                                <h:outputText value="#{item.codApadrinamiento}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="CodNino"/>
+                                </f:facet>
+                                <h:outputText value="#{item.codNino}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="FechaApadrinamiento"/>
+                                </f:facet>
+                                <h:outputText value="#{item.fechaApadrinamiento}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                </h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Observaciones"/>
+                                </f:facet>
+                                <h:outputText value="#{item.observaciones}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NumSocio"/>
+                                </f:facet>
+                                <h:outputText value="#{item.numSocio}"/>
+                            </h:column>                        
+                            <h:column>
+                                <f:facet name="header">Opción</f:facet>
+                                <h:commandLink value="Editar" action="#{ListaApadrinamientos.edit(s)}"></h:commandLink>
+                                <br></br>
+                                <h:commandLink value="Eliminar" action="#{ListaApadrinamientos.delete(s)}" 
+                                               onclick="return confirm('¿Estás seguro?')"></h:commandLink>
+                                <br></br>                           
+                            </h:column> 
+                        </h:dataTable>
                         
-                        <tbody>
-                            <ui:repeat var = "i" value="#{ListaApadrinamientos.getlApadrinamiento()}">
-                                <tr>                                
-                                    <td>#{i.codNino.nombre}</td>
-                                    <td>#{i.codNino.apellidos}</td>
-                                    <td>#{i.fechaApadrinamiento}</td>
-                                    <td>#{i.codEnvio}</td>
-                                    
-                                </tr>
-                            </ui:repeat>
-                        </tbody>
-                    </table>
-                    
-                    <td> 
-                            <h:form id = "envio"> 
-                                <h:column> <h:commandButton value="Realizar Apadrinamiento" action="insertarApadrinamiento.xhtml"/> </h:column> 
-                                <h:column> <h:commandButton value="Realizar un envio" action="insertarEnvio.xhtml"/> </h:column>
-                            </h:form>
-                    </td>
-                </div>
-                             
-                <table>
-                    <ui:param name="max" value="5"/>
-                    <ui:repeat var="i" value="#{controlAutorizacion.getSocios()}" size="#{max}">
-                        <tr>
-                            <td>#{controlAutorizacion.listaSocios[i].toString()}</td>
-                        </tr>
-                    </ui:repeat>
-                </table>
+                        <h:column>
+                        <h:commandButton value="Inserta nuevo apadrinamiento" action="#{ListaApadrinamientos.crearApadrinamiento()}"/>
+                        </h:column>   
+                        
+                    </h:form>
+                </f:view>
+                
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

@@ -3,75 +3,40 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                >
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <ui:define name="title">Registrar niño</ui:define>
     <ui:define name="content">
-        <h1>REGISTRAR NIÑO</h1>
-        <h:form id="ListaNinos">
-            <table id="ListaNinos">
-                <tr>
-                    <td>Nombre: </td>
-                    <td><h:inputText  value="#{listaninos.nombre}"/></td>
-                </tr>
+        <c:choose>
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">               
 
-                <tr>
-                    <td>Apellidos: </td>
-                    <td><h:inputText  value="#{listaninos.apellidos}"/></td>
-                </tr>
+                <f:view>
 
-                <tr>
-                    <td>Sexo </td>
-                    <td><h:inputText  value="#{listaninos.sexo}"/></td>
-                </tr>
+                    <h:form>
+                        <h1><h:outputText value="Registrar niño"/></h1>
+                        
+                        <h:panelGrid columns="2">     
+                            
+                            <h:outputLabel value="Nombre:" for="nombre" />
+                            <h:inputText id="nombre" value="#{ListaNinos.s.nombre}" title="Nombre" />
+                            
+                            <h:outputLabel value="Apellidos:" for="apellidos" />
+                            <h:inputText id="apellidos" value="#{ListaNinos.s.apellidos}" title="Apellidos" />
 
-                <tr>
-                    <td>Estado </td>
-                    <td><h:inputText  value="#{listaninos.estado}"/></td>
-                </tr>
+                            
+                            <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.add()}" />
+                            <h:commandButton value="Cancelar" action="listaninos.xhtml"/>
+                            <h:commandButton value="Limpiar" type="reset" />
+                            
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
 
-                <tr>
-                    <td>Beca </td>
-                    <td><h:inputText  value="#{listaninos.beca}"/></td>
-                </tr>
-
-                 <tr>
-                    <td>Agente </td>
-                    <td><h:inputText  value="#{listaninos.agente}"/></td>
-                </tr>  
-
-                <tr>
-                    <td>Fecha nacimiento </td>
-                    <td><h:inputText  value="#{listaninos.fechaNach}"/></td>
-                </tr>        
-
-                <tr>
-                    <td>Proyecto </td>
-                    <td><h:inputText  value="#{listaninos.proyecto}"/></td>
-                </tr>   
-
-                <tr>
-                    <td>Curso </td>
-                    <td><h:inputText  value="#{listaninos.gradoCurso}"/></td>
-                </tr> 
-
-                <tr>
-                    <td>Procedencia</td>
-                    <td><h:inputText  value="#{listaninos.comunidadProcedencia}"/></td>
-                </tr> 
-
-                <tr>
-                    <td>Colonia</td>
-                    <td><h:inputText  value="#{listaninos.coloniaActual}"/></td>
-                </tr> 
-
-                <tr>
-                    <td>Observaciones</td>
-                    <td><h:inputText  value="#{listaninos.observaciones}"/></td>
-                </tr> 
-            </table>
-        </h:form>
-        <h:form> <h:column> <h:commandButton value="Registrar niño"/> </h:column> </h:form>
-
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose> 
     </ui:define>
 </ui:composition>

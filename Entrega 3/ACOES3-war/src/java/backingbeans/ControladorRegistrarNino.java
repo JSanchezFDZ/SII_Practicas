@@ -7,9 +7,7 @@ package backingbeans;
 
 import entidades.*;
 import java.io.Serializable;
-import java.util.Date;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
@@ -61,15 +59,15 @@ public String getBeca() {
         return this.nino.getFoto();
     }
 
-    public Date getFechaNac() {
+    public String getFechaNac() {
         return this.nino.getFechaNac();
     }
 
-    public Date getFechaAlta() {
+    public String getFechaAlta() {
         return this.nino.getFechaAlta();
     }
 
-    public Date getFechaBaja() {
+    public String getFechaBaja() {
         return this.nino.getFechaBaja();
     }
 

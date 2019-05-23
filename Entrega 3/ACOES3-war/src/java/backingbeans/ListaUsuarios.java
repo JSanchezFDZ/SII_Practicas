@@ -54,6 +54,7 @@ public class ListaUsuarios implements Serializable {
     
     public String add(){
         this.usuarioFacade.create(this.u);
+        this.u = new Usuario();
         return "listausuarios.xhtml";
     }
     

@@ -11,15 +11,14 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">     
                 
-                <h:body>
-                <f:view>
+                <h:body> <f:view>
 
                     <h:form>
                         
                         <h:panelGrid columns="2">
                             
                             <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:inputText id="nombre" value="#{ListaNinos.s.nombre}" required="true" title="Nombre" />
+                            <h:inputText id="nombre" value="#{ListaNinos.s.nombre}" required="true" requiredMessage="El campo nombre es necesario" title="Nombre" />
                             
                             <h:outputLabel value="Apellidos:" for="apellidos" />
                             <h:inputText id="apellidos" value="#{ListaNinos.s.apellidos}" title="Apellidos" />

@@ -49,6 +49,7 @@ public class ListaNinos implements Serializable{
     
     public String add(){
         this.ninosFacade.create(this.s);
+        this.s= new Ninos();
         return "listaninos.xhtml";
     }
     

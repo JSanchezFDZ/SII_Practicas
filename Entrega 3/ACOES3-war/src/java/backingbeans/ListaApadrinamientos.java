@@ -52,6 +52,7 @@ public class ListaApadrinamientos implements Serializable {
     
     public String add(){
         this.apadrinamientoFacade.create(this.s);
+        this.s = new Apadrinamiento();
         return "listaninosapadrinados.xhtml";
     }
     

@@ -51,6 +51,7 @@ public class ListaCuotas implements Serializable {
     
     public String add(){
         this.cuotasFacade.create(this.c);
+        this.c = new Cuota();
         return "listacuotas.xhtml";
     }
     

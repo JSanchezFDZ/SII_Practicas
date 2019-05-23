@@ -13,7 +13,12 @@
                
                 <f:view>
 
-
+                    <c:choose>
+                        <c:when test="#{ListaNinos.findAll()} == 0">
+                            <h2>No hay niños registrados en la base de datos.</h2>
+                            <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
+                        </c:when>
+                    </c:choose>
                     <h:form>
                         <h1><h:outputText value="Lista niños"/></h1>
                         <h:dataTable value="#{ListaNinos.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
@@ -59,27 +64,9 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Foto"/>
-                                </f:facet>
-                                <h:outputText value="#{item.foto}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
                                     <h:outputText value="FechaNac"/>
                                 </f:facet>
                                 <h:outputText value="#{item.fechaNac}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="FechaAlta"/>
-                                </f:facet>
-                                <h:outputText value="#{item.fechaAlta}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="FechaBaja"/>
-                                </f:facet>
-                                <h:outputText value="#{item.fechaBaja}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
@@ -110,12 +97,6 @@
                                     <h:outputText value="Observaciones"/>
                                 </f:facet>
                                 <h:outputText value="#{item.observaciones}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="CodApadrinamiento"/>
-                                </f:facet>
-                                <h:outputText value="#{item.codApadrinamiento}"/>
                             </h:column>
                             
                             <h:column>

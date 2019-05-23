@@ -3,44 +3,42 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                >
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <ui:define name="title">Modificar Cuota</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{ModificarCuota.cuota}">Modificar Cuota</h1>
                 
-                <h:form id="ListaCuota">
-                    <table>
-                        <tr>
-                            <td>Nombre: </td>
-                            <td><h:inputText  value="#{i.nombreCuota}"/></td>
-                        </tr>
+                <h:body>
+                <f:view>
 
-                        <tr>
-                            <td>Tipo: </td>
-                            <td><h:inputText  value="#{i.tipo}"/></td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Aportación </td>
-                            <td><h:inputText  value="#{i.aportación}"/></td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Socios </td>
-                            <td><h:inputText  value="#{i.codigoSocios}"/></td>
-                        </tr>
-
-                        
-                    </table>
-                </h:form>
-                <h:form> 
-                    <h:column> <h:commandButton value="Actualizar cuota"/> </h:column> 
-                    <h:column> <h:commandButton value="Cancelar" action="listacuotas.xhtml" /> </h:column>                     
-                </h:form>
-                   
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            
+                            <h:outputLabel value="CodigoCuota:" for="codigoCuota" />
+                            <h:inputText id="codigoCuota" value="#{ListaCuotas.c.codigoCuota}" title="Codigo Cuota" />
+                            
+                            <h:outputLabel value="NombreCuota:" for="nombreCuota" />
+                            <h:inputText id="nombreCuota" value="#{ListaCuotas.c.nombreCuota}" title="Nombre Cuota" />
+                            
+                            <h:outputLabel value="Tipo:" for="tipo" />
+                            <h:inputText id="tipo" value="#{ListaCuotas.c.tipo}" title="Tipo" />
+                            
+                            <h:outputLabel value="Direccion:" for="direccion" />
+                            <h:inputText id="direccion" value="#{ListaSocios.s.direccion}" title="Direccion" />
+                            
+                            <h:outputLabel value="Aportación:" for="aportacion" />
+                            <h:inputText id="aportación" value="#{ListaCuotas.c.aportación}" title="Aportacion" />
+                           
+                            
+                            <h:commandButton value="Actualizar cuota" action="#{ListaCuotas.edit()}" />
+                            <h:commandButton value="Cancelar" action="listacuotas.xhtml"/>
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
+                </h:body>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

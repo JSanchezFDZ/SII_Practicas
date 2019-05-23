@@ -12,111 +12,112 @@
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                
                 <f:view>
-
                     <c:choose>
-                        <c:when test="#{ListaNinos.findAll()} == 0">
+                        <c:when test="#{empty ListaNinos.findAll()}">
                             <h2>No hay niños registrados en la base de datos.</h2>
-                            <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
+                            <h:form>
+                                <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
+                            </h:form>
                         </c:when>
+                        <c:otherwise>
+                            <h:form>
+                                <h1><h:outputText value="Lista niños"/></h1>
+                                <h:dataTable value="#{ListaNinos.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                    <h:column>
+                                        <f:facet name="header"><h:outputText value="Id"/></f:facet>
+                                        <h:outputText value="#{item.id}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Nombre"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.nombre}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Apellidos"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.apellidos}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Estado"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.estado}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Beca"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.beca}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Sexo"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.sexo}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Agente"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.agente}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="FechaNac"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.fechaNac}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Proyecto"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.proyecto}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="GradoCurso"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.gradoCurso}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="ComunidadProcedencia"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.comunidadProcedencia}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="ColoniaActual"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.coloniaActual}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Observaciones"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.observaciones}"/>
+                                    </h:column>
+
+                                    <h:column>
+                                        <f:facet name="header">Opción</f:facet>
+                                        <h:commandLink value="Ver/Editar" action="#{ListaNinos.edit(item)}"></h:commandLink>
+                                        <br></br>
+                                        <h:commandLink value="Eliminar" action="#{ListaNinos.delete(item)}" 
+                                                       onclick="return confirm('¿Estás seguro?')"></h:commandLink>
+                                        <br></br>                           
+                                    </h:column>  
+
+                                </h:dataTable>
+
+                                <h:column>
+                                    <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
+                                </h:column> 
+                            </h:form>
+                            </c:otherwise>
                     </c:choose>
-                    <h:form>
-                        <h1><h:outputText value="Lista niños"/></h1>
-                        <h:dataTable value="#{ListaNinos.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
-                            <h:column>
-                                <f:facet name="header"><h:outputText value="Id"/></f:facet>
-                                <h:outputText value="#{item.id}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Nombre"/>
-                                </f:facet>
-                                <h:outputText value="#{item.nombre}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Apellidos"/>
-                                </f:facet>
-                                <h:outputText value="#{item.apellidos}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Estado"/>
-                                </f:facet>
-                                <h:outputText value="#{item.estado}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Beca"/>
-                                </f:facet>
-                                <h:outputText value="#{item.beca}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Sexo"/>
-                                </f:facet>
-                                <h:outputText value="#{item.sexo}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Agente"/>
-                                </f:facet>
-                                <h:outputText value="#{item.agente}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="FechaNac"/>
-                                </f:facet>
-                                <h:outputText value="#{item.fechaNac}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Proyecto"/>
-                                </f:facet>
-                                <h:outputText value="#{item.proyecto}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="GradoCurso"/>
-                                </f:facet>
-                                <h:outputText value="#{item.gradoCurso}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="ComunidadProcedencia"/>
-                                </f:facet>
-                                <h:outputText value="#{item.comunidadProcedencia}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="ColoniaActual"/>
-                                </f:facet>
-                                <h:outputText value="#{item.coloniaActual}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Observaciones"/>
-                                </f:facet>
-                                <h:outputText value="#{item.observaciones}"/>
-                            </h:column>
-                            
-                            <h:column>
-                                <f:facet name="header">Opción</f:facet>
-                                <h:commandLink value="Ver/Editar" action="#{ListaNinos.edit(item)}"></h:commandLink>
-                                <br></br>
-                                <h:commandLink value="Eliminar" action="#{ListaNinos.delete(item)}" 
-                                               onclick="return confirm('¿Estás seguro?')"></h:commandLink>
-                                <br></br>                           
-                            </h:column>  
-
-                        </h:dataTable>
-                        
-                        <h:column>
-                            <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
-                        </h:column> 
-                    </h:form>
-                    
                 </f:view>
-
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

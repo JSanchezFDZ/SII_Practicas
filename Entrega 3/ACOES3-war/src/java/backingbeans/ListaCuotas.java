@@ -11,7 +11,9 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.faces.context.FacesContext;
+import modelos.CuotaFacade;
 
 /**
  *
@@ -21,65 +23,52 @@ import javax.faces.context.FacesContext;
     @Named(value = "ListaCuotas")
     @SessionScoped
 public class ListaCuotas implements Serializable {
-        private List<Cuota> cuotas;
-        private List<Socios> socios;
-        private Cuota cuota;
-        
-        public ListaCuotas(){
-            cuotas = new ArrayList<Cuota>();
-            socios = new ArrayList<Socios>();
-            socios.add(new Socios("pepe", (long) 70001));
-            //socios.add(new Socios("Manuel", (long) 70002));
-            cuotas.add(new Cuota((long) 1, "Estándar", "Mensual", 20, socios));
-            cuotas.add(new Cuota((long) 2, "Básica", "Semanal", 5, socios));
-            cuota = new Cuota(Long.MIN_VALUE, null, null, 0, null);
-        }
+       @EJB
+    private CuotaFacade cuotasFacade;
+    private Cuota c = new Cuota();
 
-    public Cuota getCuota() {
-        return cuota;
-    }
+    
+    /*Constructor vacio*/
+    public ListaCuotas(){
 
-    public void setCuota(Cuota cuota) {
-        this.cuota = cuota;
     }
     
-    public String añadirCuotaALista(String nombre, String tipo, long apor){
-        cuotas.add(new Cuota((long) 3, nombre, tipo, apor, null));
-        return "listacuotas.xhtml";
-    }
-    
-        public int getNumeroCuotas(){
-        int i;
-        for (i=0;i<cuotas.size();i++){
-            i++;
-        }
-        return i;
+    public List<Cuota> findAll(){
+        return this.cuotasFacade.findAll();
     }
 
-    public List<Cuota> getCuotas() {
-        return cuotas;
+    public Cuota getS() {
+        return c;
     }
 
-    public void setCuotas(List<Cuota> cuotas) {
-        this.cuotas = cuotas;
+    public void setC(Cuota c) {
+        this.c = c;
     }
     
-    public String insertarCuota() {
-        //setModo(Modo.INSERTAR);
+    public String crearCuota(){
         return "insertarCuota.xhtml";
     }
     
-    public String eliminarCuota() {
+    public String add(){
+        this.cuotasFacade.create(this.c);
         return "listacuotas.xhtml";
     }
-
-    public List<Socios> getSocios() {
-        return socios;
+    
+    public void delete(Cuota c){
+        this.cuotasFacade.remove(c);
     }
-
-    public void setSocios(List<Socios> socios) {
-        this.socios = socios;
+    
+    public String edit(Cuota c){
+        this.c = c;
+        return "modificarCuota.xhtml";
     }
+    
+    public String edit(){
+        this.cuotasFacade.edit(this.c);
+        return "listacuotas.xhtml";
+    }
+    
+        
         
         
 }

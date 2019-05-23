@@ -6,12 +6,12 @@
     <ui:define name="title">Cuotas</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                 <h1>Información de su cuota.</h1>
                 
                 
             </c:when>
-              <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+              <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                 
                   <!--___________________________________Datos inventados____________________________________________________-->
                 <h1>Gestión de cuotas.</h1>

@@ -3,49 +3,52 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                >
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <ui:define name="title">Lista de cuotas</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>MIS CUOTAS</h1>
-                 <div class="bordeTablaCuotas">
-                 <table id="tablaListaCuotas">
-			<thead>
-				<tr>
-					<th>Código</th>
-					<th>Nombre</th>
-					<th>Tipo</th>
-					<th>Aportación</th>
-					<th>Socio(s)</th>
-                                        <th>Accion</th>
-				</tr>
-			</thead>
-                        <tbody>
-                            <ui:repeat var="i" value="#{ListaCuotas.cuotas}">
-                                <tr>
-                                    <td>#{i.codigoCuota}</td>
-                                    <td>#{i.nombreCuota}</td>
-                                    <td>#{i.tipo}</td>
-                                    <td>#{i.aportación}</td>
-                                    <td>#{i.codigoSocios}</td>
-                                    
-                                    <td> 
-                                        <h:form id = "cuotaaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarCuota.verCuota(i.codigoCuota)}"/> </h:column> </h:form>
-                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listacuotas.xhtml"/> </h:column> </h:form>
-                                    </td>
-                                    
-                                </tr>
-                            </ui:repeat>
-                        </tbody>
-                </table>
-                </div> 
-                <h:form id="cuota">
-                    <h:column>
-                            <h:commandButton value="Insertar cuota" action="#{ListaCuotas.insertarCuota()}"/>
-                    </h:column>
-                </h:form>
+            <c:when test="#{controlAutorizaciongetUsuario().getRol() == 'ADMINISTRADOR'}">
+                
+                <h1>LISTA DE CUOTAS</h1>
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="List"/></h1>
+                        <h:dataTable value="#{ListaCuotas.cuotas}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="SerialVersionUID"/>
+                                </f:facet>
+                                <h:outputText value="#{item.serialVersionUID}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="CodigoCuota"/>
+                                </f:facet>
+                                <h:outputText value="#{item.codigoCuota}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NombreCuota"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nombreCuota}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tipo"/>
+                                </f:facet>
+                                <h:outputText value="#{item.tipo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Aportación"/>
+                                </f:facet>
+                                <h:outputText value="#{item.aportación}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

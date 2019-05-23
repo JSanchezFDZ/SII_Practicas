@@ -48,6 +48,7 @@ public class ListaSocios implements Serializable {
     
     public String add(){
         this.sociosFacade.create(this.s);
+        this.s=new Socios();
         return "listasocios.xhtml";
     }
     

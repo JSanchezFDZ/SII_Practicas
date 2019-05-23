@@ -10,67 +10,66 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">  
+                
+                <h:body>
+                    <f:view>
 
-                <f:view>
-
-
-                    <h:form>
-                        <h1><h:outputText value="Perfil niño"/></h1>
-                        <h:panelGrid columns="2">
-                            <h:outputLabel value="Id:" for="id" />
-                            <h:inputText id="id" value="#{PerfilNino.nino.id}" title="Id" />
-                            
-                            <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:inputText id="nombre" value="#{PerfilNino.nino.nombre}" title="Nombre" />
-                            
-                            <h:outputLabel value="Apellidos:" for="apellidos" />
-                            <h:inputText id="apellidos" value="#{PerfilNino.nino.apellidos}" title="Apellidos" />
-                            
-                            <h:outputLabel value="Estado:" for="estado" />
-                            <h:inputText id="estado" value="#{PerfilNino.nino.estado}" title="Estado" />
-                            
-                            <h:outputLabel value="Beca:" for="beca" />
-                            <h:inputText id="beca" value="#{PerfilNino.nino.beca}" title="Beca" />
-                            
-                            <h:outputLabel value="Sexo:" for="sexo" />
-                            <h:inputText id="sexo" value="#{PerfilNino.nino.sexo}" title="Sexo" />
-                            
-                            <h:outputLabel value="Agente:" for="agente" />
-                            <h:inputText id="agente" value="#{PerfilNino.nino.agente}" title="Agente" />
-                            
-                            <h:outputLabel value="Foto:" for="foto" />
-                            <h:inputText id="foto" value="#{PerfilNino.nino.foto}" title="Foto" />
-                            
-                            <h:outputLabel value="FechaNac:" for="fechaNac" />
-                            <h:inputText id="fechaNac" value="#{PerfilNino.nino.fechaNac}" title="FechaNac" />
-                            
-                            <h:outputLabel value="FechaAlta:" for="fechaAlta" />
-                            <h:inputText id="fechaAlta" value="#{PerfilNino.nino.fechaAlta}" title="FechaAlta" />
-                            
-                            <h:outputLabel value="FechaBaja:" for="fechaBaja" />
-                            <h:inputText id="fechaBaja" value="#{PerfilNino.nino.fechaBaja}" title="FechaBaja" />
-                            
-                            <h:outputLabel value="Proyecto:" for="proyecto" />
-                            <h:inputText id="proyecto" value="#{PerfilNino.nino.proyecto}" title="Proyecto" />
-                            
-                            <h:outputLabel value="GradoCurso:" for="gradoCurso" />
-                            <h:inputText id="gradoCurso" value="#{PerfilNino.nino.gradoCurso}" title="GradoCurso" />
-                            
-                            <h:outputLabel value="ComunidadProcedencia:" for="comunidadProcedencia" />
-                            <h:inputText id="comunidadProcedencia" value="#{PerfilNino.nino.comunidadProcedencia}" title="ComunidadProcedencia" />
-                            
-                            <h:outputLabel value="ColoniaActual:" for="coloniaActual" />
-                            <h:inputText id="coloniaActual" value="#{PerfilNino.nino.coloniaActual}" title="ColoniaActual" />
-                            
-                            <h:outputLabel value="Observaciones:" for="observaciones" />
-                            <h:inputText id="observaciones" value="#{PerfilNino.nino.observaciones}" title="Observaciones" />
-                            
-                            <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
-                            <h:selectOneMenu id="codApadrinamiento" value="#{PerfilNino.nino.codApadrinamiento}" title="CodApadrinamiento" >
+                        <h:form>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Id:" for="id" />
+                                <h:inputText readonly="true" id="id" value="#{ListaNinos.s.id}" title="Id" />
                                 
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
-                            </h:selectOneMenu>
+                                <h:outputLabel value="Nombre:" for="nombre" />
+                                <h:inputText id="nombre" value="#{ListaNinos.s.nombre}" title="Nombre" />
+                                
+                                <h:outputLabel value="Apellidos:" for="apellidos" />
+                                <h:inputText id="apellidos" value="#{ListaNinos.s.apellidos}" title="Apellidos" />
+                                
+                                <h:outputLabel value="Estado:" for="estado" />
+                                <h:inputText id="estado" value="#{ListaNinos.s.estado}" title="Estado" />
+                                
+                                <h:outputLabel value="Beca:" for="beca" />
+                                <h:inputText id="beca" value="#{ListaNinos.s.beca}" title="Beca" />
+                                
+                                <h:outputLabel value="Sexo:" for="sexo" />
+                                <h:inputText id="sexo" value="#{ListaNinos.s.sexo}" title="Sexo" />
+                                
+                                <h:outputLabel value="Agente:" for="agente" />
+                                <h:inputText id="agente" value="#{ListaNinos.s.agente}" title="Agente" />
+                                
+                                <h:outputLabel value="Foto:" for="foto" />
+                                <h:inputText id="foto" value="#{ListaNinos.s.foto}" title="Foto" />
+                                
+                                <h:outputLabel value="FechaNac:" for="fechaNac" />
+                                <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" title="FechaNac" />
+                                
+                                <h:outputLabel value="FechaAlta:" for="fechaAlta" />
+                                <h:inputText id="fechaAlta" value="#{ListaNinos.s.fechaAlta}" title="FechaAlta" />
+                                
+                                <h:outputLabel value="FechaBaja:" for="fechaBaja" />
+                                <h:inputText id="fechaBaja" value="#{ListaNinos.s.fechaBaja}" title="FechaBaja" />
+                                
+                                <h:outputLabel value="Proyecto:" for="proyecto" />
+                                <h:inputText id="proyecto" value="#{ListaNinos.s.proyecto}" title="Proyecto" />
+                                
+                                <h:outputLabel value="GradoCurso:" for="gradoCurso" />
+                                <h:inputText id="gradoCurso" value="#{ListaNinos.s.gradoCurso}" title="GradoCurso" />
+                                
+                                <h:outputLabel value="ComunidadProcedencia:" for="comunidadProcedencia" />
+                                <h:inputText id="comunidadProcedencia" value="#{ListaNinos.s.comunidadProcedencia}" title="ComunidadProcedencia" />
+                                
+                                <h:outputLabel value="ColoniaActual:" for="coloniaActual" />
+                                <h:inputText id="coloniaActual" value="#{ListaNinos.s.coloniaActual}" title="ColoniaActual" />
+                                
+                                <h:outputLabel value="Observaciones:" for="observaciones" />
+                                <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" title="Observaciones" />
+                                
+                                <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
+                                <h:selectOneMenu id="codApadrinamiento" value="#{ListaNinos.s.codApadrinamiento}" title="CodApadrinamiento" >
+                                    <!-- TODO: update below reference to list of available items-->
+                                    <f:selectItems value="#{fixme}"/>
+                                </h:selectOneMenu>
+
                             
                             <h:commandButton value="Modificar niño" action="#{ListaNinos.edit()}" />
                             <h:commandButton value="Cancelar" action="listaninos.xhtml"/> 
@@ -78,6 +77,7 @@
                         </h:panelGrid>
                     </h:form>
                 </f:view>
+                </h:body>
 
 
                                            

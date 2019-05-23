@@ -120,9 +120,9 @@
                             
                             <h:column>
                                 <f:facet name="header">Opción</f:facet>
-                                <h:commandLink value="Ver/Editar" action="#{ListaNinos.edit(s)}"></h:commandLink>
+                                <h:commandLink value="Ver/Editar" action="#{ListaNinos.edit(item)}"></h:commandLink>
                                 <br></br>
-                                <h:commandLink value="Eliminar" action="#{ListaNinos.delete(s)}" 
+                                <h:commandLink value="Eliminar" action="#{ListaNinos.delete(item)}" 
                                                onclick="return confirm('¿Estás seguro?')"></h:commandLink>
                                 <br></br>                           
                             </h:column>  

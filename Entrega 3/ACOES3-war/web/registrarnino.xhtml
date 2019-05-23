@@ -9,21 +9,65 @@
     <ui:define name="title">Registrar niño</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">               
-
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">     
+                
+                <h:body>
                 <f:view>
 
                     <h:form>
-                        <h1><h:outputText value="Registrar niño"/></h1>
                         
-                        <h:panelGrid columns="2">     
+                        <h:panelGrid columns="2">
                             
                             <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:inputText id="nombre" value="#{ListaNinos.s.nombre}" title="Nombre" />
+                            <h:inputText id="nombre" value="#{ListaNinos.s.nombre}" required="true" title="Nombre" />
                             
                             <h:outputLabel value="Apellidos:" for="apellidos" />
                             <h:inputText id="apellidos" value="#{ListaNinos.s.apellidos}" title="Apellidos" />
-
+                            
+                            <h:outputLabel value="Estado:" for="estado" />
+                            <h:inputText id="estado" value="#{ListaNinos.s.estado}" title="Estado" />
+                            
+                            <h:outputLabel value="Beca:" for="beca" />
+                            <h:inputText id="beca" value="#{ListaNinos.s.beca}" title="Beca" />
+                            
+                            <h:outputLabel value="Sexo:" for="sexo" />
+                            <h:inputText id="sexo" value="#{ListaNinos.s.sexo}" title="Sexo" />
+                            
+                            <h:outputLabel value="Agente:" for="agente" />
+                            <h:inputText id="agente" value="#{ListaNinos.s.agente}" title="Agente" />
+                            
+                            <h:outputLabel value="Foto:" for="foto" />
+                            <h:inputText id="foto" value="#{ListaNinos.s.foto}" title="Foto" />
+                            
+                            <h:outputLabel value="FechaNac:" for="fechaNac" />
+                            <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" title="FechaNac" />
+                            
+                            <h:outputLabel value="FechaAlta:" for="fechaAlta" />
+                            <h:inputText id="fechaAlta" value="#{ListaNinos.s.fechaAlta}" title="FechaAlta" />
+                            
+                            <h:outputLabel value="FechaBaja:" for="fechaBaja" />
+                            <h:inputText id="fechaBaja" value="#{ListaNinos.s.fechaBaja}" title="FechaBaja" />
+                            
+                            <h:outputLabel value="Proyecto:" for="proyecto" />
+                            <h:inputText id="proyecto" value="#{ListaNinos.s.proyecto}" title="Proyecto" />
+                            
+                            <h:outputLabel value="GradoCurso:" for="gradoCurso" />
+                            <h:inputText id="gradoCurso" value="#{ListaNinos.s.gradoCurso}" title="GradoCurso" />
+                            
+                            <h:outputLabel value="ComunidadProcedencia:" for="comunidadProcedencia" />
+                            <h:inputText id="comunidadProcedencia" value="#{ListaNinos.s.comunidadProcedencia}" title="ComunidadProcedencia" />
+                            
+                            <h:outputLabel value="ColoniaActual:" for="coloniaActual" />
+                            <h:inputText id="coloniaActual" value="#{ListaNinos.s.coloniaActual}" title="ColoniaActual" />
+                            
+                            <h:outputLabel value="Observaciones:" for="observaciones" />
+                            <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" title="Observaciones" />
+                            
+                            <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
+                            <h:selectOneMenu id="codApadrinamiento" value="#{ListaNinos.s.codApadrinamiento}" title="CodApadrinamiento" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
                             
                             <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.add()}" />
                             <h:commandButton value="Cancelar" action="listaninos.xhtml"/>
@@ -32,6 +76,7 @@
                         </h:panelGrid>
                     </h:form>
                 </f:view>
+                </h:body> 
 
             </c:when>
             <c:otherwise>

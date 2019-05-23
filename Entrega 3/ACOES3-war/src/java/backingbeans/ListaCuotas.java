@@ -37,7 +37,7 @@ public class ListaCuotas implements Serializable {
         return this.cuotasFacade.findAll();
     }
 
-    public Cuota getS() {
+    public Cuota getC() {
         return c;
     }
 

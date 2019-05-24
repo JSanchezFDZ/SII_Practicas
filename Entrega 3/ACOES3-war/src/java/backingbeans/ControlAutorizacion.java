@@ -51,11 +51,11 @@ public class ControlAutorizacion implements Serializable {
     }
     
     public String MisDatos(){
-        return "socio.xhtml";
+        return "listasocios.xhtml";
     }
     
     public String ListaEnvios(){
-        return "envio.xhtml";
+        return "listaenvios.xhtml";
     }
 
     public String home() {

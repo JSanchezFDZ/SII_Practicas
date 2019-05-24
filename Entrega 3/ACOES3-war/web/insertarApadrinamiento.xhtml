@@ -19,9 +19,9 @@
                             <h:inputText id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" title="CodApadrinamiento" />
                             
                             <h:outputLabel value="CodNino:" for="codNino" />
-                            <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" >
+                            <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" converter="ConvertidorJSF" >
                                 <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                                <f:selectItems value="#{ListaNinos.findAll()}"/>
                             </h:selectOneMenu>
                             
                             <h:outputLabel value="FechaApadrinamiento:" for="fechaApadrinamiento" />

@@ -136,7 +136,7 @@ public class Cuota implements Serializable {
 
     @Override
     public String toString() {
-        return "Cuota{" + "codigoCuota=" + codigoCuota + ", nombreCuota=" + nombreCuota + ", tipo=" + tipo + ", aportaci\u00f3n=" + aportación + ", codigoSocios=" + codigoSocios + '}';
+        return nombreCuota;
     }
 
   

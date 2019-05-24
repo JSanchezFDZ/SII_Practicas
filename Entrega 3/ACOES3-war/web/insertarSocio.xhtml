@@ -62,10 +62,17 @@
                             </h:selectOneMenu>
                              
                             <h:outputLabel value="Apadr:" for="apadr" />
-                            <h:selectOneMenu id="apadr" value="#{ListaSocios.s.apadr}" title="Apadrinamiento" >
+                            <h:selectOneMenu id="apadr" value="#{ListaSocios.s.apadr}" title="Apadrinamiento" converter="ConvertidorJSF" >
                                 <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                                <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
                             </h:selectOneMenu>
+                            <!--
+                            <h:outputLabel value="Cuota:" for="cuota" />
+                            <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" >
+                                
+                                <f:selectItems value="#{ListaCuotas.findAll()}"/>
+                            </h:selectManyCheckbox>-->
+                            
                             
                             <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add()}" />
                             <h:commandButton value="Cancelar" action="listasocios.xhtml"/>

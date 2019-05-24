@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 /**
@@ -28,6 +30,8 @@ public class Cuota implements Serializable {
     private String nombreCuota;
     private String tipo;    //puntual, mensual, anual...
     private float aportación;
+    @JoinTable(name="CUOTA_SOCIOS", joinColumns = @JoinColumn(name = "Cuota_FK"), inverseJoinColumns = 
+            @JoinColumn(name = "Socio_FK"))
     @ManyToMany
     private List<Socios> codigoSocios;
 

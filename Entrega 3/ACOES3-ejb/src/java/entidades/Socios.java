@@ -6,15 +6,12 @@
 package entidades;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.*;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  *
@@ -43,7 +40,7 @@ public class Socios implements Serializable {
     private String observaciones;
     @OneToOne
     private Usuario usuario;
-    @ManyToMany
+    @ManyToMany(mappedBy = "codigoSocios")
     private List<Cuota> cuota;
     @ManyToOne
     private Apadrinamiento apadr;

@@ -70,6 +70,67 @@
                     </c:choose>
                 </f:view>
             </c:when>
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
+             <f:view>
+                    <c:choose>
+                        <c:when test="#{empty ListaEnvios.findAll()}">
+                            <h2>No hay envios registrados en la base de datos.</h2>
+                            
+                        </c:when>
+                        <c:otherwise>
+                            <h:form>
+                                <h1><h:outputText value="Lista envios"/></h1>
+                                <h:dataTable value="#{ListaEnvios.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                    <!--WHEN EL CODIGO DE APADRINAMIENTO DEL ENVIO ES EL MISMO QUE EL DEL SOCIO QUE LO VE, MOSTRAR ELEM, LISTA   -->
+                                    <!-- completar  -->
+                                    <h:column>
+                                        <f:facet name="header"><h:outputText value="CodApadrinamiento"/></f:facet>
+                                        <h:outputText value="#{item.codApadrinamiento}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="CodEnvio"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.codEnvio}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Apellidos"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.apellidos}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="fechaEnvio"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.fechaEnvio}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="fechaLlegada"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.fechaLlegada}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Observaciones"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.observaciones}"/>
+                                    </h:column>
+                                   
+                                   
+
+                                </h:dataTable>
+
+                               
+                            </h:form>
+                            </c:otherwise>
+                    </c:choose>
+                </f:view>
+                
+            
+            
+            </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
             </c:otherwise>

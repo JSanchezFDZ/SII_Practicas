@@ -110,7 +110,15 @@ public class ListaEnvios implements Serializable{
 
     public ListaEnvios() {
     }
+    
+    public List<Envio> findAll(){
+        return this.enviosFacade.findAll();
+    }
 
+    public String crearEnvio(){
+        return "registrarenvio.xhtml";
+    }
+    
     public EnvioFacade getEnviosFacade() {
         return enviosFacade;
     }
@@ -130,21 +138,18 @@ public class ListaEnvios implements Serializable{
     public String add(){
         this.enviosFacade.create(this.e);
         this.e = new Envio();
-        return "listacuotas.xhtml";
+        return "listaEnvio.xhtml";
     }
     
     public void delete(Envio e){
         this.enviosFacade.remove(e);
     }
     
-    public String edit(Envio e){
-        this.e = e;
-        return "modificarCuota.xhtml";
-    }
+
     
     public String edit(){
         this.enviosFacade.edit(this.e);
-        return "listacuotas.xhtml";
+        return null; //TERMINAR
     }
     
     

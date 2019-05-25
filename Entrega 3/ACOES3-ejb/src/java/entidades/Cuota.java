@@ -30,9 +30,7 @@ public class Cuota implements Serializable {
     private String nombreCuota;
     private String tipo;    //puntual, mensual, anual...
     private float aportación;
-    @ManyToMany
-    @JoinTable(name="CUOTA_SOCIOS", joinColumns = @JoinColumn(name = "Cuota_FK"), inverseJoinColumns = 
-            @JoinColumn(name = "Socio_FK"))
+    @ManyToMany (mappedBy = "cuota")
     private List<Socios> codigoSocios;
 
     public Cuota(Long codigoCuota, String nombreCuota, String tipo, float aportación, List<Socios> codigoSocios) {

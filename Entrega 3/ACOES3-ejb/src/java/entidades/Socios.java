@@ -40,7 +40,9 @@ public class Socios implements Serializable {
     private String observaciones;
     @OneToOne
     private Usuario usuario;
-    @ManyToMany(mappedBy = "codigoSocios")
+    @ManyToMany
+    @JoinTable(name="CUOTA_SOCIOS", joinColumns = @JoinColumn(name = "Cuota_FK"), inverseJoinColumns = 
+            @JoinColumn(name = "Socio_FK"))
     private List<Cuota> cuota;
     @ManyToOne
     private Apadrinamiento apadr;

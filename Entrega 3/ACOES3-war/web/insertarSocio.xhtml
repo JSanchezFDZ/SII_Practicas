@@ -66,12 +66,13 @@
                                 <!-- TODO: update below reference to list of available items-->
                                 <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
                             </h:selectOneMenu>
-                            <!--
+                            
                             <h:outputLabel value="Cuota:" for="cuota" />
                             <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" >
-                                
-                                <f:selectItems value="#{ListaCuotas.findAll()}"/>
-                            </h:selectManyCheckbox>-->
+                                <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem"
+                                           itemValue="#{cuotaItem}"
+                                           itemLabel="#{cuotaItem.nombreCuota.toString()}"/>
+                            </h:selectManyCheckbox>
                             
                             
                             <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add()}" />

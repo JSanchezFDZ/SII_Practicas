@@ -19,7 +19,7 @@
                             
                             <h:outputLabel value="CodNino:" for="codNino" />
                             <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" requiredMessage="Tienes que seleccionar un niño" converter="ConvertidorJSF" required="true">
-                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />
                                 <f:selectItems value="#{ListaNinos.findAll()}"/>
                             </h:selectOneMenu>
                             
@@ -32,7 +32,7 @@
                             
                             <h:outputLabel value="NumSocio:" for="numSocio" />
                             <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}" title="NumSocio" converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">
-                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItem itemLabel="Elija un socio .." itemValue="#{null}" />
                                 <f:selectItems value="#{ListaSocios.findAll()}"/>
                             </h:selectOneMenu>
                             

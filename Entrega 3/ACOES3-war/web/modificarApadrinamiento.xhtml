@@ -16,30 +16,29 @@
                     <h:form>
                         <h:panelGrid columns="2">
                             <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
-                            <h:inputText id="codApadrinamiento" value="#{ModificarApadrinamientos.apadrinamiento.codApadrinamiento}" title="CodApadrinamiento" />
+                            <h:inputText readonly="true" id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" title="CodApadrinamiento" />
                             
                             <h:outputLabel value="CodNino:" for="codNino" />
-                            <h:selectOneMenu id="codNino" value="#{ModificarApadrinamientos.apadrinamiento.codNino}" title="CodNino" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                            <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" converter="ConvertidorJSF">
+                                <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />
+                                <f:selectItems value="#{ListaNinos.findAll()}"/>
                             </h:selectOneMenu>
                             
                             <h:outputLabel value="FechaApadrinamiento:" for="fechaApadrinamiento" />
-                            <h:inputText id="fechaApadrinamiento" value="#{ModificarApadrinamientos.apadrinamiento.fechaApadrinamiento}" title="FechaApadrinamiento" >
-                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            <h:inputText id="fechaApadrinamiento" value="#{ListaApadrinamientos.s.fechaApadrinamiento}" title="FechaApadrinamiento" >
                             </h:inputText>
                             
                             <h:outputLabel value="Observaciones:" for="observaciones" />
-                            <h:inputText id="observaciones" value="#{ModificarApadrinamientos.apadrinamiento.observaciones}" title="Observaciones" />
+                            <h:inputText id="observaciones" value="#{ListaApadrinamientos.s.observaciones}" title="Observaciones" />
                             
                             <h:outputLabel value="NumSocio:" for="numSocio" />
-                            <h:selectOneMenu id="numSocio" value="#{ModificarApadrinamientos.apadrinamiento.numSocio}" title="NumSocio" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                            <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}" title="NumSocio" converter="ConvertidorJSF">
+                                <f:selectItem itemLabel="Elija un socio .." itemValue="#{null}" />
+                                <f:selectItems value="#{ListaSocios.findAll()}"/>
                             </h:selectOneMenu>
                             
                             <h:commandButton value="Modificar apadrinamiento" action="#{ListaApadrinamientos.edit()}" />
-                            <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
+                            <h:commandButton value="Cancelar" action="listaninosapadrinados.xhtml"/>
                         </h:panelGrid>
                     </h:form>
                 </f:view>

@@ -138,7 +138,7 @@ public class ListaEnvios implements Serializable{
     public String add(){
         this.enviosFacade.create(this.e);
         this.e = new Envio();
-        return "listaEnvio.xhtml";
+        return "listaenvios.xhtml";
     }
     
     public void delete(Envio e){

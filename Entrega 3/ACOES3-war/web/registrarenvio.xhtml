@@ -18,25 +18,28 @@
                         
                         <h:panelGrid columns="2">
                             
-                            <h:outputLabel value="CodApadrinamiento:" for="CodApadrinamiento" />
-                            <h:inputText id="codApadrinamiento" value="#{ListaEnvios.e.codApadrinamiento}" required="true" requiredMessage="El campo codApadrinamiento es necesario." title="codApadrinamiento" />
-                            
-                            <h:outputLabel value="CodEnvio:" for="CodEnvio" />
-                            <h:inputText id="codEnvio" value="#{ListaEnvios.e.codEnvio}" required="true" requiredMessage="El campo codEnvio es necesario." title="codEnvio" />
+                            <h:outputLabel value="Niño apadrinado:" for="CodApadrinamiento" />
+                            <h:selectOneMenu id="apadr" value="#{ListaEnvios.e.codApadrinamiento}" title="Apadrinamiento" converter="ConvertidorJSF" >
+                                <f:selectItem itemLabel="Elija un niño al que hacer el envío .." itemValue="#{null}" />                                
+                                <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
+                            </h:selectOneMenu>
                             
                             <h:outputLabel value="fechaEnvio:" for="fechaEnvio" />
-                            <h:inputText id="fechaEnvio" value="#{ListaEnvios.e.fechaEnvio}" required="true" requiredMessage="El campo fechaEnvio es necesario." title="fechaEnvio" />
+                            <h:inputText id="fechaEnvio" value="#{ListaEnvios.e.fechaEnvio}" required="true" requiredMessage="El campo fechaEnvio es necesario." title="fechaEnvio" >
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </h:inputText>
                             
                             <h:outputLabel value="fechaLlegada:" for="fechaLlegada" />
-                            <h:inputText id="fechaLlegada" value="#{ListaEnvios.e.fechaLlegada}" required="true" requiredMessage="El campo fechaLlegada es necesario." title="fechaLlegada" />
+                            <h:inputText id="fechaLlegada" value="#{ListaEnvios.e.fechaLlegada}" required="true" requiredMessage="El campo fechaLlegada es necesario." title="fechaLlegada" >
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:inputText>
                             
                             <h:outputLabel value="observaciones:" for="observaciones" />
                             <h:inputText id="observaciones" value="#{ListaEnvios.e.observaciones}" title="observaciones" />
                             
-                            
-                            
+                                            
                         <h:column>
-                              <h:commandButton value="Registrar nuevo envio" action="#{ListaEnvios.crearEnvio()}"/>
+                            <h:commandButton value="Registrar nuevo envio" action="#{ListaEnvios.add()}"/>
                                 </h:column> 
                         </h:panelGrid>
                     </h:form>

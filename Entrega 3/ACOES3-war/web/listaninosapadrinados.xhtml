@@ -12,7 +12,6 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1>LISTA APADRINAMIENTOS</h1>
 
                 <f:view>
                     <c:choose>
@@ -23,6 +22,8 @@
                             </h:form>
                         </c:when>
                     <c:otherwise>
+                        
+                    <h1>LISTA APADRINAMIENTOS</h1>                        
                     <h:form>
                         <h:dataTable class="table" value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
                             <h:column>

@@ -38,13 +38,17 @@
                                         <f:facet name="header">
                                             <h:outputText value="fechaEnvio"/>
                                         </f:facet>
-                                        <h:outputText value="#{item.fechaEnvio}"/>
+                                        <h:outputText value="#{item.fechaEnvio}" >
+                                         <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                                        </h:outputText>
                                     </h:column>
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="fechaLlegada"/>
                                         </f:facet>
-                                        <h:outputText value="#{item.fechaLlegada}"/>
+                                        <h:outputText value="#{item.fechaLlegada}" >
+                                            <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                                        </h:outputText>
                                     </h:column>
                                     <h:column>
                                         <f:facet name="header">

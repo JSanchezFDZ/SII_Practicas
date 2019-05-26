@@ -129,7 +129,7 @@ public class Apadrinamiento implements Serializable {
 
     @Override
     public String toString() {
-        return "acoes.Apadrinamiento[ id=" + codApadrinamiento + " ]";
+        return codNino.getNombre() + " " + codNino.getApellidos();
     }
     
 }

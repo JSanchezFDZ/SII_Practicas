@@ -17,10 +17,10 @@
                         <h:panelGrid columns="2">
   
                             <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:inputText id="nombre" value="#{ListaSocios.s.nombre}" title="Nombre" />
+                            <h:inputText id="nombre" value="#{ListaSocios.s.nombre}" title="Nombre" required="true" requiredMessage="Inserte un nombre" />
                             
                             <h:outputLabel value="Apellido:" for="apellido" />
-                            <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" title="Apellido" />
+                            <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" title="Apellido" required="true" requiredMessage="Inserte los apellidos" />
                             
                             <h:outputLabel value="Estado:" for="estado" />
                             <h:inputText id="estado" value="#{ListaSocios.s.estado}" title="Estado" />

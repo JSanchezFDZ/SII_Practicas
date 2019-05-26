@@ -30,7 +30,7 @@
                             <h:outputLabel value="Observaciones:" for="observaciones" />
                             <h:inputText id="observaciones" value="#{ListaApadrinamientos.s.observaciones}" title="Observaciones" />
                             
-                            <h:outputLabel value="NumSocio:" for="numSocio" />
+                            <h:outputLabel value="Socio:" for="numSocio" />
                             <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}" title="NumSocio" converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">
                                 <f:selectItem itemLabel="Elija un socio .." itemValue="#{null}" />
                                 <f:selectItems value="#{ListaSocios.findAll()}"/>

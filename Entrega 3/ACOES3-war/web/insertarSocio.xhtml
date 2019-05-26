@@ -68,7 +68,7 @@
                             </h:selectOneMenu>
                             
                             <h:outputLabel value="Cuota:" for="cuota" />
-                            <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" >
+                            <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" required="true" requiredMessage="Necesita seleccionar al menos una cuota" >
                                 <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem"
                                            itemValue="#{cuotaItem}"
                                            itemLabel="#{cuotaItem.nombreCuota.toString()}"/>

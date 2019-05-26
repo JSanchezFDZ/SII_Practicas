@@ -11,7 +11,7 @@
     -->
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                 <h1>LISTA APADRINAMIENTOS</h1>
 
                 <f:view>
@@ -58,9 +58,9 @@
                             </h:column>                        
                             <h:column>
                                 <f:facet name="header">Opción</f:facet>
-                                <h:commandLink value="Editar" action="#{ListaApadrinamientos.edit(s)}"></h:commandLink>
+                                <h:commandLink value="Editar" action="#{ListaApadrinamientos.edit(item)}"></h:commandLink>
                                 <br></br>
-                                <h:commandLink value="Eliminar" action="#{ListaApadrinamientos.delete(s)}" 
+                                <h:commandLink value="Eliminar" action="#{ListaApadrinamientos.delete(item)}" 
                                                onclick="return confirm('¿Estás seguro?')"></h:commandLink>
                                 <br></br>                           
                             </h:column> 

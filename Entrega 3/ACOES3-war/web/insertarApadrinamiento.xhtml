@@ -14,10 +14,8 @@
 
                     <h:form>
                         <h:panelGrid columns="2">
-                            <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
-                            <h:inputText id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" requiredMessage="Tienes que introducir un codigo de apadrinamiento" title="CodApadrinamiento" required="true"/>
                             
-                            <h:outputLabel value="CodNino:" for="codNino" />
+                            <h:outputLabel value="Niño a apadrinar:" for="codNino" />
                             <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" requiredMessage="Tienes que seleccionar un niño" converter="ConvertidorJSF" required="true">
                                 <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />
                                 <f:selectItems value="#{ListaNinos.findAll()}"/>
@@ -28,7 +26,7 @@
                             </h:inputText>
                             
                             <h:outputLabel value="Observaciones:" for="observaciones" />
-                            <h:inputText id="observaciones" value="#{ListaApadrinamientos.s.observaciones}" title="Observaciones" />
+                            <h:inputTextarea id="observaciones" value="#{ListaApadrinamientos.s.observaciones}" title="Observaciones" />
                             
                             <h:outputLabel value="Socio:" for="numSocio" />
                             <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}" title="NumSocio" converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">

@@ -18,7 +18,7 @@
                             <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
                             <h:inputText readonly="true" id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" title="CodApadrinamiento" />
                             
-                            <h:outputLabel value="CodNino:" for="codNino" />
+                            <h:outputLabel value="Niño a apadrinar:" for="codNino" />
                             <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" converter="ConvertidorJSF">
                                 <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />
                                 <f:selectItems value="#{ListaNinos.findAll()}"/>
@@ -29,7 +29,7 @@
                             </h:inputText>
                             
                             <h:outputLabel value="Observaciones:" for="observaciones" />
-                            <h:inputText id="observaciones" value="#{ListaApadrinamientos.s.observaciones}" title="Observaciones" />
+                            <h:inputTextarea id="observaciones" value="#{ListaApadrinamientos.s.observaciones}" title="Observaciones" />
                             
                             <h:outputLabel value="NumSocio:" for="numSocio" />
                             <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}" title="NumSocio" converter="ConvertidorJSF">

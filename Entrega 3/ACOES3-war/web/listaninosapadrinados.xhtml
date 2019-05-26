@@ -3,9 +3,7 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                    
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
-    
     <ui:define name="title">Lista de niños apadrinados</ui:define>
     <!-- OJO HAY QUE TENER EN CUENTA
         - SI ES ADMINISTRADOR: VE TODOS LOS NIÑOS APADRINADOS POR CADA SOCIO
@@ -14,12 +12,19 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>LISTA SOCIOS</h1>
+                <h1>LISTA APADRINAMIENTOS</h1>
 
                 <f:view>
-
+                    <c:choose>
+                        <c:when test="#{empty ListaApadrinamientos.findAll()}">
+                            <h2>No hay apadrinamientos registrados en la base de datos.</h2>
+                            <h:form>
+                                <h:commandButton value="Inserta nuevo apadrinamiento" action="#{ListaApadrinamientos.crearApadrinamiento()}"/>
+                            </h:form>
+                        </c:when>
+                    <c:otherwise>
                     <h:form>
-                        <h:dataTable value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
+                        <h:dataTable class="table" value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="CodApadrinamiento"/>
@@ -37,7 +42,6 @@
                                     <h:outputText value="FechaApadrinamiento"/>
                                 </f:facet>
                                 <h:outputText value="#{item.fechaApadrinamiento}">
-                                    <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                                 </h:outputText>
                             </h:column>
                             <h:column>
@@ -67,6 +71,8 @@
                         </h:column>   
                         
                     </h:form>
+                    </c:otherwise>
+                    </c:choose>
                 </f:view>
                 
             </c:when>

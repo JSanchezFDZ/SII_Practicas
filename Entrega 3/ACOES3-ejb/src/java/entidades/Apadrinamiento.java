@@ -39,7 +39,7 @@ public class Apadrinamiento implements Serializable {
     public Apadrinamiento() {
     }
 
-    public Apadrinamiento(Long codApadrinamiento, Ninos codNino, Socios numSocio, List<Envio> codEnvio, Date fechaApadrinamiento, String observaciones) {
+    public Apadrinamiento(Long codApadrinamiento, Ninos codNino, Socios numSocio, List<Envio> codEnvio, String fechaApadrinamiento, String observaciones) {
         this.codApadrinamiento = codApadrinamiento;
         this.codNino = codNino;
         this.numSocio = numSocio;
@@ -54,12 +54,9 @@ public class Apadrinamiento implements Serializable {
         numSocio = numSoc;
         codEnvio = codEnv;
     }
-
     
-    
-    
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaApadrinamiento;
+    //@Temporal(TemporalType.TIMESTAMP)
+    private String fechaApadrinamiento;
     private String observaciones;
 
     public Long getCodApadrinamiento() {
@@ -72,19 +69,17 @@ public class Apadrinamiento implements Serializable {
 
     public Ninos getCodNino() {
         return codNino;
-    }
-    
-    
+    }  
 
     public void setCodNino(Ninos codNino) {
         this.codNino = codNino;
     }
 
-    public Date getFechaApadrinamiento() {
+    public String getFechaApadrinamiento() {
         return fechaApadrinamiento;
     }
 
-    public void setFechaApadrinamiento(Date fechaApadrinamiento) {
+    public void setFechaApadrinamiento(String fechaApadrinamiento) {
         this.fechaApadrinamiento = fechaApadrinamiento;
     }
 
@@ -111,8 +106,6 @@ public class Apadrinamiento implements Serializable {
     public void setCodEnvio(List<Envio> codEnvio) {
         this.codEnvio = codEnvio;
     }
-
-
 
     @Override
     public int hashCode() {

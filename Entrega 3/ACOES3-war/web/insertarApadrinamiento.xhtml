@@ -3,7 +3,6 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                    
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
 <ui:define name="title">Realizar apadrinamiento</ui:define>
 <ui:define name="content">
@@ -16,26 +15,25 @@
                     <h:form>
                         <h:panelGrid columns="2">
                             <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
-                            <h:inputText id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" title="CodApadrinamiento" />
+                            <h:inputText id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" requiredMessage="Tienes que introducir un codigo de apadrinamiento" title="CodApadrinamiento" required="true"/>
                             
                             <h:outputLabel value="CodNino:" for="codNino" />
-                            <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" converter="ConvertidorJSF" >
+                            <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" requiredMessage="Tienes que seleccionar un niño" converter="ConvertidorJSF" required="true">
                                 <!-- TODO: update below reference to list of available items-->
                                 <f:selectItems value="#{ListaNinos.findAll()}"/>
                             </h:selectOneMenu>
                             
                             <h:outputLabel value="FechaApadrinamiento:" for="fechaApadrinamiento" />
                             <h:inputText id="fechaApadrinamiento" value="#{ListaApadrinamientos.s.fechaApadrinamiento}" title="FechaApadrinamiento" >
-                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                             </h:inputText>
                             
                             <h:outputLabel value="Observaciones:" for="observaciones" />
                             <h:inputText id="observaciones" value="#{ListaApadrinamientos.s.observaciones}" title="Observaciones" />
                             
                             <h:outputLabel value="NumSocio:" for="numSocio" />
-                            <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}" title="NumSocio" >
+                            <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}" title="NumSocio" converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">
                                 <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                                <f:selectItems value="#{ListaSocios.findAll()}"/>
                             </h:selectOneMenu>
                             
                             <h:commandButton value="Insertar nuevo apadrinamiento" action="#{ListaApadrinamientos.add()}" />

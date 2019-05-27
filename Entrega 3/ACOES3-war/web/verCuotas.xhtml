@@ -18,7 +18,7 @@
                  </c:when>
                 
                 <h:form>
-                        <h:dataTable var='c' value="#{ListaCuotas.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:dataTable var='c' value="#{ListaCuotas.findAll()}" border="1" cellpadding="2" cellspacing="2">
                             <h:column>
                                 <f:facet name="header">Codigo cuota</f:facet>
                                 <h:outputText value="#{c.codigoCuota}"></h:outputText>
@@ -35,20 +35,7 @@
                                 <f:facet name="header">Aportación</f:facet>
                                 <h:outputText value="#{c.aportación}"></h:outputText>
                             </h:column>
-                            <h:column>
-                                <f:facet name="header">Opción</f:facet>
-                                <h:commandLink value="Editar" action="#{ListaCuotas.edit(c)}"></h:commandLink>
-                                <br></br>
-                                <h:commandLink value="Eliminar" action="#{ListaCuotas.delete(c)}" 
-                                           onclick="return confirm('¿Estás seguro?')"></h:commandLink>
-                                <br></br>                           
-                            </h:column> 
-                            
                         </h:dataTable>
-                        
-                        <h:column>
-                            <h:commandButton value="Inserta nueva cuota" action="#{ListaCuotas.crearCuota()}"/>
-                        </h:column>
                     </h:form>
                
             </c:when>

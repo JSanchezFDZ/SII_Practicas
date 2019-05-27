@@ -56,6 +56,14 @@
                                         </f:facet>
                                         <h:outputText value="#{item.observaciones}"/>
                                     </h:column>
+                                    <h:column>
+                                    <f:facet name="header">Opción</f:facet>
+                                        <h:commandLink value="Editar" action="#{ListaEnvios.edit(item)}"></h:commandLink>
+                                        <br></br>
+                                        <h:commandLink value="Eliminar" action="#{ListaEnvios.delete(item)}" 
+                                                   onclick="return confirm('¿Estás seguro?')"></h:commandLink>
+                                        <br></br>                           
+                                </h:column> 
                                    
                                    
 

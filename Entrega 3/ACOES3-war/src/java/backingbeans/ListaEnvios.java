@@ -7,11 +7,7 @@ package backingbeans;
 
 import entidades.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -145,11 +141,15 @@ public class ListaEnvios implements Serializable{
         this.enviosFacade.remove(e);
     }
     
-
+    
+    public String edit(Envio e){
+        this.e = e;
+        return "modificarEnvio.xhtml";
+    }
     
     public String edit(){
         this.enviosFacade.edit(this.e);
-        return null; //TERMINAR
+        return "listaenvios.xhtml";
     }
     
     

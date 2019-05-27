@@ -79,7 +79,58 @@
                 
             </c:when>
             <c:otherwise>
-                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+                <f:view>
+                    <c:choose>
+                        <c:when test="#{empty ListaApadrinamientos.findAll()}">
+                            <h2>No hay apadrinamientos registrados en la base de datos.</h2>
+                            <h:form>
+                                <h:commandButton value="Inserta nuevo apadrinamiento" action="#{ListaApadrinamientos.crearApadrinamiento()}"/>
+                            </h:form>
+                        </c:when>
+                    <c:otherwise>
+                        
+                    <h1>LISTA APADRINAMIENTOS</h1>                        
+                    <h:form>
+                        <h:dataTable class="table" value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="CodApadrinamiento"/>
+                                </f:facet>
+                                <h:outputText value="#{item.codApadrinamiento}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Niño"/>
+                                </f:facet>
+                                <h:outputText value="#{item.codNino}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="FechaApadrinamiento"/>
+                                </f:facet>
+                                <h:outputText value="#{item.fechaApadrinamiento}">
+                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/>
+                                </h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Observaciones"/>
+                                </f:facet>
+                                <h:outputText value="#{item.observaciones}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Socio"/>
+                                </f:facet>
+                                <h:outputText value="#{item.numSocio}"/>
+                            </h:column>                        
+                        </h:dataTable>
+                        
+                        
+                    </h:form>
+                    </c:otherwise>
+                    </c:choose>
+                </f:view>
             </c:otherwise>
         </c:choose>
     </ui:define>

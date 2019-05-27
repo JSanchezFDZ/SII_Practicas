@@ -13,7 +13,7 @@
                <c:choose>
                 <!-- MOSTRAR ¡¡¡¡¡¡SOLO!!!!!! LAS CUOTAS DEL SOCIO QUE INICO SESION -->
                 <c:when test="#{empty controlAutorizacion.getUsuario().socio.getCuota()}">
-                    <h2>No hay cuotas registradas en la base de datos.</h2>
+                    <h2>No tiene ninguna cuota registrada</h2>
                  </c:when>
                 
                 <c:otherwise>

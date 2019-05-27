@@ -14,6 +14,7 @@
                 <!--MOSTRAR ¡¡¡¡¡¡SOLO!!!!!! LAS CUOTAS DEL SOCIO QUE INICO SESIÓN -->
                 <c:when test="#{empty controlAutorizacion.getUsuario().getSocio().getCuota()}">
                     <h2>No tiene ninguna cuota registrada</h2>
+                    <h:outputText value="#{controlAutorizacion.getUsuario().usuario}"></h:outputText>
                  </c:when>
                 
                 <c:otherwise>  

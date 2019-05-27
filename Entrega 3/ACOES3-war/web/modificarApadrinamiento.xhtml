@@ -26,6 +26,7 @@
                             
                             <h:outputLabel value="FechaApadrinamiento:" for="fechaApadrinamiento" />
                             <h:inputText id="fechaApadrinamiento" value="#{ListaApadrinamientos.s.fechaApadrinamiento}" title="FechaApadrinamiento" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
                             </h:inputText>
                             
                             <h:outputLabel value="Observaciones:" for="observaciones" />

@@ -6,6 +6,7 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -26,6 +29,9 @@ public class Apadrinamiento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codApadrinamiento;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaApadrinamiento;
+    private String observaciones;
     @OneToOne
     private Ninos codNino;
     @ManyToOne
@@ -36,7 +42,7 @@ public class Apadrinamiento implements Serializable {
     public Apadrinamiento() {
     }
 
-    public Apadrinamiento(Long codApadrinamiento, Ninos codNino, Socios numSocio, List<Envio> codEnvio, String fechaApadrinamiento, String observaciones) {
+    public Apadrinamiento(Long codApadrinamiento, Ninos codNino, Socios numSocio, List<Envio> codEnvio, Date fechaApadrinamiento, String observaciones) {
         this.codApadrinamiento = codApadrinamiento;
         this.codNino = codNino;
         this.numSocio = numSocio;
@@ -51,10 +57,6 @@ public class Apadrinamiento implements Serializable {
         numSocio = numSoc;
         codEnvio = codEnv;
     }
-    
-    //@Temporal(TemporalType.TIMESTAMP)
-    private String fechaApadrinamiento;
-    private String observaciones;
 
     public Long getCodApadrinamiento() {
         return codApadrinamiento;
@@ -72,11 +74,11 @@ public class Apadrinamiento implements Serializable {
         this.codNino = codNino;
     }
 
-    public String getFechaApadrinamiento() {
+    public Date getFechaApadrinamiento() {
         return fechaApadrinamiento;
     }
 
-    public void setFechaApadrinamiento(String fechaApadrinamiento) {
+    public void setFechaApadrinamiento(Date fechaApadrinamiento) {
         this.fechaApadrinamiento = fechaApadrinamiento;
     }
 

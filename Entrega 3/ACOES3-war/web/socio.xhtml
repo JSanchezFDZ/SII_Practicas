@@ -47,11 +47,20 @@
                                 <h:outputLabel id="observaciones" value="#{ListaSocios.s.observaciones}" title="Observaciones" />
                                 <h:outputLabel value="Certificado:" for="certificado" />
                                 <h:outputLabel id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
+                                
+                                <h:commandButton value="Confirmar" action="#{ListaSocios.edit(s)}" />
+                                <h:commandButton value="Limpiar" type="reset" /> 
                             </h:panelGrid>
+                            
+                            
                         </h:form>
                     </f:view>
 
-                </h:form>
+                    
+                <button
+            </button>
+                    
+                
                 
                 <script>
                 function actualizarInfo() {

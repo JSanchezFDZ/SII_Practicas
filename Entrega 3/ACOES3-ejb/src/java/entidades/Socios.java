@@ -44,8 +44,8 @@ public class Socios implements Serializable {
     @OneToOne
     private Usuario usuario;
     @ManyToMany
-    @JoinTable(name="CUOTA_SOCIOS", joinColumns = @JoinColumn(name = "Socio_FK"), inverseJoinColumns = 
-            @JoinColumn(name = "Cuota_FK"))
+    @JoinTable(name="CUOTA_SOCIOS", joinColumns = @JoinColumn(name = "SOCIO_FK"), inverseJoinColumns = 
+            @JoinColumn(name = "CUOTA_FK"))
     private List<Cuota> cuota;
     @ManyToOne
     private Apadrinamiento apadr;

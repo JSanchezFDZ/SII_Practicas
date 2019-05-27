@@ -7,12 +7,10 @@ package backingbeans;
 
 import entidades.*;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.faces.context.FacesContext;
+import javax.enterprise.context.RequestScoped;
 import modelos.CuotaFacade;
 
 /**
@@ -21,7 +19,7 @@ import modelos.CuotaFacade;
  */
 
     @Named(value = "ListaCuotas")
-    @SessionScoped
+    @RequestScoped
 public class ListaCuotas implements Serializable {
        @EJB
     private CuotaFacade cuotasFacade;

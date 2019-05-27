@@ -8,10 +8,10 @@ package backingbeans;
 import entidades.*;
 import entidades.Usuario.Rol;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
 import modelos.UsuarioFacade;
 
 /**
@@ -19,7 +19,7 @@ import modelos.UsuarioFacade;
  * @author Jesús Correa Conejero
  */
 @Named(value = "ListaUsuarios")
-@SessionScoped
+@RequestScoped
 public class ListaUsuarios implements Serializable {
     @EJB
     private UsuarioFacade usuarioFacade;

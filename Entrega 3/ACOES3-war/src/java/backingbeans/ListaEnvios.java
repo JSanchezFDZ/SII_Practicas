@@ -9,7 +9,7 @@ import entidades.*;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import modelos.EnvioFacade;
 
@@ -18,7 +18,7 @@ import modelos.EnvioFacade;
  * @author Sergio
  */
 @Named(value = "ListaEnvios")
-@SessionScoped
+@RequestScoped
 
 public class ListaEnvios implements Serializable{
     @EJB

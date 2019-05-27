@@ -6,13 +6,11 @@
 package backingbeans;
 
 import entidades.*;
-import java.awt.event.ActionEvent;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.faces.component.UIComponent;
+import javax.enterprise.context.RequestScoped;
 import modelos.SociosFacade;
 
 /**
@@ -20,7 +18,7 @@ import modelos.SociosFacade;
  * @author Jaime Moreno Sánchez
  */
 @Named(value = "ListaSocios")
-@SessionScoped
+@RequestScoped
 public class ListaSocios implements Serializable {
     @EJB
     private SociosFacade sociosFacade;

@@ -9,7 +9,6 @@ import entidades.*;
 import java.io.Serializable;
 import java.util.Date;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
@@ -69,15 +68,15 @@ public class PerfilNino implements Serializable {
         return this.nino.getFoto();
     }
 
-    public String getFechaNac() {
+    public Date getFechaNac() {
         return this.nino.getFechaNac();
     }
 
-    public String getFechaAlta() {
+    public Date getFechaAlta() {
         return this.nino.getFechaAlta();
     }
 
-    public String getFechaBaja() {
+    public Date getFechaBaja() {
         return this.nino.getFechaBaja();
     }
 

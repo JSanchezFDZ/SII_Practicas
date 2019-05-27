@@ -47,10 +47,14 @@
                             <h:inputText id="sector" value="#{ListaSocios.s.sector}" title="Sector" />
                             
                             <h:outputLabel value="FechaAlta:" for="fechaAlta" />
-                            <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" title="Fecha Alta" />
+                            <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" title="Fecha Alta" >
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </h:inputText>
                             
                             <h:outputLabel value="FechaBaja:" for="fechaBaja" />
-                            <h:inputText id="fechaBaja" value="#{ListaSocios.s.fechaBaja}" title="Fecha Baja" />
+                            <h:inputText id="fechaBaja" value="#{ListaSocios.s.fechaBaja}" title="Fecha Baja" >
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </h:inputText>
                                        
                             <h:outputLabel value="Certificado:" for="certificado" />
                             <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />

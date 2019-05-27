@@ -6,6 +6,7 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,8 +36,10 @@ public class Socios implements Serializable {
     private String correo;
     private String sector;
     private String certificado;
-    private String FechaAlta;
-    private String FechaBaja;
+    @Temporal(TemporalType.TIMESTAMP)    
+    private Date FechaAlta;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date FechaBaja;
     private String observaciones;
     @OneToOne
     private Usuario usuario;
@@ -49,7 +52,7 @@ public class Socios implements Serializable {
     
     
     public Socios (String nombre,String apellido,Long id,String estado,String direccion,String poblacion,int codPostal,
-             String provincia, String telefono,String correo,String sector,String certificado, String FechaAlta, String FechaBaja,
+             String provincia, String telefono,String correo,String sector,String certificado, Date FechaAlta, Date FechaBaja,
             String observaciones,Usuario usuario){
             
             this.nombre = nombre;
@@ -191,19 +194,19 @@ public class Socios implements Serializable {
         this.sector = sector;
     }
 
-    public String getFechaAlta() {
+    public Date getFechaAlta() {
         return FechaAlta;
     }
 
-    public void setFechaAlta(String FechaAlta) {
+    public void setFechaAlta(Date FechaAlta) {
         this.FechaAlta = FechaAlta;
     }
 
-    public String getFechaBaja() {
+    public Date getFechaBaja() {
         return FechaBaja;
     }
 
-    public void setFechaBaja(String FechaBaja) {
+    public void setFechaBaja(Date FechaBaja) {
         this.FechaBaja = FechaBaja;
     }
 

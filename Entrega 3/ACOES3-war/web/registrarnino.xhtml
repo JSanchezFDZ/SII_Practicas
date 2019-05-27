@@ -34,7 +34,9 @@
                             <h:inputText id="sexo" value="#{ListaNinos.s.sexo}" required="true" requiredMessage="El campo sexo es necesario." title="Sexo" />
                             
                             <h:outputLabel value="FechaNac:" for="fechaNac" />
-                            <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" required="true" requiredMessage="El campo fecha de nacimiento es necesario." title="FechaNac" />
+                            <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" required="true" requiredMessage="El campo fecha de nacimiento es necesario." title="FechaNac" >
+                               <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </h:inputText>
                                                         
                             <h:outputLabel value="Proyecto:" for="proyecto" />
                             <h:inputText id="proyecto" value="#{ListaNinos.s.proyecto}" title="Proyecto" />

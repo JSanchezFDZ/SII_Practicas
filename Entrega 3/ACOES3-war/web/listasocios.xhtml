@@ -72,11 +72,15 @@
                         </h:column>        
                         <h:column>
                             <f:facet name="header">Fecha Alta</f:facet>
-                            <h:outputText value="#{s.fechaAlta}"></h:outputText>
+                            <h:outputText value="#{s.fechaAlta}">
+                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                            </h:outputText>
                         </h:column>       
                         <h:column>
                             <f:facet name="header">Fecha Baja</f:facet>
-                            <h:outputText value="#{s.fechaBaja}"></h:outputText>
+                            <h:outputText value="#{s.fechaBaja}">
+                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                            </h:outputText>
                         </h:column>     
                         <h:column>
                             <f:facet name="header">Población</f:facet>

@@ -6,11 +6,14 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -31,9 +34,12 @@ public class Ninos implements Serializable {
     private String sexo;
     private String agente;
     private String foto;
-    private String fechaNac;
-    private String fechaAlta;
-    private String fechaBaja;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaNac;
+    @Temporal(TemporalType.TIMESTAMP)    
+    private Date fechaAlta;
+    @Temporal(TemporalType.TIMESTAMP)    
+    private Date fechaBaja;
     private String proyecto;
     private String gradoCurso;
     private String comunidadProcedencia;
@@ -45,7 +51,7 @@ public class Ninos implements Serializable {
     public Ninos() {
     }
 
-    public Ninos(Long id, String nombre, String apellidos, String estado, String beca, String sexo, String agente, String foto, String fechaNac, String fechaAlta, String fechaBaja, String proyecto, String gradoCurso, String comunidadProcedencia, String coloniaActual, String observaciones, Apadrinamiento codApadrinamiento) {
+    public Ninos(Long id, String nombre, String apellidos, String estado, String beca, String sexo, String agente, String foto, Date fechaNac, Date fechaAlta, Date fechaBaja, String proyecto, String gradoCurso, String comunidadProcedencia, String coloniaActual, String observaciones, Apadrinamiento codApadrinamiento) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -123,15 +129,15 @@ public class Ninos implements Serializable {
         return foto;
     }
 
-    public String getFechaNac() {
+    public Date getFechaNac() {
         return fechaNac;
     }
 
-    public String getFechaAlta() {
+    public Date getFechaAlta() {
         return fechaAlta;
     }
 
-    public String getFechaBaja() {
+    public Date getFechaBaja() {
         return fechaBaja;
     }
 
@@ -183,15 +189,15 @@ public class Ninos implements Serializable {
         this.foto = foto;
     }
 
-    public void setFechaNac(String fechaNac) {
+    public void setFechaNac(Date fechaNac) {
         this.fechaNac = fechaNac;
     }
 
-    public void setFechaAlta(String fechaAlta) {
+    public void setFechaAlta(Date fechaAlta) {
         this.fechaAlta = fechaAlta;
     }
 
-    public void setFechaBaja(String fechaBaja) {
+    public void setFechaBaja(Date fechaBaja) {
         this.fechaBaja = fechaBaja;
     }
 

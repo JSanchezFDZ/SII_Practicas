@@ -41,13 +41,19 @@
                                 <h:inputText id="foto" value="#{ListaNinos.s.foto}" title="Foto" />
                                 
                                 <h:outputLabel value="FechaNac:" for="fechaNac" />
-                                <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" title="FechaNac" />
+                                <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" title="FechaNac" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
                                 
                                 <h:outputLabel value="FechaAlta:" for="fechaAlta" />
-                                <h:inputText id="fechaAlta" value="#{ListaNinos.s.fechaAlta}" title="FechaAlta" />
+                                <h:inputText id="fechaAlta" value="#{ListaNinos.s.fechaAlta}" title="FechaAlta" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
                                 
                                 <h:outputLabel value="FechaBaja:" for="fechaBaja" />
-                                <h:inputText id="fechaBaja" value="#{ListaNinos.s.fechaBaja}" title="FechaBaja" />
+                                <h:inputText id="fechaBaja" value="#{ListaNinos.s.fechaBaja}" title="FechaBaja" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
                                 
                                 <h:outputLabel value="Proyecto:" for="proyecto" />
                                 <h:inputText id="proyecto" value="#{ListaNinos.s.proyecto}" title="Proyecto" />

@@ -10,56 +10,47 @@
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                
                 <f:view>
-                    
-                     
+                    <f:view>
 
-                            <!--FICHERO DESACTUALIZADO QUE HAY QUE MODIFICAR PARA EDITAR LOS DATOS DE LA BBDD -->
-                    <h:form>
-                        <h1><h:outputText value="Mis datos"/></h1>
-                        <h:panelGrid columns="2">
-                            <h:outputLabel value="Usuario:" for="usuario" />
-                            <h:outputLabel value="Id:" for="id" />
-                            <h:outputLabel id="id" value="" title="Id" />
-                            <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:outputLabel id="nombre" value="" title="Nombre" />
-                            <h:outputLabel value="Apellido:" for="apellido" />
-                            <h:outputLabel id="apellido" value="" title="Apellido" />
-                            <h:outputLabel value="Estado:" for="estado" />
-                            <h:inputText id="estado" value="" title="Estado" />
-                            <h:outputLabel value="Direccion:" for="direccion" />
-                            <h:inputText id="direccion" value="" title="Direccion" />
-                            <h:outputLabel value="Poblacion:" for="poblacion" />
-                            <h:inputText id="poblacion" value="" title="Poblacion" />
-                            <h:outputLabel value="CodPostal:" for="codPostal" />
-                            <h:inputText id="codPostal" value="" title="CodPostal" />
-                            <h:outputLabel value="Provincia:" for="provincia" />
-                            <h:inputText id="provincia" value="" title="Provincia" />
-                            <h:outputLabel value="Telefono:" for="telefono" />
-                            <h:inputText id="telefono" value="" title="Telefono" />
-                            <h:outputLabel value="Correo:" for="correo" />
-                            <h:inputText id="correo" value="" title="Correo" />
-                            <h:outputLabel value="Sector:" for="sector" />
-                            <h:inputText id="sector" value="" title="Sector" />
-                            <h:outputLabel value="FechaAlta:" for="fechaAlta" />
-                            <h:outputLabel id="fechaAlta" value="" title="FechaAlta" />
-                            <h:outputLabel value="FechaBaja:" for="fechaBaja" />
-                            <h:outputLabel id="fechaBaja" value="" title="FechaBaja" />
-                            <h:outputLabel value="Observaciones:" for="observaciones" />
-                            <h:outputLabel id="observaciones" value="" title="Observaciones" />
-                            <h:outputLabel value="Certificado:" for="certificado" />
-                            <h:outputLabel id="certificado" value="" title="Certificado" />
-                        </h:panelGrid>
-                    </h:form>
-                </f:view>
 
-                
-                
-                <button onclick="actualizarInfo()">Guardar cambios!</button>
-                
-                 <h:form id="cuota">
-                    <h:column>
-                            <h:commandButton value="Ver mis cuotas" action="verCuotas.xhtml"/>
-                    </h:column>
+                        <h:form>
+                            <h1><h:outputText value="Mis datos:"/></h1>
+                            <h:panelGrid columns="2">
+                               
+                                <h:outputLabel value="Id:" for="id" />
+                                <h:outputLabel id="id" value="#{ListaSocios.s.id}" title="Id" />
+                                <h:outputLabel value="Nombre:" for="nombre" />
+                                <h:outputLabel id="nombre" value="#{ListaSocios.s.nombre}" title="Nombre" />
+                                <h:outputLabel value="Apellido:" for="apellido" />
+                                <h:outputLabel id="apellido" value="#{ListaSocios.s.apellido}" title="Apellido" />
+                                <h:outputLabel value="Estado:" for="estado" />
+                                <h:inputText id="estado" value="#{ListaSocios.s.estado}" title="Estado" />
+                                <h:outputLabel value="Direccion:" for="direccion" />
+                                <h:inputText id="direccion" value="#{ListaSocios.s.direccion}" title="Direccion" />
+                                <h:outputLabel value="Poblacion:" for="poblacion" />
+                                <h:inputText id="poblacion" value="#{ListaSocios.s.poblacion}" title="Poblacion" />
+                                <h:outputLabel value="CodPostal:" for="codPostal" />
+                                <h:inputText id="codPostal" value="#{ListaSocios.s.codPostal}" title="CodPostal" />
+                                <h:outputLabel value="Provincia:" for="provincia" />
+                                <h:inputText id="provincia" value="#{ListaSocios.s.provincia}" title="Provincia" />
+                                <h:outputLabel value="Telefono:" for="telefono" />
+                                <h:inputText id="telefono" value="#{ListaSocios.s.telefono}" title="Telefono" />
+                                <h:outputLabel value="Correo:" for="correo" />
+                                <h:inputText id="correo" value="#{ListaSocios.s.correo}" title="Correo" />
+                                <h:outputLabel value="Sector:" for="sector" />
+                                <h:inputText id="sector" value="#{ListaSocios.s.sector}" title="Sector" />
+                                <h:outputLabel value="FechaAlta:" for="fechaAlta" />
+                                <h:outputLabel id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" title="FechaAlta" />
+                                <h:outputLabel value="FechaBaja:" for="fechaBaja" />
+                                <h:outputLabel id="fechaBaja" value="#{ListaSocios.s.fechaBaja}" title="FechaBaja" />
+                                <h:outputLabel value="Observaciones:" for="observaciones" />
+                                <h:outputLabel id="observaciones" value="#{ListaSocios.s.observaciones}" title="Observaciones" />
+                                <h:outputLabel value="Certificado:" for="certificado" />
+                                <h:outputLabel id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
+                            </h:panelGrid>
+                        </h:form>
+                    </f:view>
+
                 </h:form>
                 
                 <script>

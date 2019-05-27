@@ -6,26 +6,28 @@ package backingbeans;
 
 
 import entidades.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import excepciones.AcoesException;
+import excepciones.ContraseniaInvalidaException;
+import excepciones.CuentaInexistenteException;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import negocio.Negocio;
 
 /**
  *
- * @author francis
+ * @author Jesús Sánchez
  */
 @Named(value = "login")
 @RequestScoped
 public class Login {
 
-    private String usuario;
-    private String contrasenia;
-    private List<Usuario> usuarios;
+    private Usuario usuario;
+
+    @Inject
+    private Negocio negocio;
     
     @Inject
     private ControlAutorizacion ctrl;
@@ -34,67 +36,33 @@ public class Login {
      * Creates a new instance of Login
      */
     public Login() {
-        usuarios = new ArrayList<Usuario>();
-        usuarios.add(new Usuario("pepe", "asdf", Usuario.Rol.SOCIO));
-        usuarios.add(new Usuario("manolo", "qwer", Usuario.Rol.ADMINISTRADOR));
-       
-       
-        
-    }
-    
-    public List<Usuario> getUsuarios(){
-        
-        return this.usuarios;
+        usuario = new Usuario();
     }
 
-    public String getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public String getContrasenia() {
-        return contrasenia;
-    }
-
-    public void setUsuario(String usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
-    }
-
     public String autenticar() {
-        // Implementar este método
-        FacesContext ctx = FacesContext.getCurrentInstance();
-        Iterator<Usuario> iter = usuarios.iterator();
-        boolean pass = false;
-        boolean user = false;
-        Usuario usuario = null;
-        
-        while(iter.hasNext() && !user){
-            usuario = iter.next();
-            
-            if(usuario.getUsuario().equals(getUsuario())){
-                user = true;
-                if(usuario.getPass().equals(getContrasenia())){
-                    pass = true;
-                    ctrl.setUsuario(usuario);
-                    return ctrl.home();
-                }
-            }
+        try {
+            negocio.compruebaLogin(usuario);
+            ctrl.setUsuario(negocio.refrescarUsuario(usuario));
+            return "inicio.xhtml";
+
+        } catch (CuentaInexistenteException e) {
+            FacesMessage fm = new FacesMessage("La cuenta no existe");
+            FacesContext.getCurrentInstance().addMessage("login:user", fm);
+        } catch (ContraseniaInvalidaException e) {
+            FacesMessage fm = new FacesMessage("La contraseña no es correcta");
+            FacesContext.getCurrentInstance().addMessage("login:pass", fm);
+        } catch (AcoesException e) {
+            FacesMessage fm = new FacesMessage("Error: " + e);
+            FacesContext.getCurrentInstance().addMessage(null, fm);
         }
-        
-        if(!user){
-            ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"El usuario introducido no existe", "El usuario introducido no existe"));
-            return null;
-        }
-        
-        if(!pass){
-            ctx.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"La contraseña introducida es incorrecta", "La contraseña introducida es incorrecta"));
-            return null;
-        }
-        
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "El método autenticar() no está implementado", "El método autenticar() no está implementado"));
         return null;
     }
 }

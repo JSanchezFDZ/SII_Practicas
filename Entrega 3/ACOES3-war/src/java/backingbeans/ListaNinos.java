@@ -7,19 +7,19 @@ package backingbeans;
 
 import entidades.*;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
 import modelos.NinosFacade;
 
 /**
  *
- * @author Edu Ruiz
+ * @author Edu Ruiz y Jesús Sánchez
  */
 
 @Named(value = "ListaNinos")
-@SessionScoped
+@RequestScoped
 public class ListaNinos implements Serializable{
     @EJB
     private NinosFacade ninosFacade;

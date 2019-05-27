@@ -10,16 +10,18 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
-                <h1>MIS CUOTAS</h1>
+               <c:choose>
                 <!-- MOSTRAR ¡¡¡¡¡¡SOLO!!!!!! LAS CUOTAS DEL SOCIO QUE INICO SESION -->
-                
-                <c:when test="#{empty ListaCuotas.findAll()}">
+                <c:when test="#{empty controlAutorizacion.getUsuario().socio.getCuota()}">
                     <h2>No hay cuotas registradas en la base de datos.</h2>
                  </c:when>
                 
                 <c:otherwise>
+                    
+                     <h1>MIS CUOTAS</h1>
+                     
                 <h:form>
-                    <h:dataTable var='c' value="#{ListaCuotas.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:dataTable var='c' value="#{controlAutorizacion.getUsuario.getSocio().getCuota()}" border="1" cellpadding="2" cellspacing="2">
                             <h:column>
                                 <f:facet name="header">Codigo cuota</f:facet>
                                 <h:outputText value="#{c.codigoCuota}"></h:outputText>
@@ -39,6 +41,7 @@
                         </h:dataTable>
                     </h:form>
                 </c:otherwise>
+                </c:choose>
             </c:when>
             
             <c:otherwise>

@@ -7,12 +7,9 @@ package backingbeans;
 
 import entidades.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.context.FacesContext;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import modelos.ApadrinamientoFacade;
 
@@ -21,7 +18,7 @@ import modelos.ApadrinamientoFacade;
  * @author Salva
  */
     @Named(value = "ListaApadrinamientos")
-    @SessionScoped
+    @RequestScoped
     
 public class ListaApadrinamientos implements Serializable {
     @EJB

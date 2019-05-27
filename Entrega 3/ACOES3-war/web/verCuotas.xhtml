@@ -11,8 +11,8 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
              <c:choose>
-                <!--MOSTRAR ¡¡¡¡¡¡SOLO!!!!!! LAS CUOTAS DEL SOCIO QUE INICO SESION -->
-                <c:when test="#{empty controlAutorizacion.getUsuario().socio.cuota}">
+                <!--MOSTRAR ¡¡¡¡¡¡SOLO!!!!!! LAS CUOTAS DEL SOCIO QUE INICO SESIÓN -->
+                <c:when test="#{empty controlAutorizacion.getUsuario().socio.getCuota()}">
                     <h2>No tiene ninguna cuota registrada</h2>
                  </c:when>
                 
@@ -20,7 +20,7 @@
                      <h1>MIS CUOTAS</h1>
                      
                 <h:form>
-                    <h:dataTable var='c' value="#{controlAutorizacion.getUsuario().socio.cuota}" border="1" cellpadding="2" cellspacing="2">
+                    <h:dataTable var='c' value="#{controlAutorizacion.getUsuario().socio.getCuota()}" border="1" cellpadding="2" cellspacing="2">
                             <h:column>
                                 <f:facet name="header">Codigo cuota</f:facet>
                                 <h:outputText value="#{c.codigoCuota}"></h:outputText>

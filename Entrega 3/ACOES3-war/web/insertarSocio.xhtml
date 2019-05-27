@@ -79,7 +79,7 @@
                             </h:selectManyCheckbox>
                             
                             
-                            <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add()}" />
+                            <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add(ListaSocios.s.usuario)}"  />
                             <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
                             <h:commandButton value="Limpiar" type="reset" />                            
                         </h:panelGrid>

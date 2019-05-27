@@ -6,12 +6,16 @@
 package backingbeans;
 
 import entidades.*;
+import excepciones.AcoesException;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import modelos.SociosFacade;
+import modelos.UsuarioFacade;
 
 /**
  *
@@ -22,8 +26,10 @@ import modelos.SociosFacade;
 public class ListaSocios implements Serializable {
     @EJB
     private SociosFacade sociosFacade;
+    @EJB
+    private UsuarioFacade usuariosFacade;  
+    private Usuario usuario;
     private Socios s = new Socios();
-    private Long auxId;
 
     
     /*Constructor vacio*/
@@ -31,18 +37,25 @@ public class ListaSocios implements Serializable {
        
     }
     
-    public void getId(Long i){
-        auxId = i;
-    }
 
     
     public List<Socios> findAll(){
         return this.sociosFacade.findAll();
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
     public Socios getS() {
         return s;
     }
+    
+    
 
     public void setS(Socios s) {
         this.s = s;
@@ -57,10 +70,13 @@ public class ListaSocios implements Serializable {
         return s.getId();
     }
     
-    public String add(){
-        this.sociosFacade.create(this.s);
-        this.s=new Socios();
-        return "listasocios.xhtml";
+    public String add(String cuenta) {
+            usuario = usuariosFacade.find(cuenta);
+            usuario.setSocio(s);
+            usuariosFacade.edit(usuario);
+            //sociosFacade.create(s);
+            //this.s=new Socios();
+            return "listasocios.xhtml";
     }
     
     public void delete(Socios s){

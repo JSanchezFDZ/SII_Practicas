@@ -16,7 +16,8 @@
                 <c:when test="#{empty ListaCuotas.findAll()}">
                     <h2>No hay cuotas registradas en la base de datos.</h2>
                  </c:when>
-                <otherwise>
+                
+                <c:otherwise>
                 <h:form>
                     <h:dataTable var='c' value="#{ListaCuotas.findAll()}" border="1" cellpadding="2" cellspacing="2">
                             <h:column>
@@ -37,8 +38,9 @@
                             </h:column>
                         </h:dataTable>
                     </h:form>
-                <otherwise>
+                </c:otherwise>
             </c:when>
+            
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
             </c:otherwise>

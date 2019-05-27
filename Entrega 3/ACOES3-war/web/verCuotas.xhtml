@@ -14,11 +14,10 @@
                 <!--MOSTRAR ¡¡¡¡¡¡SOLO!!!!!! LAS CUOTAS DEL SOCIO QUE INICO SESIÓN -->
                 <c:when test="#{empty controlAutorizacion.getUsuario().getSocio().getCuota()}">
                     <h2>No tiene ninguna cuota registrada</h2>
-                    <h:outputText value="#{controlAutorizacion.getUsuario().socio.getCuota()}"></h:outputText>
                  </c:when>
                
                 <c:otherwise>  
-                     <h1>MIS CUOTASs</h1>
+                     <h1>MIS CUOTAS</h1>
                     
                 <h:form>
                     <h:dataTable var='c' value="#{controlAutorizacion.getUsuario().getSocio().getCuota()}" border="1" cellpadding="2" cellspacing="2">

@@ -28,7 +28,7 @@ public class ListaSocios implements Serializable {
     
     /*Constructor vacio*/
     public ListaSocios(){
-        s.setId((long)111111);
+       
     }
     
     public void getId(Long i){

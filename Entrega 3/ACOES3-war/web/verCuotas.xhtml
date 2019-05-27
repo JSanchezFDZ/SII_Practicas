@@ -10,7 +10,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
-               <c:choose>
+             <!-- <c:choose> -->
                 <!-- MOSTRAR ¡¡¡¡¡¡SOLO!!!!!! LAS CUOTAS DEL SOCIO QUE INICO SESION -->
                 <!--<c:when test="#{empty controlAutorizacion.getUsuario().getSocio().getCuota()}">
                     <h2>No tiene ninguna cuota registrada</h2>
@@ -40,7 +40,7 @@
                         </h:dataTable>
                     </h:form>
                 
-                </c:choose>
+               <!-- </c:choose>-->
             </c:when>
             
             <c:otherwise>

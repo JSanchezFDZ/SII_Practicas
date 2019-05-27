@@ -12,16 +12,45 @@
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                 <h1>MIS CUOTAS</h1>
                 <!-- MOSTRAR ¡¡¡¡¡¡SOLO!!!!!! LAS CUOTAS DEL SOCIO QUE INICO SESION -->
-            
-                <f:view>
-                    <h:form>
+                
+                <c:when test="#{empty ListaCuotas.findAll()}">
+                    <h2>No hay cuotas registradas en la base de datos.</h2>
+                 </c:when>
+                
+                <h:form>
                         <h:dataTable var='c' value="#{ListaCuotas.findAll()}" border="1" cellpadding="2" cellspacing="2">
-                            
-                             <!-- Tabla donde se mostraran las cuotas de la base de datos del usuario -->  
+                            <h:column>
+                                <f:facet name="header">Codigo cuota</f:facet>
+                                <h:outputText value="#{c.codigoCuota}"></h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">NombreCuota</f:facet>
+                                <h:outputText value="#{c.nombreCuota}"></h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Tipo</f:facet>
+                                <h:outputText value="#{c.tipo}"></h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Aportación</f:facet>
+                                <h:outputText value="#{c.aportación}"></h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Opción</f:facet>
+                                <h:commandLink value="Editar" action="#{ListaCuotas.edit(c)}"></h:commandLink>
+                                <br></br>
+                                <h:commandLink value="Eliminar" action="#{ListaCuotas.delete(c)}" 
+                                           onclick="return confirm('¿Estás seguro?')"></h:commandLink>
+                                <br></br>                           
+                            </h:column> 
                             
                         </h:dataTable>
+                        
+                        <h:column>
+                            <h:commandButton value="Inserta nueva cuota" action="#{ListaCuotas.crearCuota()}"/>
+                        </h:column>
                     </h:form>
-                </f:view>
+               
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

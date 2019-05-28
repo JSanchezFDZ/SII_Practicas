@@ -6,7 +6,7 @@
                     
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
     
-    <ui:define name="title">--------</ui:define>
+    <ui:define name="title">Modificar mis datos</ui:define>
     <ui:define name="content">
         <c:choose>
              <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
@@ -17,7 +17,7 @@
                                 <f:facet name="header">
                                     <h:outputText value="Usuario"/>
                                 </f:facet>
-                                <h:outputText value="#{item.usuario}"/>
+                                <h:outputText value="#{controlAutorizacion.getUsuario().usuario}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">

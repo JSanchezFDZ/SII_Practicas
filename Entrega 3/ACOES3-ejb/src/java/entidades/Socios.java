@@ -50,7 +50,6 @@ public class Socios implements Serializable {
     @OneToMany (mappedBy="numSocio")
     private List<Apadrinamiento> apadr;
     
-    
     public Socios (String nombre,String apellido,Long id,String estado,String direccion,String poblacion,int codPostal,
              String provincia, String telefono,String correo,String sector,String certificado, Date FechaAlta, Date FechaBaja,
             String observaciones,Usuario usuario){

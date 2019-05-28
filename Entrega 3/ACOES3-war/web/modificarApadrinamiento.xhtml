@@ -15,8 +15,7 @@
                 <f:view>
                     <h:form>
                         <h:panelGrid columns="2">
-                            <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
-                            <h:inputText readonly="true" id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" title="CodApadrinamiento" />
+                            <h:inputHidden  id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" />
                             
                             <h:outputLabel value="Niño a apadrinar:" for="codNino" />
                             <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" converter="ConvertidorJSF">

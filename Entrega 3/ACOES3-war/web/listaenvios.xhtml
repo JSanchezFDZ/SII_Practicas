@@ -22,7 +22,7 @@
                         <c:otherwise>
                             <h:form>
                                 <h1><h:outputText value="LISTA ENVIOS"/></h1>
-                                <h:dataTable value="#{ListaEnvios.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                <h:dataTable class="blueTable" value="#{ListaEnvios.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
                                     <h:column>
                                         <f:facet name="header"><h:outputText value="CodApadrinamiento"/></f:facet>
                                         <h:outputText value="#{item.codApadrinamiento}"/>
@@ -64,8 +64,6 @@
                                                    onclick="return confirm('¿Estás seguro?')"></h:commandLink>
                                         <br></br>                           
                                 </h:column> 
-                                   
-                                   
 
                                 </h:dataTable>
 
@@ -85,16 +83,11 @@
                             
                         </c:when>
                         <c:otherwise>
-                            
-                            
-                   
-                           
 
                             <h:form>
                                 <h1><h:outputText value="Lista envios"/></h1>
-                                <h:dataTable value="#{controlAutorizacion.getUsuario().getSocio().getApadr().getCodEnvio()}" var="item" border="1" cellpadding="2" cellspacing="2">
-                                 
-                                                                           
+                                <h:dataTable class="blueTable" value="#{controlAutorizacion.getUsuario().getSocio().getApadr().getCodEnvio()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                                                                                          
                                     <h:column>
                                         <f:facet name="header"><h:outputText value="CodApadrinamiento"/></f:facet>
                                         <h:outputText value="#{item.codApadrinamiento}"/>

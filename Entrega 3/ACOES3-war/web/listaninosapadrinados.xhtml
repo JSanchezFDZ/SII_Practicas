@@ -25,7 +25,7 @@
                         
                     <h1>LISTA APADRINAMIENTOS</h1>                        
                     <h:form>
-                        <h:dataTable class="table" value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
+                        <h:dataTable class="blueTable" value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="CodApadrinamiento"/>
@@ -89,7 +89,7 @@
                         <h2>Mis niños apadrinados</h2>
                         <f:view>
                             <h:form>
-                                <h:dataTable value="#{controlAutorizacion.getUsuario().getSocio().getApadr()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                <h:dataTable class="blueTable" value="#{controlAutorizacion.getUsuario().getSocio().getApadr()}" var="item" border="1" cellpadding="2" cellspacing="2">
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="COD"/>

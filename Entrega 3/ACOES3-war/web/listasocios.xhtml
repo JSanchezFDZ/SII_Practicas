@@ -21,7 +21,7 @@
 
                 <h1>LISTA SOCIOS</h1>
                 <h:form>
-                    <h:dataTable var="s" value="#{ListaSocios.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:dataTable class="blueTable" var="s" value="#{ListaSocios.findAll()}" border="1" cellpadding="2" cellspacing="2">
                         <h:column>
                             <f:facet name="header">Id</f:facet>
                             <h:outputText value="#{s.id}"></h:outputText>

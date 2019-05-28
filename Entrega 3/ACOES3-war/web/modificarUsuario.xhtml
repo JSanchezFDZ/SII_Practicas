@@ -13,12 +13,10 @@
                 <h1>Modificar usuario</h1>
                 <h:body>
                     <f:view>
-
-
                         <h:form>
                             <h:panelGrid columns="2">
                                 <h:outputLabel value="Usuario:" for="usuario" />
-                                <h:inputText readonly="true" id="usuario" value="#{ListaUsuarios.u.usuario}" title="Usuario" />                                
+                                <h:inputHidden id="usuario" value="#{ListaUsuarios.u.usuario}" />                                
                                 
                                 <h:outputLabel value="Pass:" for="pass" />
                                 <h:inputSecret id="pass" value="#{ListaUsuarios.u.pass}" title="Pass" required="true" requiredMessage="Establezca una contraseña" />

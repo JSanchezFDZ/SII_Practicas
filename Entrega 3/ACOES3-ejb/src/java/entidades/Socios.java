@@ -47,8 +47,8 @@ public class Socios implements Serializable {
     @JoinTable(name="CUOTA_SOCIOS", joinColumns = @JoinColumn(name = "SOCIO_FK"), inverseJoinColumns = 
             @JoinColumn(name = "CUOTA_FK"))
     private List<Cuota> cuota;
-    @ManyToOne
-    private Apadrinamiento apadr;
+    @OneToMany (mappedBy="numSocio")
+    private List<Apadrinamiento> apadr;
     
     
     public Socios (String nombre,String apellido,Long id,String estado,String direccion,String poblacion,int codPostal,
@@ -90,11 +90,11 @@ public class Socios implements Serializable {
         this.usuario = usuario;
     }
 
-    public Apadrinamiento getApadr() {
+    public List<Apadrinamiento> getApadr() {
         return apadr;
     }
 
-    public void setApadr(Apadrinamiento apadr) {
+    public void setApadr(List<Apadrinamiento> apadr) {
         this.apadr = apadr;
     }
 

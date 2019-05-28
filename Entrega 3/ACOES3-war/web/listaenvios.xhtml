@@ -87,20 +87,13 @@
                         <c:otherwise>
                             
                             
-                            <!-- PARTE CRITICA A REVISAR-->
-                                <!-- PARTE CRITICA A REVISAR-->
-                                    <!-- PARTE CRITICA A REVISAR-->
-                                        <!-- PARTE CRITICA A REVISAR-->
-                                        <!-- SOLO SE DEBEN MOSTRAR ENVIOS DEL USUARIO DE LA SESION-->
-                                        
-                                        
-                             <c:when test="#{ListaEnvios.e.codApadrinamiento==ListaApadrinamientos.s.codApadrinamiento}">
+                   
+                           
 
                             <h:form>
                                 <h1><h:outputText value="Lista envios"/></h1>
-                                <h:dataTable value="#{ListaEnvios.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
-                                    <!--WHEN EL CODIGO DE APADRINAMIENTO DEL ENVIO ES EL MISMO QUE EL DEL SOCIO QUE LO VE, MOSTRAR ELEM, LISTA   -->
-                                    <!-- completar  -->
+                                <h:dataTable value="#{controlAutorizacion.getUsuario().getSocio().getApadr().getCodEnvio()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                 
                                                                            
                                     <h:column>
                                         <f:facet name="header"><h:outputText value="CodApadrinamiento"/></f:facet>
@@ -138,7 +131,7 @@
 
                                
                             </h:form>
-                                 </c:when>
+                               
                             </c:otherwise>
                     </c:choose>
                 </f:view>

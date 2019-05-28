@@ -18,8 +18,7 @@
                     <h:form>
                         
                         <h:panelGrid columns="2">
-                            <h:outputLabel value="CodEnvio:" for="codEnvio" />
-                            <h:inputText id="codEnvio" value="#{ListaEnvios.e.codEnvio}" title="CodEnvio" readonly="true" />
+                            <h:inputHidden id="codEnvio" value="#{ListaEnvios.e.codEnvio}"  />
                             
                             <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
                             <h:selectOneMenu id="codApadrinamiento" value="#{ListaEnvios.e.codApadrinamiento}" title="CodApadrinamiento" converter="ConvertidorJSF" >

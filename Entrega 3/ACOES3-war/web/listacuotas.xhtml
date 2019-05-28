@@ -21,8 +21,10 @@
                     <c:otherwise>
                 
                 <h1>LISTA DE CUOTAS</h1>
+                <br/>
                     <h:form>
                         <h:dataTable class="blueTable" var='c' value="#{ListaCuotas.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                        
                             <h:column>
                                 <f:facet name="header">Codigo cuota</f:facet>
                                 <h:outputText value="#{c.codigoCuota}"></h:outputText>

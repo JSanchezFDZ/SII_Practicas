@@ -22,6 +22,7 @@
                         <c:otherwise>
                             <h:form>
                                 <h1><h:outputText value="LISTA NIÑOS"/></h1>
+                                <br/>
                                 <h:dataTable class="blueTable" value="#{ListaNinos.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
                                     <h:column>
                                         <f:facet name="header"><h:outputText value="Id"/></f:facet>

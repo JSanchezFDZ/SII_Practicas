@@ -23,7 +23,8 @@
                         </c:when>
                     <c:otherwise>
                         
-                    <h1>LISTA APADRINAMIENTOS</h1>                        
+                    <h1>LISTA APADRINAMIENTOS</h1>  
+                    <br/>
                     <h:form>
                         <h:dataTable class="blueTable" value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
                             <h:column>
@@ -87,6 +88,7 @@
                     
                     <c:otherwise>
                         <h2>Mis niños apadrinados</h2>
+                        <br/>
                         <f:view>
                             <h:form>
                                 <h:dataTable class="blueTable" value="#{controlAutorizacion.getUsuario().getSocio().getApadr()}" var="item" border="1" cellpadding="2" cellspacing="2">

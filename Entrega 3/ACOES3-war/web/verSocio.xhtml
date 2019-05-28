@@ -86,17 +86,17 @@
                                 <h:outputText value="#{item.sector}"/>
                             </h:column>
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="FechaAlta"/>
-                                </f:facet>
-                                <h:outputText value="#{item.fechaAlta}"/>
-                            </h:column>
+                            <f:facet name="header">Fecha Alta</f:facet>
+                            <h:outputText value="#{item.fechaAlta}">
+                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                            </h:outputText>
+                        </h:column>     
                             <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="FechaBaja"/>
-                                </f:facet>
-                                <h:outputText value="#{item.fechaBaja}"/>
-                            </h:column>
+                            <f:facet name="header">Fecha Baja</f:facet>
+                            <h:outputText value="#{item.fechaBaja}">
+                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                            </h:outputText>
+                        </h:column>     
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Observaciones"/>

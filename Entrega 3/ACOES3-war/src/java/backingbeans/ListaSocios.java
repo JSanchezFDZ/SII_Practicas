@@ -74,9 +74,9 @@ public class ListaSocios implements Serializable {
     public String add(String cuenta) {
             usuario = usuariosFacade.find(cuenta);
             usuario.setSocio(s);
+            sociosFacade.create(s);
+            this.s=new Socios();
             usuariosFacade.edit(usuario);
-            //sociosFacade.create(s);
-            //this.s=new Socios();
             return "listasocios.xhtml";
     }
     

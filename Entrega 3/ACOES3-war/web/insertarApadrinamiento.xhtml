@@ -35,7 +35,8 @@
                                 <f:selectItems value="#{ListaSocios.findAll()}"/>
                             </h:selectOneMenu>
                             
-                            <h:commandButton value="Insertar nuevo apadrinamiento" action="#{ListaApadrinamientos.add()}" />
+                            <h:commandButton value="Insertar nuevo apadrinamiento" action="#{ListaApadrinamientos.add(ListaApadrinamientos.s.codNino.id, 
+                                                                                             ListaApadrinamientos.s.numSocio.id)}" />
                             <h:commandButton value="Cancelar" action="listaninosapadrinados.xhtml"/>
                             <h:commandButton value="Limpiar" type="reset" />                            
                             

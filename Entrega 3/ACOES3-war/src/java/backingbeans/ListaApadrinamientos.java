@@ -7,11 +7,14 @@ package backingbeans;
 
 import entidades.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import modelos.ApadrinamientoFacade;
+import modelos.NinosFacade;
+import modelos.SociosFacade;
 
 /**
  *
@@ -23,7 +26,14 @@ import modelos.ApadrinamientoFacade;
 public class ListaApadrinamientos implements Serializable {
     @EJB
     private ApadrinamientoFacade apadrinamientoFacade;
+    @EJB
+    private NinosFacade ninosFacade;
+    @EJB
+    private SociosFacade sociosFacade;    
     private Apadrinamiento s = new Apadrinamiento();
+    private List<Apadrinamiento> listaApadrinamiento;
+    private Ninos nino;
+    private Socios socio;
 
     
     /*Constructor vacio*/
@@ -47,10 +57,19 @@ public class ListaApadrinamientos implements Serializable {
         return "insertarApadrinamiento.xhtml";
     }
     
-    public String add(){
+    public String add(Long idNino, Long idSocio){
+        nino = ninosFacade.find(idNino);
+        nino.setCodApadrinamiento(s);
+        
+        listaApadrinamiento = apadrinamientoFacade.findAll();
+        listaApadrinamiento.add(s);
+        socio = sociosFacade.find(idSocio);
+        socio.setApadr(listaApadrinamiento);
         
         this.apadrinamientoFacade.create(this.s);
         this.s = new Apadrinamiento();
+        ninosFacade.edit(nino);
+        sociosFacade.edit(socio);
         return "listaninosapadrinados.xhtml";
     }
     

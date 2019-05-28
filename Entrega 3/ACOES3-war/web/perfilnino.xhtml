@@ -69,12 +69,6 @@
                                 
                                 <h:outputLabel value="Observaciones:" for="observaciones" />
                                 <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" title="Observaciones" />
-                                
-                                <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
-                                <h:selectOneMenu id="codApadrinamiento" value="#{ListaNinos.s.codApadrinamiento}" title="CodApadrinamiento" >
-                                    <!-- TODO: update below reference to list of available items-->
-                                    <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
-                                </h:selectOneMenu>
 
                             <br/>
                             <h:commandButton value="Modificar niño" action="#{ListaNinos.edit()}" />

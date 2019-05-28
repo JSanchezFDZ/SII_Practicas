@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import modelos.ApadrinamientoFacade;
 import modelos.EnvioFacade;
 
 /**
@@ -23,86 +24,11 @@ import modelos.EnvioFacade;
 public class ListaEnvios implements Serializable{
     @EJB
     private EnvioFacade enviosFacade;
+    @EJB
+    private ApadrinamientoFacade apadrinamientoFacade;    
     private Envio e = new Envio();
-
-    
-
-    /*public ListaEnvios() {
-        envios = new ArrayList<>();
-        DatosPrueba test = new DatosPrueba();   //CLASE QUE CONTIENE EJEMPLOS DE CADA ENTIDAD!
-        padrino = test.getPadrino();
-        envios.add(new Envio(Long.parseLong("1"), test.getPadrino(), new Date(000, 0, 0), new Date(004, 0, 0), "N/A"));
-         envios.add(new Envio(Long.parseLong("2"), test.getPadrino(), new Date(000, 3, 0), new Date(003, 0, 0), "N/A"));
-         envios.add(new Envio(Long.parseLong("3"), test.getPadrino(), new Date(000, 4, 1), new Date(001, 0, 0), "N/A"));
-
-       }*/
-
-    /*
-    public ArrayList<Envio> getEnvios() {
-        return envios;
-    }
-
-    public Apadrinamiento getPadrino() {
-        return padrino;
-    }
-
-    public void setEnvios(ArrayList<Envio> envios) {
-        this.envios = envios;
-    }
-
-    public void setPadrino(Apadrinamiento padrino) {
-        this.padrino = padrino;
-    }
-
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.envios);
-        hash = 67 * hash + Objects.hashCode(this.padrino);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final ListaEnvios other = (ListaEnvios) obj;
-        if (!Objects.equals(this.envios, other.envios)) {
-            return false;
-        }
-        if (!Objects.equals(this.padrino, other.padrino)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "ListaEnvios{" + "envios=" + envios + ", padrino=" + padrino + '}';
-    }
-
-        public ArrayList<Envio> getEnviosPadrino(){
-        if(padrino.getCodApadrinamiento()==null) return null;
-        Long codigoPadrino = padrino.getCodApadrinamiento();
-        ArrayList<Envio> aux = new ArrayList<>(envios.size());
-        
-        for(int i=0; i<envios.size();i++){
-            if(codigoPadrino.equals(envios.get(i).getCodApadrinamiento().getCodApadrinamiento())){
-                aux.add(envios.get(i));
-            }
-        }
-        return aux;
-    }
-    
- */   
+    private Apadrinamiento apadr;
+    private List<Envio> listaEnvios;
 
     public ListaEnvios() {
     }
@@ -131,9 +57,16 @@ public class ListaEnvios implements Serializable{
         this.e = e;
     }
     
-    public String add(){
+    public String add(Long codApad){
+        listaEnvios = enviosFacade.findAll();
+        listaEnvios.add(e);
+        
+        apadr = apadrinamientoFacade.find(codApad);
+        apadr.setCodEnvio(listaEnvios);
+        
         this.enviosFacade.create(this.e);
         this.e = new Envio();
+        apadrinamientoFacade.edit(apadr);
         return "listaenvios.xhtml";
     }
     

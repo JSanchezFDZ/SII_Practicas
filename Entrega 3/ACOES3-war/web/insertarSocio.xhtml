@@ -64,12 +64,6 @@
                                 <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
                                 <f:selectItems value="#{ListaUsuarios.findAll()}"/>
                             </h:selectOneMenu>
-                             
-                            <h:outputLabel value="Apadrinamiento:" for="apadr" />
-                            <h:selectOneMenu id="apadr" value="#{ListaSocios.s.apadr}" title="Apadrinamiento" converter="ConvertidorJSF" >
-                                <f:selectItem itemLabel="Elija un niño para apadrinar .." itemValue="#{null}" />                                
-                                <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
-                            </h:selectOneMenu>
                             
                             <h:outputLabel value="Cuota:" for="cuota" />
                             <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" required="true" requiredMessage="Necesita seleccionar al menos una cuota" >

@@ -67,18 +67,6 @@
                             <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
                             
                             
-                            <h:outputLabel value="Usuario:" for="usuario" />
-                            <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" converter="ConvertidorJSF" >
-                                <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
-                                <f:selectItems value="#{ListaUsuarios.findAll()}"/>
-                            </h:selectOneMenu>
-                            
-                            <h:outputLabel value="Apadrinamiento:" for="apadr" />
-                            <h:selectOneMenu id="apadr" value="#{ListaSocios.s.apadr}" title="Apadr" converter="ConvertidorJSF">
-                                <f:selectItem itemLabel="Elija apadrinamiento.." itemValue="#{null}" />                                
-                                <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
-                            </h:selectOneMenu>
-                            
                             <h:outputLabel value="Cuota:" for="cuota" />
                             <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF">
                                 <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem"

@@ -82,8 +82,19 @@ public class ListaApadrinamientos implements Serializable {
         return "modificarApadrinamiento.xhtml";
     }
     
-    public String edit(){
+    public String editar(Long idNino){
+        nino = s.getCodNino();
+        nino.setCodApadrinamiento(null);
+        nino = ninosFacade.find(idNino);
+        nino.setCodApadrinamiento(s);
+        
         this.apadrinamientoFacade.edit(this.s);
+        ninosFacade.edit(nino);
         return "listaninosapadrinados.xhtml";
     }
+    /*
+    public void getNinoAnterior(Long idNinoAnterior) {
+        nino = ninosFacade.find(idNinoAnterior);
+    }
+    */
 }

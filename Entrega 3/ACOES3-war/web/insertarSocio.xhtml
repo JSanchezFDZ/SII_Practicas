@@ -60,13 +60,13 @@
                             <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
                             
                              <h:outputLabel value="Usuario:" for="usuario" />
-                             <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" converter="ConvertidorJSF" >
+                             <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" converter="ConvertidorJSF" required="true" requiredMessage="Seleccione un usuario para poder acceder a la aplicación"  >
                                 <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
                                 <f:selectItems value="#{ListaUsuarios.findAll()}"/>
                             </h:selectOneMenu>
                             
                             <h:outputLabel value="Cuota:" for="cuota" />
-                            <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" required="true" requiredMessage="Necesita seleccionar al menos una cuota" >
+                            <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" required="true" requiredMessage="Debe seleccionar al menos una cuota" >
                                 <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem"
                                            itemValue="#{cuotaItem}"
                                            itemLabel="#{cuotaItem.nombreCuota.toString()}"/>

@@ -135,10 +135,9 @@
                                 <h:outputLabel value="Certificado:" for="certificado" />
                                 <h:outputLabel id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
                                 
-                                <h:commandButton value="Confirmar" action="#{ListaSocios.edit(s)}" />
-                                <h:commandButton value="Ver cuotas"  action="verCuotas.xhtml">
-                                                 <f:actionListener binding="#{ListaSocios.getId(ListaSocios.s.id)}" />      <!--SE ENVIA ID DEL SOCIO POR VALUE -->
-                                </h:commandButton>
+                                <h:commandButton value="Confirmar" action="#{ListaSocios.edit(ListaSocios.s.usuario)}" />
+                                <h:commandButton value="Ver cuotas"  action="verCuotas.xhtml"/>
+                                                
                                 <h:commandButton value="Limpiar" type="reset" /> 
                             </h:panelGrid>
                             

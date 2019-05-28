@@ -17,10 +17,10 @@
                         <h:panelGrid columns="2">
   
                             <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:inputText id="nombre" value="#{ListaSocios.s.nombre}" title="Nombre" />
+                            <h:inputText id="nombre" value="#{ListaSocios.s.nombre}" title="Nombre" required="true" requiredMessage="Inserte un nombre" />
                             
                             <h:outputLabel value="Apellido:" for="apellido" />
-                            <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" title="Apellido" />
+                            <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" title="Apellido" required="true" requiredMessage="Inserte los apellidos" />
                             
                             <h:outputLabel value="Estado:" for="estado" />
                             <h:inputText id="estado" value="#{ListaSocios.s.estado}" title="Estado" />
@@ -47,27 +47,39 @@
                             <h:inputText id="sector" value="#{ListaSocios.s.sector}" title="Sector" />
                             
                             <h:outputLabel value="FechaAlta:" for="fechaAlta" />
-                            <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" title="Fecha Alta" />
+                            <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" title="Fecha Alta" >
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </h:inputText>
                             
                             <h:outputLabel value="FechaBaja:" for="fechaBaja" />
-                            <h:inputText id="fechaBaja" value="#{ListaSocios.s.fechaBaja}" title="Fecha Baja" />
+                            <h:inputText id="fechaBaja" value="#{ListaSocios.s.fechaBaja}" title="Fecha Baja" >
+                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                            </h:inputText>
                                        
                             <h:outputLabel value="Certificado:" for="certificado" />
                             <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
                             
                              <h:outputLabel value="Usuario:" for="usuario" />
-                            <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                             <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" converter="ConvertidorJSF" >
+                                <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
+                                <f:selectItems value="#{ListaUsuarios.findAll()}"/>
                             </h:selectOneMenu>
                              
-                            <h:outputLabel value="Apadr:" for="apadr" />
-                            <h:selectOneMenu id="apadr" value="#{ListaSocios.s.apadr}" title="Apadrinamiento" >
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                            <h:outputLabel value="Apadrinamiento:" for="apadr" />
+                            <h:selectOneMenu id="apadr" value="#{ListaSocios.s.apadr}" title="Apadrinamiento" converter="ConvertidorJSF" >
+                                <f:selectItem itemLabel="Elija un niño para apadrinar .." itemValue="#{null}" />                                
+                                <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
                             </h:selectOneMenu>
                             
-                            <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add()}" />
+                            <h:outputLabel value="Cuota:" for="cuota" />
+                            <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" required="true" requiredMessage="Necesita seleccionar al menos una cuota" >
+                                <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem"
+                                           itemValue="#{cuotaItem}"
+                                           itemLabel="#{cuotaItem.nombreCuota.toString()}"/>
+                            </h:selectManyCheckbox>
+                            
+                            
+                            <h:commandButton value="Insertar nuevo socio" action="#{ListaSocios.add(ListaSocios.s.usuario)}"  />
                             <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
                             <h:commandButton value="Limpiar" type="reset" />                            
                         </h:panelGrid>

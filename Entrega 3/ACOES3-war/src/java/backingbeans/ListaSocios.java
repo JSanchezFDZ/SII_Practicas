@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import modelos.SociosFacade;
 import modelos.UsuarioFacade;
 
@@ -22,7 +23,7 @@ import modelos.UsuarioFacade;
  * @author Jaime Moreno Sánchez
  */
 @Named(value = "ListaSocios")
-@RequestScoped
+@SessionScoped
 public class ListaSocios implements Serializable {
     @EJB
     private SociosFacade sociosFacade;

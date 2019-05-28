@@ -3,8 +3,7 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                >
-    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:define name="title">Lista de niños apadrinados</ui:define>
     <!-- OJO HAY QUE TENER EN CUENTA
         - SI ES ADMINISTRADOR: VE TODOS LOS NIÑOS APADRINADOS POR CADA SOCIO
@@ -12,99 +11,117 @@
     -->
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>LISTA NIÑOS APADRINADOS</h1>
-                <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
-                
-                <div class="bordeTablaApadrinados">
-                    <table id="tablaListaApadrinados">
-                        <thead>
-                                <tr>
-                                        <th>Código</th>
-                                        <th>Código niño</th>
-                                        <th>Número de socio</th>
-                                        <th>Datos envío</th>
-                                        <th>Configuración</th>
-                                </tr>
-                            </thead>
-                        
-                        <tbody>
-                            <ui:repeat var = "i" value="#{ListaApadrinamientos.getlApadrinamiento()}">
-                                <tr>                                
-                                    <td>#{i.codApadrinamiento}</td>
-                                    <td>#{i.codNino}</td>
-                                    <td>#{i.numSocio}</td>
-                                    <td>#{i.codEnvio}</td>
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
 
-                                    <td> <h:form id = "socio"> <h:column> <h:commandButton value="Gestionar niños apadrinados" action="modificarApadrinamiento.xhtml"/> </h:column> </h:form> </td>
-                                </tr>
-                            </ui:repeat>
-                        </tbody>
-                    </table>
-                    
-                    <td> 
-                            <h:form id = "envio"> 
-                                   <h:column> <h:commandButton value="Gestionar envíos" action="envio.xhtml"/> </h:column>
+                <f:view>
+                    <c:choose>
+                        <c:when test="#{empty ListaApadrinamientos.findAll()}">
+                            <h2>No hay apadrinamientos registrados en la base de datos.</h2>
+                            <h:form>
+                                <h:commandButton value="Inserta nuevo apadrinamiento" action="#{ListaApadrinamientos.crearApadrinamiento()}"/>
                             </h:form>
-                         
-                    </td>
-                </div>
-                
-                <table>
-                    <ui:param name="max" value="5"/>
-                    <ui:repeat var="i" value="#{controlAutorizacion.getSocios()}" size="#{max}">
-                        <tr>
-                            <td>#{controlAutorizacion.listaSocios[i].toString()}</td>
-                        </tr>
-                    </ui:repeat>
-                </table>
-                
+                        </c:when>
+                    <c:otherwise>
+                        
+                    <h1>LISTA APADRINAMIENTOS</h1>                        
+                    <h:form>
+                        <h:dataTable class="table" value="#{ListaApadrinamientos.findAll()}" var="item"  border="1" cellpadding="2" cellspacing="2">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="CodApadrinamiento"/>
+                                </f:facet>
+                                <h:outputText value="#{item.codApadrinamiento}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Niño"/>
+                                </f:facet>
+                                <h:outputText value="#{item.codNino}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="FechaApadrinamiento"/>
+                                </f:facet>
+                                <h:outputText value="#{item.fechaApadrinamiento}">
+                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/>
+                                </h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Observaciones"/>
+                                </f:facet>
+                                <h:outputText value="#{item.observaciones}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Socio"/>
+                                </f:facet>
+                                <h:outputText value="#{item.numSocio}"/>
+                            </h:column>                        
+                            <h:column>
+                                <f:facet name="header">Opción</f:facet>
+                                <h:commandLink value="Editar" action="#{ListaApadrinamientos.edit(item)}"></h:commandLink>
+                                <br></br>
+                                <h:commandLink value="Eliminar" action="#{ListaApadrinamientos.delete(item)}" 
+                                               onclick="return confirm('¿Estás seguro?')"></h:commandLink>
+                                <br></br>                           
+                            </h:column> 
+                        </h:dataTable>
+                        
+                        <h:column>
+                        <h:commandButton value="Inserta nuevo apadrinamiento" action="#{ListaApadrinamientos.crearApadrinamiento()}"/>
+                        </h:column>   
+                        
+                    </h:form>
+                    </c:otherwise>
+                    </c:choose>
+                </f:view>
                 
             </c:when>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
-                <h1>LISTA NIÑOS APADRINADOS</h1>
-                <!-- RECORRER CON UN BUCLE PARA MOSTRAR LOS SOCIOS -->
-                
-                <div class="bordeTablaApadrinados">
-                    <table id="tablaListaApadrinados">
-                        <thead>
-                                <tr>
-                                        <th>Nombre</th>
-                                        <th>Apellidos</th>
-                                        <th>Fecha Apadrinamiento</th>
-                                        <th>Código de envío</th>
-                                </tr>
-                            </thead>
-                        
-                        <tbody>
-                            <ui:repeat var = "i" value="#{ListaApadrinamientos.getlApadrinamiento()}">
-                                <tr>                                
-                                    <td>#{i.codNino.nombre}</td>
-                                    <td>#{i.codNino.apellidos}</td>
-                                    <td>#{i.fechaApadrinamiento}</td>
-                                    <td>#{i.codEnvio}</td>
-                                    
-                                </tr>
-                            </ui:repeat>
-                        </tbody>
-                    </table>
+            
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
+                <c:choose>
+                    <c:when test="#{empty controlAutorizacion.getUsuario().getSocio().getApadr()}">
+                        <h2>No hay apadrinamientos registrados en la base de datos.</h2>
+                    </c:when>
                     
-                    <td> 
-                            <h:form id = "envio"> 
-                                <h:column> <h:commandButton value="Realizar Apadrinamiento" action="insertarApadrinamiento.xhtml"/> </h:column> 
-                                <h:column> <h:commandButton value="Realizar un envio" action="insertarEnvio.xhtml"/> </h:column>
+                    <c:otherwise>
+                        <h2>Mis niños apadrinados</h2>
+                        <f:view>
+                            <h:form>
+                                <h:dataTable value="#{controlAutorizacion.getUsuario().getSocio().getApadr()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="COD"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.codApadrinamiento}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Niño"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.codNino}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Fecha del apadrinamiento"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.fechaApadrinamiento}">
+                                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                                        </h:outputText>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Observaciones"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.observaciones}"/>
+                                    </h:column>
+                                </h:dataTable>
                             </h:form>
-                    </td>
-                </div>
-                             
-                <table>
-                    <ui:param name="max" value="5"/>
-                    <ui:repeat var="i" value="#{controlAutorizacion.getSocios()}" size="#{max}">
-                        <tr>
-                            <td>#{controlAutorizacion.listaSocios[i].toString()}</td>
-                        </tr>
-                    </ui:repeat>
-                </table>
+                        </f:view>
+
+                    </c:otherwise>
+                </c:choose>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

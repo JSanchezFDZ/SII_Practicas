@@ -3,82 +3,90 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                >
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <ui:define name="title">Perfil</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{PerfilNino.nino}">PERFIL DE <h:outputText value="#{i.nombre.toUpperCase()} #{i.apellidos.toUpperCase()}"/></h1>
-                
-                <h:form id="ListaNinos">
-                    <table>
-                        <tr>
-                            <td>Nombre: </td>
-                            <td><h:inputText  value="#{i.nombre}"/></td>
-                        </tr>
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">  
+                <h1>Modificar niño</h1>
+                <h:body>
+                    <f:view>
 
-                        <tr>
-                            <td>Apellidos: </td>
-                            <td><h:inputText  value="#{i.apellidos}"/></td>
-                        </tr>
+                        <h:form>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Id:" for="id" />
+                                <h:inputHidden id="id" value="#{ListaNinos.s.id}" />
+                                
+                                <h:outputLabel value="Nombre:" for="nombre" />
+                                <h:inputText id="nombre" value="#{ListaNinos.s.nombre}" title="Nombre" />
+                                
+                                <h:outputLabel value="Apellidos:" for="apellidos" />
+                                <h:inputText id="apellidos" value="#{ListaNinos.s.apellidos}" title="Apellidos" />
+                                
+                                <h:outputLabel value="Estado:" for="estado" />
+                                <h:inputText id="estado" value="#{ListaNinos.s.estado}" title="Estado" />
+                                
+                                <h:outputLabel value="Beca:" for="beca" />
+                                <h:inputText id="beca" value="#{ListaNinos.s.beca}" title="Beca" />
+                                
+                                <h:outputLabel value="Sexo:" for="sexo" />
+                                <h:inputText id="sexo" value="#{ListaNinos.s.sexo}" title="Sexo" />
+                                
+                                <h:outputLabel value="Agente:" for="agente" />
+                                <h:inputText id="agente" value="#{ListaNinos.s.agente}" title="Agente" />
+                                
+                                <h:outputLabel value="Foto:" for="foto" />
+                                <h:inputText id="foto" value="#{ListaNinos.s.foto}" title="Foto" />
+                                
+                                <h:outputLabel value="FechaNac:" for="fechaNac" />
+                                <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" title="FechaNac" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                                
+                                <h:outputLabel value="FechaAlta:" for="fechaAlta" />
+                                <h:inputText id="fechaAlta" value="#{ListaNinos.s.fechaAlta}" title="FechaAlta" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                                
+                                <h:outputLabel value="FechaBaja:" for="fechaBaja" />
+                                <h:inputText id="fechaBaja" value="#{ListaNinos.s.fechaBaja}" title="FechaBaja" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:inputText>
+                                
+                                <h:outputLabel value="Proyecto:" for="proyecto" />
+                                <h:inputText id="proyecto" value="#{ListaNinos.s.proyecto}" title="Proyecto" />
+                                
+                                <h:outputLabel value="GradoCurso:" for="gradoCurso" />
+                                <h:inputText id="gradoCurso" value="#{ListaNinos.s.gradoCurso}" title="GradoCurso" />
+                                
+                                <h:outputLabel value="ComunidadProcedencia:" for="comunidadProcedencia" />
+                                <h:inputText id="comunidadProcedencia" value="#{ListaNinos.s.comunidadProcedencia}" title="ComunidadProcedencia" />
+                                
+                                <h:outputLabel value="ColoniaActual:" for="coloniaActual" />
+                                <h:inputText id="coloniaActual" value="#{ListaNinos.s.coloniaActual}" title="ColoniaActual" />
+                                
+                                <h:outputLabel value="Observaciones:" for="observaciones" />
+                                <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" title="Observaciones" />
+                                
+                                <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
+                                <h:selectOneMenu id="codApadrinamiento" value="#{ListaNinos.s.codApadrinamiento}" title="CodApadrinamiento" >
+                                    <!-- TODO: update below reference to list of available items-->
+                                    <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
+                                </h:selectOneMenu>
 
-                        <tr>
-                            <td>Sexo </td>
-                            <td><h:inputText  value="#{i.sexo}"/></td>
-                        </tr>
+                            <br/>
+                            <h:commandButton value="Modificar niño" action="#{ListaNinos.edit()}" />
+                            <h:commandButton value="Cancelar" action="listaninos.xhtml"/> 
+                            
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
+                </h:body>
 
-                        <tr>
-                            <td>Estado </td>
-                            <td><h:inputText  value="#{i.estado}"/></td>
-                        </tr>
 
-                        <tr>
-                            <td>Beca </td>
-                            <td><h:inputText  value="#{i.beca}"/></td>
-                        </tr>
-
-                         <tr>
-                            <td>Agente </td>
-                            <td><h:inputText  value="#{i.agente}"/></td>
-                        </tr>  
-
-                        <tr>
-                            <td>Fecha nacimiento </td>
-                            <td><h:inputText  value="#{i.fechaNac}"/></td>
-                        </tr>        
-
-                        <tr>
-                            <td>Proyecto </td>
-                            <td><h:inputText  value="#{i.proyecto}"/></td>
-                        </tr>   
-
-                        <tr>
-                            <td>Curso </td>
-                            <td><h:inputText  value="#{i.gradoCurso}"/></td>
-                        </tr> 
-
-                        <tr>
-                            <td>Procedencia</td>
-                            <td><h:inputText  value="#{i.comunidadProcedencia}"/></td>
-                        </tr> 
-
-                        <tr>
-                            <td>Colonia</td>
-                            <td><h:inputText  value="#{i.coloniaActual}"/></td>
-                        </tr> 
-
-                        <tr>
-                            <td>Observaciones</td>
-                            <td><h:inputText  value="#{i.observaciones}"/></td>
-                        </tr> 
-                    </table>
-                </h:form>
-                <h:form> 
-                    <h:column> <h:commandButton value="Actualizar niño"/> </h:column> 
-                    <h:column> <h:commandButton value="Cancelar" action="listaninos.xhtml" /> </h:column>                         
-                </h:form>
-                   
+                                           
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

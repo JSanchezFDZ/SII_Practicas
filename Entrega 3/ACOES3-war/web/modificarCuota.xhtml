@@ -17,7 +17,7 @@
                         <h:panelGrid columns="2">
                             
                             <h:outputLabel value="CodigoCuota:" for="codigoCuota" />
-                            <h:inputText id="codigoCuota" value="#{ListaCuotas.c.codigoCuota}" title="Codigo Cuota" readonly="true"/>
+                            <h:inputHidden> id="codigoCuota" value="#{ListaCuotas.c.codigoCuota}" title="Codigo Cuota" readonly="true"</h:inputHidden>
                             
                             <h:outputLabel value="NombreCuota:" for="nombreCuota" />
                             <h:inputText id="nombreCuota" value="#{ListaCuotas.c.nombreCuota}" title="Nombre Cuota" />

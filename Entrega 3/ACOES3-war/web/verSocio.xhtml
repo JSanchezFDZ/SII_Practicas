@@ -12,7 +12,7 @@
              <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
              <h:form>
                         <h1><h:outputText value="Mis Datos:"/></h1>
-                        <h:dataTable value="#{controlAutorizacion.getUsuario().getSocio()}" var="item"  border="1" cellpadding="2" cellspacing="2">
+                        <h:dataTable class="blueTable" value="#{controlAutorizacion.getUsuario().getSocio()}" var="item"  border="1" cellpadding="2" cellspacing="2">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Usuario"/>

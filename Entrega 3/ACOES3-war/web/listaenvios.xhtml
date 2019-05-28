@@ -26,19 +26,19 @@
                                 <h:dataTable class="blueTable" value="#{ListaEnvios.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
                                     <br/>
                                     <h:column>
-                                        <f:facet name="header"><h:outputText value="CodApadrinamiento"/></f:facet>
+                                        <f:facet name="header"><h:outputText value="Codigo Apadrinamiento"/></f:facet>
                                         <h:outputText value="#{item.codApadrinamiento}"/>
                                     </h:column>
                                     <h:column>
                                         <f:facet name="header">
-                                            <h:outputText value="CodEnvio"/>
+                                            <h:outputText value="Codigo Envio"/>
                                         </f:facet>
                                         <h:outputText value="#{item.codEnvio}"/>
                                     </h:column>
                                    
                                     <h:column>
                                         <f:facet name="header">
-                                            <h:outputText value="fechaEnvio"/>
+                                            <h:outputText value="Fecha Envio"/>
                                         </f:facet>
                                         <h:outputText value="#{item.fechaEnvio}" >
                                          <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
@@ -46,7 +46,7 @@
                                     </h:column>
                                     <h:column>
                                         <f:facet name="header">
-                                            <h:outputText value="fechaLlegada"/>
+                                            <h:outputText value="Fecha Llegada"/>
                                         </f:facet>
                                         <h:outputText value="#{item.fechaLlegada}" >
                                             <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
@@ -97,20 +97,20 @@
                                     </h:column>
                                     <h:column>
                                         <f:facet name="header">
-                                            <h:outputText value="CodEnvio"/>
+                                            <h:outputText value="Codigo Envio"/>
                                         </f:facet>
                                         <h:outputText value="#{item.codEnvio}"/>
                                     </h:column>
                                     
                                     <h:column>
                                         <f:facet name="header">
-                                            <h:outputText value="fechaEnvio"/>
+                                            <h:outputText value="Fecha Envio"/>
                                         </f:facet>
                                         <h:outputText value="#{item.fechaEnvio}"/>
                                     </h:column>
                                     <h:column>
                                         <f:facet name="header">
-                                            <h:outputText value="fechaLlegada"/>
+                                            <h:outputText value="Fecha Llegada"/>
                                         </f:facet>
                                         <h:outputText value="#{item.fechaLlegada}"/>
                                     </h:column>

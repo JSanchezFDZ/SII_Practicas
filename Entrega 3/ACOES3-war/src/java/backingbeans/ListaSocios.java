@@ -93,4 +93,9 @@ public class ListaSocios implements Serializable {
         return "listasocios.xhtml";
     }
     
+     public String editSocio(){
+        this.sociosFacade.edit(this.s);
+        return "verSocio.xhtml";
+    }
+    
 }

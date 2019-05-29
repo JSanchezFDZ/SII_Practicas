@@ -15,8 +15,6 @@
                 <f:view>
                     <h:form>
                         <h:panelGrid columns="2">
-                            <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
-                            <h:inputHidden  id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" />
                             
                             <h:outputLabel value="Niño a apadrinar:" for="codNino" />
                             <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" title="CodNino" converter="ConvertidorJSF">
@@ -40,6 +38,9 @@
                             
                             <h:commandButton value="Modificar apadrinamiento" action="#{ListaApadrinamientos.editar(ListaApadrinamientos.s.codNino.id)}" />
                             <h:commandButton value="Cancelar" action="listaninosapadrinados.xhtml"/>
+                            
+                            <h:inputHidden  id="codApadrinamiento" value="#{ListaApadrinamientos.s.codApadrinamiento}" />                            
+                            
                         </h:panelGrid>
                     </h:form>
                 </f:view>

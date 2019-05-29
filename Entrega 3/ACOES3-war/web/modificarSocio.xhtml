@@ -17,8 +17,6 @@
                     <h:form>
                         <h:panelGrid columns="2">
                             
-                            <h:outputLabel value="Id:" for="id" />
-                            <h:inputHidden id="id" value="#{ListaSocios.s.id}" />
                             
                             <h:outputLabel value="Nombre:" for="nombre" />
                             <h:inputText id="nombre" value="#{ListaSocios.s.nombre}" title="Nombre" required="true" requiredMessage="Inserte un nombre" />
@@ -76,6 +74,9 @@
                             
                             <h:commandButton value="Modificar socio" action="#{ListaSocios.edit()}" />
                             <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
+                            
+                            <h:inputHidden id="id" value="#{ListaSocios.s.id}" />
+                            
                         </h:panelGrid>
                     </h:form>
                 </f:view>

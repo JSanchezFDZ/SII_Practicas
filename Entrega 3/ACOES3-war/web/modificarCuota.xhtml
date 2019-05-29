@@ -14,10 +14,7 @@
                 <h:body>
                 <f:view>
                     <h:form>
-                        <h:panelGrid columns="2">
-                            
-                            
-                            <h:inputHidden id="codigoCuota" value="#{ListaCuotas.c.codigoCuota}"/>
+                        <h:panelGrid columns="2">        
                             
                             <h:outputLabel value="NombreCuota:" for="nombreCuota" />
                             <h:inputText id="nombreCuota" value="#{ListaCuotas.c.nombreCuota}" title="Nombre Cuota" />
@@ -31,6 +28,9 @@
                             
                             <h:commandButton value="Actualizar cuota" action="#{ListaCuotas.edit()}" />
                             <h:commandButton value="Cancelar" action="listacuotas.xhtml"/>
+                            
+                            <h:inputHidden id="codigoCuota" value="#{ListaCuotas.c.codigoCuota}"/>                            
+                            
                         </h:panelGrid>
                     </h:form>
                 </f:view>

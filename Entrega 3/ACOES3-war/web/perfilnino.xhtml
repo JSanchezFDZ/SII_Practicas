@@ -16,8 +16,6 @@
 
                         <h:form>
                             <h:panelGrid columns="2">
-                                <h:outputLabel value="Id:" for="id" />
-                                <h:inputHidden id="id" value="#{ListaNinos.s.id}" />
                                 
                                 <h:outputLabel value="Nombre:" for="nombre" />
                                 <h:inputText id="nombre" value="#{ListaNinos.s.nombre}" title="Nombre" />
@@ -70,10 +68,11 @@
                                 <h:outputLabel value="Observaciones:" for="observaciones" />
                                 <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" title="Observaciones" />
 
-                            <br/>
-                            <h:commandButton value="Modificar niño" action="#{ListaNinos.edit()}" />
-                            <h:commandButton value="Cancelar" action="listaninos.xhtml"/> 
-                            
+                                <h:commandButton value="Modificar niño" action="#{ListaNinos.edit()}" />
+                                <h:commandButton value="Cancelar" action="listaninos.xhtml"/> 
+
+                                <h:inputHidden id="id" value="#{ListaNinos.s.id}" />                            
+    
                         </h:panelGrid>
                     </h:form>
                 </f:view>

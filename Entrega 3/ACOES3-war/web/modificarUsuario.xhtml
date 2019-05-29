@@ -14,9 +14,7 @@
                 <h:body>
                     <f:view>
                         <h:form>
-                            <h:panelGrid columns="2">
-                                <h:outputLabel value="Usuario:" for="usuario" />
-                                <h:inputHidden id="usuario" value="#{ListaUsuarios.u.usuario}" />                                
+                            <h:panelGrid columns="2">                                
                                 
                                 <h:outputLabel value="Pass:" for="pass" />
                                 <h:inputSecret id="pass" value="#{ListaUsuarios.u.pass}" title="Pass" required="true" requiredMessage="Establezca una contraseña" />
@@ -35,6 +33,9 @@
 
                             <h:commandButton value="Modificar Usuario" action="#{ListaUsuarios.edit()}" />
                             <h:commandButton value="Cancelar" action="listausuarios.xhtml"/>
+                            
+                            <h:inputHidden id="usuario" value="#{ListaUsuarios.u.usuario}" />
+                            
                         </h:panelGrid>
                     </h:form>
                 </f:view>

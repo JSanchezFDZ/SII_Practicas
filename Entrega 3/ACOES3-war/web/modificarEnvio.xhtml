@@ -18,9 +18,8 @@
                     <h:form>
                         
                         <h:panelGrid columns="2">
-                            <h:inputHidden id="codEnvio" value="#{ListaEnvios.e.codEnvio}"  />
                             
-                            <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
+                            <h:outputLabel value="Niño apadrinado" for="codApadrinamiento" />
                             <h:selectOneMenu id="codApadrinamiento" value="#{ListaEnvios.e.codApadrinamiento}" title="CodApadrinamiento" converter="ConvertidorJSF" >
                                 <!-- TODO: update below reference to list of available items-->
                                 <f:selectItems value="#{ListaApadrinamientos.findAll()}"/>
@@ -39,10 +38,11 @@
                             <h:outputLabel value="Observaciones:" for="observaciones" />
                             <h:inputTextarea id="observaciones" value="#{ListaEnvios.e.observaciones}" title="Observaciones" />
 
-                           
-                            
                             <h:commandButton value="Actualizar cuota" action="#{ListaEnvios.edit()}" />
                             <h:commandButton value="Cancelar" action="listacuotas.xhtml"/>
+                            
+                            <h:inputHidden id="codEnvio" value="#{ListaEnvios.e.codEnvio}"  />                            
+                            
                         </h:panelGrid>
                     </h:form>
                 </f:view>

@@ -89,7 +89,8 @@
                             <h:form>
                                 <h1><h:outputText value="Lista envios"/></h1>
                                 <br/>
-                                <h:dataTable class="blueTable" value="#{controlAutorizacion.getUsuario().getSocio().getApadr().getCodEnvio()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                 <h:dataTable class="blueTable" var='item' value="#{controlAutorizacion.getUsuario().getSocio().getEnviosDeSocio(controlAutorizacion.getUsuario().getSocio().getApadbyID())}" border="1" cellpadding="2" cellspacing="2">
+                               
                                                                                                           
                                     <h:column>
                                         <f:facet name="header"><h:outputText value="CodApadrinamiento"/></f:facet>

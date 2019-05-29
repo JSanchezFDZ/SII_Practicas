@@ -11,10 +11,8 @@
                
                 <f:view>
                     
-
-
                         <h:form>
-                            <h1><h:outputText value="Mis datos:"/></h1>
+                            <h3><h:outputText value="Mis datos:"/></h3>
                             <h:panelGrid columns="2">
                                
                                 <h:outputLabel value="Id:" for="id" />
@@ -48,11 +46,10 @@
                                 <h:outputLabel value="Certificado:" for="certificado" />
                                 <h:outputLabel id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
                                 
-                                <h:commandButton value="Confirmar" action="#{ListaSocios.edit(s)}" />
-                                <h:commandButton value="Ver cuotas"  action="verCuotas.xhtml">
+                                <h:commandButton class="btn btn-primary" value="Actualizar datos" action="#{ListaSocios.edit(s)}" />
+                                <h:commandButton class="btn btn-success" value="Ver cuotas"  action="verCuotas.xhtml">
                                                  <f:actionListener binding="#{ListaSocios.getId(ListaSocios.s.id)}" />      <!--SE ENVIA ID DEL SOCIO POR VALUE -->
                                 </h:commandButton>
-                                <h:commandButton value="Limpiar" type="reset" /> 
                             </h:panelGrid>
                             
                             

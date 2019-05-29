@@ -10,7 +10,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1>Modificar socio</h1>
+                <h3>Modificar socio</h3>
                 <h:body>
                 <f:view>
 
@@ -72,8 +72,8 @@
                                            itemLabel="#{cuotaItem.nombreCuota.toString()}"/>
                             </h:selectManyCheckbox>
                             
-                            <h:commandButton value="Modificar socio" action="#{ListaSocios.edit()}" />
-                            <h:commandButton value="Cancelar" action="listasocios.xhtml"/>
+                            <h:commandButton class="btn btn-primary" value="Actualizar socio" action="#{ListaSocios.edit()}" />
+                            <h:commandButton class="btn btn-danger" value="Volver" action="listasocios.xhtml"/>
                             
                             <h:inputHidden id="id" value="#{ListaSocios.s.id}" />
                             
@@ -89,7 +89,7 @@
 
 
                     <h:form>
-                        <h1><h:outputText value="Editar mis datos"/></h1>
+                        <h3><h:outputText value="Editar mis datos"/></h3>
                         <h:panelGrid columns="2">
                             
                           
@@ -130,9 +130,10 @@
                             <h:inputText id="observaciones" value="#{EditSocio.s.observaciones}" title="Observaciones" />
                             <h:outputLabel value="Certificado:" for="certificado" />
                             <h:inputText id="certificado" value="#{EditSocio.s.certificado}" title="Certificado" />
-                             <h:commandButton value="Confirmar" action="#{EditSocio.editSocio()}"/>
-                              <h:commandButton value="Cancelar" action="verSocio.xhtml"/>
-                              <h:commandButton value="Limpiar" type="reset" />
+                            
+                            <h:commandButton class="btn btn-primary" value="Actualizar socio" action="#{EditSocio.editSocio()}"/>
+                            <h:commandButton class="btn btn-danger" value="Volver" action="verSocio.xhtml"/>
+
                         </h:panelGrid>
                     </h:form>
 

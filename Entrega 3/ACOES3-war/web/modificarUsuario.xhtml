@@ -10,7 +10,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1>Modificar usuario</h1>
+                <h3>Modificar usuario</h3>
                 <h:body>
                     <f:view>
                         <h:form>
@@ -31,8 +31,8 @@
                                 </h:selectOneMenu>
                                 
 
-                            <h:commandButton value="Modificar Usuario" action="#{ListaUsuarios.edit()}" />
-                            <h:commandButton value="Cancelar" action="listausuarios.xhtml"/>
+                            <h:commandButton class="btn btn-primary" value="Actualizar Usuario" action="#{ListaUsuarios.edit()}" />
+                            <h:commandButton class="btn btn-danger" value="Volver" action="listausuarios.xhtml"/>
                             
                             <h:inputHidden id="usuario" value="#{ListaUsuarios.u.usuario}" />
                             

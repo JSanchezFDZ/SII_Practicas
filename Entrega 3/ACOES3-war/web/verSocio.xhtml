@@ -11,9 +11,9 @@
         <c:choose>
              <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
              <h:form>
-                        <h1><h:outputText value="MIS DATOS"/></h1>
+                        <h3><h:outputText value="MIS DATOS"/></h3>
                         <br/>
-                        <h:dataTable class="blueTable" value="#{controlAutorizacion.getUsuario().getSocio()}" var="item"  border="1" cellpadding="2" cellspacing="2">
+                        <h:dataTable class="blueTable" value="#{controlAutorizacion.getUsuario().getSocio()}" var="item">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Usuario"/>
@@ -114,10 +114,10 @@
                                 <f:facet name="header">
                                     <h:outputText value="Opción"/>
                                 </f:facet>
-                                 <h:commandLink value="Editar" action="#{EditSocio.edit(item)}"></h:commandLink>
+                                 <h:commandLink class="btn btn-primary" value="Actualizar datos" action="#{EditSocio.edit(item)}"></h:commandLink>
                                  
                                  <b>/</b>
-                                  <h:commandLink value="Cuotas" action="verCuotas.xhtml"></h:commandLink>
+                                  <h:commandLink class="btn btn-success" value="Cuotas" action="verCuotas.xhtml"></h:commandLink>
                             </h:column>
                         </h:dataTable>
                     </h:form>

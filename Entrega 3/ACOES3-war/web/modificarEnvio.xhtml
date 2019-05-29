@@ -10,7 +10,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1>Modificar envio</h1>
+                <h3>Modificar envio</h3>
                 <h:body>
                 <f:view>
 
@@ -38,8 +38,8 @@
                             <h:outputLabel value="Observaciones:" for="observaciones" />
                             <h:inputTextarea id="observaciones" value="#{ListaEnvios.e.observaciones}" title="Observaciones" />
 
-                            <h:commandButton value="Actualizar cuota" action="#{ListaEnvios.edit()}" />
-                            <h:commandButton value="Cancelar" action="listacuotas.xhtml"/>
+                            <h:commandButton class="btn btn-primary" value="Actualizar cuota" action="#{ListaEnvios.edit()}" />
+                            <h:commandButton class="btn btn-danger" value="Volver" action="listacuotas.xhtml"/>
                             
                             <h:inputHidden id="codEnvio" value="#{ListaEnvios.e.codEnvio}"  />                            
                             

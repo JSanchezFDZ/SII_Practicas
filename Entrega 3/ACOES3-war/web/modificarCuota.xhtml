@@ -10,7 +10,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1>Modificar cuota</h1>
+                <h3>Modificar cuota</h3>
                 <h:body>
                 <f:view>
                     <h:form>
@@ -26,8 +26,8 @@
                             <h:inputText id="aportación" value="#{ListaCuotas.c.aportación}" title="Aportacion" />
                            
                             
-                            <h:commandButton value="Actualizar cuota" action="#{ListaCuotas.edit()}" />
-                            <h:commandButton value="Cancelar" action="listacuotas.xhtml"/>
+                            <h:commandButton class="btn btn-primary" value="Actualizar cuota" action="#{ListaCuotas.edit()}" />
+                            <h:commandButton class="btn btn-danger" value="Volver" action="listacuotas.xhtml"/>
                             
                             <h:inputHidden id="codigoCuota" value="#{ListaCuotas.c.codigoCuota}"/>                            
                             

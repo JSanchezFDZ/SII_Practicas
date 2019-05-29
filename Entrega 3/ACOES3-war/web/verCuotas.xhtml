@@ -17,11 +17,11 @@
                  </c:when>
                
                 <c:otherwise>  
-                     <h1>MIS CUOTAS</h1>
+                     <h3>MIS CUOTAS</h3>
                      <br/>
                     
                 <h:form>
-                    <h:dataTable class="blueTable" var='c' value="#{controlAutorizacion.getUsuario().getSocio().getCuota()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:dataTable class="blueTable" var='c' value="#{controlAutorizacion.getUsuario().getSocio().getCuota()}">
                             <h:column>
                                 <f:facet name="header">Codigo cuota</f:facet>
                                 <h:outputText value="#{c.codigoCuota}"></h:outputText>

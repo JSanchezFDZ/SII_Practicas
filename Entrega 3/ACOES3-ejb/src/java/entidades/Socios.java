@@ -6,6 +6,7 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -249,6 +250,32 @@ public class Socios implements Serializable {
     @Override
     public String toString() {
         return nombre+ " " + apellido;
+    }
+    
+    //OBTENER APADRINAMIENTOS DE 1 UNICO SOCIO
+    public List<Apadrinamiento> getApadbyID(){
+        List <Apadrinamiento> aux = new ArrayList<>();
+        for(int i=0; i<apadr.size();i++){
+            if(id==apadr.get(i).getNumSocio().id){
+                aux.add(apadr.get(i));
+            }
+        }
+        return aux;
+        
+    }
+    
+    public List<Envio> getEnviosDeSocio(List<Apadrinamiento> l){
+        
+        List <Envio> e = new ArrayList<>();
+        
+        for(int i=0; i<l.size(); i++){
+            if(!(l.get(i).getCodEnvio().isEmpty())){
+                for(int j=0; j<l.get(i).getCodEnvio().size();j++){
+                    e.add(l.get(i).getCodEnvio().get(j));
+                }
+            }
+        }
+        return e;
     }
     
 }

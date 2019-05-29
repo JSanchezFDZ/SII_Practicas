@@ -83,7 +83,7 @@ public class ListaApadrinamientos implements Serializable {
     }
     
     public String editar(Long idNino){
-        nino = s.getCodNino();
+        nino = ninosFacade.find(s.getCodNino().getId());
         nino.setCodApadrinamiento(null);
         nino = ninosFacade.find(idNino);
         nino.setCodApadrinamiento(s);
@@ -92,9 +92,9 @@ public class ListaApadrinamientos implements Serializable {
         ninosFacade.edit(nino);
         return "listaninosapadrinados.xhtml";
     }
-    /*
-    public void getNinoAnterior(Long idNinoAnterior) {
-        nino = ninosFacade.find(idNinoAnterior);
+    
+    public Long getAnterior(Long idNinoAnterior) {
+        return idNinoAnterior;
     }
-    */
+    
 }

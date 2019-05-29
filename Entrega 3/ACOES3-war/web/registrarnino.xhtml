@@ -55,7 +55,7 @@
                             
                             <h:commandButton class="btn btn-primary" value="Insertar niño" action="#{ListaNinos.add()}" /> 
                             <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />
-                            <h:commandButton class="btn btn-danger" value="Volver" action="listaninos.xhtml"/>
+                            <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
                             
                         </h:panelGrid>
                     </h:form>

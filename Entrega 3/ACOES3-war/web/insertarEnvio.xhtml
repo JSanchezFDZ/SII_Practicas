@@ -31,9 +31,9 @@
                             <h:inputText id="observaciones" value="#{ListaEnvios.e.observaciones}" title="Observaciones" />
                         </h:panelGrid>
                         
-                            <h:commandButton class="btn btn-success" value="Insertar envio" action="#{ListaEnvios.add()}" />
+                        <h:commandButton class="btn btn-success" value="Insertar envio" action="#{ListaEnvios.add(ListaEnvios.e.codApadrinamiento.codApadrinamiento)}" />
                             <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" /> 
-                            <h:commandButton class="btn btn-danger"value="Volver" action="listaenvios.xhtml" />
+                            <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
                     </h:form>
                 </f:view>
 

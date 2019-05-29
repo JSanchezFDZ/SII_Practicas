@@ -69,7 +69,7 @@
                                 <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" title="Observaciones" />
 
                                 <h:commandButton class="btn btn-primary" value="Actualizar niño" action="#{ListaNinos.edit()}" />
-                                <h:commandButton class="btn btn-danger" value="Volver" action="listaninos.xhtml"/> 
+                                <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
 
                                 <h:inputHidden id="id" value="#{ListaNinos.s.id}" />                            
     

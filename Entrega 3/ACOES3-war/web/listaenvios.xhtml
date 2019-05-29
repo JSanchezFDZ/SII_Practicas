@@ -41,7 +41,7 @@
                                             <h:outputText value="Fecha Envio"/>
                                         </f:facet>
                                         <h:outputText value="#{item.fechaEnvio}" >
-                                         <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                                            <f:convertDateTime pattern="dd/MM/yyyy" />
                                         </h:outputText>
                                     </h:column>
                                     <h:column>
@@ -49,7 +49,7 @@
                                             <h:outputText value="Fecha Llegada"/>
                                         </f:facet>
                                         <h:outputText value="#{item.fechaLlegada}" >
-                                            <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                                            <f:convertDateTime pattern="dd/MM/yyyy" /> 
                                         </h:outputText>
                                     </h:column>
                                     <h:column>
@@ -60,9 +60,9 @@
                                     </h:column>
                                     <h:column>
                                     <f:facet name="header">Opción</f:facet>
-                                        <h:commandLink value="Editar" action="#{ListaEnvios.edit(item)}"></h:commandLink>
+                                        <h:commandLink class="fas fa-edit" value="Editar" action="#{ListaEnvios.edit(item)}"></h:commandLink>
                                         <br></br>
-                                        <h:commandLink value="Eliminar" action="#{ListaEnvios.delete(item)}" 
+                                        <h:commandLink class="fas fa-trash-alt" value="Eliminar" action="#{ListaEnvios.delete(item)}" 
                                                    onclick="return confirm('¿Estás seguro?')"></h:commandLink>
                                         <br></br>                           
                                 </h:column> 

@@ -44,7 +44,7 @@
                                     <h:outputText value="Fecha Apadrinamiento"/>
                                 </f:facet>
                                 <h:outputText value="#{item.fechaApadrinamiento}">
-                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/>
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
                                 </h:outputText>
                             </h:column>
                             <h:column>
@@ -61,14 +61,14 @@
                             </h:column>                        
                             <h:column>
                                 <f:facet name="header">Opción</f:facet>
-                                <h:commandLink value="Editar" action="#{ListaApadrinamientos.edit(item)}"></h:commandLink>
+                                <h:commandLink class="fas fa-edit" value="Editar" action="#{ListaApadrinamientos.edit(item)}"></h:commandLink>
                                 <br></br>
-                                <h:commandLink value="Eliminar" action="#{ListaApadrinamientos.delete(item)}" 
+                                <h:commandLink class="fas fa-trash-alt" value="Eliminar" action="#{ListaApadrinamientos.delete(item)}" 
                                                onclick="return confirm('¿Estás seguro?')"></h:commandLink>
                                 <br></br>                           
                             </h:column> 
                         </h:dataTable>
-                        
+                        <br/>
                         <h:column>
                         <h:commandButton value="Inserta nuevo apadrinamiento" action="#{ListaApadrinamientos.crearApadrinamiento()}"/>
                         </h:column>   

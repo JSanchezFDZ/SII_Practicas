@@ -24,7 +24,7 @@
                 <h:form>
                     <h:dataTable class="blueTable" var="s" value="#{ListaSocios.findAll()}" border="1" cellpadding="2" cellspacing="2">
                         <h:column>
-                            <f:facet name="header">Id</f:facet>
+                            <f:facet name="header">ID</f:facet>
                             <h:outputText value="#{s.id}"></h:outputText>
                         </h:column> 
                         <h:column>
@@ -74,13 +74,13 @@
                         <h:column>
                             <f:facet name="header">Fecha Alta</f:facet>
                             <h:outputText value="#{s.fechaAlta}">
-                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:outputText>
                         </h:column>       
                         <h:column>
                             <f:facet name="header">Fecha Baja</f:facet>
                             <h:outputText value="#{s.fechaBaja}">
-                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:outputText>
                         </h:column>     
                         <h:column>
@@ -101,9 +101,9 @@
                         </h:column> -->              
                         <h:column>
                             <f:facet name="header">Opción</f:facet>
-                            <h:commandLink value="Editar" action="#{ListaSocios.edit(s)}"></h:commandLink>
+                            <h:commandLink class="fas fa-edit" value="Editar" action="#{ListaSocios.edit(s)}"></h:commandLink>
                             <br></br>
-                            <h:commandLink value="Eliminar" action="#{ListaSocios.delete(s)}" 
+                            <h:commandLink class="fas fa-trash-alt" value="Eliminar" action="#{ListaSocios.delete(s)}" 
                                            onclick="return confirm('¿Estás seguro?')"></h:commandLink>
                             <br></br>                           
                         </h:column> 

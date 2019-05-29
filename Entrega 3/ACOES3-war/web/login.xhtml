@@ -22,7 +22,7 @@
                             <h:inputText pt:placeholder="Usuario..." class="form-control" value="#{login.usuario.usuario}" />
                         </div>
                         <div class="form-group">
-                            <h:inputText pt:placeholder="Contraseña..." class="form-control" value="#{login.usuario.pass}" />
+                            <h:inputSecret pt:placeholder="Contraseña..." class="form-control" value="#{login.usuario.pass}" />
                         </div>
                         <div class="form-group">
                             <h:commandButton class="btn btn-primary btn-block" value="Iniciar sesión" action="#{login.autenticar()}"/>

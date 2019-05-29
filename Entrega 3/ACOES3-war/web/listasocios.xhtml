@@ -19,10 +19,10 @@
                 </c:when>
                 <c:otherwise>
 
-                <h1>LISTA SOCIOS</h1>
+                <h3>LISTA SOCIOS</h3>
                 <br/>
                 <h:form>
-                    <h:dataTable class="blueTable" var="s" value="#{ListaSocios.findAll()}" border="1" cellpadding="2" cellspacing="2">
+                    <h:dataTable class="blueTable" var="s" value="#{ListaSocios.findAll()}">
                         <h:column>
                             <f:facet name="header">ID</f:facet>
                             <h:outputText value="#{s.id}"></h:outputText>
@@ -101,9 +101,9 @@
                         </h:column> -->              
                         <h:column>
                             <f:facet name="header">Opción</f:facet>
-                            <h:commandLink class="fas fa-edit" value="Editar" action="#{ListaSocios.edit(s)}"></h:commandLink>
+                            <h:commandLink class="fas fa-edit" value=" Editar" action="#{ListaSocios.edit(s)}"></h:commandLink>
                             <br></br>
-                            <h:commandLink class="fas fa-trash-alt" value="Eliminar" action="#{ListaSocios.delete(s)}" 
+                            <h:commandLink class="fas fa-trash-alt" value=" Eliminar" action="#{ListaSocios.delete(s)}" 
                                            onclick="return confirm('¿Estás seguro?')"></h:commandLink>
                             <br></br>                           
                         </h:column> 
@@ -111,7 +111,7 @@
                     </h:dataTable>
                     <br/>
                     <h:column>
-                        <h:commandButton value="Inserta nuevo socio" action="#{ListaSocios.crearSocio()}"/>
+                        <h:commandButton class="btn btn-primary" value="Inserta nuevo socio" action="#{ListaSocios.crearSocio()}"/>
                     </h:column>               
                 </h:form>
                 </c:otherwise>

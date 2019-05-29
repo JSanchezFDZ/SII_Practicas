@@ -21,9 +21,9 @@
                         </c:when>
                         <c:otherwise>
                             <h:form>
-                                <h1><h:outputText value="LISTA NIÑOS"/></h1>
+                                <h3><h:outputText value="LISTA NIÑOS"/></h3>
                                 <br/>
-                                <h:dataTable class="blueTable" value="#{ListaNinos.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                                <h:dataTable class="blueTable" value="#{ListaNinos.findAll()}" var="item">
                                     <h:column>
                                         <f:facet name="header"><h:outputText value="ID"/></f:facet>
                                         <h:outputText value="#{item.id}"/>
@@ -116,7 +116,7 @@
                                 </h:dataTable>
                                 <br/>
                                 <h:column>
-                                    <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
+                                    <h:commandButton class="btn btn-primary" value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
                                 </h:column> 
                             </h:form>
                             </c:otherwise>

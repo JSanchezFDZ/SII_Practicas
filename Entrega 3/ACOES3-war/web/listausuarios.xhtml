@@ -11,12 +11,12 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
 
-                <h1>LISTA USUARIOS</h1>
+                <h3>LISTA USUARIOS</h3>
                 <br/>
                 <f:view>
 
                     <h:form>
-                        <h:dataTable class="blueTable" value="#{ListaUsuarios.findAll()}" var="item" border="1" cellpadding="2" cellspacing="2">
+                        <h:dataTable class="blueTable" value="#{ListaUsuarios.findAll()}" var="item">
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Usuario"/>
@@ -61,7 +61,7 @@
                 <br/>
                 <h:form>
                     <h:column>
-                        <h:commandButton value="Inserta nuevo usuario" action="#{ListaUsuarios.crearUsuario()}"/>
+                        <h:commandButton class="btn btn-primary" value="Inserta nuevo usuario" action="#{ListaUsuarios.crearUsuario()}"/>
                     </h:column>               
                 </h:form>
             </c:when>

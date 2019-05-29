@@ -35,17 +35,9 @@
                                     <f:selectItems value="#{ListaUsuarios.roles}" />
                                 </h:selectOneMenu>
                                 
-                                
-                                <!--
-                                <h:outputLabel value="Socio:" for="socio" />
-                                <h:selectOneMenu id="socio" value="#{ListaUsuarios.u.socio}" title="Socio" >
-                                    <f:selectItems value="#{ListaSocios.findAll()}"/>
-                                </h:selectOneMenu> -->
-
-                            
-                            <h:commandButton class="btn btn-primary" value="Insertar usuario" action="#{ListaUsuarios.add()}" />
-                            <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />               
-                            <h:commandButton class="btn btn-danger" value="Volver" action="listausuarios.xhtml"/>
+                                <h:commandButton class="btn btn-primary" value="Insertar usuario" action="#{ListaUsuarios.add()}" />
+                                <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />
+                                <h:commandButton class="btn btn-danger" value="Volver" action="listausuarios.xhtml"/>    
 
                         </h:panelGrid>
                         

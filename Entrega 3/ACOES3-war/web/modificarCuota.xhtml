@@ -27,7 +27,7 @@
                            
                             
                             <h:commandButton class="btn btn-primary" value="Actualizar cuota" action="#{ListaCuotas.edit()}" />
-                            <h:commandButton class="btn btn-danger" value="Volver" action="listacuotas.xhtml"/>
+                            <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
                             
                             <h:inputHidden id="codigoCuota" value="#{ListaCuotas.c.codigoCuota}"/>                            
                             

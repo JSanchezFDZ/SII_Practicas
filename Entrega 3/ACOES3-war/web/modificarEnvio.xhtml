@@ -39,7 +39,7 @@
                             <h:inputTextarea id="observaciones" value="#{ListaEnvios.e.observaciones}" title="Observaciones" />
 
                             <h:commandButton class="btn btn-primary" value="Actualizar cuota" action="#{ListaEnvios.edit()}" />
-                            <h:commandButton class="btn btn-danger" value="Volver" action="listacuotas.xhtml"/>
+                            <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
                             
                             <h:inputHidden id="codEnvio" value="#{ListaEnvios.e.codEnvio}"  />                            
                             

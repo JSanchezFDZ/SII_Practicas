@@ -7,36 +7,16 @@
     <ui:define name="content">
         <c:choose>
             
-            <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
                 <h3>PAGINA DE INICIO</h3>
                 <br/>
-                <img id="scl" src="./resources/img/r_inicio.png"></img>
+                <img class="img-fluid rounded mx-auto d-block" src="./resources/img/img_inicio.png"></img>
                
-                
-                 <!--
-                 <p>Apellido: Rodriguez</p>  
-                 <p>Estado: Casado</p>
-                 <p>Dirección: Calle Roja</p> 
-                 <p>Población: Mijas</p>
-                 <p>Código postal: 29745</p>
-                 <p>Provincia: Málaga</p>
-                 <p>Teléfono: 952475692</p>
-                 <p>Correo: pe.rro@gmail.com</p>
-                 <p>Sector: Agrario</p>
-                 <p>Certificado: ??</p>
-                 <p>Fecha de alta: 13/08/1996</p>
-                 <p>Fecha de baja 01/012/2010</p>
-                 <p>Observaciones: Impago de cuotas!</p>
-                 
-                
-                <h:button outcome="cuota.xhtml" value="Mi Cuota"/>
-                 <h:button outcome="apadrinar.xhtml" value="Apadrinar"/>-->
             </c:when>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
                 <h3>PAGINA DE INICIO</h3>
-                <br/>
-                <h2 align="center">MODO ADMINISTRADOR</h2>
-                  <img id="scl" src="./resources/img/r_inicio.png"></img>
+                <h6 align="center">MODO ADMINISTRADOR</h6>
+                <img class="img-fluid rounded mx-auto d-block" src="./resources/img/admin_inicio.png"></img>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

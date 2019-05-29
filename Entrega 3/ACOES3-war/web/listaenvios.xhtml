@@ -10,11 +10,10 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-               
                 <f:view>
                     <c:choose>
                         <c:when test="#{empty ListaEnvios.findAll()}">
-                            <h2>No hay envios registrados en la base de datos.</h2>
+                            <h6>No hay envios registrados en la base de datos.</h6>
                             <h:form>
                                 <h:commandButton value="Registrar nuevo envio." action="#{ListaEnvios.crearEnvio()}"/>
                             </h:form>
@@ -81,11 +80,9 @@
              <f:view>
                     <c:choose>
                         <c:when test="#{empty ListaEnvios.findAll()}">
-                            <h2>No hay envios registrados en la base de datos.</h2>
-                            
+                            <h6>No hay envios registrados en la base de datos.</h6>
                         </c:when>
                         <c:otherwise>
-
                             <h:form>
                                 <h3><h:outputText value="Lista envios"/></h3>
                                 <br/>

@@ -8,7 +8,7 @@
         <c:choose>
             
             <c:when test="#{controlAutorizacion.usuario.rol == 'SOCIO'}">
-                <h1>PAGINA DE INICIO</h1>
+                <h3>PAGINA DE INICIO</h3>
                 <br/>
                 <img id="scl" src="./resources/img/r_inicio.png"></img>
                
@@ -33,7 +33,7 @@
                  <h:button outcome="apadrinar.xhtml" value="Apadrinar"/>-->
             </c:when>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>PAGINA DE INICIO</h1>
+                <h3>PAGINA DE INICIO</h3>
                 <br/>
                 <h2 align="center">MODO ADMINISTRADOR</h2>
                   <img id="scl" src="./resources/img/r_inicio.png"></img>

@@ -114,10 +114,9 @@
                                 <f:facet name="header">
                                     <h:outputText value="Opción"/>
                                 </f:facet>
-                                 <h:commandLink class="btn btn-primary" value="Actualizar datos" action="#{EditSocio.edit(item)}"></h:commandLink>
-                                 
-                                 <b>/</b>
-                                  <h:commandLink class="btn btn-success" value="Cuotas" action="verCuotas.xhtml"></h:commandLink>
+                                <h:commandLink class="fas fa-edit" value=" Actualizar datos" action="#{EditSocio.edit(item)}"></h:commandLink>
+                                <br></br>
+                                <h:commandLink class="fas fa-eye" value=" Cuotas" action="verCuotas.xhtml"></h:commandLink>
                             </h:column>
                         </h:dataTable>
                     </h:form>

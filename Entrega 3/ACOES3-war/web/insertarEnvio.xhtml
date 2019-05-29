@@ -13,7 +13,7 @@
 
 
                     <h:form>
-                        <h1><h:outputText value="Create/Edit"/></h1>
+                        <h3><h:outputText value="Create/Edit"/></h3>
                         <h:panelGrid columns="2">
                             
                             <h:outputLabel value="CodApadrinamiento:" for="codApadrinamiento" />
@@ -31,9 +31,9 @@
                             <h:inputText id="observaciones" value="#{ListaEnvios.e.observaciones}" title="Observaciones" />
                         </h:panelGrid>
                         
-                        <h:commandButton value="Insertar nuevo envio" action="#{ListaEnvios.add()}" />
-                            <h:commandButton value="Cancelar" action="listaenvios.xhtml"/>
-                            <h:commandButton value="Limpiar" type="reset" /> 
+                            <h:commandButton class="btn btn-success" value="Insertar envio" action="#{ListaEnvios.add()}" />
+                            <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" /> 
+                            <h:commandButton class="btn btn-danger"value="Volver" action="listaenvios.xhtml" />
                     </h:form>
                 </f:view>
 

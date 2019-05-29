@@ -8,7 +8,7 @@
 <ui:define name="content">
             <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>Realizar apadrinamiento</h1>
+                <h3>Realizar apadrinamiento</h3>
 
                 <f:view>
 
@@ -35,10 +35,10 @@
                                 <f:selectItems value="#{ListaSocios.findAll()}"/>
                             </h:selectOneMenu>
                             
-                            <h:commandButton value="Insertar nuevo apadrinamiento" action="#{ListaApadrinamientos.add(ListaApadrinamientos.s.codNino.id, 
+                            <h:commandButton class="btn btn-primary" value="Insertar apadrinamiento" action="#{ListaApadrinamientos.add(ListaApadrinamientos.s.codNino.id, 
                                                                                              ListaApadrinamientos.s.numSocio.id)}" />
-                            <h:commandButton value="Cancelar" action="listaninosapadrinados.xhtml"/>
-                            <h:commandButton value="Limpiar" type="reset" />                            
+                            <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />                            
+                            <h:commandButton class="btn btn-danger" value="Volver" action="listaninosapadrinados.xhtml"/>
                             
                         </h:panelGrid>
                     </h:form>

@@ -10,7 +10,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">     
-                <h1>Insertar niño</h1>
+                <h3>Insertar niño</h3>
                 <h:body>
                     <f:view>
 
@@ -54,9 +54,9 @@
                             <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" title="Observaciones" />
                             
                             <br/>
-                            <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.add()}" />
-                            <h:commandButton value="Cancelar" action="listaninos.xhtml"/>
-                            <h:commandButton value="Limpiar" type="reset" />
+                            <h:commandButton class="btn btn-primary" value="Registrar nuevo niño" action="#{ListaNinos.add()}" /> 
+                            <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />
+                            <h:commandButton class="btn btn-danger" value="Volver" action="listaninos.xhtml"/>
                             
                         </h:panelGrid>
                     </h:form>

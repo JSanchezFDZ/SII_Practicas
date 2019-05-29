@@ -10,7 +10,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">     
-                <h1>Registrar envio</h1>
+                <h3>Registrar envio</h3>
                 <h:body>
                     <f:view>
 
@@ -38,9 +38,13 @@
                             <h:inputTextarea id="observaciones" value="#{ListaEnvios.e.observaciones}" title="observaciones" />
                             
                                             
-                        <h:column>
-                            <h:commandButton value="Registrar nuevo envio" action="#{ListaEnvios.add(ListaEnvios.e.codApadrinamiento.codApadrinamiento)}"/>
-                                </h:column> 
+                        
+                            <h:commandButton class="btn btn-primary" value="Inserta envio" action="#{ListaEnvios.add(ListaEnvios.e.codApadrinamiento.codApadrinamiento)}"/> 
+                            <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" /> 
+                            <h:commandButton class="btn btn-danger" value="Volver" action="listaenvios.xhtml" /> 
+                            
+                         
+                            
                         </h:panelGrid>
                     </h:form>
                         

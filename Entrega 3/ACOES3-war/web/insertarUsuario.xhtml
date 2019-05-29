@@ -9,7 +9,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1>Insertar usuario</h1>
+                <h3>Insertar usuario</h3>
                
                 <h:body>
                     <f:view>
@@ -43,9 +43,10 @@
                                 </h:selectOneMenu> -->
 
                             
-                            <h:commandButton value="Insertar nuevo usuario" action="#{ListaUsuarios.add()}" />
-                            <h:commandButton value="Cancelar" action="listausuarios.xhtml"/>
-                            <h:commandButton value="Limpiar" type="reset" />                            
+                            <h:commandButton class="btn btn-primary" value="Insertar usuario" action="#{ListaUsuarios.add()}" />
+                            <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />               
+                            <h:commandButton class="btn btn-danger" value="Volver" action="listausuarios.xhtml"/>
+
                         </h:panelGrid>
                         
                     </h:form>

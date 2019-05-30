@@ -42,11 +42,11 @@
                                 <h:outputText value="#{c.aportación}"></h:outputText>
                             </h:column>
                             <h:column>
-                                <f:facet name="header">Opción</f:facet>
-                                <h:commandLink class="fas fa-edit" value=" Editar" action="#{ListaCuotas.edit(c)}"></h:commandLink>
+                                <f:facet name="header"></f:facet>
+                                <h:commandLink action="#{ListaCuotas.edit(c)}"><i class="fas fa-edit"></i></h:commandLink>
                                 <br></br>
-                                <h:commandLink class="fas fa-trash-alt" value=" Eliminar" action="#{ListaCuotas.delete(c)}" 
-                                           onclick="return confirm('¿Estás seguro?')"></h:commandLink>
+                                <h:commandLink action="#{ListaCuotas.delete(c)}" 
+                                           onclick="return confirm('¿Estás seguro?')"><i class="fas fa-trash-alt"></i></h:commandLink>
                                 <br></br>                           
                             </h:column> 
                             

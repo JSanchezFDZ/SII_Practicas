@@ -105,11 +105,11 @@
                                     </h:column>
 
                                     <h:column>
-                                        <f:facet name="header">Opción</f:facet>
-                                        <h:commandLink class="fas fa-edit" value=" Editar" action="#{ListaNinos.edit(item)}"></h:commandLink>
+                                        <f:facet name="header"></f:facet>
+                                        <h:commandLink action="#{ListaNinos.edit(item)}"><i class="fas fa-edit"></i></h:commandLink>
                                         <br></br>
-                                        <h:commandLink class="fas fa-trash-alt" value=" Eliminar" action="#{ListaNinos.delete(item)}" 
-                                                       onclick="return confirm('¿Estás seguro?')"></h:commandLink>
+                                        <h:commandLink action="#{ListaNinos.delete(item)}" 
+                                                       onclick="return confirm('¿Estás seguro?')"><i class="fas fa-trash-alt"></i></h:commandLink>
                                         <br></br>                           
                                     </h:column>  
 

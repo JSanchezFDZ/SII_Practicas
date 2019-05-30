@@ -10,8 +10,6 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">     
-                <h:body>
-                    <f:view>
 <!--
                     <h:form>
                         
@@ -58,9 +56,9 @@
                             
                         </h:panelGrid>
                     </h:form> -->
-                </f:view>
-                </h:body> 
 
+                <h:body>
+                    <f:view>
                 <div class="row justify-content-md-center">
                     <div class="col-md-4">
 
@@ -77,14 +75,14 @@
                                     <div class="form-group">
                                         <label class="col-md-6 control-label"><b>Nombre</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText class="form-control" id="nombre" value="#{ListaNinos.s.nombre}" required="true"/>
+                                            <h:inputText class="form-control" id="nombre" value="#{ListaNinos.s.nombre}" required="true" requiredMessage="Inserte nombre."/>
                                         </div>
                                     </div>                                    
                                     
                                     <div class="form-group">
                                         <label class="col-md-6 control-label"><b>Apellidos</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="apellidos" value="#{ListaNinos.s.apellidos}" required="true" class="form-control" />
+                                            <h:inputText id="apellidos" value="#{ListaNinos.s.apellidos}" required="true" class="form-control" requiredMessage="Inserte apellidos." />
                                         </div>
                                     </div>    
                                 </div>
@@ -93,14 +91,14 @@
                                     <div class="form-group">
                                         <label class="col-md-6 control-label"><b>Estado</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="estado" value="#{ListaNinos.s.estado}" class="form-control" required="true"/>
+                                            <h:inputText id="estado" value="#{ListaNinos.s.estado}" class="form-control"/>
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="col-md-6 control-label"><b>Beca</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="beca" value="#{ListaNinos.s.beca}" class="form-control" required="true"/>
+                                            <h:inputText id="beca" value="#{ListaNinos.s.beca}" class="form-control"/>
                                         </div>
                                     </div>
                                 </div>
@@ -110,14 +108,14 @@
                                     <div class="form-group">
                                         <label class="col-md-6 control-label"><b>Sexo</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="sexo" value="#{ListaNinos.s.sexo}" required="true" class="form-control" />
+                                            <h:inputText id="sexo" value="#{ListaNinos.s.sexo}" required="true" class="form-control" requiredMessage="Inserte el sexo del niño." />
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="col-md-12 control-label"><b>Fecha nacimiento</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" required="true" class="form-control"  >
+                                            <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" required="true" class="form-control" requiredMessage="Inserte la fecha de nacimiento."  >
                                                 <f:convertDateTime pattern="dd/MM/yyyy"/>
                                             </h:inputText>
                                         </div>
@@ -128,14 +126,14 @@
                                     <div class="form-group">
                                         <label class="col-md-6 control-label"><b>Proyecto</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="proyecto" value="#{ListaNinos.s.proyecto}" class="form-control" required="true"/>
+                                            <h:inputText id="proyecto" value="#{ListaNinos.s.proyecto}" class="form-control" />
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="col-md-12 control-label"><b>Grado-Curso</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="gradoCurso" value="#{ListaNinos.s.gradoCurso}" class="form-control" required="true"/>
+                                            <h:inputText id="gradoCurso" value="#{ListaNinos.s.gradoCurso}" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -144,14 +142,14 @@
                                     <div class="form-group">
                                         <label class="col-md-12 control-label"><b>Comunidad de procedencia</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="comunidadProcedencia" value="#{ListaNinos.s.comunidadProcedencia}" class="form-control" required="true"/>
+                                            <h:inputText id="comunidadProcedencia" value="#{ListaNinos.s.comunidadProcedencia}" class="form-control" />
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="col-md-12 control-label"><b>Colonia actual</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="coloniaActual" value="#{ListaNinos.s.coloniaActual}" class="form-control" required="true"/>
+                                            <h:inputText id="coloniaActual" value="#{ListaNinos.s.coloniaActual}" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -159,7 +157,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-9 control-label"><b>Observaciones</b></label>
                                     <div class="col-lg-12">
-                                        <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" class="form-control" rows="5" required="true" />
+                                        <h:inputTextarea id="observaciones" value="#{ListaNinos.s.observaciones}" class="form-control" rows="5"  />
                                     </div>
                                 </div>
 
@@ -178,11 +176,14 @@
                                 </div>
                                     
                                 </h:form>
+ 
 
                             </div>                         
                         </div>
                     </div>
                 </div>
+                   </f:view>
+                </h:body> 
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

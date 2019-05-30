@@ -37,7 +37,7 @@ public class Apadrinamiento implements Serializable {
     private Ninos codNino;
     @ManyToOne
     private Socios numSocio;
-    @OneToMany(mappedBy="codApadrinamiento")
+    @OneToMany(mappedBy="codApadrinamiento", cascade = CascadeType.REMOVE)
     private List<Envio> codEnvio;
 
     public Apadrinamiento() {

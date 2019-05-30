@@ -7,6 +7,7 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -45,7 +46,7 @@ public class Ninos implements Serializable {
     private String comunidadProcedencia;
     private String coloniaActual;
     private String observaciones;
-    @OneToOne
+    @OneToOne ( cascade = CascadeType.REMOVE )
     private Apadrinamiento codApadrinamiento;
 
     public Ninos() {

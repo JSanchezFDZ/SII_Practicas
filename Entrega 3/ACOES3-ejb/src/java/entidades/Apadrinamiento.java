@@ -8,6 +8,7 @@ package entidades;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,7 +33,7 @@ public class Apadrinamiento implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaApadrinamiento;
     private String observaciones;
-    @OneToOne
+    @OneToOne ( cascade = CascadeType.REMOVE)
     private Ninos codNino;
     @ManyToOne
     private Socios numSocio;

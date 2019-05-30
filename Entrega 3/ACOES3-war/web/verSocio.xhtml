@@ -22,12 +22,6 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="ID"/>
-                                </f:facet>
-                                <h:outputText value="#{item.id}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
                                     <h:outputText value="Nombre"/>
                                 </f:facet>
                                 <h:outputText value="#{item.nombre}"/>
@@ -58,7 +52,7 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Codigo Postal"/>
+                                    <h:outputText value="C.P."/>
                                 </f:facet>
                                 <h:outputText value="#{item.codPostal}"/>
                             </h:column>
@@ -76,7 +70,7 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Correo"/>
+                                    <h:outputText value="E-mail"/>
                                 </f:facet>
                                 <h:outputText value="#{item.correo}"/>
                             </h:column>
@@ -86,18 +80,12 @@
                                 </f:facet>
                                 <h:outputText value="#{item.sector}"/>
                             </h:column>
-                            <h:column>
+                        <h:column>
                             <f:facet name="header">Fecha Alta</f:facet>
                             <h:outputText value="#{item.fechaAlta}">
                                     <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
                             </h:outputText>
-                        </h:column>     
-                            <h:column>
-                            <f:facet name="header">Fecha Baja</f:facet>
-                            <h:outputText value="#{item.fechaBaja}">
-                                    <f:convertDateTime locale="es" timeStyle="long" type="date" dateStyle="full"/> 
-                            </h:outputText>
-                        </h:column>     
+                        </h:column>       
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Observaciones"/>
@@ -112,11 +100,10 @@
                             </h:column>
                              <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Opción"/>
                                 </f:facet>
-                                <h:commandLink class="fas fa-edit" value=" Actualizar datos" action="#{EditSocio.edit(item)}"></h:commandLink>
+                                <h:commandLink action="#{EditSocio.edit(item)}"><i class="fas fa-user-edit"></i></h:commandLink>
                                 <br></br>
-                                <h:commandLink class="fas fa-eye" value=" Cuotas" action="verCuotas.xhtml"></h:commandLink>
+                                <h:commandLink action="verCuotas.xhtml"><i class="fas fa-money-check-alt"></i></h:commandLink>
                             </h:column>
                         </h:dataTable>
                     </h:form>

@@ -48,7 +48,7 @@ public class Socios implements Serializable {
     @JoinTable(name="CUOTA_SOCIOS", joinColumns = @JoinColumn(name = "SOCIO_FK"), inverseJoinColumns = 
             @JoinColumn(name = "CUOTA_FK"))
     private List<Cuota> cuota;
-    @OneToMany
+    @OneToMany(mappedBy="numSocio")
     private List<Apadrinamiento> apadr;
     
     public Socios (String nombre,String apellido,Long id,String estado,String direccion,String poblacion,int codPostal,

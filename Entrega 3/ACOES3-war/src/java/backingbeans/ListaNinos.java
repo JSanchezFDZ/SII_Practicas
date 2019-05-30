@@ -48,9 +48,13 @@ public class ListaNinos implements Serializable{
     }
     
     public String add(){
-        this.ninosFacade.create(this.s);
-        this.s= new Ninos();
-        return "listaninos.xhtml";
+        if(this.s.getNombre() != null && this.s.getApellidos() != null){
+            this.ninosFacade.create(this.s);
+            this.s= new Ninos();
+            return "listaninos.xhtml";
+        } else {
+            return "listaninos.xhtml";
+        }
     }
     
     public void delete(Ninos s){

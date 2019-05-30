@@ -7,6 +7,7 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ public class Usuario implements Serializable {
     private String email;
     @Enumerated
     private Rol rol;
-    @OneToOne
+    @OneToOne(orphanRemoval=true)
     private Socios socio;
 
     

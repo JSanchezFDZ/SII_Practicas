@@ -42,7 +42,7 @@ public class Socios implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date FechaBaja;
     private String observaciones;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
     private Usuario usuario;
     @ManyToMany
     @JoinTable(name="CUOTA_SOCIOS", joinColumns = @JoinColumn(name = "SOCIO_FK"), inverseJoinColumns = 

@@ -30,72 +30,33 @@ a:link:hover, a:visited:hover  {
 }
 
 table.blueTable {
-    border: 1px solid #1C6EA4;
-    background-color: #EEEEEE;
-    width: 99%;
-    text-align: center;
     border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+}
+
+table.blueTable a {
+    margin-left: 8px;
 }
 
 table.blueTable td, table.blueTable th {
-    border: 1px solid #AAAAAA;
-    padding: 3px 2px;
+    padding: 5px;
+    background-color: #ffffff;
+    color: #000000;
 }
 
-table.blueTable tbody td {
-    font-size: 13px;
-    padding-left:10px;
-}
-
-table.blueTable tr:nth-child(even) {
-    background: #D0E4F5;
-}
-
-table.blueTable thead {
-    background: #0099e0;
-    background: -moz-linear-gradient(top, #0099e0 0%, #327cad 66%, #0099e0 100%);
-    background: -webkit-linear-gradient(top, #0099e0 0%, #327cad 66%, #0099e0 100%);
-    background: linear-gradient(to bottom, #0099e0 0%, #327cad 66%, #0099e0 100%);
-    border-bottom: 2px solid #444444;
+table.blueTable th {
+    text-align: left;
 }
 
 table.blueTable thead th {
-    font-size: 15px;
-    font-weight: bold;
-    color: #FFFFFF;
-    border-left: 2px solid #0099e0;
-    text-align: center;
+    background-color: #007ab3;
+    color: #ffffff;
 }
 
-table.blueTable thead th:first-child {
-    border-left: none;
-}
-
-table.blueTable tfoot {
-    font-size: 14px;
-    font-weight: bold;
-    color: #FFFFFF;
-    background: #0099e0;
-    background: -moz-linear-gradient(top, #dcebf7 0%, #0099e0 66%, #D0E4F5 100%);
-    background: -webkit-linear-gradient(top, #dcebf7 0%, #0099e0 66%, #D0E4F5 100%);
-    background: linear-gradient(to bottom, #dcebf7 0%, #0099e0 66%, #D0E4F5 100%);
-    border-top: 2px solid #444444;
-}
-
-table.blueTable tfoot td {
-    font-size: 14px;
-}
-
-table.blueTable tfoot .links {
-    text-align: right;
-}
-
-table.blueTable tfoot .links a{
-    display: inline-block;
-    background: #1C6EA4;
-    color: #FFFFFF;
-    padding: 2px 8px;
-    border-radius: 5px;
+table.blueTable tbody tr:hover td{
+    background-color: #e6e6e6 !important;
 }
 
 .login-form {
@@ -122,4 +83,5 @@ table.blueTable tfoot .links a{
 .btn {        
     font-size: 15px;
     font-weight: bold;
+    background-color: #0099e0 !important;
 }

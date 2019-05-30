@@ -10,7 +10,7 @@
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
 
                 <div class="row justify-content-md-center">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
 
                         <div class="card panel-primary justify-content-md-center">
                             <div class="card-header "> 
@@ -22,9 +22,9 @@
 
                                 
                                 <h:form >            
-                                    
+                                    <div class="row justify-content-md-center">
                                     <div class="form-group">
-                                        <label class="col-lg-9 control-label" for="codNino">Niño a apadrinar</label>
+                                        <label class="col-lg-12 control-label" for="codNino"><b>Niño a apadrinar</b></label>
                                         <div class="col-md-12">
                                             <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" requiredMessage="Tienes que seleccionar un niño" converter="ConvertidorJSF" required="true">
                                                 <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />
@@ -34,16 +34,18 @@
                                     </div>                                    
                                     
                                     <div class="form-group">
-                                        <label class="col-lg-9 control-label" for="fechaApadrinamiento">Fecha de apadrinamiento</label>
+                                        <label class="col-lg-12 control-label" for="fechaApadrinamiento"><b>Fecha de apadrinamiento</b></label>
                                         <div class="col-md-12">
                                             <h:inputText id="fechaApadrinamiento" value="#{ListaApadrinamientos.s.fechaApadrinamiento}"  >
                                                     <f:convertDateTime pattern="dd/MM/yyyy"/>
                                             </h:inputText>
                                         </div>
                                     </div>    
-                                
+                                    </div>
+                                    
+                                    <div class="row justify-content-md-center">
                                     <div class="form-group">
-                                        <label class="col-lg-9 control-label" for="numSocio">Socio</label>
+                                        <label class="col-lg-12 control-label" for="numSocio"><b>Socio</b></label>
                                         <div class="col-md-12">
                                             <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}"  converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">
                                                 <f:selectItem itemLabel="Elija un socio .." itemValue="#{null}" />
@@ -53,22 +55,30 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label class="col-lg-9 control-label" for="observaciones">Observaciones</label>
+                                        <label class="col-lg-12 control-label" for="observaciones"><b>Observaciones</b></label>
                                         <div class="col-md-12">
                                             <h:inputTextarea id="observaciones" value="#{ListaApadrinamientos.s.observaciones}"  />
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12">
-                                        <h:commandButton class="btn btn-primary" value="Insertar apadrinamiento" action="#{ListaApadrinamientos.add(ListaApadrinamientos.s.codNino.id, 
-                                                                                             ListaApadrinamientos.s.numSocio.id)}" />                                        
-                                        <span class="input-group-addon"></span>
-                                        <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />
-                                    </div>                                 
-                                    <br/>
-                                    <div class="col-md-12 ">
-                                        <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
                                     </div>
+                                    
+                                    <div class="row justify-content-md-center">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <h:commandButton class="btn btn-primary" value="Insertar apadrinamiento" action="#{ListaApadrinamientos.add(ListaApadrinamientos.s.codNino.id, 
+                                                                                                     ListaApadrinamientos.s.numSocio.id)}" />                                        
+                                                <span class="input-group-addon"></span>
+                                                <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />
+                                            </div>
+                                            <br/>
+                                            <div class="col-md-12 ">
+                                                <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+
                                     
                                 </h:form>
                                                    

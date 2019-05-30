@@ -36,7 +36,7 @@
                             <h:outputText value="#{s.apellido}"></h:outputText>
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Correo</f:facet>
+                            <f:facet name="header">Correo electrónico</f:facet>
                             <h:outputText value="#{s.correo}"></h:outputText>
                         </h:column>
                         <h:column>
@@ -44,7 +44,7 @@
                             <h:outputText value="#{s.direccion}"></h:outputText>
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Codigo Postal</f:facet>
+                            <f:facet name="header">C.P.</f:facet>
                             <h:outputText value="#{s.codPostal}"></h:outputText>
                         </h:column>
                         <h:column>
@@ -72,13 +72,13 @@
                             <h:outputText value="#{s.telefono}"></h:outputText>
                         </h:column>        
                         <h:column>
-                            <f:facet name="header">Fecha Alta</f:facet>
+                            <f:facet name="header">Alta</f:facet>
                             <h:outputText value="#{s.fechaAlta}">
                                     <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:outputText>
                         </h:column>       
                         <h:column>
-                            <f:facet name="header">Fecha Baja</f:facet>
+                            <f:facet name="header">Baja</f:facet>
                             <h:outputText value="#{s.fechaBaja}">
                                     <f:convertDateTime pattern="dd/MM/yyyy" />
                             </h:outputText>
@@ -102,10 +102,9 @@
                         <h:column>
                             <f:facet name="header">Opción</f:facet>
                             <h:commandLink class="fas fa-edit" value=" Editar" action="#{ListaSocios.edit(s)}"></h:commandLink>
-                            <br></br>
+                            <br/>
                             <h:commandLink class="fas fa-trash-alt" value=" Eliminar" action="#{ListaSocios.delete(s)}" 
-                                           onclick="return confirm('¿Estás seguro?')"></h:commandLink>
-                            <br></br>                           
+                                           onclick="return confirm('¿Estás seguro?')"></h:commandLink>                 
                         </h:column> 
                         
                     </h:dataTable>

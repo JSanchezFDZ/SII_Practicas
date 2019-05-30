@@ -22,7 +22,7 @@
                 <h3>LISTA SOCIOS</h3>
                 <br/>
                 <h:form>
-                    <h:dataTable class="blueTable table-responsive" var="s" value="#{ListaSocios.findAll()}">
+                    <h:dataTable class="blueTable" var="s" value="#{ListaSocios.findAll()}">
                         <h:column>
                             <f:facet name="header">ID</f:facet>
                             <h:outputText value="#{s.id}"></h:outputText>

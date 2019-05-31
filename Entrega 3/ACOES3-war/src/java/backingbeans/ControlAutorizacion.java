@@ -54,6 +54,10 @@ public class ControlAutorizacion implements Serializable {
         return "verSocio.xhtml";
     }
     
+    public String MisCuotas(){
+        return "verCuotas.xhtml";
+    }
+    
     public String ListaEnvios(){
         return "listaenvios.xhtml";
     }

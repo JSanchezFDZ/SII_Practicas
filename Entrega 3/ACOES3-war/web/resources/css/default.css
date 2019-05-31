@@ -72,7 +72,12 @@ table.blueTable tbody tr:hover td{
 .login-form h2 {
     margin: 0 0 15px;
 }
-    
+   
+i {
+    font-size: medium;
+    margin: auto;
+}
+
 /*
 
 Esto me cambia totalmente el color de los botones "Insertar apadrinamiento", "Limpiar" y "Volver"

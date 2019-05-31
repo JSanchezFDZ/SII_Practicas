@@ -25,16 +25,15 @@
                                 <h:dataTable class="blueTable" value="#{ListaEnvios.findAll()}" var="item">
                                     <br/>
                                     <h:column>
-                                        <f:facet name="header"><h:outputText value="Codigo Apadrinamiento"/></f:facet>
-                                        <h:outputText value="#{item.codApadrinamiento}"/>
-                                    </h:column>
-                                    <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="Codigo Envio"/>
                                         </f:facet>
                                         <h:outputText value="#{item.codEnvio}"/>
                                     </h:column>
-                                   
+                                    <h:column>
+                                        <f:facet name="header"><h:outputText value="Niño asignado"/></f:facet>
+                                        <h:outputText value="#{item.codApadrinamiento}"/>
+                                    </h:column>
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="Fecha Envio"/>

@@ -30,7 +30,7 @@
                                             <div class="form-group">
                                                 <label class="col-lg-12 control-label" for="usuario"><b>Usuario</b></label>
                                                 <div class="col-md-12">
-                                                    <h:inputText id="usuario" value="#{ListaUsuarios.u.usuario}" required="true" requiredMessage="El campo usuario es necesario" />
+                                                    <h:inputText class="form-control" id="usuario" value="#{ListaUsuarios.u.usuario}" required="true" requiredMessage="El campo usuario es necesario" />
                                                 </div>
                                             </div>   
                                         </div>
@@ -39,7 +39,7 @@
                                             <div class="form-group">
                                                 <label class="col-lg-12 control-label" for="pass"><b>Contraseña</b></label>
                                                 <div class="col-md-12">
-                                                    <h:inputSecret id="pass" value="#{ListaUsuarios.u.pass}" required="true" requiredMessage="Establezca una contraseĂ±a"/>
+                                                    <h:inputSecret class="form-control" id="pass" value="#{ListaUsuarios.u.pass}" required="true" requiredMessage="Establezca una contraseĂ±a"/>
                                                 </div>
                                             </div>
                                         </div>    
@@ -48,7 +48,7 @@
                                             <div class="form-group">
                                                 <label class="col-lg-12 control-label" for="apellidos"><b>Apellidos</b></label>
                                                 <div class="col-md-12">
-                                                    <h:inputText id="apellidos" value="#{ListaUsuarios.u.apellidos}" />
+                                                    <h:inputText class="form-control" id="apellidos" value="#{ListaUsuarios.u.apellidos}" />
                                                 </div>
                                             </div>
                                         </div>  
@@ -57,7 +57,7 @@
                                             <div class="form-group">
                                                 <label class="col-lg-12 control-label" for="email"><b>Email</b></label>
                                                 <div class="col-md-12">
-                                                    <h:inputText id="email" value="#{ListaUsuarios.u.email}" />
+                                                    <h:inputText class="form-control" id="email" value="#{ListaUsuarios.u.email}" />
                                                 </div>
                                             </div>
                                         </div>   
@@ -66,7 +66,7 @@
                                            <div class="form-group">
                                                <label class="col-lg-12 control-label" for="rol"><b>Rol</b></label>
                                                <div class="col-md-12">
-                                                    <h:selectOneMenu id="rol" value="#{ListaUsuarios.u.rol}" > <f:selectItems value="#{ListaUsuarios.roles}" /> </h:selectOneMenu>                                  
+                                                    <h:selectOneMenu class="form-control" id="rol" value="#{ListaUsuarios.u.rol}" > <f:selectItems value="#{ListaUsuarios.roles}" /> </h:selectOneMenu>                                  
                                                </div>
                                            </div> 
                                         </div>

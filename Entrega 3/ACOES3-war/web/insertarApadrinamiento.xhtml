@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-12 control-label" for="codNino"><b>Niño a apadrinar</b></label>
                                         <div class="col-md-12">
-                                            <h:selectOneMenu id="codNino" value="#{ListaApadrinamientos.s.codNino}" requiredMessage="Tienes que seleccionar un niño" converter="ConvertidorJSF" required="true">
+                                            <h:selectOneMenu class="form-control" id="codNino" value="#{ListaApadrinamientos.s.codNino}" requiredMessage="Tienes que seleccionar un niño" converter="ConvertidorJSF" required="true">
                                                 <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />
                                                 <f:selectItems value="#{ListaNinos.findAll()}"/>
                                             </h:selectOneMenu>                                           
@@ -36,7 +36,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-12 control-label" for="fechaApadrinamiento"><b>Fecha de apadrinamiento</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="fechaApadrinamiento" value="#{ListaApadrinamientos.s.fechaApadrinamiento}"  >
+                                            <h:inputText class="form-control" id="fechaApadrinamiento" value="#{ListaApadrinamientos.s.fechaApadrinamiento}"  >
                                                     <f:convertDateTime pattern="dd/MM/yyyy"/>
                                             </h:inputText>
                                         </div>
@@ -47,7 +47,7 @@
                                         <div class="form-group">
                                             <label class="col-lg-12 control-label" for="numSocio"><b>Socio</b></label>
                                             <div class="col-md-12">
-                                                <h:selectOneMenu id="numSocio" value="#{ListaApadrinamientos.s.numSocio}"  converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">
+                                                <h:selectOneMenu class="form-control" id="numSocio" value="#{ListaApadrinamientos.s.numSocio}"  converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">
                                                     <f:selectItem itemLabel="Elija un socio .." itemValue="#{null}" />
                                                     <f:selectItems value="#{ListaSocios.findAll()}"/>
                                                 </h:selectOneMenu>                                        
@@ -57,7 +57,7 @@
                                         <div class="form-group">
                                             <label class="col-lg-12 control-label" for="observaciones"><b>Observaciones</b></label>
                                             <div class="col-md-12">
-                                                <h:inputTextarea id="observaciones" value="#{ListaApadrinamientos.s.observaciones}"  />
+                                                <h:inputTextarea class="form-control" id="observaciones" value="#{ListaApadrinamientos.s.observaciones}"  />
                                             </div>
                                         </div>
                                     </div>

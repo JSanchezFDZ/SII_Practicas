@@ -16,7 +16,7 @@
                 <f:view>
                     <c:choose>
                         <c:when test="#{empty ListaApadrinamientos.findAll()}">
-                            <h6>No hay apadrinamientos registrados en la base de datos.</h6>
+                            <h2>No hay apadrinamientos registrados en la base de datos.</h2>
                             <h:form>
                                 <h:commandButton value="Inserta nuevo apadrinamiento" action="#{ListaApadrinamientos.crearApadrinamiento()}"/>
                             </h:form>

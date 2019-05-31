@@ -13,7 +13,7 @@
                 <f:view>
                     <c:choose>
                         <c:when test="#{empty ListaEnvios.findAll()}">
-                            <h6>No hay envios registrados en la base de datos.</h6>
+                            <h2>No hay envios registrados en la base de datos.</h2>
                             <h:form>
                                 <h:commandButton value="Registrar nuevo envio." action="#{ListaEnvios.crearEnvio()}"/>
                             </h:form>

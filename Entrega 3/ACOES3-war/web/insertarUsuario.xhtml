@@ -8,9 +8,7 @@
     <ui:define name="title">Insertar nuevo usuario</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h3>Insertar usuario</h3>
-               
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">              
                 <h:body>
                     <f:view>
                     <div class="row justify-content-md-center">

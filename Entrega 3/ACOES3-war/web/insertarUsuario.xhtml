@@ -13,35 +13,84 @@
                
                 <h:body>
                     <f:view>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-4">
+
+                            <div class="card panel-primary justify-content-md-center">
+                                <div class="card-header "> 
+                                    <h4> <strong> <center>DATOS DEL NUEVO USUARIO</center> </strong> </h4>
+                                </div>
+
+                                <div class="card-body justify-content-md-center">
+                                    <br/>
 
 
-                        <h:form>
-                            <h:panelGrid columns="2">
-                                
-                                <h:outputLabel value="Usuario:" for="usuario" />
-                                <h:inputText id="usuario" value="#{ListaUsuarios.u.usuario}" title="Usuario" required="true" requiredMessage="El campo usuario es necesario"/>
-                                
-                                <h:outputLabel value="Pass:" for="pass" />
-                                <h:inputSecret id="pass" value="#{ListaUsuarios.u.pass}" title="Pass" required="true" requiredMessage="Establezca una contraseña" />
-                                
-                                <h:outputLabel value="Apellidos:" for="apellidos" />
-                                <h:inputText id="apellidos" value="#{ListaUsuarios.u.apellidos}" title="Apellidos" />
-                                
-                                <h:outputLabel value="Email:" for="email" />
-                                <h:inputText id="email" value="#{ListaUsuarios.u.email}" title="Email" />
-                                
-                                <h:outputLabel value="Rol:" for="rol" />
-                                <h:selectOneMenu id="rol" value="#{ListaUsuarios.u.rol}" >
-                                    <f:selectItems value="#{ListaUsuarios.roles}" />
-                                </h:selectOneMenu>
-                                
-                                <h:commandButton class="btn btn-primary" value="Insertar usuario" action="#{ListaUsuarios.add()}" />
-                                <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />
-                                <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/> 
+                                    <h:form >            
+                                        <div class="row justify-content-md-center">
+                                            <div class="form-group">
+                                                <label class="col-lg-12 control-label" for="usuario"><b>Usuario</b></label>
+                                                <div class="col-md-12">
+                                                    <h:inputText id="usuario" value="#{ListaUsuarios.u.usuario}" required="true" requiredMessage="El campo usuario es necesario" />
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        
+                                        <div class="row justify-content-md-center">
+                                            <div class="form-group">
+                                                <label class="col-lg-12 control-label" for="pass"><b>Contraseña</b></label>
+                                                <div class="col-md-12">
+                                                    <h:inputSecret id="pass" value="#{ListaUsuarios.u.pass}" required="true" requiredMessage="Establezca una contraseĂ±a"/>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        
+                                        <div class="row justify-content-md-center">
+                                            <div class="form-group">
+                                                <label class="col-lg-12 control-label" for="apellidos"><b>Apellidos</b></label>
+                                                <div class="col-md-12">
+                                                    <h:inputText id="apellidos" value="#{ListaUsuarios.u.apellidos}" />
+                                                </div>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="row justify-content-md-center">
+                                            <div class="form-group">
+                                                <label class="col-lg-12 control-label" for="email"><b>Email</b></label>
+                                                <div class="col-md-12">
+                                                    <h:inputText id="email" value="#{ListaUsuarios.u.email}" />
+                                                </div>
+                                            </div>
+                                        </div>   
+                                        
+                                        <div class="row justify-content-md-center">
+                                           <div class="form-group">
+                                               <label class="col-lg-12 control-label" for="rol"><b>Rol</b></label>
+                                               <div class="col-md-12">
+                                                    <h:selectOneMenu id="rol" value="#{ListaUsuarios.u.rol}" > <f:selectItems value="#{ListaUsuarios.roles}" /> </h:selectOneMenu>                                  
+                                               </div>
+                                           </div> 
+                                        </div>
+                                        
+                                        <div class="row justify-content-md-center">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <h:commandButton class="btn btn-primary" value="Insertar usuario" action="#{ListaUsuarios.add()}" />                                        
+                                                    <span class="input-group-addon"></span>
+                                                    <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />
+                                                </div>
+                                                <br/>
+                                                <div class="col-md-12 ">
+                                                    <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                        </h:panelGrid>
-                        
-                    </h:form>
+                                    </h:form>
+
+                                </div>                         
+                            </div>
+                        </div>
+                    </div>
                 </f:view>
                 </h:body>
             </c:when>

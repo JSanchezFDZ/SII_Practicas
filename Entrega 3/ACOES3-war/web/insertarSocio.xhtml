@@ -13,72 +13,163 @@
                
                 <h:body>
                 <f:view>
-                    <h:form>
-                        <h:panelGrid columns="2">
   
-                            <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:inputText id="nombre" value="#{ListaSocios.s.nombre}" title="Nombre" required="true" requiredMessage="Inserte un nombre" />
-                            
-                            <h:outputLabel value="Apellido:" for="apellido" />
-                            <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" title="Apellido" required="true" requiredMessage="Inserte los apellidos" />
-                            
-                            <h:outputLabel value="Estado:" for="estado" />
-                            <h:inputText id="estado" value="#{ListaSocios.s.estado}" title="Estado" />
-                            
-                            <h:outputLabel value="Direccion:" for="direccion" />
-                            <h:inputText id="direccion" value="#{ListaSocios.s.direccion}" title="Direccion" />
-                            
-                            <h:outputLabel value="Poblacion:" for="poblacion" />
-                            <h:inputText id="poblacion" value="#{ListaSocios.s.poblacion}" title="Poblacion" />
-                            
-                            <h:outputLabel value="CodPostal:" for="codPostal" />
-                            <h:inputText id="codPostal" value="#{ListaSocios.s.codPostal}" title="CodPostal" />
-                            
-                            <h:outputLabel value="Provincia:" for="provincia" />
-                            <h:inputText id="provincia" value="#{ListaSocios.s.provincia}" title="Provincia" />
-                            
-                            <h:outputLabel value="Telefono:" for="telefono" />
-                            <h:inputText id="telefono" value="#{ListaSocios.s.telefono}" title="Telefono" />
-                            
-                            <h:outputLabel value="Correo:" for="correo" />
-                            <h:inputText id="correo" value="#{ListaSocios.s.correo}" title="Correo" />
-                            
-                            <h:outputLabel value="Sector:" for="sector" />
-                            <h:inputText id="sector" value="#{ListaSocios.s.sector}" title="Sector" />
-                            
-                            <h:outputLabel value="FechaAlta:" for="fechaAlta" />
-                            <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" title="Fecha Alta" >
-                                <f:convertDateTime pattern="dd/MM/yyyy"/>
-                            </h:inputText>
-                            
-                            <h:outputLabel value="FechaBaja:" for="fechaBaja" />
-                            <h:inputText id="fechaBaja" value="#{ListaSocios.s.fechaBaja}" title="Fecha Baja" >
-                                <f:convertDateTime pattern="dd/MM/yyyy"/>
-                            </h:inputText>
-                                       
-                            <h:outputLabel value="Certificado:" for="certificado" />
-                            <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" title="Certificado" />
-                            
-                             <h:outputLabel value="Usuario:" for="usuario" />
-                             <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}" title="Usuario" converter="ConvertidorJSF" required="true" requiredMessage="Seleccione un usuario para poder acceder a la aplicación"  >
-                                <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
-                                <f:selectItems value="#{ListaUsuarios.findAll()}"/>
-                            </h:selectOneMenu>
-                            
-                            <h:outputLabel value="Cuota:" for="cuota" />
-                            <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" title="Cuota" converter="ConvertidorJSF" required="true" requiredMessage="Debe seleccionar al menos una cuota" >
-                                <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem"
-                                           itemValue="#{cuotaItem}"
-                                           itemLabel="#{cuotaItem.nombreCuota.toString()}"/>
-                            </h:selectManyCheckbox>
-                            
-                            <h:commandButton class="btn btn-primary" value="Insertar socio" action="#{ListaSocios.add(ListaSocios.s.usuario)}"  />
-                            <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />                                   
-                            <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
-                     
-                        </h:panelGrid>
-                        
-                    </h:form>
+                    
+                <div class="row justify-content-md-center">
+                    <div class="col-md-4">
+
+                        <div class="card panel-primary">
+                            <div class="card-header "> 
+                                <h4> <strong> <center>DATOS DEL NUEVO SOCIO</center> </strong> </h4>
+                            </div>
+
+                            <div class="card-body">
+                                <br/>
+                                <h:form>            
+                                    
+                                <div class="row justify-content-md-center">    
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label"><b>Nombre</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText class="form-control" id="nombre" value="#{ListaSocios.s.nombre}" required="true" requiredMessage="Inserte nombre."/>
+                                        </div>
+                                    </div>                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label"><b>Apellidos</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" required="true" class="form-control" requiredMessage="Inserte apellidos." />
+                                        </div>
+                                    </div>    
+                                </div>
+                                
+                                <div class="row justify-content-md-center">    
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label"><b>Estado</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="estado" value="#{ListaSocios.s.estado}" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label"><b>Direccion</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="direccion" value="#{ListaSocios.s.direccion}" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                    
+                                <div class="row justify-content-md-center">   
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label"><b>Población</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="poblacion" value="#{ListaSocios.s.poblacion}" required="true" class="form-control" requiredMessage="Inserte poblacion" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label"><b>Codigo postal</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="codPostal" value="#{ListaSocios.s.codPostal}" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>    
+                                
+                                <div class="row justify-content-md-center">
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label"><b>Provincia</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="provincia" value="#{ListaSocios.s.provincia}" class="form-control" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label"><b>Telefono</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="telefono" value="#{ListaSocios.s.telefono}" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+ 
+                                <div class="row justify-content-md-center">
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label"><b>Correo</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="correo" value="#{ListaSocios.s.correo}" class="form-control" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label"><b>Sector</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="sector" value="#{ListaSocios.s.sector}" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                <div class="row justify-content-md-center">   
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label"><b>Fecha alta</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" required="true" class="form-control" requiredMessage="Inserte la fecha de alta."  >
+                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                            </h:inputText>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label"><b>Certificado</b></label>
+                                        <div class="col-md-12">
+                                            <h:inputText id="certificado" value="#{ListaSocios.s.certificado}" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div> 
+                                    
+                                <div class="form-group">                                        
+                                    
+                                    <div class="form-group">
+                                        <label class="col-lg-12 control-label" for="usuario"><b>Usuario</b></label>
+                                        <div class="col-md-12">
+                                            <h:selectOneMenu id="usuario" value="#{ListaSocios.s.usuario}"  converter="ConvertidorJSF" required="true" requiredMessage="Seleccione un usuario para poder acceder a la aplicación">
+                                                <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
+                                                <f:selectItems value="#{ListaUsuarios.findAll()}"/>
+                                            </h:selectOneMenu>                                        
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-lg-12 control-label" for="cuota"><b>Cuota</b></label>
+                                        <div class="col-md-12">
+                                            <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" converter="ConvertidorJSF" required="true" requiredMessage="Debe seleccionar al menos una cuota">
+                                                <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem" itemValue="#{cuotaItem}" itemLabel="#{cuotaItem.nombreCuota.toString()}"/>
+                                            </h:selectManyCheckbox>                                        
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-12">
+                                        <h:commandButton class="btn btn-primary" value="Insertar socio" action="#{ListaSocios.add(ListaSocios.s.usuario)}" /> 
+                                        <span class="input-group-addon"></span>
+                                        <h:commandButton class="btn btn-secondary" value="Limpiar" type="reset" />
+                                    </div>
+                                </div>                                    
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
+                                    </div>
+                                </div>
+                                    
+                                </h:form>
+ 
+
+                            </div>                         
+                        </div>
+                    </div>
+                </div>
+                    
                 </f:view>
                 </h:body>
             </c:when>

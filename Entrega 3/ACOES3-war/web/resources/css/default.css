@@ -73,6 +73,9 @@ table.blueTable tbody tr:hover td{
     margin: 0 0 15px;
 }
     
+/*
+
+Esto me cambia totalmente el color de los botones "Insertar apadrinamiento", "Limpiar" y "Volver"
 .form-control, .btn {
     min-height: 38px;
     border-radius: 2px;
@@ -83,3 +86,4 @@ table.blueTable tbody tr:hover td{
     font-weight: bold;
     background-color: #0099e0 !important;
 }
+*/

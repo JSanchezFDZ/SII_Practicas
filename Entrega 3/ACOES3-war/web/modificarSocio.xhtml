@@ -179,54 +179,151 @@
                 <f:view>
 
 
-                    <h:form>
-                        <h3><h:outputText value="Editar mis datos"/></h3>
-                        <h:panelGrid columns="2">
-                            
-                          
-                            <h:inputHidden id="id" value="#{EditSocio.s.id}"  />
-                             <h:outputLabel/>
-                            <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:inputText id="nombre" value="#{EditSocio.s.nombre}" title="Nombre" />
-                            <h:outputLabel value="Apellido:" for="apellido" />
-                            <h:inputText id="apellido" value="#{EditSocio.s.apellido}" title="Apellido" />
-                            <h:outputLabel value="Estado:" for="estado" />
-                            <h:inputText id="estado" value="#{EditSocio.s.estado}" title="Estado" />
-                            <h:outputLabel value="Direccion:" for="direccion" />
-                            <h:inputText id="direccion" value="#{EditSocio.s.direccion}" title="Direccion" />
-                            <h:outputLabel value="Poblacion:" for="poblacion" />
-                            <h:inputText id="poblacion" value="#{EditSocio.s.poblacion}" title="Poblacion" />
-                            <h:outputLabel value="CodPostal:" for="codPostal" />
-                            <h:inputText id="codPostal" value="#{EditSocio.s.codPostal}" title="CodPostal" />
-                            <h:outputLabel value="Provincia:" for="provincia" />
-                            <h:inputText id="provincia" value="#{EditSocio.s.provincia}" title="Provincia" />
-                            <h:outputLabel value="Telefono:" for="telefono" />
-                            <h:inputText id="telefono" value="#{EditSocio.s.telefono}" title="Telefono" />
-                            <h:outputLabel value="Correo:" for="correo" />
-                            <h:inputText id="correo" value="#{EditSocio.s.correo}" title="Correo" />
-                            <h:outputLabel value="Sector:" for="sector" />
-                            <h:inputText id="sector" value="#{EditSocio.s.sector}" title="Sector" />
-                            
-                             <h:outputLabel value="FechaAlta:" for="fechaAlta" />
-                            <h:inputText id="fechaAlta" value="#{EditSocio.s.fechaAlta}" title="FechaAlta" >
-                                <f:convertDateTime pattern="dd/MM/yyyy" />
-                            </h:inputText>
-                            
-                            <h:outputLabel value="FechaBaja:" for="fechaBaja" />
-                            <h:inputText id="fechaBaja" value="#{EditSocio.s.fechaBaja}" title="FechaBaja" >
-                                <f:convertDateTime pattern="dd/MM/yyyy" />
-                            </h:inputText>
-                            
-                            <h:outputLabel value="Observaciones:" for="observaciones" />
-                            <h:inputText id="observaciones" value="#{EditSocio.s.observaciones}" title="Observaciones" />
-                            <h:outputLabel value="Certificado:" for="certificado" />
-                            <h:inputText id="certificado" value="#{EditSocio.s.certificado}" title="Certificado" />
-                            
-                            <h:commandButton class="btn btn-primary" value="Actualizar socio" action="#{EditSocio.editSocio()}"/>
-                            <h:commandButton class="btn btn-danger" value="Volver" action="verSocio.xhtml"/>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-4">
 
-                        </h:panelGrid>
-                    </h:form>
+                            <div class="card panel-primary">
+                                <div class="card-header "> 
+                                    <h4> <strong> <center>MIS DATOS</center> </strong> </h4>
+                                </div>
+
+                                <div class="card-body">
+                                    <br/>
+                                    <h:form>            
+
+                                    <div class="row justify-content-md-center">    
+                                        
+                                        <h:inputHidden id="id" value="#{EditSocio.s.id}"  />
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Nombre</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText class="form-control" id="nombre" value="#{EditSocio.s.nombre}" required="true" requiredMessage="Inserte nombre."/>
+                                            </div>
+                                        </div>                                    
+
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Apellidos</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="apellido" value="#{EditSocio.s.apellido}" required="true" class="form-control" requiredMessage="Inserte apellidos." />
+                                            </div>
+                                        </div>    
+                                    </div>
+
+                                    <div class="row justify-content-md-center">    
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Estado</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="estado" value="#{EditSocio.s.estado}" class="form-control"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Direccion</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="direccion" value="#{EditSocio.s.direccion}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row justify-content-md-center">   
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Población</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="poblacion" value="#{EditSocio.s.poblacion}" required="true" class="form-control" requiredMessage="Inserte poblacion" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Codigo postal</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="codPostal" value="#{EditSocio.s.codPostal}" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>    
+
+                                    <div class="row justify-content-md-center">
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Provincia</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="provincia" value="#{EditSocio.s.provincia}" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-12 control-label"><b>Telefono</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="telefono" value="#{EditSocio.s.telefono}" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-md-center">
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Correo</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="correo" value="#{EditSocio.s.correo}" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-12 control-label"><b>Sector</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="sector" value="#{EditSocio.s.sector}" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-md-center">   
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Fecha alta</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText readonly="true" id="fechaAlta" value="#{EditSocio.s.fechaAlta}" class="form-control" >
+                                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                                </h:inputText>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label"><b>Fecha baja</b></label>
+                                            <div class="col-md-12">
+                                                <h:inputText id="fechaBaja" value="#{EditSocio.s.fechaBaja}" class="form-control">
+                                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                                </h:inputText>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="form-group justify-content-md-center">                                        
+                                        <div class="form-group">
+                                            <label class="col-md-5 control-label"><b>Certificado</b></label>
+                                            <div class="col-md-5">
+                                                <h:inputText id="certificado" value="#{EditSocio.s.certificado}" class="form-control" />
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-5 control-label"><b>Observaciones</b></label>
+                                            <div class="col-md-5">
+                                        <h:inputTextarea id="observaciones" value="#{EditSocio.s.observaciones}" class="form-control" rows="5"  />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <h:commandButton class="btn btn-primary" value="Actualizar datos" action="#{EditSocio.editSocio()}" /> 
+                                            <span class="input-group-addon"></span>
+                                            <h:commandButton class="btn btn-danger" value="Volver" action="verSocio.xhtml"/>
+                                        </div>
+                                    </div>                                    
+
+                                    </h:form>
+                                </div>                         
+                            </div>
+                        </div>
+                    </div>
 
 
                    

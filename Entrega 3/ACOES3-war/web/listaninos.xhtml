@@ -16,7 +16,7 @@
                         <c:when test="#{empty ListaNinos.findAll()}">
                             <h2>No hay niños registrados en la base de datos.</h2>
                             <h:form>
-                                <h:commandButton value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
+                                <h:commandButton class="btn btn-primary" value="Registrar nuevo niño" action="#{ListaNinos.crearNino()}"/>
                             </h:form>
                         </c:when>
                         <c:otherwise>

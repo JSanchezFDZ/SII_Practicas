@@ -15,7 +15,7 @@
                         <c:when test="#{empty ListaUsuarios.findAll()}">
                             <h2>No hay usuarios registrados en la base de datos.</h2>
                             <h:form>
-                                <h:commandButton value="Registrar nuevo usuario" action="#{ListaUsuarios.crearUsuario()}"/>
+                                <h:commandButton class="btn btn-primary" value="Registrar nuevo usuario" action="#{ListaUsuarios.crearUsuario()}"/>
                             </h:form>
                     </c:when>
                     <c:otherwise>

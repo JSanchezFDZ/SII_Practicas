@@ -14,7 +14,7 @@
                 <c:when test="#{empty ListaSocios.findAll()}">
                     <h2>No hay socios registrados en la base de datos.</h2>
                     <h:form>
-                        <h:commandButton value="Registrar nuevo socio" action="#{ListaSocios.crearSocio()}"/>
+                        <h:commandButton class="btn btn-primary" value="Registrar nuevo socio" action="#{ListaSocios.crearSocio()}"/>
                     </h:form>
                 </c:when>
                 <c:otherwise>

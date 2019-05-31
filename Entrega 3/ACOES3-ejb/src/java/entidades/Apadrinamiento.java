@@ -33,7 +33,7 @@ public class Apadrinamiento implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaApadrinamiento;
     private String observaciones;
-    @OneToOne ( cascade = CascadeType.REMOVE)
+    @OneToOne
     private Ninos codNino;
     @ManyToOne
     private Socios numSocio;

@@ -76,6 +76,7 @@
                                         <label class="col-md-6 control-label"><b>Nombre</b></label>
                                         <div class="col-md-12">
                                             <h:inputText class="form-control" id="nombre" value="#{ListaNinos.s.nombre}" required="true" requiredMessage="Inserte nombre."/>
+                                            <h:message for = "nombre" style = "color:red" />
                                         </div>
                                     </div>                                    
                                     
@@ -83,6 +84,7 @@
                                         <label class="col-md-6 control-label"><b>Apellidos</b></label>
                                         <div class="col-md-12">
                                             <h:inputText id="apellidos" value="#{ListaNinos.s.apellidos}" required="true" class="form-control" requiredMessage="Inserte apellidos." />
+                                            <h:message for = "apellidos" style = "color:red" />
                                         </div>
                                     </div>    
                                 </div>
@@ -109,6 +111,7 @@
                                         <label class="col-md-6 control-label"><b>Sexo</b></label>
                                         <div class="col-md-12">
                                             <h:inputText id="sexo" value="#{ListaNinos.s.sexo}" required="true" class="form-control" requiredMessage="Inserte el sexo del niño." />
+                                            <h:message for = "sexo" style = "color:red" />
                                         </div>
                                     </div>
                                     
@@ -116,8 +119,10 @@
                                         <label class="col-md-12 control-label"><b>Fecha nacimiento</b></label>
                                         <div class="col-md-12">
                                             <h:inputText id="fechaNac" value="#{ListaNinos.s.fechaNac}" required="true" class="form-control" requiredMessage="Inserte la fecha de nacimiento."  >
+                                                <h:message for = "fechaNac" style = "color:red" />
                                                 <f:convertDateTime pattern="dd/MM/yyyy"/>
                                             </h:inputText>
+                                            <h:message for = "fechaNac" style = "color:red" />
                                         </div>
                                     </div>
                                 </div>    

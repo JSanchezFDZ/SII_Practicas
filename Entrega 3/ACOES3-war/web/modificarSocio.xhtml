@@ -30,6 +30,7 @@
                                             <label class="col-md-6 control-label"><b>Nombre</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText class="form-control" id="nombre" value="#{ListaSocios.s.nombre}" required="true" requiredMessage="Inserte nombre."/>
+                                                <h:message for = "nombre" style = "color:red" />
                                             </div>
                                         </div>                                    
 
@@ -37,6 +38,7 @@
                                             <label class="col-md-6 control-label"><b>Apellidos</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" required="true" class="form-control" requiredMessage="Inserte apellidos." />
+                                                <h:message for = "apellido" style = "color:red" />
                                             </div>
                                         </div>    
                                     </div>
@@ -63,6 +65,7 @@
                                             <label class="col-md-6 control-label"><b>Población</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText id="poblacion" value="#{ListaSocios.s.poblacion}" required="true" class="form-control" requiredMessage="Inserte poblacion" />
+                                                <h:message for = "poblacion" style = "color:red" />
                                             </div>
                                         </div>
 
@@ -113,6 +116,7 @@
                                                 <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" required="true" class="form-control" requiredMessage="Inserte la fecha de alta."  >
                                                     <f:convertDateTime pattern="dd/MM/yyyy"/>
                                                 </h:inputText>
+                                                <h:message for = "fechaAlta" style = "color:red" />
                                             </div>
                                         </div>
                                         
@@ -134,7 +138,8 @@
                                                 <h:selectOneMenu class="form-control" id="usuario" value="#{ListaSocios.s.usuario}"  converter="ConvertidorJSF" required="true" requiredMessage="Seleccione un usuario para poder acceder a la aplicación">
                                                     <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
                                                     <f:selectItems value="#{ListaUsuarios.findAll()}"/>
-                                                </h:selectOneMenu>                                        
+                                                </h:selectOneMenu>
+                                                <h:message for = "usuario" style = "color:red" />
                                             </div>
                                         </div>
                                         
@@ -152,7 +157,8 @@
                                             <div class="col-md-12">
                                                 <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" converter="ConvertidorJSF" required="true" requiredMessage="Debe seleccionar al menos una cuota">
                                                     <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem" itemValue="#{cuotaItem}" itemLabel="#{cuotaItem.nombreCuota.toString()}"/>
-                                                </h:selectManyCheckbox>                                        
+                                                </h:selectManyCheckbox>
+                                                <h:message for = "cuota" style = "color:red" />
                                             </div>
                                         </div>
                                     </div>

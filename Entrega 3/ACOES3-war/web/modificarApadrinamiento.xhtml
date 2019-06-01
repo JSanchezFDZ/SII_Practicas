@@ -36,7 +36,8 @@
                                             <h:selectOneMenu class="form-control" id="codNino" value="#{ListaApadrinamientos.s.codNino}" requiredMessage="Tienes que seleccionar un niño" converter="ConvertidorJSF" required="true">
                                                 <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />
                                                 <f:selectItems value="#{ListaNinos.findAll()}"/>
-                                            </h:selectOneMenu>                                           
+                                            </h:selectOneMenu>
+                                            <h:message for = "codNino" style = "color:red" />
                                         </div>
                                     </div>                                    
                                     
@@ -57,7 +58,8 @@
                                                 <h:selectOneMenu class="form-control" id="numSocio" value="#{ListaApadrinamientos.s.numSocio}"  converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">
                                                     <f:selectItem itemLabel="Elija un socio .." itemValue="#{null}" />
                                                     <f:selectItems value="#{ListaSocios.findAll()}"/>
-                                                </h:selectOneMenu>                                        
+                                                </h:selectOneMenu>
+                                                <h:message for = "numSocio" style = "color:red" />
                                             </div>
                                         </div>
 

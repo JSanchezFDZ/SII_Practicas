@@ -30,7 +30,8 @@
                                             <div class="form-group">
                                                 <label class="col-lg-12 control-label" for="nombreCuota"><b>Nombre cuota</b></label>
                                                 <div class="col-md-12">
-                                                    <h:inputText class="form-control" id="nombreCuota" value="#{ListaCuotas.c.nombreCuota}" />
+                                                    <h:inputText class="form-control" id="nombreCuota" value="#{ListaCuotas.c.nombreCuota}" required="true" requiredMessage="Inserte el nombre de la nueva cuota" />
+                                                    <h:message for = "nombreCuota" style = "color:red" />
                                                 </div>
                                             </div>   
                                         </div>
@@ -39,7 +40,8 @@
                                             <div class="form-group">
                                                 <label class="col-lg-12 control-label" for="tipo"><b>Tipo de cuota</b></label>
                                                 <div class="col-md-12">
-                                                    <h:inputText class="form-control" id="tipo" value="#{ListaCuotas.c.tipo}" />
+                                                    <h:inputText class="form-control" id="tipo" value="#{ListaCuotas.c.tipo}" required="true" requiredMessage="Especifique el tipo de cuota" />
+                                                    <h:message for = "tipo" style = "color:red" />
                                                 </div>
                                             </div>
                                         </div>    
@@ -48,7 +50,8 @@
                                             <div class="form-group">
                                                 <label class="col-lg-12 control-label" for="aportacion"><b>Aportación</b></label>
                                                 <div class="col-md-12">
-                                                    <h:inputText class="form-control" id="aportación" value="#{ListaCuotas.c.aportación}" />
+                                                    <h:inputText class="form-control" id="aportacion" value="#{ListaCuotas.c.aportación}" required="true" requiredMessage="Aportación de la cuota" />
+                                                    <h:message for = "aportacion" style = "color:red" />
                                                 </div>
                                             </div>
                                         </div>                                          

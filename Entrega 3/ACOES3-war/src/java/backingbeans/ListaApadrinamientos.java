@@ -93,8 +93,4 @@ public class ListaApadrinamientos implements Serializable {
         return "listaninosapadrinados.xhtml";
     }
     
-    public Long getAnterior(Long idNinoAnterior) {
-        return idNinoAnterior;
-    }
-    
 }

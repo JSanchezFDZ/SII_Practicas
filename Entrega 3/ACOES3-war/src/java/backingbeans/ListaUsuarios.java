@@ -9,6 +9,7 @@ import entidades.*;
 import entidades.Usuario.Rol;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
@@ -33,6 +34,18 @@ public class ListaUsuarios implements Serializable {
     
     public List<Usuario> findAll(){
         return this.usuarioFacade.findAll();
+    }
+    
+    
+    // Chapuzilla by JSanchezFDZ
+    public List<Usuario> findAllLibres(){
+        List<Usuario> libres = new ArrayList<>();
+        for (Usuario usu : this.usuarioFacade.findAll()) {
+            if(usu.getSocio() == null){
+                libres.add(usu);
+            }
+        } 
+        return libres;
     }
     
     public Rol[] getRoles(){

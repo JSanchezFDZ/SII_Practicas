@@ -27,7 +27,7 @@
                     </c:if>
                     <!-- OPCIONES PARA SOCIO-->
                     <c:if test="#{controlAutorizacion.getUsuario().getRol() == 'SOCIO'}">
-                        <li><h:commandLink action="#{controlAutorizacion.MisDatos()}" value="Mis datos"/></li>
+                        <li><h:commandLink action="#{EditSocio.edit(controlAutorizacion.getUsuario().getSocio())}" value="Mis datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.MisCuotas()}" value="Cuotas"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.NinosApadrinados()}" value="Niños apadrinados"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.ListaEnvios()}" value="Lista envíos"/></li>

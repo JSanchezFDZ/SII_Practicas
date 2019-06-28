@@ -24,7 +24,7 @@
                                 <h:form >            
                                     <div class="row justify-content-md-center">
                                     <div class="form-group">
-                                        <label class="col-lg-12 control-label" for="codNino"><b>Niño a apadrinar</b></label>
+                                        <label class="col-lg-12 control-label" for="codNino"><b>Niño a apadrinar *</b></label>
                                         <div class="col-md-12">
                                             <h:selectOneMenu class="form-control" id="codNino" value="#{ListaApadrinamientos.s.codNino}" requiredMessage="Tienes que seleccionar un niño" converter="ConvertidorJSF" required="true">
                                                 <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />
@@ -46,7 +46,7 @@
                                     
                                     <div class="row justify-content-md-center">
                                         <div class="form-group">
-                                            <label class="col-lg-12 control-label" for="numSocio"><b>Socio</b></label>
+                                            <label class="col-lg-12 control-label" for="numSocio"><b>Socio *</b></label>
                                             <div class="col-md-12">
                                                 <h:selectOneMenu class="form-control" id="numSocio" value="#{ListaApadrinamientos.s.numSocio}"  converter="ConvertidorJSF" required="true" requiredMessage="Tienes que seleccionar un socio">
                                                     <f:selectItem itemLabel="Elija un socio .." itemValue="#{null}" />
@@ -75,6 +75,10 @@
                                             <br/>
                                             <div class="col-md-12 ">
                                                 <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
+                                            </div>
+                                            <br/>
+                                            <div class="col-md-12 ">
+                                                <b>(* Campos obligatorios)</b>
                                             </div>
                                         </div>
                                     </div>

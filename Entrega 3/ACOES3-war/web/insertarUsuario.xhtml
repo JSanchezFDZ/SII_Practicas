@@ -26,7 +26,7 @@
                                     <h:form >            
                                         <div class="row justify-content-md-center">
                                             <div class="form-group">
-                                                <label class="col-lg-12 control-label" for="usuario"><b>Usuario</b></label>
+                                                <label class="col-lg-12 control-label" for="usuario"><b>Usuario *</b></label>
                                                 <div class="col-md-12">
                                                     <h:inputText class="form-control" id="usuario" value="#{ListaUsuarios.u.usuario}" required="true" requiredMessage="El campo usuario es necesario" />
                                                     <h:message for = "usuario" style = "color:red" />
@@ -36,7 +36,7 @@
                                         
                                         <div class="row justify-content-md-center">
                                             <div class="form-group">
-                                                <label class="col-lg-12 control-label" for="pass"><b>Contraseña</b></label>
+                                                <label class="col-lg-12 control-label" for="pass"><b>Contraseña *</b></label>
                                                 <div class="col-md-12">
                                                     <h:inputSecret class="form-control" id="pass" value="#{ListaUsuarios.u.pass}" required="true" requiredMessage="Establezca una contraseña"/>
                                                     <h:message for = "pass" style = "color:red" />
@@ -64,7 +64,7 @@
                                         
                                         <div class="row justify-content-md-center">
                                            <div class="form-group">
-                                               <label class="col-lg-12 control-label" for="rol"><b>Rol</b></label>
+                                               <label class="col-lg-12 control-label" for="rol"><b>Rol *</b></label>
                                                <div class="col-md-12">
                                                    <h:selectOneMenu class="form-control" id="rol" value="#{ListaUsuarios.u.rol}" required="true" requiredMessage="Inserte el rol del nuevo usuario" > 
                                                         <f:selectItems value="#{ListaUsuarios.roles}" /> 
@@ -84,6 +84,10 @@
                                                 <br/>
                                                 <div class="col-md-12 ">
                                                     <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
+                                                </div>
+                                                <br/>
+                                                <div class="col-md-12 ">
+                                                    <b>(* Campos obligatorios)</b>
                                                 </div>
                                             </div>
                                         </div>

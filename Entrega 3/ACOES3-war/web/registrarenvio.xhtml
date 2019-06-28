@@ -29,7 +29,7 @@
                                 <h:form >            
                                     <div class="row justify-content-md-center">
                                         <div class="form-group">
-                                            <label class="col-lg-12 control-label" for="apadr"><b>Niño apadrinado</b></label>
+                                            <label class="col-lg-12 control-label" for="apadr"><b>Niño apadrinado *</b></label>
                                             <div class="col-md-12">
                                                 <h:selectOneMenu class="form-control" id="apadr" value="#{ListaEnvios.e.codApadrinamiento}"  converter="ConvertidorJSF" required="true" requiredMessage="Debe insertar un niño apadrinado" >
                                                     <f:selectItem itemLabel="Elija un niño .." itemValue="#{null}" />                                
@@ -40,7 +40,7 @@
                                         </div>                                    
 
                                         <div class="form-group">
-                                            <label class="col-lg-12 control-label" for="fechaEnvio"><b>Fecha de envio</b></label>
+                                            <label class="col-lg-12 control-label" for="fechaEnvio"><b>Fecha de envio *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText class="form-control" id="fechaEnvio" value="#{ListaEnvios.e.fechaEnvio}" required="true" requiredMessage="El campo fechaEnvio es necesario.">
                                                         <f:convertDateTime pattern="dd/MM/yyyy"/>
@@ -52,7 +52,7 @@
                                     
                                     <div class="row justify-content-md-center">
                                         <div class="form-group">
-                                            <label class="col-lg-12 control-label" for="fechaLlegada"><b>Fecha de llegada</b></label>
+                                            <label class="col-lg-12 control-label" for="fechaLlegada"><b>Fecha de llegada *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText class="form-control" id="fechaLlegada" value="#{ListaEnvios.e.fechaLlegada}" required="true" requiredMessage="El campo fechaLlegada es necesario.">
                                                         <f:convertDateTime pattern="dd/MM/yyyy"/>
@@ -80,6 +80,10 @@
                                             <br/>
                                             <div class="col-md-12 ">
                                                 <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
+                                            </div>
+                                            <br/>
+                                            <div class="col-md-12 ">
+                                                <b>(* Campos obligatorios)</b>
                                             </div>
                                         </div>
                                     </div>

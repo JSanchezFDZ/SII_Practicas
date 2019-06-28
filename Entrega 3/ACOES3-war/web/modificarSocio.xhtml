@@ -27,7 +27,7 @@
 
                                     <div class="row justify-content-md-center">    
                                         <div class="form-group">
-                                            <label class="col-md-6 control-label"><b>Nombre</b></label>
+                                            <label class="col-md-6 control-label"><b>Nombre *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText class="form-control" id="nombre" value="#{ListaSocios.s.nombre}" required="true" requiredMessage="Inserte nombre."/>
                                                 <h:message for = "nombre" style = "color:red" />
@@ -35,7 +35,7 @@
                                         </div>                                    
 
                                         <div class="form-group">
-                                            <label class="col-md-6 control-label"><b>Apellidos</b></label>
+                                            <label class="col-md-6 control-label"><b>Apellidos *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText id="apellido" value="#{ListaSocios.s.apellido}" required="true" class="form-control" requiredMessage="Inserte apellidos." />
                                                 <h:message for = "apellido" style = "color:red" />
@@ -62,7 +62,7 @@
 
                                     <div class="row justify-content-md-center">   
                                         <div class="form-group">
-                                            <label class="col-md-6 control-label"><b>Población</b></label>
+                                            <label class="col-md-6 control-label"><b>Población *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText id="poblacion" value="#{ListaSocios.s.poblacion}" required="true" class="form-control" requiredMessage="Inserte poblacion" />
                                                 <h:message for = "poblacion" style = "color:red" />
@@ -111,7 +111,7 @@
 
                                     <div class="row justify-content-md-center">   
                                         <div class="form-group">
-                                            <label class="col-md-6 control-label"><b>Fecha alta</b></label>
+                                            <label class="col-md-6 control-label"><b>Fecha alta *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText id="fechaAlta" value="#{ListaSocios.s.fechaAlta}" required="true" class="form-control" requiredMessage="Inserte la fecha de alta."  >
                                                     <f:convertDateTime pattern="dd/MM/yyyy"/>
@@ -133,7 +133,7 @@
                                     <div class="form-group justify-content-md-center">                                        
 
                                         <div class="form-group">
-                                            <label class="col-lg-5 control-label" for="usuario"><b>Usuario</b></label>
+                                            <label class="col-lg-5 control-label" for="usuario"><b>Usuario *</b></label>
                                             <div class="col-md-5">
                                                 <h:selectOneMenu class="form-control" id="usuario" value="#{ListaSocios.s.usuario}"  converter="ConvertidorJSF" required="true" requiredMessage="Seleccione un usuario para poder acceder a la aplicación">
                                                     <f:selectItem itemLabel="Elija un usuario .." itemValue="#{null}" />
@@ -153,7 +153,7 @@
                                         
                                     <div class="form-group justify-content-md-center"> 
                                         <div class="form-group">
-                                            <label class="col-lg-12 control-label" for="cuota"><b>Cuota</b></label>
+                                            <label class="col-lg-12 control-label" for="cuota"><b>Cuota *</b></label>
                                             <div class="col-md-12">
                                                 <h:selectManyCheckbox id="cuota" value="#{ListaSocios.s.cuota}" converter="ConvertidorJSF" required="true" requiredMessage="Debe seleccionar al menos una cuota">
                                                     <f:selectItems value="#{ListaCuotas.findAll()}" var="cuotaItem" itemValue="#{cuotaItem}" itemLabel="#{cuotaItem.nombreCuota.toString()}"/>
@@ -169,6 +169,10 @@
                                             <h:commandButton class="btn btn-primary" value="Actualizar socio" action="#{ListaSocios.edit()}" /> 
                                             <span class="input-group-addon"></span>
                                             <h:commandButton class="btn btn-danger" value="Volver" onclick="history.back()" type="button"/>
+                                        </div>
+                                        <br/>
+                                        <div class="col-md-12 ">
+                                            <b>(* Campos obligatorios)</b>
                                         </div>
                                     </div>                                    
 
@@ -203,14 +207,14 @@
                                         <h:inputHidden id="id" value="#{EditSocio.s.id}"  />
                                         
                                         <div class="form-group">
-                                            <label class="col-md-6 control-label"><b>Nombre</b></label>
+                                            <label class="col-md-6 control-label"><b>Nombre *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText class="form-control" id="nombre" value="#{EditSocio.s.nombre}" required="true" requiredMessage="Inserte nombre."/>
                                             </div>
                                         </div>                                    
 
                                         <div class="form-group">
-                                            <label class="col-md-6 control-label"><b>Apellidos</b></label>
+                                            <label class="col-md-6 control-label"><b>Apellidos *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText id="apellido" value="#{EditSocio.s.apellido}" required="true" class="form-control" requiredMessage="Inserte apellidos." />
                                             </div>
@@ -236,7 +240,7 @@
 
                                     <div class="row justify-content-md-center">   
                                         <div class="form-group">
-                                            <label class="col-md-6 control-label"><b>Población</b></label>
+                                            <label class="col-md-6 control-label"><b>Población *</b></label>
                                             <div class="col-md-12">
                                                 <h:inputText id="poblacion" value="#{EditSocio.s.poblacion}" required="true" class="form-control" requiredMessage="Inserte poblacion" />
                                             </div>
@@ -323,6 +327,10 @@
                                             <h:commandButton class="btn btn-primary" value="Actualizar datos" action="#{EditSocio.editSocio()}" /> 
                                             <span class="input-group-addon"></span>
                                             <h:commandButton class="btn btn-danger" value="Volver" action="verSocio.xhtml"/>
+                                        </div>
+                                        <br/>
+                                        <div class="col-md-12 ">
+                                            <b>(* Campos obligatorios)</b>
                                         </div>
                                     </div>                                    
 

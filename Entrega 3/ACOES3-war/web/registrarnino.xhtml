@@ -110,7 +110,11 @@
                                     <div class="form-group">
                                         <label class="col-md-6 control-label"><b>Sexo *</b></label>
                                         <div class="col-md-12">
-                                            <h:inputText id="sexo" value="#{ListaNinos.s.sexo}" required="true" class="form-control" requiredMessage="Inserte el sexo del niño." />
+                                        <h:selectOneMenu id="sexo" value="#{ListaNinos.s.sexo}" required="true" style="width:210px" class="form-control" requiredMessage="Inserte el sexo del niño." >
+                                            <f:selectItem itemLabel="Seleccione sexo" itemValue="" />
+                                            <f:selectItem itemLabel="V" itemValue="V" />
+                                            <f:selectItem itemLabel="M" itemValue="M" />
+                                        </h:selectOneMenu>
                                             <h:message for = "sexo" style = "color:red" />
                                         </div>
                                     </div>
